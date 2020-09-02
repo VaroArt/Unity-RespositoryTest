@@ -7,7 +7,7 @@ public class Key : MonoBehaviour
     public int ID;
     public float speed;
     public bool intKey;
-    public bool canPress;
+
     public GameObject objectToFollow;
     public PanelControl panel;
     public player_triggers player;

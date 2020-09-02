@@ -27,6 +27,7 @@ public class player_script : MonoBehaviour
         if(input.x != 0 || input.y != 0)
         {
             isMoving = true;
+            rotationInterpolation = 0.4f;
         }
         else
         {

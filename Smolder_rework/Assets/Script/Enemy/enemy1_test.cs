@@ -135,6 +135,7 @@ public class enemy1_test : MonoBehaviour
                     charge = 0f;
                     stop = 0;
                 }
+
             }
 
         }
@@ -151,7 +152,6 @@ public class enemy1_test : MonoBehaviour
         if (distance < nextWaypointDistance)
         {
             currentWaypoint++;
-
         }
 
     }

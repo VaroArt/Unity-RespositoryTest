@@ -93,5 +93,6 @@ public class limite_mapa : MonoBehaviour
     void turnOpaccityOff()
     {  
         value -= 0.8f * Time.deltaTime;
+
     }
 }

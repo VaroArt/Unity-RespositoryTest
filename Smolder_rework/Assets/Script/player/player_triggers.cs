@@ -282,13 +282,5 @@ public class player_triggers : MonoBehaviour
             panel.areTalking = false;
 
         }
-        /* if(collision.tag == ("key"))
-         {
-             key.intKey = false;
-         }
-         if (collision.tag == ("bomba"))
-         {
-             bomb.intBomb = false;
-         }*/
     }
 }
