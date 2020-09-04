@@ -10,7 +10,7 @@ public class Enemy2_test : MonoBehaviour
     public Transform Playertarget;
     public float speed;
     [HideInInspector]public float nextWaypointDistance = 3f;
-    public float attackRadius;
+    public float stopRadius;
     public float moveRadius;
     public float angleRotation;
     Path path;
@@ -23,7 +23,7 @@ public class Enemy2_test : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         InvokeRepeating("updatePath", 0f, .5f);
-
+      
     }
     void updatePath()
     {
@@ -43,45 +43,11 @@ public class Enemy2_test : MonoBehaviour
 
     private void Update()
     {
-        angleRotation = transform.localEulerAngles.z;
-        angleRotation = (int)angleRotation;
-        if(angleRotation > 0 && angleRotation < 45)
-        {
-            print("up");
-            enemyAnim.SetFloat("y",1);
-            enemyAnim.SetFloat("x", 0);
-        }
-        if (angleRotation < 350 && angleRotation > 320)
-        {
-            print("up");
-            enemyAnim.SetFloat("y", 1);
-            enemyAnim.SetFloat("x", 0);
-        }
-        if (angleRotation < 90 && angleRotation > 45)
-        {
-            print("left");
-            enemyAnim.SetFloat("y", 0);
-            enemyAnim.SetFloat("x", -1);
-        }
-        if (angleRotation < 180 && angleRotation > 120)
-        {
-            print("down");
-            enemyAnim.SetFloat("y", -1);
-            enemyAnim.SetFloat("x", 0);
-        }
-        if (angleRotation < 270 && angleRotation > 230)
-        {
-            print("right");
-            enemyAnim.SetFloat("y", 0);
-            enemyAnim.SetFloat("x", 1);
-
-        }
-
+        rotateAnimation();
     }
     void FixedUpdate()
     {
       
-        RotateTowards(target.position);
         if (path == null)
             return;
         if (currentWaypoint >= path.vectorPath.Count)
@@ -98,16 +64,15 @@ public class Enemy2_test : MonoBehaviour
         
         float moveDistance = Vector3.Distance(Playertarget.position, transform.position);
 
-
-        if(moveDistance < attackRadius)
+        if(moveDistance < stopRadius)
         {
 
         }
         else if(moveDistance < moveRadius)
         {
-          
-            Vector2 force = direction * speed * Time.deltaTime;
-            rb.AddForce(force);
+                RotateTowards(target.position);
+                Vector2 force = direction * speed * Time.deltaTime;
+                rb.AddForce(force);
         }
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
 
@@ -115,7 +80,6 @@ public class Enemy2_test : MonoBehaviour
         {
             currentWaypoint++;
         }
-
     }
 
     private void RotateTowards(Vector2 target)
@@ -126,11 +90,63 @@ public class Enemy2_test : MonoBehaviour
         var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(Vector3.forward * (angle + offset));
     }
+   
+    public void rotateAnimation()
+    {
+        angleRotation = transform.localEulerAngles.z;
+        angleRotation = (int)angleRotation;
+
+        if (angleRotation >= 0)
+        {
+            enemyAnim.SetFloat("x", 0);
+            enemyAnim.SetFloat("y", 1);
+        }
+        if (angleRotation >= 10 && angleRotation < 70)
+        {
+            enemyAnim.SetFloat("x", -1);
+            enemyAnim.SetFloat("y", 1);
+        }
+        if (angleRotation >= 70 && angleRotation < 108)
+        {
+            enemyAnim.SetFloat("x", -1);
+            enemyAnim.SetFloat("y", 0);
+        }
+        if (angleRotation >= 108 && angleRotation < 165)
+        {
+            enemyAnim.SetFloat("x", -1);
+            enemyAnim.SetFloat("y", -1);
+        }
+        if (angleRotation >= 165 && angleRotation < 204)
+        {
+            enemyAnim.SetFloat("x", 0);
+            enemyAnim.SetFloat("y", -1);
+        }
+        if (angleRotation >= 204 && angleRotation < 231)
+        {
+            enemyAnim.SetFloat("x", 1);
+            enemyAnim.SetFloat("y", -1);
+        }
+        if (angleRotation >= 231 && angleRotation < 294)
+        {
+            enemyAnim.SetFloat("x", 1);
+            enemyAnim.SetFloat("y", 0);
+        }
+        if (angleRotation >= 294 && angleRotation < 345)
+        {
+            enemyAnim.SetFloat("x", 1);
+            enemyAnim.SetFloat("y", 1);
+        }
+        if (angleRotation >= 345)
+        {
+            enemyAnim.SetFloat("x", 0);
+            enemyAnim.SetFloat("y", 1);
+        }
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, moveRadius);
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRadius);
+        Gizmos.DrawWireSphere(transform.position, stopRadius);
     }
 }

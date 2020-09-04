@@ -85,6 +85,8 @@ public class enemy1_test : MonoBehaviour
         {
             Vector2 force = direction * speed * Time.deltaTime;
             rb.AddForce(force);
+            RotateTowards(target.position);
+
         }
         float moveDistance = Vector3.Distance(Playertarget.position, transform.position);
         float soundPersecucion = Vector3.Distance(Playertarget.position, transform.position);
@@ -105,40 +107,41 @@ public class enemy1_test : MonoBehaviour
             SceneManager.LoadScene("Main Menu");
           
         }
-        else if (moveDistance < moveRadius)
+       /* else if (moveDistance < moveRadius)
         {
             //rb.AddForce(force);
-            target = Playertarget;
-            moveMode = 0;
-            canMove = true;
-            RotateTowards(target.position);
-            if(charge < 3f)
-            {
-                charge += 1 * Time.deltaTime;
-                //
-            }
+            /*  target = Playertarget;
+              moveMode = 0;
+              canMove = true;
+              RotateTowards(target.position);
+              if(charge < 3f)
+              {
+                  charge += 1 * Time.deltaTime;
+
+              }
+
+              if(charge > 3f)
+              {
+
+                  speed = 1600f;
+                  myaudio.clip = myclip;
+                  myaudio.Play();
+                  if (stop < 1f)
+                  {
+                      stop += 1 * Time.deltaTime;
+                  }
+                  if(stop > 1f)
+                  {
+                      attackRadius = 1.32f;
+                      speed = 400f;
+                      charge = 0f;
+                      stop = 0;
+                  }
+
+              }*/
            
-            if(charge > 3f)
-            {
-               // attackRadius = 2f;
-                speed = 1600f;
-                myaudio.clip = myclip;
-                myaudio.Play();
-                if (stop < 1f)
-                {
-                    stop += 1 * Time.deltaTime;
-                }
-                if(stop > 1f)
-                {
-                    attackRadius = 1.32f;
-                    speed = 400f;
-                    charge = 0f;
-                    stop = 0;
-                }
 
-            }
-
-        }
+     //   }
        if(moveDistance > moveRadius)
         {
             //print("out of range");
@@ -182,6 +185,38 @@ public class enemy1_test : MonoBehaviour
                     canMove = true;
                 }
 
+                break;
+
+            case 2:
+                target = Playertarget;
+                moveMode = 0;
+                canMove = true;
+               
+                if (charge < 3f)
+                {
+                    charge += 1 * Time.deltaTime;
+
+                }
+
+                if (charge > 3f)
+                {
+
+                    speed = 1600f;
+                    myaudio.clip = myclip;
+                    myaudio.Play();
+                    if (stop < 1f)
+                    {
+                        stop += 1 * Time.deltaTime;
+                    }
+                    if (stop > 1f)
+                    {
+                        attackRadius = 1.32f;
+                        speed = 400f;
+                        charge = 0f;
+                        stop = 0;
+                    }
+
+                }
                 break;
         }
     }

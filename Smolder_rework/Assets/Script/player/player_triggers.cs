@@ -58,7 +58,7 @@ public class player_triggers : MonoBehaviour
         {
             coord = collision.GetComponent<Coordenada>();
             curretCoordenada = collision.gameObject;
-
+            
         }
     }
     public void OnTriggerStay2D(Collider2D collision)

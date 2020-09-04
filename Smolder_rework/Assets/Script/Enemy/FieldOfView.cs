@@ -13,7 +13,7 @@ public class FieldOfView : MonoBehaviour
 
     public List<Transform> visibleTargets = new List<Transform>();
     [Space(10)]
-    public Enemy_IA_1 enemy;
+    public enemy1_test enemy;
     private void Start()
     {
         StartCoroutine("FindTargetsWithDelay", .2f);
@@ -43,23 +43,12 @@ public class FieldOfView : MonoBehaviour
                 if (Physics2D.Raycast(transform.position, dirToTarget, dstToTarget, targetMask))
                 {
                     visibleTargets.Add(target);
-                    if (visibleTargets.Count > 0 && target.transform.gameObject.tag == ("Player"))
+                    if(target.gameObject.tag == ("Player"))
                     {
-                        enemy.Attackmode = 3;
-                        enemy.canMove = true;
-                        if(dstToTarget > enemy.stopRadius)
-                        {
-                            enemy.canMove = false;
-                        }
+                        print("player");
+                        enemy.moveMode = 2;
                     }
-                    
-                    if(visibleTargets.Count > 0 && target.transform.gameObject.tag == ("Bengala"))
-                    {
-                        //print("bengala");
-                        enemy.canMove = true;
-                        enemy.Attackmode = 1;
-                    }
-                   
+                    //enemy.moveMode = 2;
                 }
             }
         }
@@ -67,7 +56,7 @@ public class FieldOfView : MonoBehaviour
         {
             //print("bruh");
             enemy.canMove = false;
-            enemy.Attackmode = 0;
+           
         }
     }
 

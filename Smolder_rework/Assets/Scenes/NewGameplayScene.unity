@@ -331,7 +331,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 236264008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.49, y: -9.5, z: -10}
+  m_LocalPosition: {x: 0.36, y: -1.5799999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -678,7 +678,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 392021934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.49, y: -9.5, z: -10}
+  m_LocalPosition: {x: 0.36, y: -1.5799999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 615115197}
@@ -1280,7 +1280,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1401002711}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 19.49, y: -9.5, z: 0}
+  m_LocalPosition: {x: 0.36, y: -1.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1954859972}
@@ -1798,9 +1798,9 @@ MonoBehaviour:
   enemyAnim: {fileID: 620161124}
   target: {fileID: 1401002713}
   Playertarget: {fileID: 1401002713}
-  speed: 0
+  speed: 800
   nextWaypointDistance: 3
-  attackRadius: 3.63
+  stopRadius: 0
   moveRadius: 17.08
   angleRotation: 0
   seeker: {fileID: 0}
