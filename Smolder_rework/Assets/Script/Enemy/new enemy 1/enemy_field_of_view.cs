@@ -20,7 +20,7 @@ public class enemy_field_of_view : MonoBehaviour
         if (collision.tag == ("Player"))
         {
 
-        //    enemy.moveMode = 2;
+           enemy.moveMode = 2;
         }
     }
     public void OnTriggerExit2D(Collider2D collision)

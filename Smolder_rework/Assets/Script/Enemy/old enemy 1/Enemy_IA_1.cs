@@ -253,9 +253,9 @@ public class Enemy_IA_1 : MonoBehaviour
 
                 /*chargeAttack += 2 * Time.deltaTime;
                 speedPatrol = 0f;
-                stopRadius = 0f;
+                stopRadius = 0f;*/
                 //prueba de hacer invisible al enemigo..
-                /*  isdissolving = true;
+                 isdissolving = true;
                   if (isdissolving)
                   {
                       fade -= Time.deltaTime;
@@ -266,7 +266,7 @@ public class Enemy_IA_1 : MonoBehaviour
                           isdissolving = false;
                       }
                       mat.SetFloat("_Fade", fade);
-                  }*/
+                  }
                 break;
 
             case 2:

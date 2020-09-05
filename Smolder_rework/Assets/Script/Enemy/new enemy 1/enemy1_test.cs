@@ -24,6 +24,11 @@ public class enemy1_test : MonoBehaviour
     [Header("Enemy Patrol")]
     public Transform[] movePatrol;
     public float startWaitTime;
+    [Header("Enemy gfx")]
+    public SpriteRenderer enemygfx;
+    public Material mat;
+    bool isdissolving = false;
+    public float fade = 1f;
     Path path;
     int currentWaypoint = 0;
     bool reachedEndOfPath = false;
@@ -200,7 +205,18 @@ public class enemy1_test : MonoBehaviour
                 if (charge < 3f)
                 {
                     charge += 1 * Time.deltaTime;
+                    isdissolving = true;
+                    if (isdissolving)
+                    {
+                        fade -= Time.deltaTime;
 
+                        if (fade <= 0f)
+                        {
+                            fade = 0f;
+                            isdissolving = false;
+                        }
+                        mat.SetFloat("_Fade", fade);
+                    }
                 }
 
                 if (charge > 3f)

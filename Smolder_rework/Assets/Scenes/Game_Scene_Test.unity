@@ -2639,6 +2639,9 @@ MonoBehaviour:
   - {fileID: 99990438}
   - {fileID: 847018606}
   startWaitTime: 3
+  enemygfx: {fileID: 627773490}
+  mat: {fileID: 2100000, guid: 6a6f2549bdf3ff84cbaeb1ac48de0192, type: 2}
+  fade: 1
   seeker: {fileID: 319997886}
   audioFondo: {fileID: 519420034}
   myclip: {fileID: 8300000, guid: c9e22165efc59ec4e8469de6cd91224c, type: 3}
