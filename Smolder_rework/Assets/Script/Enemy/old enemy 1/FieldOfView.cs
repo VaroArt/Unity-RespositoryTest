@@ -48,15 +48,18 @@ public class FieldOfView : MonoBehaviour
                         print("player");
                         enemy.moveMode = 2;
                     }
-                    //enemy.moveMode = 2;
-                }
+                    if(visibleTargets.Count < 1)
+                    {
+                        print("no player");
+                    }
+                 }
             }
-        }
-        if (visibleTargets.Count < 1)
-        {
-            //print("bruh");
-            enemy.canMove = false;
-           
+            /* if (visibleTargets.Count < 1)
+             {
+                 //print("bruh");
+                 enemy.canMove = false;
+
+             }*/
         }
     }
 

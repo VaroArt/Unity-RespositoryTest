@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 using UnityEngine.SceneManagement;
+using JetBrains.Annotations;
 
 public class enemy1_test : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class enemy1_test : MonoBehaviour
     public Transform bengala;
     public player_script playerScript;
     public float speed = 200f;
-    public float speedPatrol;
     public float nextWaypointDistance = 3f;
     public float attackRadius;
     public float moveRadius;
@@ -63,7 +63,6 @@ public class enemy1_test : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         
@@ -101,53 +100,58 @@ public class enemy1_test : MonoBehaviour
             myaudio.clip = myclip2;
             myaudio.Play();*/
         }
-        if (moveDistance < attackRadius)
+        /* if (moveDistance < attackRadius)
+         {
+             print("muerte");
+             SceneManager.LoadScene("Main Menu");
+
+         }*/
+        /* else if (moveDistance < moveRadius)
+         {
+             //rb.AddForce(force);
+             /*  target = Playertarget;
+               moveMode = 0;
+               canMove = true;
+               RotateTowards(target.position);
+               if(charge < 3f)
+               {
+                   charge += 1 * Time.deltaTime;
+
+               }
+
+               if(charge > 3f)
+               {
+
+                   speed = 1600f;
+                   myaudio.clip = myclip;
+                   myaudio.Play();
+                   if (stop < 1f)
+                   {
+                       stop += 1 * Time.deltaTime;
+                   }
+                   if(stop > 1f)
+                   {
+                       attackRadius = 1.32f;
+                       speed = 400f;
+                       charge = 0f;
+                       stop = 0;
+                   }
+
+               }*/
+
+
+        //   }
+        /* if(moveDistance > moveRadius)
+           {
+               //print("out of range");
+               moveMode = 1;
+               charge = 0;
+               speed = 400;
+           }
+         */
+        if (moveDistance < moveRadius)
         {
-            print("muerte");
-            SceneManager.LoadScene("Main Menu");
-          
-        }
-       /* else if (moveDistance < moveRadius)
-        {
-            //rb.AddForce(force);
-            /*  target = Playertarget;
-              moveMode = 0;
-              canMove = true;
-              RotateTowards(target.position);
-              if(charge < 3f)
-              {
-                  charge += 1 * Time.deltaTime;
-
-              }
-
-              if(charge > 3f)
-              {
-
-                  speed = 1600f;
-                  myaudio.clip = myclip;
-                  myaudio.Play();
-                  if (stop < 1f)
-                  {
-                      stop += 1 * Time.deltaTime;
-                  }
-                  if(stop > 1f)
-                  {
-                      attackRadius = 1.32f;
-                      speed = 400f;
-                      charge = 0f;
-                      stop = 0;
-                  }
-
-              }*/
-           
-
-     //   }
-       if(moveDistance > moveRadius)
-        {
-            //print("out of range");
-            moveMode = 1;
-            charge = 0;
-            speed = 400;
+            print("daño");
         }
 
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
@@ -188,6 +192,7 @@ public class enemy1_test : MonoBehaviour
                 break;
 
             case 2:
+                speed = 550f;
                 target = Playertarget;
                 moveMode = 0;
                 canMove = true;
@@ -200,7 +205,6 @@ public class enemy1_test : MonoBehaviour
 
                 if (charge > 3f)
                 {
-
                     speed = 1600f;
                     myaudio.clip = myclip;
                     myaudio.Play();
@@ -215,7 +219,6 @@ public class enemy1_test : MonoBehaviour
                         charge = 0f;
                         stop = 0;
                     }
-
                 }
                 break;
         }
@@ -239,11 +242,14 @@ public class enemy1_test : MonoBehaviour
                 bengala.gameObject.SetActive(false);
             }
         }
+    
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
         if(collision.tag == ("Player"))
         {
-          
-               
-
+            print("player");
         }
     }
     private void RotateTowards(Vector2 target)
@@ -258,9 +264,9 @@ public class enemy1_test : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, moveRadius);
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(transform.position, attackRadius);
-        Gizmos.color = Color.green;
+        Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(transform.position, SoundRadius);
     }
     

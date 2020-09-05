@@ -193,13 +193,6 @@ public class Enemy_IA_1 : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, stopRadius);
     }
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.tag == ("Player"))
-        {
-            player.vida -= 1;
-        }
-    }
     public void attack()
     {
         switch (Attackmode)
