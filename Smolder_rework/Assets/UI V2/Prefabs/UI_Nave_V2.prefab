@@ -382,7 +382,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2089785976902146017}
   m_Direction: 2
   m_Value: 1.0000112
-  m_Size: 0.587958
+  m_Size: 0.58800596
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5258,6 +5258,7 @@ GameObject:
   - component: {fileID: 5939888128889078884}
   - component: {fileID: 5939888128889078885}
   - component: {fileID: 5939888128889078886}
+  - component: {fileID: 569186959242571523}
   m_Layer: 5
   m_Name: UI_Nave_V2
   m_TagString: Untagged
@@ -5355,6 +5356,31 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &569186959242571523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5939888128889078887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fb41ed878b1acf49b0d4ac8e14f1a60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanvasNave:
+    PanelNaveTexto: {fileID: 5939888127687770097}
+    PanelNaveInteraccion: {fileID: 5939888128446965000}
+    PanelNaveRadar: {fileID: 5939888127910481148}
+    PanelNaveRecarga: {fileID: 5939888128781715377}
+    PanelNavePausa: {fileID: 5939888129787033708}
+    PanelNaveDiario: {fileID: 5939888127801879882}
+    PanelNaveDiarioOff: {fileID: 3044387020091339550}
+    PanelNaveMisiones: {fileID: 5939888129771376388}
+    PanelNavePanelPerros: {fileID: 5939888127777575642}
+    PanelNaveDialogos: {fileID: 5939888129452444750}
+  ObjsColorNave: []
+  Dialogos: []
 --- !u!1 &5939888129041783881
 GameObject:
   m_ObjectHideFlags: 0
