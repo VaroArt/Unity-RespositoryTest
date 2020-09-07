@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -353,6 +353,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.10902405
+      objectReference: {fileID: 0}
+    - target: {fileID: 569186959242571523, guid: bac905bdfb1bc3a4d95075aa4d869837,
+        type: 3}
+      propertyPath: controlTextoNave.EdgarHablando
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 569186959242571523, guid: bac905bdfb1bc3a4d95075aa4d869837,
+        type: 3}
+      propertyPath: controlTextoNave.AstroHablando
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 738295803255618456, guid: bac905bdfb1bc3a4d95075aa4d869837,
         type: 3}
@@ -677,7 +687,7 @@ PrefabInstance:
     - target: {fileID: 4167453054511814323, guid: bac905bdfb1bc3a4d95075aa4d869837,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -102.267105
+      value: -20.936256
       objectReference: {fileID: 0}
     - target: {fileID: 4280199394510334994, guid: bac905bdfb1bc3a4d95075aa4d869837,
         type: 3}
