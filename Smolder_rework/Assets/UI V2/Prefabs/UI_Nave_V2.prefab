@@ -519,7 +519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0.009601116, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1813,7 +1813,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1460972152916487357}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 569186959242571523}
+        m_MethodName: BotonPausaReaunudar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3567866801348050304
 GameObject:
   m_ObjectHideFlags: 0
@@ -1935,7 +1946,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 569186959242571523}
-        m_MethodName: BotonDeDiario
+        m_MethodName: BotonDiario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2290,7 +2301,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4039741973349302392}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8371373800023992024}
+        m_MethodName: boton1Press
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4089761660350727353
 GameObject:
   m_ObjectHideFlags: 0
@@ -2408,7 +2430,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3812020882204455655}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8371373800023992024}
+        m_MethodName: boton2Press
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4186402136903217765
 GameObject:
   m_ObjectHideFlags: 0
@@ -2794,7 +2827,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6704396584779711730}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 569186959242571523}
+        m_MethodName: BotonDeDisparo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4566240399039267414
 GameObject:
   m_ObjectHideFlags: 0
@@ -3030,7 +3074,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8041297271443506316}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 569186959242571523}
+        m_MethodName: BotonRecargaCentro
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4780217097999635757
 GameObject:
   m_ObjectHideFlags: 0
@@ -3063,7 +3118,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0011138916, y: -163.15202}
+  m_AnchoredPosition: {x: -0.0011138916, y: -136.22316}
   m_SizeDelta: {x: -0.0021820068, y: 204.53421}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4798336944471656066
@@ -3604,8 +3659,8 @@ RectTransform:
   m_Children:
   - {fileID: 7770884239975216580}
   - {fileID: 3219256142510518665}
-  - {fileID: 797848794481286082}
   - {fileID: 2729120098388395862}
+  - {fileID: 797848794481286082}
   m_Father: {fileID: 387150386725500038}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3664,7 +3719,7 @@ GameObject:
   - component: {fileID: 5706454453373756368}
   - component: {fileID: 3959368043810804185}
   m_Layer: 5
-  m_Name: Boton Recarga 4
+  m_Name: Boton Recarga 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3682,7 +3737,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7954687602366629729}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.753, y: 0.7034921}
   m_AnchorMax: {x: 0.90000004, y: 0.88000005}
@@ -3768,7 +3823,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5706454453373756368}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8371373800023992024}
+        m_MethodName: boton3Press
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5939888127687770101
 GameObject:
   m_ObjectHideFlags: 0
@@ -5281,6 +5347,7 @@ GameObject:
   - component: {fileID: 5939888128889078885}
   - component: {fileID: 5939888128889078886}
   - component: {fileID: 569186959242571523}
+  - component: {fileID: 8371373800023992024}
   m_Layer: 5
   m_Name: UI_Nave_V2
   m_TagString: Untagged
@@ -5395,33 +5462,17 @@ MonoBehaviour:
     PanelNaveInteraccion: {fileID: 5939888128446965000}
     PanelNaveRadar: {fileID: 5939888127910481148}
     PanelNaveRecarga: {fileID: 5939888128781715377}
-    PanelNavePausa: {fileID: 5939888129787033708}
-    PanelNaveDiario: {fileID: 5939888127801879882}
-    PanelNaveDiarioOff: {fileID: 3044387020091339550}
-    PanelNaveMisiones: {fileID: 5939888129771376388}
     PanelNavePanelPerros: {fileID: 5939888127777575642}
     PanelNaveDialogos: {fileID: 5939888129452444750}
   ControlPanelesNave:
     ActivarPanelRadar: 0
     ActivarPanelRecarga: 0
-    ActivarPanelDiario: 0
     ActivarPanelInteraccion: 0
     ActivarPanelTexto: 0
-    ActivarPanelPausa: 0
-    ActivarPanelTextoMisiones: 0
   ControlEstadoNave:
     VidaBaja: 0
     MunicionCargada: 0
-  controlTextoNave:
-    hablando: 0
-    PanelPerrosActivo: 0
-    AstroHablando: 0
-    EdgarHablando: 0
-  ImagenesPerros:
-  - PerrosImg: {fileID: 5372590335884701185}
-    PerrosNombre: {fileID: 9006860753493981075}
-  - PerrosImg: {fileID: 8042264263513116040}
-    PerrosNombre: {fileID: 6681939509869836719}
+    EstadoDron: 0
   ObjsColorNave:
   - ObjetoARenderear: {fileID: 6513804122504591572}
     ColorActivo: {r: 0.6981132, g: 0.18770024, b: 0.18770024, a: 1}
@@ -5435,6 +5486,28 @@ MonoBehaviour:
   - ObjetoARenderear: {fileID: 6049382802357505685}
     ColorActivo: {r: 0.33333334, g: 0.91764706, b: 0.39215687, a: 1}
     ColorInactivo: {r: 0.4627451, g: 0.11372549, b: 0.11372549, a: 1}
+  - ObjetoARenderear: {fileID: 712311651239580769}
+    ColorActivo: {r: 0.33333334, g: 0.91764706, b: 0.39215687, a: 1}
+    ColorInactivo: {r: 0.4627451, g: 0.11372549, b: 0.11372549, a: 1}
+  ControlMisiones:
+    PanelNaveDiario: {fileID: 5939888127801879882}
+    PanelNaveDiarioOff: {fileID: 3044387020091339550}
+    PanelNaveMisiones: {fileID: 5939888129771376388}
+    ActivarPanelDiario: 0
+    ActivarPanelTextoMisiones: 0
+  ControlPausa:
+    PanelNavePausa: {fileID: 5939888129787033708}
+    ActivarPanelPausa: 0
+  controlTextoNave:
+    hablando: 0
+    PanelPerrosActivo: 0
+    AstroHablando: 0
+    EdgarHablando: 0
+    ImagenesPerros:
+    - PerrosImg: {fileID: 5372590335884701185}
+      PerrosNombre: {fileID: 9006860753493981075}
+    - PerrosImg: {fileID: 8042264263513116040}
+      PerrosNombre: {fileID: 6681939509869836719}
   Dialogos:
   - Dialogos: 0
     DialogoInteractive: 0
@@ -5443,8 +5516,30 @@ MonoBehaviour:
   ControlDialogos:
     player: {fileID: 0}
     dialogoManager: {fileID: 0}
-  Municion: {fileID: 0}
+  Municion: {fileID: 8371373800023992024}
   manager: {fileID: 0}
+--- !u!114 &8371373800023992024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5939888128889078887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 778a1cdbdf72cc046aaa20575251a5d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonRecarga1: 0
+  buttonRecarga2: 0
+  buttonRecarga3: 0
+  buttonRecarga4: 0
+  luz1: {fileID: 1739189694900665981}
+  luz2: {fileID: 193682496236978448}
+  luz3: {fileID: 2294151812723520400}
+  luz4: {fileID: 6798559616512010890}
+  Fire: 0
+  rand: 0
 --- !u!1 &5939888129041783881
 GameObject:
   m_ObjectHideFlags: 0
@@ -6763,7 +6858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.08543229, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -7058,7 +7153,7 @@ GameObject:
   - component: {fileID: 3693735746469780854}
   - component: {fileID: 3336016855304474659}
   m_Layer: 5
-  m_Name: Boton Recarga 3
+  m_Name: Boton Recarga 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7076,7 +7171,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7954687602366629729}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.753, y: 0.11150799}
   m_AnchorMax: {x: 0.9, y: 0.31500003}
@@ -7162,7 +7257,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3693735746469780854}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8371373800023992024}
+        m_MethodName: boton4Press
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7279102026239253864
 GameObject:
   m_ObjectHideFlags: 0
@@ -7299,7 +7405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.08543229, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -7515,7 +7621,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 569186959242571523}
-        m_MethodName: BotonDeDiario
+        m_MethodName: BotonDiario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7693,7 +7799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
+  m_Color: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -8047,7 +8153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.08543229, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:

@@ -5,15 +5,22 @@ using UnityEngine.UI;
 
 public class UI_ControlNaveSc : MonoBehaviour
 {
+    [Header("Opciones de nave")]
+    public bool municionCargada;
+
+    [Header("Controles Exclusivos Nave")]
     public ControlCanvasNave CanvasNave;
     public BoolPanelesNave ControlPanelesNave;
     public VidayMunicionNave ControlEstadoNave;
-    public PerrosHablando controlTextoNave;
-    public List<ImagenTextoPerros> ImagenesPerros;
     public List<ObjControlDeColorNave> ObjsColorNave;
+    [Header("Controles generales")]
+    public DiarioyMisiones ControlMisiones;
+    public SystemaPausa ControlPausa;
+    [Header("Dialogos")]
+    public PerrosHablando controlTextoNave;
     public List<ControlDialogos> Dialogos;
     public LlamarDialogos ControlDialogos;
-
+    [Header("Recarga")]
     public SistemaBengala Municion;
     public Throw_Flare_Manager manager;
 
@@ -38,6 +45,8 @@ public class UI_ControlNaveSc : MonoBehaviour
         PanelDialogos();
         VidaBaja();
         MunicionCargada();
+        Estadodeldron();
+        ControlPausa.ControlPausa();
     }
 
     //Control De UI
@@ -52,7 +61,6 @@ public class UI_ControlNaveSc : MonoBehaviour
             CanvasNave.PanelNaveRadar.enabled = true;
         }
     }
-
     void PanelRecarga()
     {
         if(ControlPanelesNave.ActivarPanelRecarga == false)
@@ -64,21 +72,10 @@ public class UI_ControlNaveSc : MonoBehaviour
             CanvasNave.PanelNaveRecarga.enabled = true;
         }
     }
-
     void PanelDiario()
     {
-        if(ControlPanelesNave.ActivarPanelDiario == false)
-        {
-            CanvasNave.PanelNaveDiario.enabled = false;
-            CanvasNave.PanelNaveDiarioOff.enabled = true;
-        }
-        if(ControlPanelesNave.ActivarPanelDiario == true)
-        {
-            CanvasNave.PanelNaveDiario.enabled = true;
-            CanvasNave.PanelNaveDiarioOff.enabled = false;
-        }
+        ControlMisiones.OnOffPanelDiario();
     }
-
     void PanelBotonTexto()
     {
         if(ControlPanelesNave.ActivarPanelTexto == false)
@@ -90,7 +87,6 @@ public class UI_ControlNaveSc : MonoBehaviour
             CanvasNave.PanelNaveTexto.enabled = true;
         }
     }
-
     void PanelBotonInteraccion()
     {
         if(ControlPanelesNave.ActivarPanelInteraccion == false)
@@ -102,31 +98,14 @@ public class UI_ControlNaveSc : MonoBehaviour
             CanvasNave.PanelNaveInteraccion.enabled = true;
         }
     }
-
     void PanelMisiones()
     {
-        if(ControlPanelesNave.ActivarPanelTextoMisiones == false)
-        {
-            CanvasNave.PanelNaveMisiones.enabled = false;
-        }
-        if(ControlPanelesNave.ActivarPanelTextoMisiones == true)
-        {
-            CanvasNave.PanelNaveMisiones.enabled = true;
-        }
+        ControlMisiones.OnOffPanelMisiones();
     }
-
     void PanelPausa()
     {
-        if(ControlPanelesNave.ActivarPanelPausa == false)
-        {
-            CanvasNave.PanelNavePausa.enabled = false;
-        }
-        if(ControlPanelesNave.ActivarPanelPausa == true)
-        {
-            CanvasNave.PanelNavePausa.enabled = true;
-        }
+        ControlPausa.OnOffPanelPausa();
     }
-
     void PanelPerros()
     {
         if(controlTextoNave.PanelPerrosActivo == true)
@@ -138,35 +117,32 @@ public class UI_ControlNaveSc : MonoBehaviour
             CanvasNave.PanelNavePanelPerros.enabled = false;
         }
     }
-
     void AstroHablando()
     {
         if (controlTextoNave.AstroHablando == true)
         {
-            ImagenesPerros[0].PerrosNombre.enabled = true;
-            ImagenesPerros[0].PerrosImg.enabled = true;
+            controlTextoNave.ImagenesPerros[0].PerrosNombre.enabled = true;
+            controlTextoNave.ImagenesPerros[0].PerrosImg.enabled = true;
         }
         if (controlTextoNave.AstroHablando == false)
         {
-            ImagenesPerros[0].PerrosNombre.enabled = false;
-            ImagenesPerros[0].PerrosImg.enabled = false;
+            controlTextoNave.ImagenesPerros[0].PerrosNombre.enabled = false;
+            controlTextoNave.ImagenesPerros[0].PerrosImg.enabled = false;
         }
     }
-
     void EdgarHablando()
     {
         if (controlTextoNave.EdgarHablando == true)
         {
-            ImagenesPerros[1].PerrosNombre.enabled = true;
-            ImagenesPerros[1].PerrosImg.enabled = true;
+            controlTextoNave.ImagenesPerros[1].PerrosNombre.enabled = true;
+            controlTextoNave.ImagenesPerros[1].PerrosImg.enabled = true;
         }
         if (controlTextoNave.EdgarHablando == false)
         {
-            ImagenesPerros[1].PerrosNombre.enabled = false;
-            ImagenesPerros[1].PerrosImg.enabled = false;
+            controlTextoNave.ImagenesPerros[1].PerrosNombre.enabled = false;
+            controlTextoNave.ImagenesPerros[1].PerrosImg.enabled = false;
         }
     }
-
     void PanelDialogos()
     {
         if(controlTextoNave.hablando == false)
@@ -193,18 +169,28 @@ public class UI_ControlNaveSc : MonoBehaviour
             ObjsColorNave[1].ObjetoARenderear.SetColor(ObjsColorNave[1].ColorInactivo);
         }
     }
-
     void MunicionCargada()
     {
-        if(ControlEstadoNave.MunicionCargada == true)
+        if(municionCargada == true)
         {
             ObjsColorNave[2].ObjetoARenderear.SetColor(ObjsColorNave[2].ColorActivo);
             ObjsColorNave[3].ObjetoARenderear.SetColor(ObjsColorNave[3].ColorActivo);
         }
-        if(ControlEstadoNave.MunicionCargada == false)
+        if(municionCargada == false)
         {
             ObjsColorNave[2].ObjetoARenderear.SetColor(ObjsColorNave[2].ColorInactivo);
             ObjsColorNave[3].ObjetoARenderear.SetColor(ObjsColorNave[3].ColorInactivo);
+        }
+    }
+    void Estadodeldron()
+    {
+        if(ControlEstadoNave.EstadoDron == true)
+        {
+            ObjsColorNave[4].ObjetoARenderear.SetColor(ObjsColorNave[4].ColorActivo);
+        }
+        if (ControlEstadoNave.EstadoDron == false)
+        {
+            ObjsColorNave[4].ObjetoARenderear.SetColor(ObjsColorNave[4].ColorInactivo);
         }
     }
 
@@ -220,29 +206,59 @@ public class UI_ControlNaveSc : MonoBehaviour
             ControlPanelesNave.ActivarPanelRadar = false;
         }
     }
-
     public void BotonDeRecarga()
     {
         if(ControlPanelesNave.ActivarPanelRecarga == false)
         {
             ControlPanelesNave.ActivarPanelRecarga = true;
+            if(manager.canShoot == 1)
+            {
+                Municion.ran();
+                Municion.Fire = Municion.rand;
+            }
         }
         else
         {
             ControlPanelesNave.ActivarPanelRecarga = false;
+            Municion.buttonRecarga1 = 0;
+            Municion.buttonRecarga2 = 0;
+            Municion.buttonRecarga3 = 0;
+            Municion.buttonRecarga4 = 0;
         }
 
     }
-
-    public void BotonDeDiario()
+    public void BotonRecargaCentro()
     {
-        if(ControlPanelesNave.ActivarPanelDiario == false)
+        if(Municion.buttonRecarga1 + Municion.buttonRecarga2 + Municion.buttonRecarga3 + Municion.buttonRecarga4 == Municion.Fire)
         {
-            ControlPanelesNave.ActivarPanelDiario = true;
+            print("Fire");
+            manager.AmmoCount++;
+            manager.canShoot = 0;
         }
         else
         {
-            ControlPanelesNave.ActivarPanelDiario = false;
+            print("No ammo");
         }
+    }
+    public void BotonDeDisparo()
+    {
+        if(municionCargada == true)
+        {
+            manager.Shoot();
+            manager.AmmoCount = -1;
+            municionCargada = false;
+        }
+        else
+        {
+            return;
+        }
+    }
+    public void BotonDiario()
+    {
+        ControlMisiones.ActivadorDiario();
+    }
+    public void BotonPausaReaunudar()
+    {
+        ControlPausa.ControlPausaBton();
     }
 }

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//0 y 1 es el panel de vida, 2 y 3 son las luces de recarga
+//0 y 1 es el panel de vida, 
+//2 y 3 son las luces de recarga
+//4 es la luz del dron
 [System.Serializable]
 public class ObjControlDeColorNave
 {
@@ -15,17 +17,21 @@ public class ObjControlDeColorNave
 [System.Serializable]
 public class ControlCanvasNave
 {
-    //public Canvas PanelesNave;
     public Canvas PanelNaveTexto;
     public Canvas PanelNaveInteraccion;
     public Canvas PanelNaveRadar;
     public Canvas PanelNaveRecarga;
-    public Canvas PanelNavePausa;
-    public Canvas PanelNaveDiario;
-    public Canvas PanelNaveDiarioOff;
-    public Canvas PanelNaveMisiones;
     public Canvas PanelNavePanelPerros;
     public Canvas PanelNaveDialogos;
+}
+
+[System.Serializable]
+public class BoolPanelesNave
+{
+    public bool ActivarPanelRadar;
+    public bool ActivarPanelRecarga;
+    public bool ActivarPanelInteraccion;
+    public bool ActivarPanelTexto;
 }
 
 //0 es boton interactuar e interaccion activa
@@ -38,22 +44,11 @@ public class ControlDialogos
 }
 
 [System.Serializable]
-public class BoolPanelesNave
-{
-    public bool ActivarPanelRadar;
-    public bool ActivarPanelRecarga;
-    public bool ActivarPanelDiario;
-    public bool ActivarPanelInteraccion;
-    public bool ActivarPanelTexto;
-    public bool ActivarPanelPausa;
-    public bool ActivarPanelTextoMisiones;
-}
-
-[System.Serializable]
 public class VidayMunicionNave
 {
     public bool VidaBaja;
-    public bool MunicionCargada;
+    //public bool MunicionCargada;
+    public bool EstadoDron;
 }
 
 [System.Serializable]
@@ -63,8 +58,9 @@ public class PerrosHablando
     public bool PanelPerrosActivo;
     public bool AstroHablando;
     public bool EdgarHablando;
+    [Space(10)]
+    public List<ImagenTextoPerros> ImagenesPerros;
 }
-
 
 //0 es Atro, 1 es edgar
 [System.Serializable]
@@ -80,6 +76,110 @@ public class LlamarDialogos
     public player_triggers player;
     public DialogueManager dialogoManager;
 }
+
+//Zona de Sistemas especificos
+
+[System.Serializable]
+public class DiarioyMisiones
+{
+    public Canvas PanelNaveDiario;
+    public Canvas PanelNaveDiarioOff;
+    public Canvas PanelNaveMisiones;
+    [Space(10)]
+    public bool ActivarPanelDiario;
+    public bool ActivarPanelTextoMisiones;
+
+    public void ActivadorDiario()
+    {
+        if (ActivarPanelDiario == false)
+        {
+            ActivarPanelDiario = true;
+        }
+        else
+        {
+            ActivarPanelDiario = false;
+        }
+    }
+    public void OnOffPanelDiario()
+    {
+        if (ActivarPanelDiario == false)
+        {
+            PanelNaveDiario.enabled = false;
+            PanelNaveDiarioOff.enabled = true;
+        }
+        if (ActivarPanelDiario == true)
+        {
+            PanelNaveDiario.enabled = true;
+            PanelNaveDiarioOff.enabled = false;
+        }
+    }
+    public void OnOffPanelMisiones()
+    {
+        if (ActivarPanelTextoMisiones == false)
+        {
+            PanelNaveMisiones.enabled = false;
+        }
+        if (ActivarPanelTextoMisiones == true)
+        {
+            PanelNaveMisiones.enabled = true;
+        }
+    }
+}
+
+[System.Serializable]
+public class SystemaPausa
+{
+    public Canvas PanelNavePausa;
+    [Space(10)]
+    public bool ActivarPanelPausa;
+
+    public void ControlPausa()
+    {
+        if (Input.GetButtonDown("Cancel"))
+        {
+            if(ActivarPanelPausa == false)
+            {
+                ActivarPanelPausa = true;
+            }
+            else
+            {
+                ActivarPanelPausa = false;
+            }
+        }
+        else
+        {
+            return;
+        }
+    }
+    public void ControlPausaBton()
+    {
+        if (ActivarPanelPausa == false)
+        {
+            ActivarPanelPausa = true;
+        }
+        else
+        {
+            ActivarPanelPausa = false;
+        }
+    }
+    public void OnOffPanelPausa()
+    {
+        if (ActivarPanelPausa == false)
+        {
+            //Debug.Log("Play");
+            PanelNavePausa.enabled = false;
+            Time.timeScale = 1;
+        }
+        if (ActivarPanelPausa == true)
+        {
+            //Debug.Log("Stop");
+            Time.timeScale = 0;
+            PanelNavePausa.enabled = true;
+        }
+    }
+}
+
+//Zona de Funciones de Aplicacion
 
 [System.Serializable]
 public class AppFunciones
