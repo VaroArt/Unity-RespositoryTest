@@ -88,7 +88,6 @@ public class SistemaBengala : MonoBehaviour
             }
         }
        
-        
     }
     public void boton3Press()
     {

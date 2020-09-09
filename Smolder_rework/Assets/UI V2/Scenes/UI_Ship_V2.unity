@@ -251,6 +251,7 @@ MonoBehaviour:
   AmmoCount: 0
   flare: {fileID: 7981498184629684868, guid: 9499d37eea5ab8a4e948d22c622d2509, type: 3}
   pointFlare: {fileID: 1904913534}
+  panel: {fileID: 0}
   carganueva: {fileID: 1054862964}
 --- !u!114 &163882331
 MonoBehaviour:
@@ -564,7 +565,7 @@ PrefabInstance:
     - target: {fileID: 4167453054511814323, guid: bac905bdfb1bc3a4d95075aa4d869837,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -123.698105
+      value: -124.01132
       objectReference: {fileID: 0}
     - target: {fileID: 5939888128889078883, guid: bac905bdfb1bc3a4d95075aa4d869837,
         type: 3}

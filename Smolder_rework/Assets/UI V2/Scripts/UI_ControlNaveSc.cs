@@ -23,6 +23,8 @@ public class UI_ControlNaveSc : MonoBehaviour
     [Header("Recarga")]
     public SistemaBengala Municion;
     public Throw_Flare_Manager manager;
+    [Header("Control Nueva Bengala")]
+    public SystemaDeBengalas nuevasBengalas;
 
     // Start is called before the first frame update
     void Start()

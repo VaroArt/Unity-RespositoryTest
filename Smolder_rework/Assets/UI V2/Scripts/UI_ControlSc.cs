@@ -179,6 +179,110 @@ public class SystemaPausa
     }
 }
 
+//Sistema nuevo de bengala
+[System.Serializable]
+public class SystemaDeBengalas
+{
+    public int[] BotonesDeRecarga;
+    public CanvasRenderer[] luces;
+    public Color colorVerde;
+    public Color colorRojo;
+    public Color colorInactivo;
+    int FinalNum;
+    public int RandomN;
+    public int fuego;
+    
+    int FuncGetRandom(int min, int max)
+    {
+        RandomN = Random.Range(min, max);
+        while (RandomN == FinalNum)
+            RandomN = Random.Range(min, max);
+        FinalNum = RandomN;
+        return RandomN;
+    }
+
+    public void FuncRan()
+    {
+        FuncGetRandom(1, 5);
+        switch (RandomN)
+        {
+            case 1:
+                luces[0].SetColor(colorRojo);
+                luces[1].SetColor(colorInactivo);
+                luces[2].SetColor(colorInactivo);
+                luces[3].SetColor(colorInactivo);
+                break;
+            case 2:
+                luces[0].SetColor(colorRojo);
+                luces[1].SetColor(colorRojo);
+                luces[2].SetColor(colorInactivo);
+                luces[3].SetColor(colorInactivo);
+                break;
+            case 3:
+                luces[0].SetColor(colorRojo);
+                luces[1].SetColor(colorRojo);
+                luces[2].SetColor(colorRojo);
+                luces[3].SetColor(colorInactivo);
+                break;
+            case 4:
+                luces[0].SetColor(colorRojo);
+                luces[1].SetColor(colorRojo);
+                luces[2].SetColor(colorRojo);
+                luces[3].SetColor(colorRojo);
+                break;
+        }
+    }
+
+    public void Btn1Press()
+    {
+        if(RandomN == 1||RandomN == 2||RandomN == 3||RandomN == 4)
+        {
+            BotonesDeRecarga[0]++;
+            luces[0].SetColor(colorVerde);
+            if(BotonesDeRecarga[0] > 1)
+            {
+                BotonesDeRecarga[0] = 1;
+            }
+        }
+    }
+    public void Btn2Press()
+    {
+        if (RandomN == 2 || RandomN == 3 || RandomN == 4)
+        {
+            BotonesDeRecarga[1]++;
+            luces[1].SetColor(colorVerde);
+            if (BotonesDeRecarga[1] > 1)
+            {
+                BotonesDeRecarga[1] = 1;
+            }
+        }
+    }
+    public void Btn3Press()
+    {
+        if (RandomN == 3 || RandomN == 4)
+        {
+            BotonesDeRecarga[2]++;
+            luces[2].SetColor(colorVerde);
+            if (BotonesDeRecarga[2] > 1)
+            {
+                BotonesDeRecarga[2] = 1;
+            }
+        }
+    }
+    public void Btn4Press()
+    {
+        if (RandomN == 4)
+        {
+            BotonesDeRecarga[3]++;
+            luces[3].SetColor(colorVerde);
+            if (BotonesDeRecarga[3] > 1)
+            {
+                BotonesDeRecarga[3] = 1;
+            }
+        }
+    }
+}
+
 //Zona de Funciones de Aplicacion
 
 [System.Serializable]
