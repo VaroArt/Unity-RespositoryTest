@@ -227,7 +227,6 @@ public class UI_ControlNaveSc : MonoBehaviour
             Municion.buttonRecarga3 = 0;
             Municion.buttonRecarga4 = 0;
         }
-
     }
     public void BotonRecargaCentro()
     {

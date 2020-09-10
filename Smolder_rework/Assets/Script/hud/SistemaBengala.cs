@@ -87,7 +87,6 @@ public class SistemaBengala : MonoBehaviour
                 buttonRecarga2 = 1;
             }
         }
-       
     }
     public void boton3Press()
     {
