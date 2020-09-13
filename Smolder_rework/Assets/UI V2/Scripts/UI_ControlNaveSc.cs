@@ -21,10 +21,8 @@ public class UI_ControlNaveSc : MonoBehaviour
     public List<ControlDialogos> Dialogos;
     public LlamarDialogos ControlDialogos;
     [Header("Recarga")]
-    public SistemaBengala Municion;
+    public BengalSystem Municion;
     public Throw_Flare_Manager manager;
-    [Header("Control Nueva Bengala")]
-    public SystemaDeBengalas nuevasBengalas;
 
     // Start is called before the first frame update
     void Start()
@@ -213,10 +211,10 @@ public class UI_ControlNaveSc : MonoBehaviour
         if(ControlPanelesNave.ActivarPanelRecarga == false)
         {
             ControlPanelesNave.ActivarPanelRecarga = true;
-            if(manager.canShoot == 1)
+            if(Municion.canShoot == 1)
             {
-                Municion.ran();
-                Municion.Fire = Municion.rand;
+                Municion.Ran();
+                Municion.Fire = Municion.RandomN;
             }
         }
         else
@@ -233,8 +231,14 @@ public class UI_ControlNaveSc : MonoBehaviour
         if(Municion.buttonRecarga1 + Municion.buttonRecarga2 + Municion.buttonRecarga3 + Municion.buttonRecarga4 == Municion.Fire)
         {
             print("Fire");
-            manager.AmmoCount++;
-            manager.canShoot = 0;
+            Municion.AmmoCount++;
+            Municion.canShoot = 0;
+            ControlPanelesNave.ActivarPanelRecarga = false;
+            Municion.canShoot = 1;
+            Municion.buttonRecarga1 = 0;
+            Municion.buttonRecarga2 = 0;
+            Municion.buttonRecarga3 = 0;
+            Municion.buttonRecarga4 = 0;
         }
         else
         {
@@ -246,7 +250,7 @@ public class UI_ControlNaveSc : MonoBehaviour
         if(municionCargada == true)
         {
             manager.Shoot();
-            manager.AmmoCount = -1;
+            Municion.AmmoCount = 0;
             municionCargada = false;
         }
         else

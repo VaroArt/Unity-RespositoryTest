@@ -381,7 +381,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6970725632418302638}
   m_HandleRect: {fileID: 2089785976902146017}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -2302,8 +2302,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8371373800023992024}
-        m_MethodName: boton1Press
+      - m_Target: {fileID: 7178414983089938711}
+        m_MethodName: Btn1Press
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2431,8 +2431,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8371373800023992024}
-        m_MethodName: boton2Press
+      - m_Target: {fileID: 7178414983089938711}
+        m_MethodName: Btn2Press
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3118,7 +3118,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0011138916, y: -124.01134}
+  m_AnchoredPosition: {x: -0.0011138916, y: -138.41493}
   m_SizeDelta: {x: -0.0021820068, y: 204.53421}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4798336944471656066
@@ -3824,8 +3824,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8371373800023992024}
-        m_MethodName: boton3Press
+      - m_Target: {fileID: 7178414983089938711}
+        m_MethodName: Btn3Press
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5347,7 +5347,7 @@ GameObject:
   - component: {fileID: 5939888128889078885}
   - component: {fileID: 5939888128889078886}
   - component: {fileID: 569186959242571523}
-  - component: {fileID: 8371373800023992024}
+  - component: {fileID: 7178414983089938711}
   m_Layer: 5
   m_Name: UI_Nave_V2
   m_TagString: Untagged
@@ -5516,42 +5516,37 @@ MonoBehaviour:
   ControlDialogos:
     player: {fileID: 0}
     dialogoManager: {fileID: 0}
-  Municion: {fileID: 8371373800023992024}
+  Municion: {fileID: 7178414983089938711}
   manager: {fileID: 0}
-  nuevasBengalas:
-    BotonesDeRecarga: 00000000000000000000000000000000
-    luces:
-    - {fileID: 5446280639586056403}
-    - {fileID: 3030948250277874976}
-    - {fileID: 8812896290750174604}
-    - {fileID: 7622040597863816691}
-    colorVerde: {r: 0, g: 1, b: 0.07144809, a: 1}
-    colorRojo: {r: 1, g: 0, b: 0, a: 1}
-    colorInactivo: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 1}
-    RandomN: 0
-    fuego: 0
---- !u!114 &8371373800023992024
+--- !u!114 &7178414983089938711
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5939888128889078887}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 778a1cdbdf72cc046aaa20575251a5d9, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a17d8550880ef04fae48431a5fe1979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRecarga1: 0
   buttonRecarga2: 0
   buttonRecarga3: 0
   buttonRecarga4: 0
-  luz1: {fileID: 1739189694900665981}
-  luz2: {fileID: 193682496236978448}
-  luz3: {fileID: 2294151812723520400}
-  luz4: {fileID: 6798559616512010890}
+  luces:
+  - {fileID: 5446280639586056403}
+  - {fileID: 3030948250277874976}
+  - {fileID: 8812896290750174604}
+  - {fileID: 7622040597863816691}
+  colorVerde: {r: 0.21787111, g: 0.9056604, b: 0.27265084, a: 1}
+  colorRojo: {r: 0.9528302, g: 0.3672961, b: 0.32809716, a: 1}
+  colorInactivo: {r: 1, g: 1, b: 1, a: 1}
+  RandomN: 0
   Fire: 0
-  rand: 0
+  canShoot: 0
+  AmmoCount: 0
+  carganueva: {fileID: 569186959242571523}
 --- !u!1 &5939888129041783881
 GameObject:
   m_ObjectHideFlags: 0
@@ -7270,8 +7265,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8371373800023992024}
-        m_MethodName: boton4Press
+      - m_Target: {fileID: 7178414983089938711}
+        m_MethodName: Btn4Press
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

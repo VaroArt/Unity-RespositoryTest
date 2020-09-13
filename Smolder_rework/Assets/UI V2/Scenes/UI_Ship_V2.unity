@@ -172,7 +172,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &163882329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,6 +542,11 @@ PrefabInstance:
       propertyPath: ControlDialogos.player
       value: 
       objectReference: {fileID: 163882329}
+    - target: {fileID: 738295803255618456, guid: bac905bdfb1bc3a4d95075aa4d869837,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2089785976902146017, guid: bac905bdfb1bc3a4d95075aa4d869837,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -565,7 +570,7 @@ PrefabInstance:
     - target: {fileID: 4167453054511814323, guid: bac905bdfb1bc3a4d95075aa4d869837,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -124.01132
+      value: -138.41508
       objectReference: {fileID: 0}
     - target: {fileID: 5939888128889078883, guid: bac905bdfb1bc3a4d95075aa4d869837,
         type: 3}
@@ -676,6 +681,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI_Nave_V2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5939888128889078887, guid: bac905bdfb1bc3a4d95075aa4d869837,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8371373800023992024, guid: bac905bdfb1bc3a4d95075aa4d869837,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9165735183470171861, guid: bac905bdfb1bc3a4d95075aa4d869837,
         type: 3}
