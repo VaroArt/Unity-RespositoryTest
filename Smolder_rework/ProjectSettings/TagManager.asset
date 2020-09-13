@@ -16,6 +16,8 @@ TagManager:
   - bomba
   - naveSellada
   - naveCerrada
+  - Evento Texto
+  - Evento Interaccion
   layers:
   - Default
   - TransparentFX
