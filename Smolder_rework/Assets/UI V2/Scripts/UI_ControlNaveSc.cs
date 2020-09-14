@@ -266,4 +266,8 @@ public class UI_ControlNaveSc : MonoBehaviour
     {
         ControlPausa.ControlPausaBton();
     }
+    public void BotonInteraccion()
+    {
+
+    }
 }

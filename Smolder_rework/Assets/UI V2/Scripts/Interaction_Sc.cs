@@ -9,7 +9,6 @@ public class Interaction_Sc : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -22,6 +21,7 @@ public class Interaction_Sc : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Evento Texto"))
         {
+
             controlNave.ControlPanelesNave.ActivarPanelTexto = true;
             print("allahu akbar");
         }
