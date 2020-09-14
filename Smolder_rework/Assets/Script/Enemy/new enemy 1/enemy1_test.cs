@@ -16,11 +16,11 @@ public class enemy1_test : MonoBehaviour
     public float attackRadius;
     public float moveRadius;
     public float SoundRadius;
-    public float charge;
-    public float stop;
-    public float TiempoBengala;
+    [HideInInspector]public float charge;
+    [HideInInspector] public float stop;
+    [HideInInspector] public float TiempoBengala;
     public int moveMode;
-    public bool canMove;
+    [HideInInspector] public bool canMove;
     [Header("Enemy Patrol")]
     public Transform[] movePatrol;
     public float startWaitTime;
@@ -28,7 +28,7 @@ public class enemy1_test : MonoBehaviour
     public SpriteRenderer enemygfx;
     public Material mat;
     bool isdissolving = false;
-    public float fade = 1f;
+    [HideInInspector] public float fade = 1f;
     Path path;
     int currentWaypoint = 0;
     bool reachedEndOfPath = false;
@@ -48,7 +48,7 @@ public class enemy1_test : MonoBehaviour
         waitTime = startWaitTime;
         randomSpot = Random.Range(0, movePatrol.Length);
         myaudio = GetComponent<AudioSource>(); 
-        // seeker.StartPath(rb.position, target.position, OnPathComplete);
+        seeker.StartPath(rb.position, target.position, OnPathComplete);
         InvokeRepeating("updatePath", 0f, 0.1f);
     }
 
@@ -189,7 +189,7 @@ public class enemy1_test : MonoBehaviour
                 }
                 else if (moveDistance > attackRadius)
                 {
-                   // transform.position = Vector2.MoveTowards(transform.position, movePatrol[randomSpot].position, speedPatrol * Time.deltaTime);
+                   // transform.position = Vector2.MoveTowards(transform.position, movePatrol[randomSpot].position, speed * Time.deltaTime);
                     RotateTowards(target.position);
                     canMove = true;
                 }
