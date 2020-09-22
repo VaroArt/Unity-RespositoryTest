@@ -1,18 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Enemy_1_IA : MonoBehaviour
+using Pathfinding;
+public class Enemy_1_IA : Enemey_1_Var
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("EnemtGFX")]
+    public EnemyGfx gfx;
+
+    [Header("Movimiento")]
+    public VariablesMovimiento variables_movimiento;
+
+    [Header("Transform")]
+    public Targets targets;
+
+    [Header("Patrullaje")]
+    public PatrolMode patrol;
+
+    [Header("PathFind")]
+    public PathFinder path;
+    public void Awake()
     {
         
     }
+    public void Start()
+    {
+        variables_movimiento.speed = 400;
+        path.seeker = GetComponent<Seeker>();
+        variables_movimiento.rb = GetComponent<Rigidbody2D>();
+        patrol.waitTime = patrol.startWaitTime;
+        patrol.randomSpot = Random.Range(0, patrol.points.Length);
+    }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
+
 }

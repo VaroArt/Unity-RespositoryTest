@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 using UnityEngine.SceneManagement;
-using JetBrains.Annotations;
+
 
 public class enemy1_test : MonoBehaviour
 {
     public Transform target;
     public Transform Playertarget;
     public Transform bengala;
-    public player_script playerScript;
+
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
     public float attackRadius;
