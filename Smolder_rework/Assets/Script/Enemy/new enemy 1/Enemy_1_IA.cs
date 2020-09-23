@@ -33,7 +33,29 @@ public class Enemy_1_IA : Enemey_1_Var
 
     void Update()
     {
-        
+        Reconocimiento();
+    }
+
+
+    public void Reconocimiento()
+    {
+        if(targets.Recognition)
+        {
+            targets.recognitionTime += 1 * Time.deltaTime;
+        }
+        if(!targets.Recognition)
+        {
+            targets.recognitionTime -= 1 * Time.deltaTime;
+        }
+        if (targets.recognitionTime > 4)
+        {
+            targets.recognitionTime = 4;
+        }
+
+        if (targets.recognitionTime < 0)
+        {
+            targets.recognitionTime = 0;
+        }
     }
 
 }

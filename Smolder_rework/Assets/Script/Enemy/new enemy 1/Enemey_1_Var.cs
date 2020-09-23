@@ -23,8 +23,9 @@ public class VariablesMovimiento
 [System.Serializable]
 public class Targets
 {
-    public bool timetosee;
-    public float timeToSee;
+    public bool Recognition;
+    [Range(0,4)]
+    public float recognitionTime;
     [Space(10)]
     public Transform CurrentTarget;
     public Transform PlayerTr;

@@ -21,7 +21,7 @@ public class player_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(vida);
+        //print(vida);
         input.x = Input.GetAxis("Horizontal");
         input.y = Input.GetAxis("Vertical");
 

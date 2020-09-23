@@ -261,13 +261,6 @@ public class enemy1_test : MonoBehaviour
     
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.tag == ("Player"))
-        {
-            print("player");
-        }
-    }
     private void RotateTowards(Vector2 target)
     {
         var offset = -90f;
