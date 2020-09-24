@@ -21,12 +21,16 @@ public class VariablesMovimiento
     public Rigidbody2D rb;
 }
 [System.Serializable]
-public class Targets
+public class SensorEnemigo
 {
+    public LayerMask obstacleMask;
     public bool Recognition;
+    public bool iniciateRaycast;
+    [Space(10)]
     [Range(0,4)]
     public float recognitionTime;
     [Space(10)]
+    public float raycastRange;
     public Transform CurrentTarget;
     public Transform PlayerTr;
     public Transform bengalaTr;

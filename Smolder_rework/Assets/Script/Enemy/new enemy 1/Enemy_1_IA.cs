@@ -10,8 +10,8 @@ public class Enemy_1_IA : Enemey_1_Var
     [Header("Movimiento")]
     public VariablesMovimiento variables_movimiento;
 
-    [Header("Transform")]
-    public Targets targets;
+    [Header("Sensores")]
+    public SensorEnemigo sensor;
 
     [Header("Patrullaje")]
     public PatrolMode patrol;
@@ -34,28 +34,55 @@ public class Enemy_1_IA : Enemey_1_Var
     void Update()
     {
         Reconocimiento();
+
+        if (sensor.iniciateRaycast)
+        {
+            Raycasteo();
+           
+        }
+
     }
 
 
     public void Reconocimiento()
     {
-        if(targets.Recognition)
+        if(sensor.Recognition)
         {
-            targets.recognitionTime += 1 * Time.deltaTime;
+            sensor.recognitionTime += 1 * Time.deltaTime;
         }
-        if(!targets.Recognition)
+        if(!sensor.Recognition)
         {
-            targets.recognitionTime -= 1 * Time.deltaTime;
+            sensor.recognitionTime -= 1 * Time.deltaTime;
         }
-        if (targets.recognitionTime > 4)
+        if (sensor.recognitionTime > 4)
         {
-            targets.recognitionTime = 4;
+            sensor.recognitionTime = 4;
         }
 
-        if (targets.recognitionTime < 0)
+        if (sensor.recognitionTime < 0)
         {
-            targets.recognitionTime = 0;
+            sensor.recognitionTime = 0;
         }
     }
 
+    public void Raycasteo()
+    {
+        Vector2 dirToTarget = (sensor.PlayerTr.position - transform.position).normalized;
+
+        if(Vector2.Angle(transform.up,dirToTarget)< sensor.raycastRange /2)
+        {
+            float dstToTarget = Vector2.Distance(transform.position, sensor.PlayerTr.position);
+            if (!Physics2D.Raycast(transform.position, dirToTarget, dstToTarget, sensor.obstacleMask))
+            {
+                Vector3 forward = transform.TransformDirection(sensor.PlayerTr.position - transform.position);
+                Debug.DrawRay(transform.position, forward, Color.green);
+                sensor.Recognition = true;
+            }
+            else
+            {
+                sensor.Recognition = false;
+            }
+        }
+       
+    }
 }
