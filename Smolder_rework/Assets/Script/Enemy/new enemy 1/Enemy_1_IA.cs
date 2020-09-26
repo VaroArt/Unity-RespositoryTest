@@ -34,12 +34,15 @@ public class Enemy_1_IA : Enemey_1_Var
     public void Update()
     {
         Reconocimiento();
-
-        if (sensor.iniciateRaycast)
+        if (sensor.CurrentTarget != null)
         {
             VerTarget();
-           
         }
+        /* if (sensor.iniciateRaycast)
+         {
+             VerTarget();
+         }*/
+
 
     }
 
@@ -53,6 +56,7 @@ public class Enemy_1_IA : Enemey_1_Var
         if(!sensor.Recognition)
         {
             sensor.recognitionTime -= 1 * Time.deltaTime;
+
         }
         if (sensor.recognitionTime > 4)
         {
@@ -69,7 +73,7 @@ public class Enemy_1_IA : Enemey_1_Var
     {
         Vector2 dirToTarget = (sensor.CurrentTarget.position - transform.position).normalized;
 
-        if(Vector2.Angle(transform.up,dirToTarget)< sensor.raycastRange /2)
+        if(Vector2.Angle(transform.up,dirToTarget)< sensor.raycastRange)
         {
             float dstToTarget = Vector2.Distance(transform.position, sensor.CurrentTarget.position);
             if (!Physics2D.Raycast(transform.position, dirToTarget, dstToTarget, sensor.obstacleMask))
@@ -77,13 +81,27 @@ public class Enemy_1_IA : Enemey_1_Var
                 Vector3 forward = transform.TransformDirection(sensor.CurrentTarget.position - transform.position);
                 Debug.DrawRay(transform.position, forward, Color.green);
                 sensor.Recognition = true;
+               /* if(sensor.CurrentTarget == sensor.PlayerTr)
+                {
+
+                }
+                if (sensor.CurrentTarget == sensor.bengalaTr)
+                {
+
+                }*/
             }
-            else
+           else
             {
                 sensor.Recognition = false;
+                sensor.CurrentTarget = null;
             }
         }
        
+    }
+
+    public void perderTarget()
+    {
+        sensor.CurrentTarget = null;
     }
    
 }

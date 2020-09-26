@@ -28,8 +28,6 @@ public class SensorEnemigo
     public bool Recognition;
     public bool iniciateRaycast;
     public float raycastRange;
-    [Header("Nivel prioridad")]
-    public float prioridad;
     [Space(10)]
     [Range(0,4)]
     public float recognitionTime;
