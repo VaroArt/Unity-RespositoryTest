@@ -31,13 +31,13 @@ public class Enemy_1_IA : Enemey_1_Var
         patrol.randomSpot = Random.Range(0, patrol.points.Length);
     }
 
-    void Update()
+    public void Update()
     {
         Reconocimiento();
 
         if (sensor.iniciateRaycast)
         {
-            Raycasteo();
+            VerTarget();
            
         }
 
@@ -65,16 +65,16 @@ public class Enemy_1_IA : Enemey_1_Var
         }
     }
 
-    public void Raycasteo()
+    public void VerTarget()
     {
-        Vector2 dirToTarget = (sensor.PlayerTr.position - transform.position).normalized;
+        Vector2 dirToTarget = (sensor.CurrentTarget.position - transform.position).normalized;
 
         if(Vector2.Angle(transform.up,dirToTarget)< sensor.raycastRange /2)
         {
-            float dstToTarget = Vector2.Distance(transform.position, sensor.PlayerTr.position);
+            float dstToTarget = Vector2.Distance(transform.position, sensor.CurrentTarget.position);
             if (!Physics2D.Raycast(transform.position, dirToTarget, dstToTarget, sensor.obstacleMask))
             {
-                Vector3 forward = transform.TransformDirection(sensor.PlayerTr.position - transform.position);
+                Vector3 forward = transform.TransformDirection(sensor.CurrentTarget.position - transform.position);
                 Debug.DrawRay(transform.position, forward, Color.green);
                 sensor.Recognition = true;
             }
@@ -85,4 +85,5 @@ public class Enemy_1_IA : Enemey_1_Var
         }
        
     }
+   
 }

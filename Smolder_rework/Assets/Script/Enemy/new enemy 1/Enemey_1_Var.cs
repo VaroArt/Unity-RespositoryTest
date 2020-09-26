@@ -23,14 +23,18 @@ public class VariablesMovimiento
 [System.Serializable]
 public class SensorEnemigo
 {
+    [Header("Reconocimiento de targets")]
     public LayerMask obstacleMask;
     public bool Recognition;
     public bool iniciateRaycast;
+    public float raycastRange;
+    [Header("Nivel prioridad")]
+    public float prioridad;
     [Space(10)]
     [Range(0,4)]
     public float recognitionTime;
-    [Space(10)]
-    public float raycastRange;
+
+    [Header("Targets")]
     public Transform CurrentTarget;
     public Transform PlayerTr;
     public Transform bengalaTr;
