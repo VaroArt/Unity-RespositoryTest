@@ -12,6 +12,8 @@ public class player_script : MonoBehaviour
     public float rotationInterpolation = 0.4f;
     public bool isMoving;
     public int vida;
+    // solo testeo de algo
+    public GameObject bengala;
     void Start()
     {
         myrg = GetComponent<Rigidbody2D>();
@@ -21,7 +23,6 @@ public class player_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //print(vida);
         input.x = Input.GetAxis("Horizontal");
         input.y = Input.GetAxis("Vertical");
 
@@ -35,9 +36,11 @@ public class player_script : MonoBehaviour
             isMoving = false; 
         }
         Rotation();
-      
 
-     
+        //metodo para probar con la bengala spawneada, nada mas
+        shoot();
+
+
     }
     private void FixedUpdate()
     {
@@ -66,5 +69,14 @@ public class player_script : MonoBehaviour
         {
             myrg.rotation = Mathf.Lerp(myrg.rotation, shipAngle, rotationInterpolation);
         } 
+    }
+
+    // metodo de prueba nada mas, luego debe borrarse
+    void shoot()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(bengala, transform.position, transform.rotation);
+        }
     }
 }
