@@ -2,51 +2,62 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
-public class Enemy_1_IA : Enemey_1_Var
+using System.Threading.Tasks;
+
+public class Enemy_1_IA : Enemy_1_Var
 {
     [Header("EnemtGFX")]
     public EnemyGfx gfx;
 
     [Header("Movimiento")]
-    public VariablesMovimiento variables_movimiento;
+    public VariablesMovimiento movimiento;
 
     [Header("Sensores")]
     public SensorEnemigo sensor;
+
+    [Header("Task")]
+    public TaskSystem tasks;
 
     [Header("Patrullaje")]
     public PatrolMode patrol;
 
     [Header("PathFind")]
-    public PathFinder path;
+    public PathFinder Path;
+
+
     public void Awake()
     {
-        
+       
+
     }
     public void Start()
     {
-        variables_movimiento.speed = 400;
-        path.seeker = GetComponent<Seeker>();
-        variables_movimiento.rb = GetComponent<Rigidbody2D>();
+        InvokeRepeating("updatePath", 0f, 0.1f);
+        Path.seeker = GetComponent<Seeker>();
+        movimiento.rb = GetComponent<Rigidbody2D>();
         patrol.waitTime = patrol.startWaitTime;
         patrol.randomSpot = Random.Range(0, patrol.points.Length);
     }
 
     public void Update()
     {
+        taskTrigger();
+        taskList();
         Reconocimiento();
         if (sensor.CurrentTarget != null)
         {
             VerTarget();
         }
-        /* if (sensor.iniciateRaycast)
-         {
-             VerTarget();
-         }*/
 
-
+       
     }
 
+    public void FixedUpdate()
+    {
+        MovimientoBase();
+    }
 
+    #region Sensor vision 
     public void Reconocimiento()
     {
         if(sensor.Recognition)
@@ -93,7 +104,7 @@ public class Enemy_1_IA : Enemey_1_Var
            else
             {
                 sensor.Recognition = false;
-                sensor.CurrentTarget = null;
+               // sensor.CurrentTarget = null;
             }
         }
        
@@ -103,5 +114,75 @@ public class Enemy_1_IA : Enemey_1_Var
     {
         sensor.CurrentTarget = null;
     }
-   
+
+    #endregion
+
+    #region Pathfind
+    void updatePath()
+    {
+        if (Path.seeker.IsDone())
+        {
+            Path.seeker.StartPath(movimiento.rb.position, sensor.CurrentTarget.position, OnPathComplete);
+        }
+    }
+    void OnPathComplete(Path p)
+    {
+        if (!p.error)
+        {
+            Path.path = p;
+            Path.currentWaypoint = 0;
+        }
+    }
+
+    #endregion
+
+    public void taskList()
+    {
+        switch (tasks.TaskList)
+        {
+            case 1:
+                tasks.currentTask = ("Explore Zone");
+                tasks.priority = 10;
+                break;
+            case 2:
+                tasks.currentTask = ("Explore Zone 2");
+                tasks.priority = 20;
+                break;
+        }
+    }
+
+    public void taskTrigger()
+    {
+        if (tasks.priority <= 10)
+        {
+            print("tarea menor");
+        }
+    }
+
+    public void MovimientoBase()
+    {
+        if (Path.path == null)
+            return;
+        if (Path.currentWaypoint >= Path.path.vectorPath.Count)
+        {
+            Path.reachedEndOfPath = true;
+            return;
+        }
+        else
+        {
+            Path.reachedEndOfPath = false;
+        }
+        Vector2 direction = ((Vector2)Path.path.vectorPath[Path.currentWaypoint] - movimiento.rb.position).normalized;
+
+        Vector2 force = direction * movimiento.speed * Time.deltaTime;
+        movimiento.rb.AddForce(force);
+
+        float distance = Vector2.Distance(movimiento.rb.position, Path.path.vectorPath[Path.currentWaypoint]);
+
+        if (distance < Path.nextWaypointDistance)
+        {
+            Path.currentWaypoint++;
+
+        }
+    }
 }

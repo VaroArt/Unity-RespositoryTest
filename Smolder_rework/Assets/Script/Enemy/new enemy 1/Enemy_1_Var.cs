@@ -46,17 +46,27 @@ public class PatrolMode
     public float waitTime;
     public int randomSpot;
 }
+[System.Serializable]
+public class TaskSystem
+{
+    public string currentTask;
+    public int TaskList;
+    [Space(10)]
+    public int priority;
+}
+
 
 [System.Serializable]
 public class PathFinder
 {
-    Path path;
+    public Path path;
     public Seeker seeker;
-    int currentWaypoint = 0;
-    bool reachedEndOfPath = false;
+    public float nextWaypointDistance = 3f;
+    [HideInInspector]public int currentWaypoint = 0;
+    [HideInInspector] public bool reachedEndOfPath = false;
 }
 
-public class Enemey_1_Var : MonoBehaviour
+public class Enemy_1_Var : MonoBehaviour
 {
     
 }

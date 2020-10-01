@@ -944,7 +944,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &91867547
 Transform:
   m_ObjectHideFlags: 0
@@ -1432,18 +1432,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2397145003753295739}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &230439652 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2397145003797083551, guid: e625cae5ebd908647a6ee327c5aaae9e,
-    type: 3}
-  m_PrefabInstance: {fileID: 2397145003753295739}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 230439651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e12ee7d50ac6397418c170561912c62d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &230460824
 GameObject:
   m_ObjectHideFlags: 0
@@ -1899,7 +1887,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6007922, y: 0.2791974}
   m_AnchorMax: {x: 0.63079226, y: 0.33663687}
-  m_AnchoredPosition: {x: 0.13999939, y: 0.36004257}
+  m_AnchoredPosition: {x: 0.13999939, y: 0.36003876}
   m_SizeDelta: {x: 1, y: 0.0002632141}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &250315348
@@ -2531,8 +2519,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319997883}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.22, y: -5.77, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20.94, y: -17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 523352363}
@@ -2624,10 +2612,10 @@ MonoBehaviour:
     enemygfx: {fileID: 0}
     mat: {fileID: 0}
     fade: 1
-  variables_movimiento:
-    speed: 0
+  movimiento:
+    speed: 400
     attackRadius: 0
-    rb: {fileID: 0}
+    rb: {fileID: 319997887}
   sensor:
     obstacleMask:
       serializedVersion: 2
@@ -2636,17 +2624,24 @@ MonoBehaviour:
     iniciateRaycast: 0
     raycastRange: 21
     recognitionTime: 0
-    CurrentTarget: {fileID: 0}
+    CurrentTarget: {fileID: 1819132299}
     PlayerTr: {fileID: 1819132299}
     bengalaTr: {fileID: 1219949213211740, guid: 9499d37eea5ab8a4e948d22c622d2509,
       type: 3}
+  tasks:
+    currentTask: 
+    TaskList: 2
+    priority: 0
   patrol:
     points: []
     startWaitTime: 0
     waitTime: 0
     randomSpot: 0
-  path:
-    seeker: {fileID: 319997886}
+  Path:
+    seeker: {fileID: 0}
+    nextWaypointDistance: 3
+    currentWaypoint: 0
+    reachedEndOfPath: 0
 --- !u!82 &319997892
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3689,7 +3684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordenadas: 0
-  player: {fileID: 1819132303}
+  player: {fileID: 0}
   myportal: {fileID: 1686679128}
   light1: {fileID: 284114172}
   CoordenadaOff: {fileID: 1341350190}
@@ -4314,7 +4309,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1819132303}
+      objectReference: {fileID: 0}
     - target: {fileID: 1124395292400202917, guid: 0043f75970fe0fc4f8963401bd73152e,
         type: 3}
       propertyPath: m_Name
@@ -4884,7 +4879,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &530188799
 Transform:
   m_ObjectHideFlags: 0
@@ -6146,7 +6141,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1819132303}
+      objectReference: {fileID: 0}
     - target: {fileID: 1124395292400202917, guid: 0043f75970fe0fc4f8963401bd73152e,
         type: 3}
       propertyPath: m_Name
@@ -6180,18 +6175,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0043f75970fe0fc4f8963401bd73152e, type: 3}
---- !u!114 &710059039 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2950509566279695699, guid: 271d49a117aae164582cd2e91112f1c9,
-    type: 3}
-  m_PrefabInstance: {fileID: 8828074221742177584}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a817a04117b37343b93a6205364e0e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &711860292
 GameObject:
   m_ObjectHideFlags: 0
@@ -6545,7 +6528,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &733885730
 Transform:
   m_ObjectHideFlags: 0
@@ -9958,7 +9941,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1176977422
 Transform:
   m_ObjectHideFlags: 0
@@ -10711,7 +10694,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1819132303}
+      objectReference: {fileID: 0}
     - target: {fileID: 1124395292400202917, guid: 0043f75970fe0fc4f8963401bd73152e,
         type: 3}
       propertyPath: m_Name
@@ -10894,7 +10877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordenadas: 0
-  player: {fileID: 1819132303}
+  player: {fileID: 0}
   myportal: {fileID: 1686679128}
   light1: {fileID: 1313040533}
   CoordenadaOff: {fileID: 1191623765}
@@ -10937,7 +10920,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1259430308
 Transform:
   m_ObjectHideFlags: 0
@@ -12936,7 +12919,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.96131504, y: 0.051296815}
   m_AnchorMax: {x: 0.994173, y: 0.20876923}
-  m_AnchoredPosition: {x: -0.05999756, y: -0.08999252}
+  m_AnchoredPosition: {x: -0.05999756, y: -0.08998871}
   m_SizeDelta: {x: 0.6177368, y: 0.6177368}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1486417520
@@ -13043,7 +13026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordenadas: 0
-  player: {fileID: 1819132303}
+  player: {fileID: 0}
   myportal: {fileID: 1686679128}
   light1: {fileID: 1714576807}
   CoordenadaOff: {fileID: 711860292}
@@ -13669,7 +13652,7 @@ MonoBehaviour:
     enemygfx: {fileID: 0}
     mat: {fileID: 0}
     fade: 1
-  variables_movimiento:
+  movimiento:
     speed: 0
     attackRadius: 0
     rb: {fileID: 0}
@@ -13684,13 +13667,20 @@ MonoBehaviour:
     CurrentTarget: {fileID: 0}
     PlayerTr: {fileID: 0}
     bengalaTr: {fileID: 0}
+  tasks:
+    currentTask: 
+    TaskList: 0
+    priority: 0
   patrol:
     points: []
     startWaitTime: 0
     waitTime: 0
     randomSpot: 0
-  path:
+  Path:
     seeker: {fileID: 0}
+    nextWaypointDistance: 3
+    currentWaypoint: 0
+    reachedEndOfPath: 0
 --- !u!82 &1597231112
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15539,7 +15529,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1736511482
 Transform:
   m_ObjectHideFlags: 0
@@ -15787,7 +15777,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1751636778
 Transform:
   m_ObjectHideFlags: 0
@@ -16263,6 +16253,50 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!1 &1798234531
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1798234533}
+  - component: {fileID: 1798234532}
+  m_Layer: 0
+  m_Name: TaskManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1798234532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798234531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 232321651c0cb26458239c9aeb8adc1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 319997889}
+--- !u!4 &1798234533
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798234531}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.45804, y: 3.815438, z: -15.65625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1798693422
 GameObject:
   m_ObjectHideFlags: 0
@@ -16884,59 +16918,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1819132296}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfe8e291361e82a4dbc875dc2f4276b9, type: 3}
+  m_Script: {fileID: 11500000, guid: f64b5b9de242e5440b3b2c2301ae7ff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentObject: none
-  isdialogue: 0
-  curretCoordenada: {fileID: 0}
-  panel: {fileID: 4244960244197047052}
-  manager: {fileID: 1636242480}
-  key: {fileID: 230439652}
-  coord: {fileID: 0}
-  bomb: {fileID: 1919501075}
-  naveKey: {fileID: 710059039}
-  naveExplosivo: {fileID: 1917548620}
-  naveCoordenadas: {fileID: 1953541208}
-  dialogue:
-    name: Dialogos nivel 1
-    sentences:
-    - "Se\xF1or logramos abrir la nave, parece muy antigua."
-    - Dame un informe de ella.
-    - "Contiene una bit\xE1cora, puede que nos diga algo \xFAtil."
-    - Eso espero.
-    - "\"(Bit\xE1cora de la nave, 26/03/2054) Hemos sufrido una falla, algo nos golpe\xF3,
-      a\xFAn no sabemos que fue. La misi\xF3n de exploraci\xF3n fue un fracaso, solicitamos
-      ayuda urgente, no podremos aguantar mucho m\xE1s\"."
-    - Debemos tener cuidado para no tener su misma suerte.
-    sentences2:
-    - "Parece ser una nave, Edgar rev\xEDsala e inf\xF3rmame si contiene algo que
-      nos pueda ser \xFAtil."
-    - "La nave contiene coordenadas que nos puede ser muy \xFAtil, adem\xE1s contiene
-      un mensaje, de inmediato lo leer\xE9."
-    - "\"(Bit\xE1cora de la nave,17/05/2061) Logramos armar el t\xFAnel espacial,
-      para hacerla funcionar solo se deben colocar las coordenadas de navegaci\xF3n
-      al destino, futuramente se espera mantener varios de estos t\xFAneles en el
-      espacio."
-    - "En el camino hemos encontrado varias de las naves de exploraci\xF3n perdidas,
-      en ninguna encontramos los cuerpos de los tripulantes, creemos que se perdieron
-      en el espacio.\""
-    - "No olvidemos ese portal, nos sacara de aqu\xED. "
-    sentences3:
-    - "Que extra\xF1o que una nave con este blindaje este tan mal."
-    - Debieron toparse una lluvia de asteroides.
-    - "\xBFO algo m\xE1s que asteroides, que es lo que dice su bit\xE1cora?"
-    - "\"(Bit\xE1cora de la nave, 04/06/2058) La misi\xF3n de recuperaci\xF3n fue
-      un \xE9xito, se recuperaron los datos de navegaci\xF3n recolectados por la
-      nave perdida. No se encontraron los cuerpos y la nave manten\xEDa golpes muy
-      extra\xF1os como para ser de meteoros. "
-    - "Dejamos explosivos con un temporizador para hacer estallar los restos de la
-      nave. Se ven movimientos extra\xF1os en el espacio, creemos que es solo basura
-      espacial, volveremos dentro de poco\"."
-    - "Se encontraron con algo m\xE1s que asteroides."
-    - "\xBFSera que?..."
-  buttonDialogueAnim: {fileID: 4244960243540129414}
-  buttonInteractAnim: {fileID: 2106273674763976674}
 --- !u!1 &1823774416
 GameObject:
   m_ObjectHideFlags: 0
@@ -17198,7 +17182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1853509989
 Transform:
   m_ObjectHideFlags: 0
@@ -17679,36 +17663,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7a44dbfc5be67c4e90bab42128d8a1e, type: 3}
---- !u!114 &1917548620 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8828360276020367097, guid: c876414c893e8e24095753ea25b15353,
-    type: 3}
-  m_PrefabInstance: {fileID: 5838034686257850848}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8332d9226f7261e46a48434a35a1f098, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1919501074 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4178367164952271005, guid: 7ad735593bc68cb4da6933540b2eaf2f,
     type: 3}
   m_PrefabInstance: {fileID: 4178367163109448591}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1919501075 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4178367164952271004, guid: 7ad735593bc68cb4da6933540b2eaf2f,
-    type: 3}
-  m_PrefabInstance: {fileID: 4178367163109448591}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1919501074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e783d38653f4a274aa76ed3a841a98cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1933646312
 GameObject:
   m_ObjectHideFlags: 0
@@ -17884,7 +17844,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordenada: {fileID: 325460173}
-  player: {fileID: 1819132303}
+  player: {fileID: 0}
 --- !u!1 &1957267422
 GameObject:
   m_ObjectHideFlags: 3
@@ -18807,7 +18767,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2034410477
 Transform:
   m_ObjectHideFlags: 0
@@ -20680,7 +20640,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1819132303}
+      objectReference: {fileID: 0}
     - target: {fileID: 2397145003797083551, guid: e625cae5ebd908647a6ee327c5aaae9e,
         type: 3}
       propertyPath: speed
@@ -22148,7 +22108,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1819132303}
+      objectReference: {fileID: 0}
     - target: {fileID: 4178367164952271004, guid: 7ad735593bc68cb4da6933540b2eaf2f,
         type: 3}
       propertyPath: speed
@@ -24030,7 +23990,7 @@ MonoBehaviour:
   lowEnergy: 0
   AmmoCharged: 0
   manager: {fileID: 1819132302}
-  player: {fileID: 1819132303}
+  player: {fileID: 0}
   bengala: {fileID: 4244960244197047044}
   botonInteractuar: 0
   dialogue1: 0
@@ -25466,7 +25426,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1819132303}
+      objectReference: {fileID: 0}
     - target: {fileID: 8828360276020367097, guid: c876414c893e8e24095753ea25b15353,
         type: 3}
       propertyPath: explosivo
@@ -26692,7 +26652,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1819132303}
+      objectReference: {fileID: 0}
     - target: {fileID: 2950509566279695699, guid: 271d49a117aae164582cd2e91112f1c9,
         type: 3}
       propertyPath: coordenada
