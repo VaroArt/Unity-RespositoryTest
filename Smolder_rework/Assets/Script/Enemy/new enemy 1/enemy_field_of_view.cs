@@ -20,6 +20,7 @@ public class enemy_field_of_view : MonoBehaviour
       //  enemy.sensor.iniciateRaycast = true;
 
         enemy.sensor.CurrentTarget = collision.transform;
+        print(collision);
         // print(collision);
 
         /*   if (enemy.sensor.recognitionTime == 4)

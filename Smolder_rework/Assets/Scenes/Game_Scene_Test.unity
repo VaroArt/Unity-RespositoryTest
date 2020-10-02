@@ -2624,18 +2624,20 @@ MonoBehaviour:
     iniciateRaycast: 0
     raycastRange: 21
     recognitionTime: 0
-    CurrentTarget: {fileID: 1819132299}
+    CurrentTarget: {fileID: 0}
     PlayerTr: {fileID: 1819132299}
     bengalaTr: {fileID: 1219949213211740, guid: 9499d37eea5ab8a4e948d22c622d2509,
       type: 3}
   tasks:
     currentTask: 
-    TaskList: 2
+    TaskList: 1
     priority: 0
   patrol:
-    points: []
+    points:
+    - {fileID: 1178159925}
+    - {fileID: 99990438}
     startWaitTime: 0
-    waitTime: 0
+    waitTime: 4
     randomSpot: 0
   Path:
     seeker: {fileID: 0}

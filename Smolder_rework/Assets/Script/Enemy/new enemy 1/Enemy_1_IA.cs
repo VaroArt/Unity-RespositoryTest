@@ -46,7 +46,7 @@ public class Enemy_1_IA : Enemy_1_Var
         Reconocimiento();
         if (sensor.CurrentTarget != null)
         {
-            VerTarget();
+           // VerTarget();
         }
 
        
@@ -155,7 +155,12 @@ public class Enemy_1_IA : Enemy_1_Var
     {
         if (tasks.priority <= 10)
         {
-            print("tarea menor");
+            patrullaje();
+        }
+
+        if(tasks.priority >= 20)
+        {
+            sensor.CurrentTarget = sensor.PlayerTr;
         }
     }
 
@@ -182,7 +187,30 @@ public class Enemy_1_IA : Enemy_1_Var
         if (distance < Path.nextWaypointDistance)
         {
             Path.currentWaypoint++;
+        }
+    }
 
+    public void patrullaje()
+    {
+        sensor.CurrentTarget = patrol.points[patrol.randomSpot];
+
+        float moveDistance = Vector3.Distance(sensor.CurrentTarget.position, transform.position);
+
+        if (moveDistance < movimiento.attackRadius)
+        {
+            if (patrol.waitTime <= 0)
+            {
+                patrol.randomSpot = Random.Range(0, patrol.points.Length);
+                patrol.waitTime = patrol.startWaitTime;
+            }
+            else
+            {
+                patrol.waitTime -= Time.deltaTime;
+            }
+        }
+        else if (moveDistance > movimiento.attackRadius)
+        {
+            //movimiento 
         }
     }
 }
