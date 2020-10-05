@@ -1687,12 +1687,14 @@ MonoBehaviour:
       este sistema, ya que estoy en test
     - porfavor no wei mas y asegurate de que funcione que ya toy chato de escribir
       xd
+    - 333333333333333333
+    - 2222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222
   controlNave: {fileID: 1054862964}
   PanelDialogo: {fileID: 1789261642}
   Display: {fileID: 756891421}
   playText: {fileID: 0}
   nextbton: {fileID: 388719515}
-  typingSpeed: 0.01
+  typingSpeed: 0.005
 --- !u!1 &1546230450
 GameObject:
   m_ObjectHideFlags: 0
