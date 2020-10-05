@@ -25,6 +25,7 @@ public class UI_ControlNaveSc : MonoBehaviour
     public BengalSystem Municion;
     public Throw_Flare_Manager manager;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -269,6 +270,5 @@ public class UI_ControlNaveSc : MonoBehaviour
     }
     public void BotonInteraccion()
     {
-
     }
 }

@@ -209,6 +209,8 @@ public class Dialogos
     public string[] listaDeSentencias;
 }
 
+
+
 public class UI_ControlSc : MonoBehaviour
 {
     // Start is called before the first frame update

@@ -18,7 +18,7 @@ public class Interaction_Sc : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    /*private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Evento Texto"))
         {
@@ -38,5 +38,5 @@ public class Interaction_Sc : MonoBehaviour
         controlNave.ControlPanelesNave.ActivarPanelTexto = false;
         print("rabka uhalla");
         controlNave.ControlPanelesNave.ActivarPanelInteraccion = false;
-    }   
+    }*/   
 }
