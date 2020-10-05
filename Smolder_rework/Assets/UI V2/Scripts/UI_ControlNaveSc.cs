@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class UI_ControlNaveSc : MonoBehaviour
 {
+
     [Header("Opciones de nave")]
     public bool municionCargada;
 

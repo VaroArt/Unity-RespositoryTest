@@ -5,6 +5,7 @@ using UnityEngine;
 public class Interaction_Sc : MonoBehaviour
 {
     public UI_ControlNaveSc controlNave;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,5 @@ public class Interaction_Sc : MonoBehaviour
         controlNave.ControlPanelesNave.ActivarPanelTexto = false;
         print("rabka uhalla");
         controlNave.ControlPanelesNave.ActivarPanelInteraccion = false;
-
-    }
+    }   
 }

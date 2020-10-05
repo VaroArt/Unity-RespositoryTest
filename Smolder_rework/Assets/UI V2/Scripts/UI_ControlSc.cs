@@ -200,6 +200,15 @@ public class AppFunciones
     }
 }
 
+[System.Serializable]
+public class Dialogos
+{
+    public int id;
+
+    [TextArea(3, 10)]
+    public string[] listaDeSentencias;
+}
+
 public class UI_ControlSc : MonoBehaviour
 {
     // Start is called before the first frame update
