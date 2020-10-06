@@ -27,7 +27,7 @@ public class Enemy_1_IA : Enemy_1_Var
 
     public void Awake()
     {
-       
+      
 
     }
     public void Start()
@@ -47,9 +47,7 @@ public class Enemy_1_IA : Enemy_1_Var
         if (sensor.CurrentTarget != null)
         {
            // VerTarget();
-        }
-
-       
+        } 
     }
 
     public void FixedUpdate()
@@ -136,6 +134,7 @@ public class Enemy_1_IA : Enemy_1_Var
 
     #endregion
 
+    #region Tareas
     public void taskList()
     {
         switch (tasks.TaskList)
@@ -150,7 +149,6 @@ public class Enemy_1_IA : Enemy_1_Var
                 break;
         }
     }
-
     public void taskTrigger()
     {
         if (tasks.priority <= 10)
@@ -158,12 +156,14 @@ public class Enemy_1_IA : Enemy_1_Var
             patrullaje();
         }
 
-        if(tasks.priority >= 20)
+        if (tasks.priority >= 20)
         {
             sensor.CurrentTarget = sensor.PlayerTr;
         }
     }
+    #endregion
 
+    #region Movimiento Base
     public void MovimientoBase()
     {
         if (Path.path == null)
@@ -190,13 +190,16 @@ public class Enemy_1_IA : Enemy_1_Var
         }
     }
 
+    #endregion
+
+    #region Movimiento Patrullaje
     public void patrullaje()
     {
         sensor.CurrentTarget = patrol.points[patrol.randomSpot];
 
         float moveDistance = Vector3.Distance(sensor.CurrentTarget.position, transform.position);
 
-        if (moveDistance < movimiento.attackRadius)
+        if (moveDistance > movimiento.attackRadius)
         {
             if (patrol.waitTime <= 0)
             {
@@ -212,5 +215,12 @@ public class Enemy_1_IA : Enemy_1_Var
         {
             //movimiento 
         }
+    }
+
+    #endregion
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireSphere(transform.position, movimiento.attackRadius);
     }
 }
