@@ -18,6 +18,7 @@ public class VariablesMovimiento
 {
     public float speed;
     public float attackRadius;
+    public bool move;
     public Rigidbody2D rb;
 }
 [System.Serializable]
@@ -40,7 +41,8 @@ public class SensorEnemigo
 [System.Serializable]
 public class PatrolMode
 {
-    public Transform[] points;
+    public Transform[] pointsLow;
+    public Transform[] pointsMid;
     [Space(10)]
     public float startWaitTime;
     public float waitTime;

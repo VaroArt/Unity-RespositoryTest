@@ -32,11 +32,12 @@ public class Enemy_1_IA : Enemy_1_Var
     }
     public void Start()
     {
+        movimiento.move = true;
         InvokeRepeating("updatePath", 0f, 0.1f);
         Path.seeker = GetComponent<Seeker>();
         movimiento.rb = GetComponent<Rigidbody2D>();
         patrol.waitTime = patrol.startWaitTime;
-        patrol.randomSpot = Random.Range(0, patrol.points.Length);
+        patrol.randomSpot = Random.Range(0, patrol.pointsLow.Length);
     }
 
     public void Update()
@@ -52,7 +53,11 @@ public class Enemy_1_IA : Enemy_1_Var
 
     public void FixedUpdate()
     {
-        MovimientoBase();
+        if (movimiento.move)
+        {
+            MovimientoBase();
+        }
+      
     }
 
     #region Sensor vision 
@@ -158,7 +163,8 @@ public class Enemy_1_IA : Enemy_1_Var
 
         if (tasks.priority >= 20)
         {
-            sensor.CurrentTarget = sensor.PlayerTr;
+            // sensor.CurrentTarget = sensor.PlayerTr;
+            sensor.CurrentTarget = patrol.pointsMid[patrol.randomSpot];
         }
     }
     #endregion
@@ -195,25 +201,27 @@ public class Enemy_1_IA : Enemy_1_Var
     #region Movimiento Patrullaje
     public void patrullaje()
     {
-        sensor.CurrentTarget = patrol.points[patrol.randomSpot];
+        sensor.CurrentTarget = patrol.pointsLow[patrol.randomSpot];
 
         float moveDistance = Vector3.Distance(sensor.CurrentTarget.position, transform.position);
 
-        if (moveDistance > movimiento.attackRadius)
+        if (moveDistance < movimiento.attackRadius)
         {
             if (patrol.waitTime <= 0)
             {
-                patrol.randomSpot = Random.Range(0, patrol.points.Length);
+                patrol.randomSpot = Random.Range(0, patrol.pointsLow.Length);
                 patrol.waitTime = patrol.startWaitTime;
             }
             else
             {
+                movimiento.move = false;
                 patrol.waitTime -= Time.deltaTime;
+
             }
         }
         else if (moveDistance > movimiento.attackRadius)
         {
-            //movimiento 
+            movimiento.move = true;
         }
     }
 
