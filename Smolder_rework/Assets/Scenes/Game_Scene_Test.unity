@@ -5269,7 +5269,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 549692116}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.077, y: -0.308, z: 0}
+  m_LocalPosition: {x: 0.086, y: -0.2397, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0.12524}
   m_Children: []
   m_Father: {fileID: 1819132299}
@@ -5312,10 +5312,10 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Time: 0.3
+  m_SortingLayerID: -1501393297
+  m_SortingLayer: 3
+  m_SortingOrder: 4
+  m_Time: 0.2
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -5323,8 +5323,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.12800229
-        value: 0.056232333
+        time: 0.1446687
+        value: 0.07051456
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -5345,8 +5345,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.11764707, g: 0.40784317, b: 0.53333336, a: 1}
+      key1: {r: 0.11764707, g: 0.40784317, b: 0.53333336, a: 1}
       key2: {r: 0, g: 0.13074064, b: 1, a: 0}
       key3: {r: 0.9607843, g: 0.69411767, b: 0.9108352, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -8154,7 +8154,7 @@ PrefabInstance:
     - target: {fileID: 3196651772553271738, guid: 0f7ee4e1168fa314e996aa29d55a294d,
         type: 3}
       propertyPath: S_Dialogos.listaDeSentencias.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3196651772553271738, guid: 0f7ee4e1168fa314e996aa29d55a294d,
         type: 3}
@@ -8184,24 +8184,29 @@ PrefabInstance:
     - target: {fileID: 3196651772553271738, guid: 0f7ee4e1168fa314e996aa29d55a294d,
         type: 3}
       propertyPath: S_Dialogos.listaDeSentencias.Array.data[0]
-      value: estoy probando por aqui buen seniol
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3196651772553271738, guid: 0f7ee4e1168fa314e996aa29d55a294d,
         type: 3}
       propertyPath: S_Dialogos.listaDeSentencias.Array.data[1]
+      value: estoy probando por aqui buen seniol
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196651772553271738, guid: 0f7ee4e1168fa314e996aa29d55a294d,
+        type: 3}
+      propertyPath: S_Dialogos.listaDeSentencias.Array.data[2]
       value: bueno, te cuento, yo soy una sentencia de prueba para saber como funcionaria
         este sistema, ya que estoy en test
       objectReference: {fileID: 0}
     - target: {fileID: 3196651772553271738, guid: 0f7ee4e1168fa314e996aa29d55a294d,
         type: 3}
-      propertyPath: S_Dialogos.listaDeSentencias.Array.data[2]
-      value: porfavor no wei mas y asegurate de que funcione que ya toy chato de
-        escribir xd
+      propertyPath: currentSentence
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3196651772553271738, guid: 0f7ee4e1168fa314e996aa29d55a294d,
         type: 3}
-      propertyPath: currentSentence
-      value: 0
+      propertyPath: S_Dialogos.listaDeSentencias.Array.data[3]
+      value: porfavor no wei mas y asegurate de que funcione que ya toy chato de
+        escribir xd
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f7ee4e1168fa314e996aa29d55a294d, type: 3}
@@ -16346,7 +16351,7 @@ PrefabInstance:
     - target: {fileID: 4167453054511814323, guid: bac905bdfb1bc3a4d95075aa4d869837,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -244.8429
+      value: -273.9208
       objectReference: {fileID: 0}
     - target: {fileID: 4167453054511814323, guid: bac905bdfb1bc3a4d95075aa4d869837,
         type: 3}
@@ -17229,7 +17234,7 @@ PrefabInstance:
     - target: {fileID: 3196651772553271738, guid: 0f7ee4e1168fa314e996aa29d55a294d,
         type: 3}
       propertyPath: S_Dialogos.listaDeSentencias.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3196651772553271738, guid: 0f7ee4e1168fa314e996aa29d55a294d,
         type: 3}
@@ -17259,18 +17264,17 @@ PrefabInstance:
     - target: {fileID: 3196651772553271738, guid: 0f7ee4e1168fa314e996aa29d55a294d,
         type: 3}
       propertyPath: S_Dialogos.listaDeSentencias.Array.data[0]
-      value: "ta un poquito grande la nave , que wea los tama\xF1os asdas"
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3196651772553271738, guid: 0f7ee4e1168fa314e996aa29d55a294d,
         type: 3}
       propertyPath: S_Dialogos.listaDeSentencias.Array.data[1]
-      value: tambien la luz ta mal puesta, si no es llegar y arrastrar eh
+      value: "ta un poquito grande la nave , que wea los tama\xF1os asdas"
       objectReference: {fileID: 0}
     - target: {fileID: 3196651772553271738, guid: 0f7ee4e1168fa314e996aa29d55a294d,
         type: 3}
       propertyPath: S_Dialogos.listaDeSentencias.Array.data[2]
-      value: porfavor no wei mas y asegurate de que funcione que ya toy chato de
-        escribir xd
+      value: tambien la luz ta mal puesta, si no es llegar y arrastrar eh
       objectReference: {fileID: 0}
     - target: {fileID: 3196651772553271738, guid: 0f7ee4e1168fa314e996aa29d55a294d,
         type: 3}
@@ -20597,7 +20601,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658142492}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.092, y: -0.264, z: 0}
+  m_LocalPosition: {x: -0.085, y: -0.209, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0.12524}
   m_Children: []
   m_Father: {fileID: 1819132299}
@@ -20640,10 +20644,10 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Time: 0.3
+  m_SortingLayerID: -1501393297
+  m_SortingLayer: 3
+  m_SortingOrder: 4
+  m_Time: 0.2
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -20651,8 +20655,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.12800229
-        value: 0.056232333
+        time: 0.1446687
+        value: 0.07051456
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -20673,8 +20677,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.11764707, g: 0.40784317, b: 0.53333336, a: 1}
+      key1: {r: 0.11764707, g: 0.40784317, b: 0.53333336, a: 1}
       key2: {r: 0, g: 0.13074064, b: 1, a: 0}
       key3: {r: 0.9607843, g: 0.69411767, b: 0.9108352, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -23119,12 +23123,12 @@ SpriteRenderer:
   m_SortingLayerID: -1501393297
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cc18bb9165005d540a6895d02edc2e20, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bc910735c1054414198311d47e689450, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 6.4, y: 6.4}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -23189,7 +23193,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 6.4, y: 6.4}
+    newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0

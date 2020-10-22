@@ -78,10 +78,8 @@ public class Dialogue_Manager : MonoBehaviour
         if (col.CompareTag("Player"))
         {
             controlNave.ControlPanelesNave.ActivarPanelTexto = true;
-            controlNave.controlTextoNave.hablando = true;
-            controlNave.controlTextoNave.PanelPerrosActivo = true;
             IniciarDialogo();
-            currentSentence++;
+
             //print(sentencias.Count);
 
         }
@@ -94,8 +92,11 @@ public class Dialogue_Manager : MonoBehaviour
             if(Display.text == sentenciaActiva)
             {  
                 nextbton.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.Return))
+                if (Input.GetKeyDown(KeyCode.E))
                 {
+                    controlNave.controlTextoNave.hablando = true;
+                    controlNave.controlTextoNave.PanelPerrosActivo = true;
+
                     MostrarSigSentencia();
                     currentSentence++;
                    // print(sentencias.Count);
