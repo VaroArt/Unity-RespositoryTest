@@ -17,16 +17,27 @@ public class enemy_field_of_view : MonoBehaviour
     }
     public void OnTriggerStay2D(Collider2D collision)
     {
+        enemy.sensor.CurrentTarget = collision.transform;
+        if (collision.tag == ("Bengala"))
+        {
+            enemy.sensor.bengalaTr = collision.transform;
+        }
+        if (collision.transform == enemy.sensor.bengalaTr)
+        {
+            print("bengala");
+        }
+        else if (collision.transform == enemy.sensor.PlayerTr)
+        {
+            print("player");
+        }
+   
+        
       //  enemy.sensor.iniciateRaycast = true;
 
-        enemy.sensor.CurrentTarget = collision.transform;
-        print(collision);
+       
         // print(collision);
 
-        /*   if (enemy.sensor.recognitionTime == 4)
-           {
-               print("player visible");
-           }*/
+
 
         /*  enemy.sensor.bengalaTr = collision.transform;
           enemy.sensor.CurrentTarget = enemy.sensor.bengalaTr;*/

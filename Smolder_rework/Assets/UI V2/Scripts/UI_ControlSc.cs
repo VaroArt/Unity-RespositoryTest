@@ -73,7 +73,7 @@ public class ImagenTextoPerros
 [System.Serializable]
 public class LlamarDialogos
 {
-    public player_triggers player;
+    //public player_triggers player;
     public DialogueManager dialogoManager;
 }
 

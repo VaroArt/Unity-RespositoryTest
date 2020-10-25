@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class player_interactions : MonoBehaviour
 {
-    
+    public float taskLevel;
+    public float noisyLevel;
     void Start()
     {
         

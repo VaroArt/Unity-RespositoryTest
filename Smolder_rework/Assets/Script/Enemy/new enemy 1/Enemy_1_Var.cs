@@ -30,10 +30,11 @@ public class SensorEnemigo
     public bool iniciateRaycast;
     public float raycastRange;
     [Space(10)]
-    [Range(0,4)]
+    [Range(0,2)]
     public float recognitionTime;
 
     [Header("Targets")]
+    
     public Transform CurrentTarget;
     public Transform PlayerTr;
     public Transform bengalaTr;
@@ -41,6 +42,7 @@ public class SensorEnemigo
 [System.Serializable]
 public class PatrolMode
 {
+   
     public Transform[] pointsLow;
     public Transform[] pointsMid;
     [Space(10)]

@@ -32,8 +32,8 @@ public class Enemy_1_IA : Enemy_1_Var
     }
     public void Start()
     {
-        movimiento.move = true;
-        InvokeRepeating("updatePath", 0f, 0.1f);
+       // movimiento.move = true;
+       // InvokeRepeating("updatePath", 0f, 0.1f);
         Path.seeker = GetComponent<Seeker>();
         movimiento.rb = GetComponent<Rigidbody2D>();
         patrol.waitTime = patrol.startWaitTime;
@@ -47,7 +47,7 @@ public class Enemy_1_IA : Enemy_1_Var
         Reconocimiento();
         if (sensor.CurrentTarget != null)
         {
-           // VerTarget();
+          //  VerTarget();
         } 
     }
 
@@ -55,7 +55,7 @@ public class Enemy_1_IA : Enemy_1_Var
     {
         if (movimiento.move)
         {
-            MovimientoBase();
+          //  MovimientoBase();
         }
       
     }
@@ -72,9 +72,9 @@ public class Enemy_1_IA : Enemy_1_Var
             sensor.recognitionTime -= 1 * Time.deltaTime;
 
         }
-        if (sensor.recognitionTime > 4)
+        if (sensor.recognitionTime > 2)
         {
-            sensor.recognitionTime = 4;
+            sensor.recognitionTime = 2;
         }
 
         if (sensor.recognitionTime < 0)
@@ -95,19 +95,19 @@ public class Enemy_1_IA : Enemy_1_Var
                 Vector3 forward = transform.TransformDirection(sensor.CurrentTarget.position - transform.position);
                 Debug.DrawRay(transform.position, forward, Color.green);
                 sensor.Recognition = true;
-               /* if(sensor.CurrentTarget == sensor.PlayerTr)
+                if(sensor.CurrentTarget == sensor.PlayerTr)
                 {
 
                 }
                 if (sensor.CurrentTarget == sensor.bengalaTr)
                 {
 
-                }*/
+                }
             }
            else
             {
                 sensor.Recognition = false;
-               // sensor.CurrentTarget = null;
+                sensor.CurrentTarget = null;
             }
         }
        
@@ -152,19 +152,21 @@ public class Enemy_1_IA : Enemy_1_Var
                 tasks.currentTask = ("Explore Zone 2");
                 tasks.priority = 20;
                 break;
+            case 3:
+
+                break;       
         }
     }
     public void taskTrigger()
     {
         if (tasks.priority <= 10)
         {
-            patrullaje();
+           // patrullaje();
         }
 
         if (tasks.priority >= 20)
         {
-            // sensor.CurrentTarget = sensor.PlayerTr;
-            sensor.CurrentTarget = patrol.pointsMid[patrol.randomSpot];
+             
         }
     }
     #endregion
