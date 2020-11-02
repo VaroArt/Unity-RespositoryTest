@@ -28,34 +28,33 @@ public class Enemy_1_IA : Enemy_1_Var
     public void Awake()
     {
       
-
+        gfx.mat.SetFloat("_Fade", 1f);
     }
     public void Start()
     {
-       // movimiento.move = true;
-       // InvokeRepeating("updatePath", 0f, 0.1f);
+        movimiento.move = true;
+        patrol.randomSpot = Random.Range(0, patrol.Points.Length);
+        InvokeRepeating("updatePath", 0f, 0.1f);
         Path.seeker = GetComponent<Seeker>();
         movimiento.rb = GetComponent<Rigidbody2D>();
         patrol.waitTime = patrol.startWaitTime;
-        patrol.randomSpot = Random.Range(0, patrol.pointsLow.Length);
+       
     }
 
     public void Update()
     {
+        Hide();
         taskTrigger();
         taskList();
         Reconocimiento();
-        if (sensor.CurrentTarget != null)
-        {
-          //  VerTarget();
-        } 
+        ReconocimientoSecundario();
     }
 
     public void FixedUpdate()
     {
         if (movimiento.move)
         {
-          //  MovimientoBase();
+           MovimientoBase();
         }
       
     }
@@ -63,18 +62,26 @@ public class Enemy_1_IA : Enemy_1_Var
     #region Sensor vision 
     public void Reconocimiento()
     {
-        if(sensor.Recognition)
+        if(sensor.RecognitionGeneral)
         {
             sensor.recognitionTime += 1 * Time.deltaTime;
         }
-        if(!sensor.Recognition)
+        if(!sensor.RecognitionGeneral)
         {
             sensor.recognitionTime -= 1 * Time.deltaTime;
-
+            
         }
         if (sensor.recognitionTime > 2)
         {
             sensor.recognitionTime = 2;
+            if(sensor.sensorTarget.tag == ("Bengala"))
+            {
+                sensor.CurrentTarget = sensor.sensorTarget;
+            }
+            else if (sensor.sensorTarget.tag == ("Player"))
+            {
+                sensor.CurrentTarget = sensor.sensorTarget;
+            }
         }
 
         if (sensor.recognitionTime < 0)
@@ -83,36 +90,57 @@ public class Enemy_1_IA : Enemy_1_Var
         }
     }
 
+    public void ReconocimientoSecundario()
+    {
+        if (sensor.RecognitionSecondary)
+        {
+            sensor.recognitionTime2 += 1.5f * Time.deltaTime;
+        }
+        if (!sensor.RecognitionSecondary)
+        {
+            sensor.recognitionTime2 -= 1.5f * Time.deltaTime;
+
+        }
+        if (sensor.recognitionTime2 > 4)
+        {
+            sensor.recognitionTime2 = 4;
+            if (sensor.sensorTarget.tag == ("Bengala"))
+            {
+                sensor.CurrentTarget = sensor.sensorTarget;
+            }
+            else if (sensor.sensorTarget.tag == ("Player"))
+            {
+                sensor.CurrentTarget = sensor.sensorTarget;
+            }
+        }
+
+        if (sensor.recognitionTime2 < 0)
+        {
+            sensor.recognitionTime2 = 0;
+        }
+    }
     public void VerTarget()
     {
-        Vector2 dirToTarget = (sensor.CurrentTarget.position - transform.position).normalized;
+        Vector2 dirToTarget = (sensor.sensorTarget.position - transform.position).normalized;
 
-        if(Vector2.Angle(transform.up,dirToTarget)< sensor.raycastRange)
+        if(Vector2.Angle(transform.up,dirToTarget)< sensor.raycastRangeGeneral)
         {
-            float dstToTarget = Vector2.Distance(transform.position, sensor.CurrentTarget.position);
+            float dstToTarget = Vector2.Distance(transform.position, sensor.sensorTarget.position);
             if (!Physics2D.Raycast(transform.position, dirToTarget, dstToTarget, sensor.obstacleMask))
             {
-                Vector3 forward = transform.TransformDirection(sensor.CurrentTarget.position - transform.position);
+                Vector3 forward = transform.TransformDirection(sensor.sensorTarget.position - transform.position);
                 Debug.DrawRay(transform.position, forward, Color.green);
-                sensor.Recognition = true;
-                if(sensor.CurrentTarget == sensor.PlayerTr)
-                {
-
-                }
-                if (sensor.CurrentTarget == sensor.bengalaTr)
-                {
-
-                }
+                sensor.RecognitionGeneral = true;
             }
            else
             {
-                sensor.Recognition = false;
-                sensor.CurrentTarget = null;
+                sensor.RecognitionGeneral = false;
+                sensor.sensorTarget = null;
             }
         }
        
     }
-
+   
     public void perderTarget()
     {
         sensor.CurrentTarget = null;
@@ -146,11 +174,13 @@ public class Enemy_1_IA : Enemy_1_Var
         {
             case 1:
                 tasks.currentTask = ("Explore Zone");
-                tasks.priority = 10;
+                patrullaje();
+
                 break;
             case 2:
                 tasks.currentTask = ("Explore Zone 2");
-                tasks.priority = 20;
+                sensor.CurrentTarget = sensor.sensorTarget;
+               
                 break;
             case 3:
 
@@ -161,12 +191,13 @@ public class Enemy_1_IA : Enemy_1_Var
     {
         if (tasks.priority <= 10)
         {
-           // patrullaje();
+           
+            tasks.TaskList = 1;
         }
 
-        if (tasks.priority >= 20)
+        if (tasks.priority == 20)
         {
-             
+            tasks.TaskList = 2;
         }
     }
     #endregion
@@ -203,7 +234,7 @@ public class Enemy_1_IA : Enemy_1_Var
     #region Movimiento Patrullaje
     public void patrullaje()
     {
-        sensor.CurrentTarget = patrol.pointsLow[patrol.randomSpot];
+        sensor.CurrentTarget = patrol.Points[patrol.randomSpot];
 
         float moveDistance = Vector3.Distance(sensor.CurrentTarget.position, transform.position);
 
@@ -211,7 +242,7 @@ public class Enemy_1_IA : Enemy_1_Var
         {
             if (patrol.waitTime <= 0)
             {
-                patrol.randomSpot = Random.Range(0, patrol.pointsLow.Length);
+                patrol.randomSpot = Random.Range(0, patrol.Points.Length);
                 patrol.waitTime = patrol.startWaitTime;
             }
             else
@@ -228,6 +259,49 @@ public class Enemy_1_IA : Enemy_1_Var
     }
 
     #endregion
+
+    #region Hide mode
+    public void Hide()
+    {
+        if (patrol.isHide)
+        {
+            gfx.isdissolving = true;
+            if (gfx.isdissolving)
+            {
+                gfx.fade -= Time.deltaTime;
+
+                if(gfx.fade <= 0f)
+                {
+                    gfx.fade = 0f;
+                    gfx.isdissolving = false;
+                }
+                gfx.mat.SetFloat("_Fade", gfx.fade);
+            }
+        }
+        if (!patrol.isHide)
+        {
+            gfx.fade += Time.deltaTime;
+            if(gfx.fade >= 1)
+            {
+                gfx.fade = 1f;
+            }
+            gfx.mat.SetFloat("_Fade", gfx.fade);
+        }
+    }
+
+    #endregion
+
+    private void RotateTowards(Vector2 target)
+    {
+        if (movimiento.canRotate)
+        {
+            Vector2 direction = target - (Vector2)transform.position;
+            direction.Normalize();
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(Vector3.forward * (angle + movimiento.offset));
+        }
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.white;
