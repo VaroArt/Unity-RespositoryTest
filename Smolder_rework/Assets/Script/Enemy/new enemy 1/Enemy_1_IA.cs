@@ -184,7 +184,7 @@ public class Enemy_1_IA : Enemy_1_Var
             case 2:
                 tasks.currentTask = ("Explore Zone 2");
                 sensor.CurrentTarget = sensor.sensorTarget;
-               
+                // activar musica y se para musica 1   
                 break;
             case 3:
 
