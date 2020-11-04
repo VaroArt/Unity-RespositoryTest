@@ -3539,7 +3539,7 @@ GameObject:
   - component: {fileID: 422502638}
   - component: {fileID: 422502641}
   m_Layer: 0
-  m_Name: Particle System (1)
+  m_Name: Star Dust particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3692,7 +3692,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 31.06
+      scalar: 56.6
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4177,7 +4177,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 10000
     size3D: 0
     rotation3D: 1
     gravityModifier:
@@ -4244,7 +4244,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 2.61, y: 1, z: 2.59}
+    m_Scale: {x: 9.73, y: 0, z: 25.78}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -4323,9 +4323,9 @@ ParticleSystem:
     sphericalDirectionAmount: 0.19
     randomPositionAmount: 3.68
     radius:
-      value: 0.0001
-      mode: 3
-      spread: 0.14
+      value: 1.04
+      mode: 0
+      spread: 1
       speed:
         serializedVersion: 2
         minMaxState: 0
@@ -4442,7 +4442,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 74.17
+      scalar: 128.54
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4495,7 +4495,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 64.3
+      scalar: 153.6
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -8293,7 +8293,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 055d516824f3e0640a870046a10e5030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particle: {fileID: 0}
+  player: {fileID: 1819132297}
+  particle: {fileID: 422502639}
+  valueY: 0
+  valueX: 0
 --- !u!1001 &440288657
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20788,7 +20791,7 @@ PrefabInstance:
     - target: {fileID: 4167453054511814323, guid: bac905bdfb1bc3a4d95075aa4d869837,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -361.10437
+      value: -271.02478
       objectReference: {fileID: 0}
     - target: {fileID: 4167453054511814323, guid: bac905bdfb1bc3a4d95075aa4d869837,
         type: 3}
@@ -27252,6 +27255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76cd7902dac080b4e9c0cb265fac68c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  input: {x: 0, y: 0}
   speed: 120
   rotationInterpolation: 0.1
   isMoving: 0
@@ -31143,7 +31147,8 @@ PrefabInstance:
       propertyPath: speed
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2397145003797083551, guid: e625cae5ebd908647a6ee327c5aaae9e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e625cae5ebd908647a6ee327c5aaae9e, type: 3}
 --- !u!4 &2397145003753295740 stripped
 Transform:

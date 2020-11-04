@@ -77,16 +77,19 @@ public class Enemy_1_IA : Enemy_1_Var
             sensor.recognitionTime = 2;
             if(sensor.sensorTarget.tag == ("Bengala"))
             {
-                sensor.CurrentTarget = sensor.sensorTarget;
+                 sensor.CurrentTarget = sensor.sensorTarget;
+                tasks.priority = 20;
             }
             else if (sensor.sensorTarget.tag == ("Player"))
             {
+                tasks.priority = 20;
                 sensor.CurrentTarget = sensor.sensorTarget;
             }
         }
 
         if (sensor.recognitionTime < 0)
         {
+            tasks.priority = 10;
             sensor.recognitionTime = 0;
         }
     }
@@ -198,6 +201,7 @@ public class Enemy_1_IA : Enemy_1_Var
 
         if (tasks.priority == 20)
         {
+            movimiento.move = true;
             tasks.TaskList = 2;
         }
     }

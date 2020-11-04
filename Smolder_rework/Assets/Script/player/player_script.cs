@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class player_script : MonoBehaviour
 {
     Rigidbody2D myrg;
-    Vector2 input;
+    [HideInInspector]public Vector2 input;
     float shipAngle;
     public float speed;
     public float rotationInterpolation = 0.4f;
