@@ -111,3 +111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8332d9226f7261e46a48434a35a1f098, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coordenada: {fileID: 0}
+  player: {fileID: 0}
+  explosivo: {fileID: 0}

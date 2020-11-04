@@ -11,13 +11,10 @@ TagManager:
   - firstAlert
   - deadZone
   - Bengala
-  - key
-  - coordenada
-  - bomba
-  - naveSellada
-  - naveCerrada
   - Evento Texto
   - Evento Interaccion
+  - Interaction
+  - Interaction2
   layers:
   - Default
   - TransparentFX

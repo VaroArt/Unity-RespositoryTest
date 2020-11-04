@@ -7,6 +7,7 @@ using UnityEngine.Windows.Speech;
 [System.Serializable]
 public class EnemyGfx
 {
+    public GameObject gbj;
     public SpriteRenderer enemygfx;
     public Material mat;
     public float fade = 1f;

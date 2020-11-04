@@ -48,6 +48,7 @@ public class Enemy_1_IA : Enemy_1_Var
         taskList();
         Reconocimiento();
         ReconocimientoSecundario();
+
     }
 
     public void FixedUpdate()

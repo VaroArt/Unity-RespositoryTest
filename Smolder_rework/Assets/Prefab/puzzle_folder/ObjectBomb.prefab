@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4178367164952271004}
   m_Layer: 0
   m_Name: ObjectBomb
-  m_TagString: bomba
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1501393297
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 4b3dfaaed5044ba4392e337848320a90, type: 3}
   m_Color: {r: 1, g: 0.4481132, b: 0.4481132, a: 1}

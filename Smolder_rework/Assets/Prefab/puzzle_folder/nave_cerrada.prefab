@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordenada: {fileID: 0}
+  key: {fileID: 0}
   player: {fileID: 0}
 --- !u!58 &4708083413854477806
 CircleCollider2D:
