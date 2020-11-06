@@ -28,7 +28,7 @@ TagManager:
   - Obstacules
   - targets
   - alerta
-  - 
+  - Minimap
   - 
   - 
   - 
@@ -63,4 +63,7 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 1502188951
+    locked: 0
+  - name: player mini map
+    uniqueID: 2159272865
     locked: 0
