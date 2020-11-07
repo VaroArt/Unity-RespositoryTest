@@ -49,6 +49,10 @@ public class Enemy_1_IA : Enemy_1_Var
         Reconocimiento();
         ReconocimientoSecundario();
 
+        if (movimiento.canRotate)
+        {
+            RotateTowards(sensor.CurrentTarget.position);
+        }
     }
 
     public void FixedUpdate()
@@ -179,11 +183,14 @@ public class Enemy_1_IA : Enemy_1_Var
             case 1:
                 tasks.currentTask = ("Explore Zone");
                 patrullaje();
+                
 
                 break;
             case 2:
+            
                 tasks.currentTask = ("Explore Zone 2");
                 sensor.CurrentTarget = sensor.sensorTarget;
+             
                 // activar musica y se para musica 1   
                 break;
             case 3:
