@@ -15,6 +15,7 @@ TagManager:
   - Evento Interaccion
   - Interaction
   - Interaction2
+  - minimap
   layers:
   - Default
   - TransparentFX
