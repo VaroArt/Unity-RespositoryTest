@@ -48,11 +48,8 @@ public class Enemy_1_IA : Enemy_1_Var
         taskList();
         Reconocimiento();
         ReconocimientoSecundario();
-
-        if (movimiento.canRotate)
-        {
-            RotateTowards(sensor.CurrentTarget.position);
-        }
+       
+       
     }
 
     public void FixedUpdate()
@@ -61,7 +58,10 @@ public class Enemy_1_IA : Enemy_1_Var
         {
            MovimientoBase();
         }
-      
+        if (movimiento.canRotate)
+        {
+            RotateTowards(sensor.CurrentTarget.position);
+        }
     }
 
     #region Sensor vision 
@@ -81,7 +81,7 @@ public class Enemy_1_IA : Enemy_1_Var
             sensor.recognitionTime = 2;
             if(sensor.sensorTarget.tag == ("Bengala"))
             {
-                 sensor.CurrentTarget = sensor.sensorTarget;
+                sensor.CurrentTarget = sensor.sensorTarget;
                 tasks.priority = 20;
             }
             else if (sensor.sensorTarget.tag == ("Player"))
@@ -91,9 +91,10 @@ public class Enemy_1_IA : Enemy_1_Var
             }
         }
 
-        if (sensor.recognitionTime < 0)
+        if (sensor.recognitionTime <= 0)
         {
-            tasks.priority = 10;
+            //tasks.priotity = 10;
+            tasks.priority = 60;
             sensor.recognitionTime = 0;
         }
     }
@@ -142,9 +143,10 @@ public class Enemy_1_IA : Enemy_1_Var
             }
            else
             {
-                sensor.RecognitionGeneral = false;
-                sensor.sensorTarget = null;
+               // sensor.RecognitionGeneral = false;
+              //  sensor.sensorTarget = null;
             }
+
         }
        
     }
@@ -206,10 +208,15 @@ public class Enemy_1_IA : Enemy_1_Var
             tasks.TaskList = 1;
         }
 
-        if (tasks.priority == 20)
+        if (tasks.priority > 11 && tasks.priority <= 20)
         {
             movimiento.move = true;
             tasks.TaskList = 2;
+        }
+        if (tasks.priority >= 60)
+        {
+
+            tasks.TaskList = 6;
         }
     }
     #endregion
@@ -230,8 +237,35 @@ public class Enemy_1_IA : Enemy_1_Var
         }
         Vector2 direction = ((Vector2)Path.path.vectorPath[Path.currentWaypoint] - movimiento.rb.position).normalized;
 
-        Vector2 force = direction * movimiento.speed * Time.deltaTime;
-        movimiento.rb.AddForce(force);
+        float moveDistance = Vector3.Distance(sensor.sensorTarget.position, transform.position);
+
+        if(moveDistance > movimiento.rotateDistance)
+        {
+            movimiento.canRotate = false;
+        }
+
+        if (moveDistance < movimiento.attackRadius)
+        {
+            print("stop");
+        }
+        else if (moveDistance < movimiento.rotateDistance)
+        {
+            /* Vector2 force = direction * movimiento.speed * Time.deltaTime;
+             movimiento.rb.AddForce(force);*/
+            rotateAnimation();
+            // movimiento.canRotate = true;
+            VerTarget();
+        //raycast basico y fast
+         /*   RaycastHit2D hit = Physics2D.Raycast(
+                transform.position,
+                sensor.CurrentTarget.position - transform.position,
+                movimiento.rotateDistance,
+                1 << LayerMask.NameToLayer("Default")
+                );
+
+            Vector3 forward = transform.TransformDirection(sensor.CurrentTarget.position - transform.position);
+            Debug.DrawRay(transform.position, forward, Color.green);*/
+        }
 
         float distance = Vector2.Distance(movimiento.rb.position, Path.path.vectorPath[Path.currentWaypoint]);
 
@@ -246,7 +280,7 @@ public class Enemy_1_IA : Enemy_1_Var
     #region Movimiento Patrullaje
     public void patrullaje()
     {
-        sensor.CurrentTarget = patrol.Points[patrol.randomSpot];
+        //sensor.CurrentTarget = patrol.Points[patrol.randomSpot];
 
         float moveDistance = Vector3.Distance(sensor.CurrentTarget.position, transform.position);
 
@@ -303,20 +337,33 @@ public class Enemy_1_IA : Enemy_1_Var
 
     #endregion
 
+    #region Rotate enemy
     private void RotateTowards(Vector2 target)
     {
         if (movimiento.canRotate)
-        {
-            Vector2 direction = target - (Vector2)transform.position;
-            direction.Normalize();
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(Vector3.forward * (angle + movimiento.offset));
+        { 
+             Vector2 direction = target - (Vector2)transform.position;
+             // direction.Normalize();
+              float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+              transform.rotation = Quaternion.Euler(Vector3.forward * (angle + movimiento.offset));
+        
         }
     }
+
+
+    public void rotateAnimation()
+    {
+        movimiento.angleRotation = sensor.CurrentTarget.transform.localEulerAngles.z;
+        movimiento.angleRotation = (int)movimiento.angleRotation;
+    }
+
+    #endregion
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(transform.position, movimiento.attackRadius);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, movimiento.rotateDistance);
     }
 }

@@ -1300,10 +1300,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76cd7902dac080b4e9c0cb265fac68c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  input: {x: 0, y: 0}
   speed: 400
   rotationInterpolation: 0
   isMoving: 0
   vida: 0
+  bengala: {fileID: 0}
 --- !u!50 &1401002715
 Rigidbody2D:
   serializedVersion: 4

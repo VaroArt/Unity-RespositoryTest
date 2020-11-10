@@ -7,6 +7,7 @@ using UnityEngine.Windows.Speech;
 [System.Serializable]
 public class EnemyGfx
 {
+    public Animator enemyAnim;
     public GameObject gbj;
     public SpriteRenderer enemygfx;
     public Material mat;
@@ -17,10 +18,14 @@ public class EnemyGfx
 [System.Serializable]
 public class VariablesMovimiento
 {
+    [Header("Variables movimiento")]
     public float speed;
     public float attackRadius;
     public bool move;
+    [Header("Variables rotacion")]
     public bool canRotate;
+    public float angleRotation;
+    public float rotateDistance;
     public float offset;
     public Rigidbody2D rb;
 }

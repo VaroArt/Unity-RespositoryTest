@@ -22,7 +22,7 @@ public class enemy_field_of_view : MonoBehaviour
         if (collision.tag == ("Bengala"))
         {
             enemy.sensor.sensorTarget = collision.transform;
-            //enemy.sensor.Recognition = true;
+            //enemy.sensor.RecognitionGeneral = true;
             enemy.VerTarget();
         }
 
