@@ -23,10 +23,9 @@ public class VariablesMovimiento
     public float attackRadius;
     public bool move;
     [Header("Variables rotacion")]
-    public bool canRotate;
-    public float angleRotation;
     public float rotateDistance;
-    public float offset;
+    public Enemy_1_Rotation rotation;
+    [Header("Rb")]
     public Rigidbody2D rb;
 }
 [System.Serializable]
