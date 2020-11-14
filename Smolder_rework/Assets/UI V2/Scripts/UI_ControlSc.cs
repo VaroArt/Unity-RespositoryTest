@@ -190,7 +190,7 @@ public class AppFunciones
 
     public void JugarJuego()
     {
-
+        SceneManager.LoadScene("Game_Scene_Test");
     }
 
     public void PantallaCreditos()
