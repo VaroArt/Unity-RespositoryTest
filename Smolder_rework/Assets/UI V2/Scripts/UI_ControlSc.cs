@@ -247,7 +247,7 @@ public class Dialogos
 {
     public int id;
 
-    [TextArea(3, 10)]
+    [TextArea(10, 10)]
     public string[] listaDeSentencias;
 }
 

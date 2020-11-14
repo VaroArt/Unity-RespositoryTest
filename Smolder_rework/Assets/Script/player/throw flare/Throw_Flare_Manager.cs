@@ -9,7 +9,6 @@ public class Throw_Flare_Manager : MonoBehaviour
     public int AmmoCount;
     public GameObject flare;
     public Transform pointFlare;
-    public PanelControl panel;
     public UI_ControlNaveSc carganueva;
     void Start()
     {
@@ -24,7 +23,6 @@ public class Throw_Flare_Manager : MonoBehaviour
     {
         if(AmmoCount == 1)
         {
-            panel.AmmoCharged = true;
             carganueva.municionCargada = true;
             print("llamada");
         }

@@ -32,7 +32,7 @@ public class Enemy_1_IA : Enemy_1_Var
     }
     public void Start()
     {
-       
+        patrol.isHide = false;  
         patrol.randomSpot = Random.Range(0, patrol.Points.Length);
         InvokeRepeating("updatePath", 0f, 0.1f);
         Path.seeker = GetComponent<Seeker>();

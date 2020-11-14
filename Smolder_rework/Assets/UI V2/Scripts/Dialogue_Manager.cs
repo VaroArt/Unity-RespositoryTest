@@ -17,7 +17,7 @@ public class Dialogue_Manager : MonoBehaviour
     string sentenciaActiva;
     public float typingSpeed;
     public int currentSentence;
-
+    public GameObject E;
     void Start()
     {
         sentencias = new Queue<string>();
@@ -79,7 +79,7 @@ public class Dialogue_Manager : MonoBehaviour
         {
             controlNave.ControlPanelesNave.ActivarPanelTexto = true;
             IniciarDialogo();
-
+            E.SetActive(true);
             //print(sentencias.Count);
 
         }
@@ -115,6 +115,7 @@ public class Dialogue_Manager : MonoBehaviour
         controlNave.controlTextoNave.hablando = false;
         controlNave.controlTextoNave.PanelPerrosActivo = false;
         StopAllCoroutines();
+        E.SetActive(false);
     }
 
     public void conversacion()
@@ -124,11 +125,16 @@ public class Dialogue_Manager : MonoBehaviour
             case 1:
                if(S_Dialogos.id == 1)
                 {
+                    
                     controlNave.controlTextoNave.AstroHablando = true;
                 }
                if(S_Dialogos.id == 2)
                 {
                     controlNave.controlTextoNave.EdgarHablando = true;
+                }
+                if (S_Dialogos.id == 3)
+                {
+                    controlNave.controlTextoNave.AstroHablando = true;
                 }
                 break;
             case 2:
@@ -143,9 +149,50 @@ public class Dialogue_Manager : MonoBehaviour
                     controlNave.controlTextoNave.AstroHablando = true;
                     controlNave.controlTextoNave.EdgarHablando = false;
                 }
+                if (S_Dialogos.id == 3)
+                {
+                    controlNave.controlTextoNave.AstroHablando = false;
+                    controlNave.controlTextoNave.EdgarHablando = true;
+                }
                 break;
 
             case 3:
+                if (S_Dialogos.id == 1)
+                {
+                    controlNave.controlTextoNave.AstroHablando = false;
+                    controlNave.controlTextoNave.EdgarHablando = true;
+                }
+                if (S_Dialogos.id == 2)
+                {
+                    controlNave.controlTextoNave.AstroHablando = false;
+                    controlNave.controlTextoNave.EdgarHablando = true;
+                }
+                if (S_Dialogos.id == 3)
+                {
+                    controlNave.controlTextoNave.AstroHablando = true;
+                    controlNave.controlTextoNave.EdgarHablando = false;
+                }
+                break;
+
+            case 4:
+                if (S_Dialogos.id == 1)
+                {
+                    controlNave.controlTextoNave.AstroHablando = false;
+                    controlNave.controlTextoNave.EdgarHablando = true;
+                }
+                if (S_Dialogos.id == 2)
+                {
+                    controlNave.controlTextoNave.AstroHablando = true;
+                    controlNave.controlTextoNave.EdgarHablando = false;
+                }
+                if (S_Dialogos.id == 3)
+                {
+                    controlNave.controlTextoNave.AstroHablando = false;
+                    controlNave.controlTextoNave.EdgarHablando = true;
+                }
+
+                break;
+            case 5:
                 if (S_Dialogos.id == 1)
                 {
                     controlNave.controlTextoNave.AstroHablando = true;
@@ -154,15 +201,15 @@ public class Dialogue_Manager : MonoBehaviour
                 if (S_Dialogos.id == 2)
                 {
                     controlNave.controlTextoNave.AstroHablando = false;
-                    controlNave.controlTextoNave.EdgarHablando = false;
-                    controlNave.ControlPanelesNave.ActivarPanelTexto = false;
-                    controlNave.controlTextoNave.hablando = false;
-                    controlNave.controlTextoNave.PanelPerrosActivo = false;
-                    currentSentence = 0;
+                    controlNave.controlTextoNave.EdgarHablando = true;
+                }
+                if (S_Dialogos.id == 3)
+                {
+                    controlNave.controlTextoNave.AstroHablando = false;
+                    controlNave.controlTextoNave.EdgarHablando = true;
                 }
                 break;
-
-            case 4:
+            case 6:
                 if (S_Dialogos.id == 1)
                 {
                     controlNave.controlTextoNave.AstroHablando = false;
@@ -171,8 +218,59 @@ public class Dialogue_Manager : MonoBehaviour
                     controlNave.controlTextoNave.hablando = false;
                     controlNave.controlTextoNave.PanelPerrosActivo = false;
                     currentSentence = 0;
+                    E.SetActive(false);
+                }
+                if (S_Dialogos.id == 2)
+                {
+                    controlNave.controlTextoNave.AstroHablando = true;
+                    controlNave.controlTextoNave.EdgarHablando = false;
+                }
+                if (S_Dialogos.id == 3)
+                {
+                    controlNave.controlTextoNave.AstroHablando = true;
+                    controlNave.controlTextoNave.EdgarHablando = false;
                 }
                 break;
+
+            case 7:
+                if(S_Dialogos.id == 2)
+                {
+                    controlNave.controlTextoNave.AstroHablando = false;
+                    controlNave.controlTextoNave.EdgarHablando = false;
+                    controlNave.ControlPanelesNave.ActivarPanelTexto = false;
+                    controlNave.controlTextoNave.hablando = false;
+                    controlNave.controlTextoNave.PanelPerrosActivo = false;
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    
+                }
+
+                if (S_Dialogos.id == 3)
+                {
+                    controlNave.controlTextoNave.AstroHablando = false;
+                    controlNave.controlTextoNave.EdgarHablando = true;
+                }
+                break;
+
+            case 8:
+                controlNave.controlTextoNave.AstroHablando = false;
+                controlNave.controlTextoNave.EdgarHablando = false;
+                controlNave.ControlPanelesNave.ActivarPanelTexto = false;
+                controlNave.controlTextoNave.hablando = false;
+                controlNave.controlTextoNave.PanelPerrosActivo = false;
+                currentSentence = 0;
+                E.SetActive(false);
+                break;
+
+
+                /*  controlNave.controlTextoNave.AstroHablando = false;
+                    controlNave.controlTextoNave.EdgarHablando = false;
+                    controlNave.ControlPanelesNave.ActivarPanelTexto = false;
+                    controlNave.controlTextoNave.hablando = false;
+                    controlNave.controlTextoNave.PanelPerrosActivo = false;
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    break;*/
         }
     }
 }

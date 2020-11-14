@@ -16,6 +16,7 @@ TagManager:
   - Interaction
   - Interaction2
   - minimap
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -53,14 +54,20 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: test
-    uniqueID: 78398063
-    locked: 0
   - name: starts
     uniqueID: 1229461267
     locked: 0
+  - name: Meteoritos back
+    uniqueID: 78398063
+    locked: 0
+  - name: Nebulosas
+    uniqueID: 3902406915
+    locked: 0
   - name: Player
     uniqueID: 2793573999
+    locked: 0
+  - name: Meteoritos obs
+    uniqueID: 2239060195
     locked: 0
   - name: Enemy
     uniqueID: 1502188951

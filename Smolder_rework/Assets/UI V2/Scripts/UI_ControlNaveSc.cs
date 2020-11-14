@@ -235,10 +235,11 @@ public class UI_ControlNaveSc : MonoBehaviour
     }
     public void BotonRecargaCentro()
     {
-        if (Municion.buttonRecarga1 + Municion.buttonRecarga2 + Municion.buttonRecarga3 + Municion.buttonRecarga4 == Municion.Fire)
+        if (municionCargada)
         {
             print("Fire");
-            Municion.AmmoCount++;
+            manager.Shoot();
+            Municion.AmmoCount = 0;
             Municion.canShoot = 0;
             ControlPanelesNave.ActivarPanelRecarga = false;
             Municion.canShoot = 1;
@@ -246,6 +247,7 @@ public class UI_ControlNaveSc : MonoBehaviour
             Municion.buttonRecarga2 = 0;
             Municion.buttonRecarga3 = 0;
             Municion.buttonRecarga4 = 0;
+            municionCargada = false;
         }
         else
         {

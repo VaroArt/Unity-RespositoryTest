@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class player_interactions : MonoBehaviour
 {
-    public float taskLevel;
-    public float noisyLevel;
+
     public GameObject enemy;
     private AudioSource myaudio;
     public  AudioSource cAudio;

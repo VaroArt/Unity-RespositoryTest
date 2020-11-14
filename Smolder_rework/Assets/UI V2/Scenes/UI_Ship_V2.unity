@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -252,7 +252,6 @@ MonoBehaviour:
   AmmoCount: 0
   flare: {fileID: 7981498184629684868, guid: 9499d37eea5ab8a4e948d22c622d2509, type: 3}
   pointFlare: {fileID: 1904913534}
-  panel: {fileID: 0}
   carganueva: {fileID: 1054862964}
 --- !u!114 &163882331
 MonoBehaviour:
@@ -356,7 +355,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1501393297
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: b7f3fe6fb08e37841ac5d9ec568f89c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -478,6 +477,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.46993473
       objectReference: {fileID: 0}
+    - target: {fileID: 3461034554103133113, guid: fa948fbf69cc6da4d878ce6ec5b20e9b,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032978014324465707, guid: fa948fbf69cc6da4d878ce6ec5b20e9b,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5972377699082235252, guid: fa948fbf69cc6da4d878ce6ec5b20e9b,
         type: 3}
       propertyPath: m_RenderingLayerMask
@@ -581,7 +590,7 @@ SpriteRenderer:
   m_Size: {x: 1.4, y: 1.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &275897039
@@ -890,7 +899,7 @@ SpriteRenderer:
   m_Size: {x: 1.4, y: 1.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &729033055
@@ -941,7 +950,7 @@ PrefabInstance:
     - target: {fileID: 309366780817436214, guid: bac905bdfb1bc3a4d95075aa4d869837,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -16.894592
+      value: -54.062622
       objectReference: {fileID: 0}
     - target: {fileID: 387150386725500038, guid: bac905bdfb1bc3a4d95075aa4d869837,
         type: 3}
@@ -1001,7 +1010,7 @@ PrefabInstance:
     - target: {fileID: 2089785976902146017, guid: bac905bdfb1bc3a4d95075aa4d869837,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.99992836
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2089785976902146017, guid: bac905bdfb1bc3a4d95075aa4d869837,
         type: 3}
@@ -1096,7 +1105,7 @@ PrefabInstance:
     - target: {fileID: 4167453054511814323, guid: bac905bdfb1bc3a4d95075aa4d869837,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -360.91617
+      value: -360.4813
       objectReference: {fileID: 0}
     - target: {fileID: 4167453054511814323, guid: bac905bdfb1bc3a4d95075aa4d869837,
         type: 3}
@@ -2415,7 +2424,7 @@ PrefabInstance:
     - target: {fileID: 862276013590612963, guid: 1c5d0a1c25237174387661be81375a19,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -18.099854
+      value: -18.100098
       objectReference: {fileID: 0}
     - target: {fileID: 862276013590612963, guid: 1c5d0a1c25237174387661be81375a19,
         type: 3}
@@ -2595,7 +2604,7 @@ PrefabInstance:
     - target: {fileID: 3376626121203562027, guid: 1c5d0a1c25237174387661be81375a19,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00022888184
+      value: 0.00021362305
       objectReference: {fileID: 0}
     - target: {fileID: 3499100279748770759, guid: 1c5d0a1c25237174387661be81375a19,
         type: 3}
@@ -2715,7 +2724,7 @@ PrefabInstance:
     - target: {fileID: 5248586814796428901, guid: 1c5d0a1c25237174387661be81375a19,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000022888184
+      value: -0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 5248586814796428901, guid: 1c5d0a1c25237174387661be81375a19,
         type: 3}

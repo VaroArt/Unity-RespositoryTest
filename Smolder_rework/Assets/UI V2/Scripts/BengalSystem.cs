@@ -91,6 +91,7 @@ public class BengalSystem : MonoBehaviour
                 buttonRecarga1 = 1;
             }
         }
+        MecanismoDeRecarga();
     }
     public void Btn2Press()
     {
@@ -104,6 +105,7 @@ public class BengalSystem : MonoBehaviour
                 buttonRecarga2 = 1;
             }
         }
+        MecanismoDeRecarga();
     }
     public void Btn3Press()
     {
@@ -117,6 +119,7 @@ public class BengalSystem : MonoBehaviour
                 buttonRecarga3 = 1;
             }
         }
+        MecanismoDeRecarga();
     }
     public void Btn4Press()
     {
@@ -129,6 +132,19 @@ public class BengalSystem : MonoBehaviour
             {
                 buttonRecarga4 = 1;
             }
+        }
+        MecanismoDeRecarga();
+    }
+
+    public void MecanismoDeRecarga()
+    {
+        if (buttonRecarga1 + buttonRecarga2 + buttonRecarga3 + buttonRecarga4 == Fire)
+        {
+            print("FIRE!");
+            AmmoCount = 1;
+           /* manager.AmmoCount++;
+            manager.canShoot = 0;*/
+
         }
     }
 }

@@ -29,8 +29,7 @@ public class Enemy_1_Rotation : MonoBehaviour
 
     public void rotateAnimation()
     {
-        angleRotation = transform.localEulerAngles.z;
-        angleRotation = (int)angleRotation;
+      
 
         if (angleRotation >= 0)
         {
@@ -82,7 +81,7 @@ public class Enemy_1_Rotation : MonoBehaviour
     private void RotateTowards(Vector2 target)
     {
       Vector2 direction = target - (Vector2)transform.position;
-      direction.Normalize();
+      //direction.Normalize();
       float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
       transform.rotation = Quaternion.Euler(Vector3.forward * (angle + offset));
     }
