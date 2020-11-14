@@ -1046,19 +1046,22 @@ MonoBehaviour:
     VidaBaja: 0
     EstadoDron: 0
   ObjsColorNave:
-  - ObjetoARenderear: {fileID: 0}
+  - ObjetoARenderear: {fileID: 4949065894456600059}
     ColorActivo: {r: 0.6981132, g: 0.18770024, b: 0.18770024, a: 1}
-    ColorInactivo: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
-  - ObjetoARenderear: {fileID: 0}
-    ColorActivo: {r: 0.8207547, g: 0.42973477, b: 0.42973477, a: 1}
-    ColorInactivo: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
-  - ObjetoARenderear: {fileID: 0}
-    ColorActivo: {r: 0.33236915, g: 0.9150943, b: 0.389499, a: 1}
-    ColorInactivo: {r: 0.46226418, g: 0.11120505, b: 0.11120505, a: 1}
-  - ObjetoARenderear: {fileID: 0}
+    ColorInactivo: {r: 1, g: 1, b: 1, a: 1}
+  - ObjetoARenderear: {fileID: 2591750875916432663}
+    ColorActivo: {r: 0.8784314, g: 0.15294118, b: 0.12156863, a: 1}
+    ColorInactivo: {r: 1, g: 1, b: 1, a: 1}
+  - ObjetoARenderear: {fileID: 127463197532342378}
+    ColorActivo: {r: 0.8773585, g: 0.15335816, b: 0.120016046, a: 1}
+    ColorInactivo: {r: 1, g: 1, b: 1, a: 1}
+  - ObjetoARenderear: {fileID: 168689008762339174}
     ColorActivo: {r: 0.33333334, g: 0.91764706, b: 0.39215687, a: 1}
     ColorInactivo: {r: 0.4627451, g: 0.11372549, b: 0.11372549, a: 1}
-  - ObjetoARenderear: {fileID: 0}
+  - ObjetoARenderear: {fileID: 1778401748622376136}
+    ColorActivo: {r: 0.33333334, g: 0.91764706, b: 0.39215687, a: 1}
+    ColorInactivo: {r: 0.4627451, g: 0.11372549, b: 0.11372549, a: 1}
+  - ObjetoARenderear: {fileID: 2521067235747846958}
     ColorActivo: {r: 0.33333334, g: 0.91764706, b: 0.39215687, a: 1}
     ColorInactivo: {r: 0.4627451, g: 0.11372549, b: 0.11372549, a: 1}
   ControlMisiones:
@@ -1070,6 +1073,11 @@ MonoBehaviour:
   ControlPausa:
     PanelNavePausa: {fileID: 862276013542395003}
     ActivarPanelPausa: 0
+  SistemaDelDron:
+    sistemadron: {fileID: 3036566121603638497}
+    erroractivo: 0
+    timer: 0
+    count: 2
   controlTextoNave:
     hablando: 0
     PanelPerrosActivo: 0
@@ -3879,7 +3887,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405733606694157124}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6329,7 +6337,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.3773585, g: 0.005339969, b: 0.005339969, a: 1}
+    m_PressedColor: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -6349,7 +6357,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8270955903060441388}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6809437385256540948}
+        m_MethodName: BotonPausaReaunudar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4261124046501352109
 GameObject:
   m_ObjectHideFlags: 0
@@ -6580,7 +6599,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5453106263053276198}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6809437385256540948}
+        m_MethodName: btonmenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4334787100665637495
 GameObject:
   m_ObjectHideFlags: 0
@@ -6947,7 +6977,7 @@ RectTransform:
   m_Father: {fileID: 862276013385937114}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5556122}
+  m_AnchorMin: {x: 0, y: 0.51786005}
   m_AnchorMax: {x: 0.07189234, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0.000030517578, y: 0.000030517578}
@@ -6973,7 +7003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.019607844}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -8621,10 +8651,10 @@ RectTransform:
   m_Father: {fileID: 221702964824050415}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.97900003, y: 0.8952643}
+  m_AnchorMin: {x: 0.97248834, y: 0.8643935}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -0.0000076293945, y: -0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0.0028076172}
+  m_SizeDelta: {x: -0.00015640259, y: 0.0054473877}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6972070292863569353
 GameObject:
@@ -9025,7 +9055,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1019189969423692990}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6809437385256540948}
+        m_MethodName: btonsalir
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7200340990012804400
 GameObject:
   m_ObjectHideFlags: 0
@@ -9589,7 +9630,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 329640816134336741}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6809437385256540948}
+        m_MethodName: BtonDron
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7488896643101879818
 GameObject:
   m_ObjectHideFlags: 0

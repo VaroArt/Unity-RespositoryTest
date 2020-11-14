@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-//0 y 1 es el panel de vida, 
-//2 y 3 son las luces de recarga
-//4 es la luz del dron
+//0, 1 y 2 es el panel de vida, 
+//3 es la luzs de recarga
+//4 y 5 son las luces del dron
 [System.Serializable]
 public class ObjControlDeColorNave
 {
@@ -184,6 +185,42 @@ public class SystemaPausa
 [System.Serializable]
 public class AppFunciones
 {
+    public Canvas PantallaConfig;
+    public bool ConfiguracionAbierta;
+
+    public void JugarJuego()
+    {
+
+    }
+
+    public void PantallaCreditos()
+    {
+        SceneManager.LoadScene("UI_Credits");
+    }
+
+    public void FuncAbrirConfiguracion()
+    {
+        ConfiguracionAbierta = true;
+    }
+
+    public void Pantallaconfiguraciones()
+    {
+        if (ConfiguracionAbierta == true)
+        {
+            PantallaConfig.enabled = true;
+        }
+
+        if(ConfiguracionAbierta == false)
+        {
+            PantallaConfig.enabled = false;
+        }
+    }
+
+    public void FuncCerrarConfiguracion()
+    {
+        ConfiguracionAbierta = false;
+    }
+
     public void Exitgame()
     {
         Application.Quit();
@@ -198,6 +235,11 @@ public class AppFunciones
     {
         Application.OpenURL("https://www.facebook.com/Dimensions-Games-101686981606579");
     }
+
+    public void Gotomenu()
+    {
+        SceneManager.LoadScene("UI_Menu");
+    }
 }
 
 [System.Serializable]
@@ -209,7 +251,35 @@ public class Dialogos
     public string[] listaDeSentencias;
 }
 
+[System.Serializable]
+public class DronFuncion
+{
+    public GameObject sistemadron;
+    public bool erroractivo;
+    public float timer;
+    public float count;
 
+    public void FuncionError()
+    { 
+        erroractivo = true;
+    }
+
+    public void Errorupdate()
+    {
+        if(erroractivo == true)
+        {
+            sistemadron.SetActive(true);
+            timer += 1 * Time.deltaTime;
+        }
+
+        if(timer >= count)
+        {
+            erroractivo = false;
+            sistemadron.SetActive(false);
+            timer = 0f;
+        }
+    }
+}
 
 public class UI_ControlSc : MonoBehaviour
 {
@@ -225,3 +295,5 @@ public class UI_ControlSc : MonoBehaviour
         
     }
 }
+
+

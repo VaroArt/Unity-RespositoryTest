@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +16,7 @@ public class UI_ControlNaveSc : MonoBehaviour
     [Header("Controles generales")]
     public DiarioyMisiones ControlMisiones;
     public SystemaPausa ControlPausa;
+    public DronFuncion SistemaDelDron;
     [Header("Dialogos")]
     public PerrosHablando controlTextoNave;
     public List<ControlDialogos> Dialogos;
@@ -24,6 +24,8 @@ public class UI_ControlNaveSc : MonoBehaviour
     [Header("Recarga")]
     public BengalSystem Municion;
     public Throw_Flare_Manager manager;
+
+    public AppFunciones extras;
 
 
     // Start is called before the first frame update
@@ -49,27 +51,28 @@ public class UI_ControlNaveSc : MonoBehaviour
         MunicionCargada();
         Estadodeldron();
         ControlPausa.ControlPausa();
+        SistemaDelDron.Errorupdate();
     }
 
     //Control De UI
     void PanelRadar()
     {
-        if(ControlPanelesNave.ActivarPanelRadar == false)
+        if (ControlPanelesNave.ActivarPanelRadar == false)
         {
             CanvasNave.PanelNaveRadar.enabled = false;
         }
-        if(ControlPanelesNave.ActivarPanelRadar == true)
+        if (ControlPanelesNave.ActivarPanelRadar == true)
         {
             CanvasNave.PanelNaveRadar.enabled = true;
         }
     }
     void PanelRecarga()
     {
-        if(ControlPanelesNave.ActivarPanelRecarga == false)
+        if (ControlPanelesNave.ActivarPanelRecarga == false)
         {
             CanvasNave.PanelNaveRecarga.enabled = false;
         }
-        if(ControlPanelesNave.ActivarPanelRecarga == true)
+        if (ControlPanelesNave.ActivarPanelRecarga == true)
         {
             CanvasNave.PanelNaveRecarga.enabled = true;
         }
@@ -80,22 +83,22 @@ public class UI_ControlNaveSc : MonoBehaviour
     }
     void PanelBotonTexto()
     {
-        if(ControlPanelesNave.ActivarPanelTexto == false)
+        if (ControlPanelesNave.ActivarPanelTexto == false)
         {
             CanvasNave.PanelNaveTexto.enabled = false;
         }
-        if(ControlPanelesNave.ActivarPanelTexto == true)
+        if (ControlPanelesNave.ActivarPanelTexto == true)
         {
             CanvasNave.PanelNaveTexto.enabled = true;
         }
     }
     void PanelBotonInteraccion()
     {
-        if(ControlPanelesNave.ActivarPanelInteraccion == false)
+        if (ControlPanelesNave.ActivarPanelInteraccion == false)
         {
             CanvasNave.PanelNaveInteraccion.enabled = false;
         }
-        if(ControlPanelesNave.ActivarPanelInteraccion == true)
+        if (ControlPanelesNave.ActivarPanelInteraccion == true)
         {
             CanvasNave.PanelNaveInteraccion.enabled = true;
         }
@@ -110,11 +113,11 @@ public class UI_ControlNaveSc : MonoBehaviour
     }
     void PanelPerros()
     {
-        if(controlTextoNave.PanelPerrosActivo == true)
+        if (controlTextoNave.PanelPerrosActivo == true)
         {
             CanvasNave.PanelNavePanelPerros.enabled = true;
         }
-        if(controlTextoNave.PanelPerrosActivo == false)
+        if (controlTextoNave.PanelPerrosActivo == false)
         {
             CanvasNave.PanelNavePanelPerros.enabled = false;
         }
@@ -147,11 +150,11 @@ public class UI_ControlNaveSc : MonoBehaviour
     }
     void PanelDialogos()
     {
-        if(controlTextoNave.hablando == false)
+        if (controlTextoNave.hablando == false)
         {
             CanvasNave.PanelNaveDialogos.enabled = false;
         }
-        if(controlTextoNave.hablando == true)
+        if (controlTextoNave.hablando == true)
         {
             CanvasNave.PanelNaveDialogos.enabled = true;
         }
@@ -160,46 +163,48 @@ public class UI_ControlNaveSc : MonoBehaviour
     //funciones
     void VidaBaja()
     {
-        if(ControlEstadoNave.VidaBaja == true)
+        if (ControlEstadoNave.VidaBaja == true)
         {
             ObjsColorNave[0].ObjetoARenderear.SetColor(ObjsColorNave[0].ColorActivo);
             ObjsColorNave[1].ObjetoARenderear.SetColor(ObjsColorNave[1].ColorActivo);
+            ObjsColorNave[2].ObjetoARenderear.SetColor(ObjsColorNave[2].ColorActivo);
         }
-        if(ControlEstadoNave.VidaBaja == false)
+        if (ControlEstadoNave.VidaBaja == false)
         {
             ObjsColorNave[0].ObjetoARenderear.SetColor(ObjsColorNave[0].ColorInactivo);
             ObjsColorNave[1].ObjetoARenderear.SetColor(ObjsColorNave[1].ColorInactivo);
+            ObjsColorNave[2].ObjetoARenderear.SetColor(ObjsColorNave[2].ColorInactivo);
         }
     }
     void MunicionCargada()
     {
-        if(municionCargada == true)
+        if (municionCargada == true)
         {
-            ObjsColorNave[2].ObjetoARenderear.SetColor(ObjsColorNave[2].ColorActivo);
             ObjsColorNave[3].ObjetoARenderear.SetColor(ObjsColorNave[3].ColorActivo);
         }
-        if(municionCargada == false)
+        if (municionCargada == false)
         {
-            ObjsColorNave[2].ObjetoARenderear.SetColor(ObjsColorNave[2].ColorInactivo);
             ObjsColorNave[3].ObjetoARenderear.SetColor(ObjsColorNave[3].ColorInactivo);
         }
     }
     void Estadodeldron()
     {
-        if(ControlEstadoNave.EstadoDron == true)
+        if (ControlEstadoNave.EstadoDron == true)
         {
             ObjsColorNave[4].ObjetoARenderear.SetColor(ObjsColorNave[4].ColorActivo);
+            ObjsColorNave[5].ObjetoARenderear.SetColor(ObjsColorNave[5].ColorActivo);
         }
         if (ControlEstadoNave.EstadoDron == false)
         {
             ObjsColorNave[4].ObjetoARenderear.SetColor(ObjsColorNave[4].ColorInactivo);
+            ObjsColorNave[5].ObjetoARenderear.SetColor(ObjsColorNave[5].ColorInactivo);
         }
     }
 
     //Botones
     public void BotonDeRadar()
     {
-        if(ControlPanelesNave.ActivarPanelRadar == false)
+        if (ControlPanelesNave.ActivarPanelRadar == false)
         {
             ControlPanelesNave.ActivarPanelRadar = true;
         }
@@ -210,10 +215,10 @@ public class UI_ControlNaveSc : MonoBehaviour
     }
     public void BotonDeRecarga()
     {
-        if(ControlPanelesNave.ActivarPanelRecarga == false)
+        if (ControlPanelesNave.ActivarPanelRecarga == false)
         {
             ControlPanelesNave.ActivarPanelRecarga = true;
-            if(Municion.canShoot == 1)
+            if (Municion.canShoot == 1)
             {
                 Municion.Ran();
                 Municion.Fire = Municion.RandomN;
@@ -230,7 +235,7 @@ public class UI_ControlNaveSc : MonoBehaviour
     }
     public void BotonRecargaCentro()
     {
-        if(Municion.buttonRecarga1 + Municion.buttonRecarga2 + Municion.buttonRecarga3 + Municion.buttonRecarga4 == Municion.Fire)
+        if (Municion.buttonRecarga1 + Municion.buttonRecarga2 + Municion.buttonRecarga3 + Municion.buttonRecarga4 == Municion.Fire)
         {
             print("Fire");
             Municion.AmmoCount++;
@@ -249,7 +254,7 @@ public class UI_ControlNaveSc : MonoBehaviour
     }
     public void BotonDeDisparo()
     {
-        if(municionCargada == true)
+        if (municionCargada == true)
         {
             manager.Shoot();
             Municion.AmmoCount = 0;
@@ -270,5 +275,20 @@ public class UI_ControlNaveSc : MonoBehaviour
     }
     public void BotonInteraccion()
     {
+    }
+
+    public void BtonDron()
+    {
+        SistemaDelDron.FuncionError();
+    }
+
+    public void btonsalir()
+    {
+        extras.Exitgame();
+    }
+
+    public void btonmenu()
+    {
+        extras.Gotomenu();
     }
 }
