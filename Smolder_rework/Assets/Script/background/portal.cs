@@ -10,7 +10,8 @@ public class portal : MonoBehaviour
     public GameObject portalabierto;
     public GameObject luceslaterales;
     public int coordenadasCount;
-    public Light2D lightportal;
+    public GameObject lightportal;
+    public CapsuleCollider2D mycapsule;
     void Start()
     {
         
@@ -19,22 +20,23 @@ public class portal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(coordenadasCount == 3)
+       if(coordenadasCount == 2)
         {
+            mycapsule.isTrigger = true;
             portalabierto.gameObject.SetActive(true);
             portalcerrado.gameObject.SetActive(false);
             luceslaterales.gameObject.SetActive(true);
-            lightportal.intensity = 48.85f;
+            lightportal.gameObject.SetActive(true);
         }
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == ("Player"))
         {
-            if (coordenadasCount == 3)
+            if (coordenadasCount == 2)
             {
                 print("endgame");
-                SceneManager.LoadScene("Final");
+                SceneManager.LoadScene("UI_Credits");
             }
         }
       

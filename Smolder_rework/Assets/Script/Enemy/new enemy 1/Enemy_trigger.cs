@@ -9,6 +9,7 @@ public class Enemy_trigger : MonoBehaviour
     public Transform point;
     public Enemy_1_IA enemy_scr;
 
+
     void Start()
     {
         
@@ -26,14 +27,14 @@ public class Enemy_trigger : MonoBehaviour
         {
             if(tipo_trigger == ("entrada")) // si el player colisiona con este trigger y tiene el string necesario, se activara el enemigo para que aparesca y asuste
             {
-              
-              //  enemy_Gobj.gameObject.SetActive(true);
+                                            // aqui activa el audio pa asustar diego
+             
                 Invoke("PointAssing", 0.5f);
             }
             if (tipo_trigger == ("entrada2")) // si el player colisiona con este trigger y tiene el string necesario, se activara el enemigo para que aparesca y asuste
             {
 
-             //   enemy_Gobj.gameObject.SetActive(true);
+                                                // esto es una prueba, pa la interaccion expecifica que marcaste, pero ta incompleto y no lo voy a usar pal testeo
                 Invoke("PointAssing", 0.5f);
             }
         }
