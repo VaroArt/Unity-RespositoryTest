@@ -190,7 +190,7 @@ public class AppFunciones
 
     public void JugarJuego()
     {
-        SceneManager.LoadScene("Game_Scene_Test");
+        SceneManager.LoadScene("UI_LoadScene");
     }
 
     public void PantallaCreditos()
@@ -238,6 +238,7 @@ public class AppFunciones
 
     public void Gotomenu()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("UI_Menu");
     }
 }
