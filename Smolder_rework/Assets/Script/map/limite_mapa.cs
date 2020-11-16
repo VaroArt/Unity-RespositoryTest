@@ -34,7 +34,7 @@ public class limite_mapa : MonoBehaviour
             if(timetoDie > 3)
             {
                 print("Die");
-                SceneManager.LoadScene("Main Menu");
+                SceneManager.LoadScene("UI_Menu");
                 //player.SetActive(false);
             }
         }

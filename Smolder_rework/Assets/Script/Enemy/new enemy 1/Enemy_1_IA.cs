@@ -62,7 +62,7 @@ public class Enemy_1_IA : Enemy_1_Var
         }
         #endregion
 
-        Hide();
+         Hide();
          Reconocimiento();
          taskTrigger();
          taskList();
@@ -317,19 +317,19 @@ public class Enemy_1_IA : Enemy_1_Var
                 
                 print("velocidad normal 1");
                 movimiento.speed = 500f;
-                movimiento.MoveDistance = 3.6f;
+                movimiento.MoveDistance = 5f;
                 break;
             case 2:
                 print("Velocidad ataque");
                 movimiento.speed = 1800f;
-                movimiento.MoveDistance = 4;
+                movimiento.MoveDistance = 6;
               
                 break;
             case 3:
                
                 print("velocidad normal 2");
                 movimiento.speed = 500f;
-                movimiento.MoveDistance = 3.6f;
+                movimiento.MoveDistance = 5f;
                 break;
         }
 
@@ -343,7 +343,6 @@ public class Enemy_1_IA : Enemy_1_Var
             movimiento.rotateEnemy.enemyAnim.SetBool("attack", true);
             movimiento.player.vida--;
             camera_shake.instance.shakeCamera(2f, 0.3f);
-
         }
     }
     public void OnTriggerExit2D(Collider2D collision)

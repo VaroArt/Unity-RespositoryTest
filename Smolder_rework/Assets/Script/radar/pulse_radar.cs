@@ -60,7 +60,18 @@ public class pulse_radar : MonoBehaviour
                     radar2.setColor(new Color(0, 1, 0));
                     //
                 }
-
+                if (collision.name == ("portal minimap"))
+                {
+                    ping_radar radar2 = radarpingtr.GetComponent<ping_radar>();
+                    radar2.setColor(new Color(0.5f, 0.5f, 0.5f));
+                    //
+                }
+                if (collision.name == ("receptor minimap"))
+                {
+                    ping_radar radar2 = radarpingtr.GetComponent<ping_radar>();
+                    radar2.setColor(new Color(0, 1, 1));
+                    //
+                }
             }
            
         }
