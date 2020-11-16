@@ -9,10 +9,15 @@ public class Enemy_trigger : MonoBehaviour
     public Transform point;
     public Enemy_1_IA enemy_scr;
 
+    public AudioClip inter;
+
+    private AudioSource audiointeraccion;
+
+
 
     void Start()
     {
-        
+        audiointeraccion = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,7 +32,8 @@ public class Enemy_trigger : MonoBehaviour
         {
             if(tipo_trigger == ("entrada")) // si el player colisiona con este trigger y tiene el string necesario, se activara el enemigo para que aparesca y asuste
             {
-                                            // aqui activa el audio pa asustar diego
+                audiointeraccion.clip = inter;
+                audiointeraccion.Play();         // aqui activa el audio pa asustar diego
              
                 Invoke("PointAssing", 0.5f);
             }
