@@ -25,10 +25,14 @@ public class Enemy_1_IA : Enemy_1_Var
     [Header("PathFind")]
     public PathFinder Path;
 
+    public AudioClip ataque;
+    public AudioClip perder;
+    private AudioSource audioenemigo;
+
    
     public void Awake()
     {
-      
+
         gfx.mat.SetFloat("_Fade", 1f);
     }
     public void Start()
@@ -39,7 +43,9 @@ public class Enemy_1_IA : Enemy_1_Var
         Path.seeker = GetComponent<Seeker>();
         movimiento.rb = GetComponent<Rigidbody2D>();
         patrol.waitTime = patrol.startWaitTime;
-       
+
+        audioenemigo = GetComponent<AudioSource>();
+
     }
 
     public void Update()
@@ -51,6 +57,7 @@ public class Enemy_1_IA : Enemy_1_Var
            if(movimiento.timercito <= 2)
             {
                 movimiento.player.gameObject.SetActive(false);
+               
             }
 
             // 
@@ -323,6 +330,8 @@ public class Enemy_1_IA : Enemy_1_Var
                 print("Velocidad ataque");
                 movimiento.speed = 1800f;
                 movimiento.MoveDistance = 6;
+                audioenemigo.clip = ataque;
+                audioenemigo.Play();
               
                 break;
             case 3:

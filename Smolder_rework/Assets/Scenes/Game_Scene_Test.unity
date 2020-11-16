@@ -1842,7 +1842,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138033000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.936, y: -11.16, z: -10}
+  m_LocalPosition: {x: -11.65, y: 11.92, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4314,6 +4314,8 @@ MonoBehaviour:
     nextWaypointDistance: 3
     currentWaypoint: 0
     reachedEndOfPath: 0
+  ataque: {fileID: 0}
+  perder: {fileID: 0}
 --- !u!82 &319997892
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10425,6 +10427,8 @@ MonoBehaviour:
     nextWaypointDistance: 3
     currentWaypoint: 0
     reachedEndOfPath: 0
+  ataque: {fileID: 0}
+  perder: {fileID: 0}
 --- !u!50 &424841877
 Rigidbody2D:
   serializedVersion: 4
@@ -11746,7 +11750,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508743046}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.936, y: -11.16, z: -10}
+  m_LocalPosition: {x: -11.65, y: 11.92, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 556320883}
@@ -11865,7 +11869,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.936, y: -11.16, z: -10}
+  m_LocalPosition: {x: -11.65, y: 11.92, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -12800,6 +12804,8 @@ MonoBehaviour:
     nextWaypointDistance: 3
     currentWaypoint: 0
     reachedEndOfPath: 0
+  ataque: {fileID: 0}
+  perder: {fileID: 0}
 --- !u!50 &575744492
 Rigidbody2D:
   serializedVersion: 4
@@ -18381,6 +18387,8 @@ MonoBehaviour:
     nextWaypointDistance: 3
     currentWaypoint: 0
     reachedEndOfPath: 0
+  ataque: {fileID: 0}
+  perder: {fileID: 0}
 --- !u!50 &982759516
 Rigidbody2D:
   serializedVersion: 4
@@ -19137,6 +19145,8 @@ MonoBehaviour:
     nextWaypointDistance: 3
     currentWaypoint: 0
     reachedEndOfPath: 0
+  ataque: {fileID: 0}
+  perder: {fileID: 0}
 --- !u!50 &1048478128
 Rigidbody2D:
   serializedVersion: 4
@@ -27473,6 +27483,8 @@ MonoBehaviour:
     nextWaypointDistance: 3
     currentWaypoint: 0
     reachedEndOfPath: 0
+  ataque: {fileID: 8300000, guid: 03b6db2e09b9b0a4b8aa9e503cdfe778, type: 3}
+  perder: {fileID: 8300000, guid: d62b21ec06303014d94cd1e4907f58aa, type: 3}
 --- !u!50 &1252357428
 Rigidbody2D:
   serializedVersion: 4
@@ -27506,7 +27518,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.505
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -28137,6 +28149,8 @@ MonoBehaviour:
     nextWaypointDistance: 3
     currentWaypoint: 0
     reachedEndOfPath: 0
+  ataque: {fileID: 0}
+  perder: {fileID: 0}
 --- !u!50 &1296122445
 Rigidbody2D:
   serializedVersion: 4
@@ -28920,6 +28934,8 @@ MonoBehaviour:
     nextWaypointDistance: 3
     currentWaypoint: 0
     reachedEndOfPath: 0
+  ataque: {fileID: 0}
+  perder: {fileID: 0}
 --- !u!50 &1389446655
 Rigidbody2D:
   serializedVersion: 4
@@ -32047,6 +32063,8 @@ MonoBehaviour:
     nextWaypointDistance: 3
     currentWaypoint: 0
     reachedEndOfPath: 0
+  ataque: {fileID: 0}
+  perder: {fileID: 0}
 --- !u!82 &1597231112
 AudioSource:
   m_ObjectHideFlags: 0
@@ -32688,6 +32706,8 @@ MonoBehaviour:
     nextWaypointDistance: 3
     currentWaypoint: 0
     reachedEndOfPath: 0
+  ataque: {fileID: 0}
+  perder: {fileID: 0}
 --- !u!50 &1631411397
 Rigidbody2D:
   serializedVersion: 4
@@ -35406,7 +35426,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1819132296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.936, y: -11.16, z: 0}
+  m_LocalPosition: {x: -11.65, y: 11.92, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 592180330}
@@ -38275,7 +38295,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1967863324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.936, y: -11.16, z: -10}
+  m_LocalPosition: {x: -11.65, y: 11.92, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1957267423}
@@ -38478,6 +38498,8 @@ MonoBehaviour:
     nextWaypointDistance: 3
     currentWaypoint: 0
     reachedEndOfPath: 0
+  ataque: {fileID: 0}
+  perder: {fileID: 0}
 --- !u!50 &1976016152
 Rigidbody2D:
   serializedVersion: 4
@@ -38802,6 +38824,8 @@ MonoBehaviour:
     nextWaypointDistance: 3
     currentWaypoint: 0
     reachedEndOfPath: 0
+  ataque: {fileID: 0}
+  perder: {fileID: 0}
 --- !u!50 &2017181293
 Rigidbody2D:
   serializedVersion: 4
