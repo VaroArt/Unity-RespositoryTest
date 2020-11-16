@@ -8,7 +8,7 @@ public class Enemy_trigger : MonoBehaviour
     public GameObject enemy_Gobj;
     public Transform point;
     public Enemy_1_IA enemy_scr;
-
+    public GameObject trigger;
     public AudioClip inter;
 
     private AudioSource audiointeraccion;
@@ -54,6 +54,16 @@ public class Enemy_trigger : MonoBehaviour
            
         }
 
+    }
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.tag == ("Player"))
+        {
+            if(tipo_trigger == ("entrada"))
+            {
+                trigger.SetActive(false);
+            }
+        }
     }
 
     public void PointAssing()

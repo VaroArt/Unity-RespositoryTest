@@ -12,11 +12,12 @@ public class player_script : MonoBehaviour
     public float rotationInterpolation = 0.4f;
     public bool isMoving;
     public int vida;
-
+    public UI_ControlNaveSc hud;
     // solo testeo de algo
     public GameObject bengala;
     void Start()
     {
+       
         myrg = GetComponent<Rigidbody2D>();
         vida = 2;
        
@@ -39,8 +40,17 @@ public class player_script : MonoBehaviour
         }
         Rotation();
 
-        //metodo para probar con la bengala spawneada, nada mas
-        shoot();
+        if(vida <= 1)
+        {
+            hud.ControlEstadoNave.VidaBaja = true;
+        }
+       if(vida <= 0)
+        {
+           
+                input.x = 0f;
+                input.y=0f;
+
+        }
        
     }
     private void FixedUpdate()
@@ -80,6 +90,7 @@ public class player_script : MonoBehaviour
             Instantiate(bengala, transform.position, transform.rotation);
         }
     }
+   
 
    
 }

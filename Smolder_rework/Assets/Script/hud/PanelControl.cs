@@ -35,7 +35,7 @@ public class PanelControl : MonoBehaviour
     public bool AmmoCharged;
 
     public Throw_Flare_Manager manager;
-    public player_triggers player;
+   
     public SistemaBengala bengala;
     public bool botonInteractuar;
     public bool dialogue1;
@@ -318,88 +318,5 @@ public class PanelControl : MonoBehaviour
         }
     }
 
-    public void BotonDialogo()
-    {
-        if (dialogue1)
-        {
-            dialogoManager.DisplayNextSentence();
-            dialogueinteract1++;
-        }
-        if (dialogue2)
-        {
-            dialogoManager.DisplayNextSentence2();
-            dialogueinteract2++;
-        }
-        if (dialogue3)
-        {
-            dialogoManager.DisplayNextSentence3();
-            dialogueinteract3++;
-        }
-
-        if (player.isdialogue)
-        {
-            if(dialogueinteract1 > 7 && dialogue1)
-            {
-                dialogueinteract1 = 1;
-            }
-        }
-        if (player.isdialogue)
-        {
-            if (dialogueinteract2 > 6 && dialogue2)
-            {
-                dialogueinteract2 = 1;
-            }
-        }
-        if (player.isdialogue)
-        {
-            if (dialogueinteract3 > 8 && dialogue3)
-            {
-                dialogueinteract3 = 1;
-            }
-        }
-
-      
-    }
-    public void BotonInteractuar()
-    {
-        InteraccionActiva++;
-        if(InteraccionActiva > 1)
-        {
-            InteraccionActiva = 0;
-        }
-         if (botonInteractuar == false)
-         {
-           botonInteractuar = true;
-           Invoke("interactFalse", .1f);
-         }
-    }
-
-    public void BotonQuit()
-    {
-        Debug.Log("Exit Game");
-        Application.Quit();
-    }
-
-    public void BotonMenu()
-    {
-        Debug.Log("Goto Menu");
-        SceneManager.LoadScene("Main Menu");
-    }
-
-    public void BotonResume()
-    {
-        botonPausa = false;
-        Debug.Log("Resumir Juego");
-    }
-
-    public void QuitPausa()
-    {
-        botonPausa = false;
-
-    }
-    public void interactFalse()
-    {
-        botonInteractuar = false;
-    }
-
+   
 }

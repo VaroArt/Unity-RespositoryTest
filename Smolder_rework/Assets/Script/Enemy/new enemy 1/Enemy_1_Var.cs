@@ -23,8 +23,28 @@ public class VariablesMovimiento
     public float attackRadius;
     public bool move;
     [Header("Variables rotacion")]
-    public float rotateDistance;
+    public float MoveDistance;
     public Enemy_1_Rotation rotation;
+    [Header("Attack")]
+    public player_script player;
+    public float timer;
+    [Header("Variables para hacer un random para ataque")]
+    public int numFinal;
+    public int randomNum;
+    public int getRandom(int min, int max)
+    {
+        randomNum = Random.Range(min, max);
+        while (randomNum == numFinal)
+            randomNum = Random.Range(min, max);
+        numFinal = randomNum;
+        return randomNum;
+    }
+    [Header("Variable para llamar al ataque en cierta cantidad de tiempo")]
+    public float AttackRate;
+    public float nextAttack = 0.0F;
+    public Enemy_1_Rotation rotateEnemy;
+    public camera_shake camerashake;
+    public float timercito;
     [Header("Rb")]
     public Rigidbody2D rb;
 }
@@ -38,12 +58,6 @@ public class SensorEnemigo
     [Space(10)]
     [Range(0,2)]
     public float recognitionTime;
-
-    [Header("Reconocimiento de Secundario")]
-    public bool RecognitionSecondary;
-    [Space(10)]
-    [Range(0, 4)]
-    public float recognitionTime2;
     [Header("Targets")]
     public Transform CurrentTarget;
     public Transform sensorTarget;
@@ -80,6 +94,7 @@ public class PathFinder
     [HideInInspector]public int currentWaypoint = 0;
     [HideInInspector] public bool reachedEndOfPath = false;
 }
+
 
 public class Enemy_1_Var : MonoBehaviour
 {

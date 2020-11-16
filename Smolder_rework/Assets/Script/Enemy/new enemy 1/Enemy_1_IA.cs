@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
-using System.Threading.Tasks;
+using UnityEngine.SceneManagement;
+
 
 public class Enemy_1_IA : Enemy_1_Var
 {
@@ -24,7 +25,7 @@ public class Enemy_1_IA : Enemy_1_Var
     [Header("PathFind")]
     public PathFinder Path;
 
-
+   
     public void Awake()
     {
       
@@ -43,30 +44,50 @@ public class Enemy_1_IA : Enemy_1_Var
 
     public void Update()
     {
-         Hide();
+        #region reset game
+        if (movimiento.player.vida <= 0)
+        {
+            movimiento.timercito -= 1 * Time.deltaTime;
+           if(movimiento.timercito <= 2)
+            {
+                movimiento.player.gameObject.SetActive(false);
+            }
+
+            // 
+           
+        }
+        if (movimiento.timercito <= 0)
+        {
+            SceneManager.LoadScene("UI_Menu");
+        }
+        #endregion
+
+        Hide();
          Reconocimiento();
          taskTrigger();
          taskList();
          movimiento.rotation.canRotate = true;
          movimiento.rotation.targetTr = sensor.CurrentTarget;
 
+        #region Ver target con radius
         float moveDistance = Vector3.Distance(sensor.sensorTarget.transform.position, transform.position);
 
         if (moveDistance < movimiento.attackRadius)
         {
-            // movimiento.move = false;
+           // movimiento.move = false;
         }
-        else if (moveDistance < movimiento.rotateDistance)
+        else if (moveDistance < movimiento.MoveDistance)
         {
            // print("target in radius");
              VerTarget();
         }
-        if (moveDistance > movimiento.rotateDistance)
+        if (moveDistance > movimiento.MoveDistance)
         {
            // print("target not in radius");
             sensor.RecognitionGeneral = false;
             //movimiento.rotation.canRotate = false;
         }
+        #endregion
     }
 
     public void FixedUpdate()
@@ -90,6 +111,11 @@ public class Enemy_1_IA : Enemy_1_Var
         {
             tasks.priority = 15;
             sensor.recognitionTime = 2;
+            if(Time.time > movimiento.nextAttack)
+            {
+                movimiento.nextAttack = Time.time + movimiento.AttackRate;
+                RandomAttackTime();
+            }
             if(sensor.sensorTarget.tag == ("Bengala"))
             {
                 sensor.CurrentTarget = sensor.sensorTarget;
@@ -100,15 +126,20 @@ public class Enemy_1_IA : Enemy_1_Var
                 sensor.CurrentTarget = sensor.sensorTarget;
                 movimiento.move = true;
             }
+         
         }
 
+        
         if (sensor.recognitionTime <= 0)
         {
+           
+           
            //sensor.CurrentTarget = null;
             tasks.priority = 10;
             sensor.recognitionTime = 0;
         }
     }
+   
 
     public void VerTarget()
     {
@@ -122,10 +153,12 @@ public class Enemy_1_IA : Enemy_1_Var
                   Vector3 forward = transform.TransformDirection(sensor.sensorTarget.position - transform.position);
                   Debug.DrawRay(transform.position, forward, Color.green);
                   sensor.RecognitionGeneral = true;
+               
               }
              else
               {
                 sensor.RecognitionGeneral = false;
+              
                 // sensor.sensorTarget = null;
               }
           }
@@ -272,13 +305,60 @@ public class Enemy_1_IA : Enemy_1_Var
             gfx.mat.SetFloat("_Fade", gfx.fade);
         }
     }
-
     #endregion
+
+    #region ATTACK
+    public void RandomAttackTime()
+    {
+        movimiento.getRandom(1, 3);
+        switch (movimiento.randomNum)
+        {
+            case 1:
+                
+                print("velocidad normal 1");
+                movimiento.speed = 500f;
+                movimiento.MoveDistance = 3.6f;
+                break;
+            case 2:
+                print("Velocidad ataque");
+                movimiento.speed = 1800f;
+                movimiento.MoveDistance = 4;
+              
+                break;
+            case 3:
+               
+                print("velocidad normal 2");
+                movimiento.speed = 500f;
+                movimiento.MoveDistance = 3.6f;
+                break;
+        }
+
+    }
+    #endregion
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == ("Player"))
+        {
+            movimiento.rotateEnemy.enemyAnim.SetBool("attack", true);
+            movimiento.player.vida--;
+            camera_shake.instance.shakeCamera(2f, 0.3f);
+
+        }
+    }
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.tag == ("Player"))
+        {
+            movimiento.rotateEnemy.enemyAnim.SetBool("attack", false);
+        }
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(transform.position, movimiento.attackRadius);
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, movimiento.rotateDistance);
+        Gizmos.DrawWireSphere(transform.position, movimiento.MoveDistance);
+
     }
 }

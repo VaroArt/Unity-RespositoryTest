@@ -17,9 +17,18 @@ public class stardust_System : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    
+            moveUp();
+            moveDown();
+        if (player.vida <= 0)
+        {
+            myvelocity.x = 0;
+            myvelocity.y = 0;
+        }
 
-        moveUp();
-        moveDown();
+
+
     }
     public void moveUp()
     {
