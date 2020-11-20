@@ -18774,7 +18774,7 @@ GameObject:
   - component: {fileID: 735166369}
   - component: {fileID: 735166370}
   m_Layer: 0
-  m_Name: Point Light 2D
+  m_Name: Luz linterna
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23502,7 +23502,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.010000001, y: 0}
   m_AnchorMax: {x: 0.26458955, y: 0.8005623}
-  m_AnchoredPosition: {x: -1.7896729, y: 0.1005249}
+  m_AnchoredPosition: {x: -1.7896118, y: 0.1005249}
   m_SizeDelta: {x: 3.7856903, y: -0.20103455}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1034567621
@@ -27597,7 +27597,6 @@ GameObject:
   - component: {fileID: 1271062210}
   - component: {fileID: 1271062209}
   - component: {fileID: 1271062208}
-  - component: {fileID: 1271062207}
   - component: {fileID: 1271062206}
   - component: {fileID: 1271062205}
   m_Layer: 0
@@ -27737,20 +27736,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1271062207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1271062204}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 508098f36e1ae004990ea44595fad699, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 2067719413}
-  suavizado: 5
 --- !u!114 &1271062208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35036,7 +35021,7 @@ GameObject:
   - component: {fileID: 1423734218}
   - component: {fileID: 1423734219}
   m_Layer: 0
-  m_Name: Point Light 2D (1)
+  m_Name: Luz nave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35049,7 +35034,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423734217}
-  m_LocalRotation: {x: -0, y: -0, z: 0.99992526, w: 0.012228033}
+  m_LocalRotation: {x: -0, y: -0, z: 0.9997722, w: -0.02134573}
   m_LocalPosition: {x: -0.016, y: 0.331, z: 0}
   m_LocalScale: {x: 2.783573, y: 2.783573, z: 2.783573}
   m_Children: []
@@ -35074,7 +35059,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 0.92
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 131748496f8e82a6e35875850000000003019ae89795895900000000
+  m_ApplyToSortingLayers: 6f8e82a600000000
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 1
@@ -35084,7 +35069,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 0
   m_PointLightOuterAngle: 298
   m_PointLightInnerRadius: 0.080402
-  m_PointLightOuterRadius: 0.7127811
+  m_PointLightOuterRadius: 0.41285983
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -49433,8 +49418,9 @@ GameObject:
   - component: {fileID: 2067719418}
   - component: {fileID: 2067719417}
   - component: {fileID: 2067719416}
-  - component: {fileID: 2067719414}
   - component: {fileID: 2067719415}
+  - component: {fileID: 2067719414}
+  - component: {fileID: 2067719422}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -49729,6 +49715,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2067719422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067719412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41602923439a2a048baf7a24c7cfcc1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light2d: {fileID: 735166370}
+  initialTime: 0.1
+  Min: 1
+  Max: 3
+  delay: 0.1
+  rangeR: 0
 --- !u!1 &2070644017
 GameObject:
   m_ObjectHideFlags: 0
