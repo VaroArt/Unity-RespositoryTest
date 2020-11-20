@@ -19,10 +19,12 @@ public class Dialogue_Manager : MonoBehaviour
     public int currentSentence;
     public GameObject E;
     public player_interactions player;
+    public int Used;
     void Start()
     {
         sentencias = new Queue<string>();
         //playText.onClick.AddListener(LlamarTexto);
+        Used = 0;
     }
 
     void Update()
@@ -78,24 +80,26 @@ public class Dialogue_Manager : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
-            if (S_Dialogos.id == 1 || S_Dialogos.id == 3 || S_Dialogos.id == 4)
+            if(Used != 1)
             {
-                controlNave.ControlPanelesNave.ActivarPanelTexto = true;
-                IniciarDialogo();
-                E.SetActive(true);
-            }
-            if (S_Dialogos.id == 2)
-            {
-                if (player.currentItem == ("Llave"))
+                if (S_Dialogos.id == 1 || S_Dialogos.id == 3 || S_Dialogos.id == 4)
                 {
                     controlNave.ControlPanelesNave.ActivarPanelTexto = true;
                     IniciarDialogo();
                     E.SetActive(true);
+                   
                 }
+                if (S_Dialogos.id == 2)
+                {
+                    if (player.currentItem == ("Llave"))
+                    {
+                        controlNave.ControlPanelesNave.ActivarPanelTexto = true;
+                        IniciarDialogo();
+                        E.SetActive(true);
+                    }
 
+                }
             }
-
-
         }
     }
 
@@ -104,37 +108,39 @@ public class Dialogue_Manager : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             if(Display.text == sentenciaActiva)
-            {  
-                nextbton.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (Used != 1)
                 {
-                    if(S_Dialogos.id == 1 || S_Dialogos.id == 3 || S_Dialogos.id == 4)
+                    nextbton.SetActive(true);
+                    if (Input.GetKeyDown(KeyCode.E))
                     {
-                      controlNave.controlTextoNave.hablando = true;
-                      controlNave.controlTextoNave.PanelPerrosActivo = true;
-                      MostrarSigSentencia();
-                      currentSentence++;
-                    }
-                    if (S_Dialogos.id == 2)
-                    {
-                        if(player.currentItem == ("Llave"))
+                        if (S_Dialogos.id == 1 || S_Dialogos.id == 3 || S_Dialogos.id == 4)
                         {
                             controlNave.controlTextoNave.hablando = true;
                             controlNave.controlTextoNave.PanelPerrosActivo = true;
                             MostrarSigSentencia();
                             currentSentence++;
                         }
-                     
+                        if (S_Dialogos.id == 2)
+                        {
+                            if (player.currentItem == ("Llave"))
+                            {
+                                controlNave.controlTextoNave.hablando = true;
+                                controlNave.controlTextoNave.PanelPerrosActivo = true;
+                                MostrarSigSentencia();
+                                currentSentence++;
+                            }
+
+                        }
+                        // print(sentencias.Count);
                     }
-
-
-                    // print(sentencias.Count);
+                }
+                else
+                {
+                    nextbton.SetActive(false);
                 }
             }
-            else
-            {
-                nextbton.SetActive(false);
-            }
+              
         }
     }
 
@@ -273,6 +279,7 @@ public class Dialogue_Manager : MonoBehaviour
                     controlNave.controlTextoNave.PanelPerrosActivo = false;
                     currentSentence = 0;
                     E.SetActive(false);
+                    Used = 1;
                 }
                 if (S_Dialogos.id == 2)
                 {
