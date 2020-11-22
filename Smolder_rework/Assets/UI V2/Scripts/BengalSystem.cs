@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class BengalSystem : MonoBehaviour
 {
+    [Header("Bengala HUD")]
     public int buttonRecarga1, buttonRecarga2, buttonRecarga3, buttonRecarga4;
     public CanvasRenderer[] luces;
     public Color colorVerde;
@@ -13,10 +14,12 @@ public class BengalSystem : MonoBehaviour
     int finalNum;
     public int RandomN;
     public int Fire;
-
     public int canShoot;
     public int AmmoCount;
     public UI_ControlNaveSc carganueva;
+    [Header("Bengala spawn")]
+    public GameObject flare;
+    public Transform pointFlare;
 
     int GetRandom(int min, int max)
     {
@@ -146,5 +149,9 @@ public class BengalSystem : MonoBehaviour
             manager.canShoot = 0;*/
 
         }
+    }
+    public void Shoot()
+    {
+        Instantiate(flare, pointFlare.position, pointFlare.rotation);
     }
 }

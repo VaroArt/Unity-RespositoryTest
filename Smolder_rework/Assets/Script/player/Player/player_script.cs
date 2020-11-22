@@ -5,16 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class player_script : MonoBehaviour
 {
+   
     Rigidbody2D myrg;
     [HideInInspector]public Vector2 input;
     float shipAngle;
+    [Header("Variables Movimiento y rotacion")]
     public float speed;
+    float speedInitial = 60f;
     public float rotationInterpolation = 0.4f;
     public bool isMoving;
     public int vida;
     public UI_ControlNaveSc hud;
-    // solo testeo de algo
-    public GameObject bengala;
+    [Header("Variables turbo")]
+    [Range(0,100)]
+    public float cantidadTurbo;
+    public float turbospeed;
+    public bool isTurboActivate;
+
     void Start()
     {
        
@@ -51,13 +58,32 @@ public class player_script : MonoBehaviour
                 input.y=0f;
 
         }
-       
+
+        UseTurbo();
+
+
     }
     private void FixedUpdate()
     {
         myrg.velocity = input * speed * Time.deltaTime;
     }
 
+    public void UseTurbo()
+    {
+        if (Input.GetKey(KeyCode.LeftShift)&& cantidadTurbo !=0)
+        {
+            speed = turbospeed;
+            cantidadTurbo -= 1 * Time.deltaTime;
+            if(cantidadTurbo < 0)
+            {
+                cantidadTurbo = 0;
+            }
+        }
+        else
+        {
+            speed = speedInitial;
+        }
+    }
     void Rotation()
     {
         Vector2 lookDir = new Vector2(-input.x, input.y);
@@ -81,16 +107,4 @@ public class player_script : MonoBehaviour
             myrg.rotation = Mathf.Lerp(myrg.rotation, shipAngle, rotationInterpolation);
         } 
     }
-
-    // metodo de prueba nada mas, luego debe borrarse
-    void shoot()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Instantiate(bengala, transform.position, transform.rotation);
-        }
-    }
-   
-
-   
 }

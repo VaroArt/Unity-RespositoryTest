@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     public Text dialogueText;
-    public PanelControl panel;
-
+  
     public Queue<string> sentences;
     public Queue<string> sentences2;
     public Queue<string> sentences3;

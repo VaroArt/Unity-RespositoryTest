@@ -23,7 +23,7 @@ public class UI_ControlNaveSc : MonoBehaviour
     public LlamarDialogos ControlDialogos;
     [Header("Recarga")]
     public BengalSystem Municion;
-    public Throw_Flare_Manager manager;
+
 
     public AppFunciones extras;
 
@@ -237,8 +237,8 @@ public class UI_ControlNaveSc : MonoBehaviour
     {
         if (municionCargada)
         {
-            print("Fire");
-            manager.Shoot();
+            
+            Municion.Shoot();
             Municion.AmmoCount = 0;
             Municion.canShoot = 0;
             ControlPanelesNave.ActivarPanelRecarga = false;
@@ -258,7 +258,7 @@ public class UI_ControlNaveSc : MonoBehaviour
     {
         if (municionCargada == true)
         {
-            manager.Shoot();
+            Municion.Shoot();
             Municion.AmmoCount = 0;
             municionCargada = false;
         }
