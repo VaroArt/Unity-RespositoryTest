@@ -23,9 +23,11 @@ public class UI_ControlNaveSc : MonoBehaviour
     public LlamarDialogos ControlDialogos;
     [Header("Recarga")]
     public BengalSystem Municion;
-
-
     public AppFunciones extras;
+    [Header("Turbo")]
+    public TurboSystem Turbo;
+    [Header("Linterna")]
+    public Linterna LinternaNave;
 
 
     // Start is called before the first frame update
@@ -44,6 +46,7 @@ public class UI_ControlNaveSc : MonoBehaviour
         PanelMisiones();
         PanelPausa();
         PanelPerros();
+        PanelInventario();
         EdgarHablando();
         AstroHablando();
         PanelDialogos();
@@ -122,6 +125,19 @@ public class UI_ControlNaveSc : MonoBehaviour
             CanvasNave.PanelNavePanelPerros.enabled = false;
         }
     }
+    void PanelInventario()
+    {
+        if(ControlPanelesNave.ActivarPanelInventario == false)
+        {
+            CanvasNave.PanelNaveInventario.enabled = false;
+        }
+        if (ControlPanelesNave.ActivarPanelInventario == true)
+        {
+            CanvasNave.PanelNaveInventario.enabled = true;
+        }
+    }
+        
+    
     void AstroHablando()
     {
         if (controlTextoNave.AstroHablando == true)
@@ -275,8 +291,16 @@ public class UI_ControlNaveSc : MonoBehaviour
     {
         ControlPausa.ControlPausaBton();
     }
-    public void BotonInteraccion()
+    public void BotonInventario()
     {
+        if (ControlPanelesNave.ActivarPanelInventario == false)
+        {
+            ControlPanelesNave.ActivarPanelInventario = true;
+        }
+        else
+        {
+            ControlPanelesNave.ActivarPanelInventario = false;
+        }
     }
 
     public void BtonDron()

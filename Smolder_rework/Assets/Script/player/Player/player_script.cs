@@ -7,15 +7,15 @@ public class player_script : MonoBehaviour
 {
    
     Rigidbody2D myrg;
-    [HideInInspector]public Vector2 input;
+    [HideInInspector] public Vector2 input;
     float shipAngle;
     [Header("Variables Movimiento y rotacion")]
     public float speed;
-    float speedInitial = 60f;
+    [HideInInspector]public float speedInitial;
     public float rotationInterpolation = 0.4f;
     public bool isMoving;
     public int vida;
-    public UI_ControlNaveSc hud;
+    public UI_ControlNaveSc HUD;
     [Header("Variables turbo")]
     [Range(0,100)]
     public float cantidadTurbo;
@@ -49,31 +49,37 @@ public class player_script : MonoBehaviour
 
         if(vida <= 1)
         {
-            hud.ControlEstadoNave.VidaBaja = true;
+            HUD.ControlEstadoNave.VidaBaja = true;
         }
        if(vida <= 0)
         {
            
                 input.x = 0f;
-                input.y=0f;
+                input.y = 0f;
 
         }
 
         UseTurbo();
 
-
+        
     }
     private void FixedUpdate()
     {
-        myrg.velocity = input * speed * Time.deltaTime;
+         myrg.velocity = input * speed * Time.fixedDeltaTime;
+
     }
+   
 
     public void UseTurbo()
+
     {
+        HUD.Turbo.TurboBar.fillAmount = cantidadTurbo / 100f;
         if (Input.GetKey(KeyCode.LeftShift)&& cantidadTurbo !=0)
         {
             speed = turbospeed;
             cantidadTurbo -= 1 * Time.deltaTime;
+           
+
             if(cantidadTurbo < 0)
             {
                 cantidadTurbo = 0;

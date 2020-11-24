@@ -3686,6 +3686,7 @@ MonoBehaviour:
   currentSentence: 0
   E: {fileID: 1623211560}
   player: {fileID: 1819132303}
+  Used: 0
 --- !u!50 &287527952
 Rigidbody2D:
   serializedVersion: 4
@@ -3835,6 +3836,7 @@ MonoBehaviour:
   currentSentence: 0
   E: {fileID: 56934941}
   player: {fileID: 0}
+  Used: 0
 --- !u!50 &296741679
 Rigidbody2D:
   serializedVersion: 4
@@ -11887,8 +11889,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 508098f36e1ae004990ea44595fad699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1819132299}
-  suavizado: 5
 --- !u!82 &519420034
 AudioSource:
   m_ObjectHideFlags: 0
@@ -31755,6 +31755,7 @@ MonoBehaviour:
   currentSentence: 0
   E: {fileID: 888259078}
   player: {fileID: 0}
+  Used: 0
 --- !u!50 &1586851658
 Rigidbody2D:
   serializedVersion: 4
@@ -31861,6 +31862,7 @@ MonoBehaviour:
   currentSentence: 0
   E: {fileID: 1899064277}
   player: {fileID: 0}
+  Used: 0
 --- !u!50 &1589510654
 Rigidbody2D:
   serializedVersion: 4
@@ -33023,7 +33025,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 0}
-  panel: {fileID: 0}
 --- !u!4 &1636242481
 Transform:
   m_ObjectHideFlags: 0
@@ -35367,7 +35368,9 @@ MonoBehaviour:
   isMoving: 0
   vida: 2
   hud: {fileID: 8301138199183869247}
-  bengala: {fileID: 7981498184629684868, guid: 9499d37eea5ab8a4e948d22c622d2509, type: 3}
+  cantidadTurbo: 0
+  turbospeed: 0
+  isTurboActivate: 0
 --- !u!212 &1819132298
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35498,11 +35501,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8102ec27b92cd5b49a2e114a65dde5b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canShoot: 0
-  AmmoCount: 0
-  flare: {fileID: 7981498184629684868, guid: 9499d37eea5ab8a4e948d22c622d2509, type: 3}
-  pointFlare: {fileID: 1400465835}
-  carganueva: {fileID: 8301138199183869247}
 --- !u!114 &1819132303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40822,7 +40820,6 @@ MonoBehaviour:
   ControlDialogos:
     dialogoManager: {fileID: 0}
   Municion: {fileID: 7178414981858919877}
-  manager: {fileID: 0}
   extras:
     PantallaConfig: {fileID: 0}
     ConfiguracionAbierta: 0
@@ -42650,6 +42647,8 @@ MonoBehaviour:
   canShoot: 0
   AmmoCount: 0
   carganueva: {fileID: 8301138199183869247}
+  flare: {fileID: 0}
+  pointFlare: {fileID: 0}
 --- !u!114 &1698588979052805406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47519,6 +47518,7 @@ MonoBehaviour:
   currentSentence: 0
   E: {fileID: 7754931449847187795}
   player: {fileID: 0}
+  Used: 0
 --- !u!58 &3196651771777996272
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -47616,6 +47616,7 @@ MonoBehaviour:
   currentSentence: 0
   E: {fileID: 2082599929}
   player: {fileID: 0}
+  Used: 0
 --- !u!50 &3196651773447128892
 Rigidbody2D:
   serializedVersion: 4
@@ -56890,6 +56891,8 @@ MonoBehaviour:
   canShoot: 0
   AmmoCount: 0
   carganueva: {fileID: 569186960461122513}
+  flare: {fileID: 0}
+  pointFlare: {fileID: 0}
 --- !u!222 &7189389063882941959
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -58768,7 +58771,6 @@ MonoBehaviour:
   ControlDialogos:
     dialogoManager: {fileID: 0}
   Municion: {fileID: 1678545061209246507}
-  manager: {fileID: 1819132302}
   extras:
     PantallaConfig: {fileID: 0}
     ConfiguracionAbierta: 0

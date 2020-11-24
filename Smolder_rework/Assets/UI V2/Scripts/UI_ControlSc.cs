@@ -24,6 +24,7 @@ public class ControlCanvasNave
     public Canvas PanelNaveRecarga;
     public Canvas PanelNavePanelPerros;
     public Canvas PanelNaveDialogos;
+    public Canvas PanelNaveInventario;
 }
 
 [System.Serializable]
@@ -33,6 +34,7 @@ public class BoolPanelesNave
     public bool ActivarPanelRecarga;
     public bool ActivarPanelInteraccion;
     public bool ActivarPanelTexto;
+    public bool ActivarPanelInventario;
 }
 
 //0 es boton interactuar e interaccion activa
@@ -280,6 +282,18 @@ public class DronFuncion
             timer = 0f;
         }
     }
+}
+
+[System.Serializable]
+
+public class TurboSystem
+{
+    public Image TurboBar;
+}
+[System.Serializable]
+public class Linterna
+{
+    public Image LinternaBar;
 }
 
 public class UI_ControlSc : MonoBehaviour
