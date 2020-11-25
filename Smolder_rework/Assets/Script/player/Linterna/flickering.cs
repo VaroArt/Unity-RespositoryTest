@@ -6,15 +6,16 @@ using UnityEngine.Experimental.Rendering.Universal;
 public class flickering : MonoBehaviour
 {
     public Light2D light2d;
-    [Header("Light Count")]
+    [Header("Light Charge")]
     public float lightCharge;
-    public int Count;
+    [HideInInspector]public int Count;
     public UI_ControlNaveSc HUD;
+    public BengalSystem bengala;
     [Header("Flickering system")]
-    public bool iniciate;
+    [HideInInspector] public bool iniciate;
     public int Min;
     public int Max;
-    public int rangeR;
+    [HideInInspector] public int rangeR;
 
     void Start()
     {     
@@ -79,4 +80,15 @@ public class flickering : MonoBehaviour
             light2d.enabled = false;
         }
     }   
+
+    public void RecargaLinterna()
+    {
+        if (bengala.CantBengalas != 0)
+        {
+            bengala.CantBengalas--;
+            lightCharge += 20f;
+        }
+     
+
+    }
 }

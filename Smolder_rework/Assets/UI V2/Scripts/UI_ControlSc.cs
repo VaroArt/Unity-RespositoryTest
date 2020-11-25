@@ -294,8 +294,19 @@ public class TurboSystem
 public class Linterna
 {
     public Image LinternaBar;
+    
 }
+[System.Serializable]
+public class Invetario
+{
+    public Text TurboText;
+    public Text BengalaText;
 
+    public void VisibleBengalaHUD()
+    {
+
+    }
+}
 public class UI_ControlSc : MonoBehaviour
 {
     // Start is called before the first frame update

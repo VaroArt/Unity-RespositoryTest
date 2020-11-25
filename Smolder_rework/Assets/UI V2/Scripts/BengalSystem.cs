@@ -11,13 +11,17 @@ public class BengalSystem : MonoBehaviour
     public Color colorVerde;
     public Color colorRojo;
     public Color colorInactivo;
+    [Header("Municion Bengala")]
+    public int CantBengalas;
     int finalNum;
+    [Header("Puzzle")]
     public int RandomN;
     public int Fire;
     public int canShoot;
     public int AmmoCount;
     public UI_ControlNaveSc carganueva;
     [Header("Bengala spawn")]
+    public GameObject NoMunicion;
     public GameObject flare;
     public Transform pointFlare;
 
@@ -32,12 +36,20 @@ public class BengalSystem : MonoBehaviour
 
     void Start()
     {
-        canShoot = 1;
+       // canShoot = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
+        // visible municion en inventario
+
+
+        if (CantBengalas != 0)
+        {
+            canShoot = 1;
+        }
+        else canShoot = 0;
         //parte del trowflare manager
         if (AmmoCount == 1)
         {
@@ -141,7 +153,7 @@ public class BengalSystem : MonoBehaviour
 
     public void MecanismoDeRecarga()
     {
-        if (buttonRecarga1 + buttonRecarga2 + buttonRecarga3 + buttonRecarga4 == Fire)
+        if (buttonRecarga1 + buttonRecarga2 + buttonRecarga3 + buttonRecarga4 == Fire &&CantBengalas !=0)
         {
             print("FIRE!");
             AmmoCount = 1;

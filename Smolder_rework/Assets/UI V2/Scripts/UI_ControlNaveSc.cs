@@ -28,6 +28,8 @@ public class UI_ControlNaveSc : MonoBehaviour
     public TurboSystem Turbo;
     [Header("Linterna")]
     public Linterna LinternaNave;
+    [Header("Inventario")]
+    public Invetario inventario;
 
 
     // Start is called before the first frame update
@@ -55,6 +57,7 @@ public class UI_ControlNaveSc : MonoBehaviour
         Estadodeldron();
         ControlPausa.ControlPausa();
         SistemaDelDron.Errorupdate();
+        BengalaInventario();
     }
 
     //Control De UI
@@ -257,6 +260,7 @@ public class UI_ControlNaveSc : MonoBehaviour
             Municion.Shoot();
             Municion.AmmoCount = 0;
             Municion.canShoot = 0;
+            Municion.CantBengalas--;
             ControlPanelesNave.ActivarPanelRecarga = false;
             Municion.canShoot = 1;
             Municion.buttonRecarga1 = 0;
@@ -302,7 +306,10 @@ public class UI_ControlNaveSc : MonoBehaviour
             ControlPanelesNave.ActivarPanelInventario = false;
         }
     }
-
+    public void BengalaInventario()
+    {
+        inventario.BengalaText.text = "X " + Municion.CantBengalas.ToString();
+    }
     public void BtonDron()
     {
         SistemaDelDron.FuncionError();
