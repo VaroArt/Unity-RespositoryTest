@@ -302,10 +302,7 @@ public class Invetario
     public Text TurboText;
     public Text BengalaText;
 
-    public void VisibleBengalaHUD()
-    {
-
-    }
+  
 }
 public class UI_ControlSc : MonoBehaviour
 {

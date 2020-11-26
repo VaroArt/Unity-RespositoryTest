@@ -23,7 +23,7 @@ public class receptor_coordenadas : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == ("Player"))
+      /*  if (collision.tag == ("Player"))
         {
             if(player.coordenadaCount == 1)
             {
@@ -45,6 +45,6 @@ public class receptor_coordenadas : MonoBehaviour
           CoordenadaOff.gameObject.SetActive(false);
           CoordenadaOn.gameObject.SetActive(true);
           myportal.coordenadasCount ++;*/
-        }
+     //   }
     }
 }

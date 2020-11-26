@@ -19,6 +19,7 @@ public class Dialogue_Manager : MonoBehaviour
     public int currentSentence;
     public GameObject E;
     public player_interactions player;
+    public InventarioSystem inventorySystem;
     public int Used;
     void Start()
     {
@@ -91,13 +92,13 @@ public class Dialogue_Manager : MonoBehaviour
                 }
                 if (S_Dialogos.id == 2)
                 {
-                    if (player.currentItem == ("Llave"))
+                 /*   if (player.currentItem == ("Llave"))
                     {
                         controlNave.ControlPanelesNave.ActivarPanelTexto = true;
                         IniciarDialogo();
                         E.SetActive(true);
                     }
-
+                    */
                 }
             }
         }
@@ -123,13 +124,13 @@ public class Dialogue_Manager : MonoBehaviour
                         }
                         if (S_Dialogos.id == 2)
                         {
-                            if (player.currentItem == ("Llave"))
+                           /* if (player.currentItem == ("Llave"))
                             {
                                 controlNave.controlTextoNave.hablando = true;
                                 controlNave.controlTextoNave.PanelPerrosActivo = true;
                                 MostrarSigSentencia();
                                 currentSentence++;
-                            }
+                            }*/
 
                         }
                         // print(sentencias.Count);

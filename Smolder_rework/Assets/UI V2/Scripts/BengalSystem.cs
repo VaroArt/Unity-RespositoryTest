@@ -11,6 +11,7 @@ public class BengalSystem : MonoBehaviour
     public Color colorVerde;
     public Color colorRojo;
     public Color colorInactivo;
+    public GameObject Error;
     [Header("Municion Bengala")]
     public int CantBengalas;
     int finalNum;

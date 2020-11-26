@@ -240,7 +240,7 @@ public class UI_ControlNaveSc : MonoBehaviour
             if (Municion.canShoot == 1)
             {
                 Municion.Ran();
-                Municion.Fire = Municion.RandomN;
+                Municion.Fire = Municion.RandomN;     
             }
         }
         else
@@ -251,6 +251,17 @@ public class UI_ControlNaveSc : MonoBehaviour
             Municion.buttonRecarga3 = 0;
             Municion.buttonRecarga4 = 0;
         }
+        if (Municion.CantBengalas == 0)
+        {
+            //  print("no bullet");
+            Municion.Error.SetActive(true);
+            Municion.RandomN = 0;
+        }
+        else 
+        {
+            Municion.Error.SetActive(false);
+        }
+       
     }
     public void BotonRecargaCentro()
     {
@@ -267,6 +278,11 @@ public class UI_ControlNaveSc : MonoBehaviour
             Municion.buttonRecarga2 = 0;
             Municion.buttonRecarga3 = 0;
             Municion.buttonRecarga4 = 0;
+            //delete here
+            Municion.luces[0].SetColor(Municion.colorInactivo);
+            Municion.luces[1].SetColor(Municion.colorInactivo);
+            Municion.luces[2].SetColor(Municion.colorInactivo);
+            Municion.luces[3].SetColor(Municion.colorInactivo);
             municionCargada = false;
         }
         else

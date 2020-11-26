@@ -11,13 +11,13 @@ public class player_interactions : MonoBehaviour
      public  AudioSource cAudio;
      public AudioClip test;*/
     public Dialogue_Manager manager;
-    public string currentItem;
-    public int coordenadaCount;
-    public Image Llave, Coordenada1, Coordenada2;
+   // public string currentItem;
+   // public int coordenadaCount;
+   // public Image Llave, Coordenada1, Coordenada2;
     void Start()
     {
         //   myaudio = GetComponent<AudioSource>(); // esto vo mismo me lo enseñaste asi que no se porque te lo comento
-        currentItem = ("null");
+      //  currentItem = ("null");
     }
 
     // Update is called once per frame
@@ -41,14 +41,14 @@ public class player_interactions : MonoBehaviour
            {
 
            }*/
-        if (collision.tag == ("Evento Texto"))
+       /* if (collision.tag == ("Evento Texto"))
         {
             manager = collision.GetComponent<Dialogue_Manager>();
-        }
+        }*/
     }
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == ("Evento Texto"))
+     /*   if (collision.tag == ("Evento Texto"))
         {
             if(manager.S_Dialogos.id == 4)
             {
@@ -84,7 +84,7 @@ public class player_interactions : MonoBehaviour
                  
                 }
             }
-        }
+        }*/
     }
 
     public void OnTriggerExit2D(Collider2D collision)
@@ -94,9 +94,9 @@ public class player_interactions : MonoBehaviour
               myaudio.Stop();  // aca es pa volver al audio de camara original, no creo que lo usemos
               cAudio.Play();
           }*/
-        if (collision.tag == ("Evento Texto"))
+      /*  if (collision.tag == ("Evento Texto"))
         {
             manager = null;
-        }
+        }*/
     }
 }
