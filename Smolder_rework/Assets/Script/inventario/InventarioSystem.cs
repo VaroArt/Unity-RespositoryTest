@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class InventarioSystem : MonoBehaviour
 {
-    public int Slot;
+    public GameObject slot1, slot2, slot3;
+    public bool slot1Active, slot2Active, slot3Active;
+    public string[] ItemList;
+    public int coordenadaCount;
     void Start()
     {
         
@@ -13,19 +16,5 @@ public class InventarioSystem : MonoBehaviour
     {
         
     }
-    public void SlotInventory()
-    {
-        switch (Slot)
-        {
-            case 1:
-
-                break;
-            case 2:
-
-                break;
-            case 3:
-
-                break;
-        }
-    }
+    
 }

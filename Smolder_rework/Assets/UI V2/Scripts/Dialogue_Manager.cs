@@ -99,6 +99,23 @@ public class Dialogue_Manager : MonoBehaviour
                         E.SetActive(true);
                     }
                     */
+                    if(inventorySystem.ItemList[0] ==("Llave") || inventorySystem.ItemList[1] ==("Llave") || inventorySystem.ItemList[2] == ("Llave"))
+                    {
+                        controlNave.ControlPanelesNave.ActivarPanelTexto = true;
+                        IniciarDialogo();
+                        E.SetActive(true);
+                    }
+                    else
+                    {
+                        controlNave.ControlPanelesNave.ActivarPanelTexto = false;
+                        //IniciarDialogo();
+                        E.SetActive(false);
+                        Display.text = "Parece que esta nave necesita una llave maestra para poder abrirla.".ToString();
+                        controlNave.controlTextoNave.hablando = true;
+                        controlNave.controlTextoNave.PanelPerrosActivo = true;
+                        controlNave.controlTextoNave.EdgarHablando = true;
+                       
+                    }
                 }
             }
         }
@@ -124,16 +141,22 @@ public class Dialogue_Manager : MonoBehaviour
                         }
                         if (S_Dialogos.id == 2)
                         {
-                           /* if (player.currentItem == ("Llave"))
+                            /* if (player.currentItem == ("Llave"))
+                             {
+                                 controlNave.controlTextoNave.hablando = true;
+                                 controlNave.controlTextoNave.PanelPerrosActivo = true;
+                                 MostrarSigSentencia();
+                                 currentSentence++;
+                             }*/
+                            if (inventorySystem.ItemList[0] == ("Llave") || inventorySystem.ItemList[1] == ("Llave") || inventorySystem.ItemList[2] == ("Llave"))
                             {
                                 controlNave.controlTextoNave.hablando = true;
                                 controlNave.controlTextoNave.PanelPerrosActivo = true;
                                 MostrarSigSentencia();
                                 currentSentence++;
-                            }*/
-
+                            }
                         }
-                        // print(sentencias.Count);
+                       
                     }
                 }
                 else
@@ -280,6 +303,27 @@ public class Dialogue_Manager : MonoBehaviour
                     controlNave.controlTextoNave.PanelPerrosActivo = false;
                     currentSentence = 0;
                     E.SetActive(false);
+                    if (inventorySystem.slot1Active != true)
+                    {
+                        inventorySystem.slot1.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+                        inventorySystem.slot1Active = true;
+                        inventorySystem.ItemList[0] = "Coordenada 1";
+                        inventorySystem.coordenadaCount++;
+                    }
+                    else if (inventorySystem.slot1Active && inventorySystem.slot2Active!=true && inventorySystem.slot3Active != true)
+                    {
+                        inventorySystem.slot2.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+                        inventorySystem.slot2Active = true;
+                        inventorySystem.ItemList[1] = "Coordenada 1";
+                        inventorySystem.coordenadaCount++;
+                    }
+                    else if(inventorySystem.slot1Active && inventorySystem.slot2Active && inventorySystem.slot3Active != true)
+                    {
+                        inventorySystem.slot3.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+                        inventorySystem.slot3Active = true;
+                        inventorySystem.ItemList[2] = "Coordenada 1";
+                        inventorySystem.coordenadaCount++;
+                    }
                     Used = 1;
                 }
                 if (S_Dialogos.id == 2)
@@ -301,7 +345,26 @@ public class Dialogue_Manager : MonoBehaviour
                     controlNave.controlTextoNave.PanelPerrosActivo = false;
                     currentSentence = 0;
                     E.SetActive(false);
-                   
+                    Used = 1;
+                    if (inventorySystem.slot1Active != true)
+                    {
+                        inventorySystem.slot1.gameObject.transform.GetChild(2).gameObject.SetActive(true);
+                        inventorySystem.slot1Active = true;
+                        inventorySystem.ItemList[0] = "Llave";
+                    }
+                    else if (inventorySystem.slot1Active && inventorySystem.slot2Active != true && inventorySystem.slot3Active != true)
+                    {
+                        inventorySystem.slot2.gameObject.transform.GetChild(2).gameObject.SetActive(true);
+                        inventorySystem.slot2Active = true;
+                        inventorySystem.ItemList[1] = "Llave";
+                    }
+                    else if (inventorySystem.slot1Active && inventorySystem.slot2Active && inventorySystem.slot3Active != true)
+                    {
+                        inventorySystem.slot3.gameObject.transform.GetChild(2).gameObject.SetActive(true);
+                        inventorySystem.slot3Active = true;
+                        inventorySystem.ItemList[2] = "Llave";
+                    }
+
                 }
                 break;
 
@@ -314,8 +377,30 @@ public class Dialogue_Manager : MonoBehaviour
                     controlNave.controlTextoNave.hablando = false;
                     controlNave.controlTextoNave.PanelPerrosActivo = false;
                     currentSentence = 0;
+                    Used = 1;
                     E.SetActive(false);
-                    
+                    if (inventorySystem.slot1Active != true)
+                    {
+                        inventorySystem.slot1.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+                        inventorySystem.slot1Active = true;
+                        inventorySystem.ItemList[0] = "Coordenada 2";
+                        inventorySystem.coordenadaCount++;
+                    }
+                    else if (inventorySystem.slot1Active && inventorySystem.slot2Active != true && inventorySystem.slot3Active != true)
+                    {
+                        inventorySystem.slot2.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+                        inventorySystem.slot2Active = true;
+                        inventorySystem.ItemList[1] = "Coordenada 2";
+                        inventorySystem.coordenadaCount++;
+                    }
+                    else if (inventorySystem.slot1Active && inventorySystem.slot2Active && inventorySystem.slot3Active != true)
+                    {
+                        inventorySystem.slot3.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+                        inventorySystem.slot3Active = true;
+                        inventorySystem.ItemList[2] = "Coordenada 2";
+                        inventorySystem.coordenadaCount++;
+                    }
+
                 }
 
                 if (S_Dialogos.id == 3)
@@ -333,17 +418,7 @@ public class Dialogue_Manager : MonoBehaviour
                 controlNave.controlTextoNave.PanelPerrosActivo = false;
                 currentSentence = 0;
                 E.SetActive(false);
-                break;
-
-
-                /*  controlNave.controlTextoNave.AstroHablando = false;
-                    controlNave.controlTextoNave.EdgarHablando = false;
-                    controlNave.ControlPanelesNave.ActivarPanelTexto = false;
-                    controlNave.controlTextoNave.hablando = false;
-                    controlNave.controlTextoNave.PanelPerrosActivo = false;
-                    currentSentence = 0;
-                    E.SetActive(false);
-                    break;*/
+                break;       
         }
     }
 }
