@@ -134,13 +134,13 @@ public class UI_ControlNaveSc : MonoBehaviour
         {
             CanvasNave.PanelNaveInventario.enabled = false;
         }
+
         if (ControlPanelesNave.ActivarPanelInventario == true)
         {
             CanvasNave.PanelNaveInventario.enabled = true;
         }
     }
         
-    
     void AstroHablando()
     {
         if (controlTextoNave.AstroHablando == true)

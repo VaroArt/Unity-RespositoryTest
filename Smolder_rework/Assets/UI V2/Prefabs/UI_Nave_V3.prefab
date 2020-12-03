@@ -33,7 +33,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.3754883, y: 0.509}
   m_AnchorMax: {x: 0.7142774, y: 0.734414}
-  m_AnchoredPosition: {x: 0.000076293945, y: 0}
+  m_AnchoredPosition: {x: 0.000061035156, y: 0}
   m_SizeDelta: {x: 0, y: -0.000030517578}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &48849288042689762
@@ -128,7 +128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2914114237821760195
 RectTransform:
   m_ObjectHideFlags: 0
@@ -822,7 +822,7 @@ GameObject:
   - component: {fileID: 1002005138670108464}
   - component: {fileID: 6851539038877136758}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Radar Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1863,7 +1863,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1458135109869720927
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2074,6 +2074,7 @@ GameObject:
   - component: {fileID: 862276012643545201}
   - component: {fileID: 6809437385256540948}
   - component: {fileID: 4181321618148152576}
+  - component: {fileID: 2695310064745414787}
   m_Layer: 5
   m_Name: UI_Nave_V3
   m_TagString: Untagged
@@ -2192,7 +2193,7 @@ MonoBehaviour:
     PanelNaveRecarga: {fileID: 862276012536443814}
     PanelNavePanelPerros: {fileID: 862276013679519437}
     PanelNaveDialogos: {fileID: 862276013207959641}
-    PanelNaveInventario: {fileID: 0}
+    PanelNaveInventario: {fileID: 4673377958652880108}
   ControlPanelesNave:
     ActivarPanelRadar: 0
     ActivarPanelRecarga: 0
@@ -2297,6 +2298,46 @@ MonoBehaviour:
   NoMunicion: {fileID: 0}
   flare: {fileID: 0}
   pointFlare: {fileID: 0}
+--- !u!114 &2695310064745414787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862276012643545200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb56271dde804bd4d92a2a4777f26b8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutotial_elements:
+    Paneles:
+    - {fileID: 902312300325401672}
+    - {fileID: 3107418778405058453}
+    - {fileID: 882811348525568009}
+    - {fileID: 2362856926836273082}
+    - {fileID: 8807593387399938399}
+    - {fileID: 6851539038877136758}
+    - {fileID: 2853687768094450657}
+    - {fileID: 2659932406795155133}
+    - {fileID: 363725242773204686}
+    CanvasTexto1: {fileID: 7230928347925374773}
+    CanvasTexto2: {fileID: 9193549784542308759}
+    Mision: {fileID: 1720564480129867434}
+    nextbton: {fileID: 3047340459349403819}
+    TutoBtonRecarga: 0
+    TutopanelRegarga: 0
+    TutoBtonRadar: 0
+    TutoPanelRadar: 0
+    TutoBtonInventario: 0
+    TutoPanelInventario: 0
+    TutoBtonDron: 0
+    TutoPanelVida: 0
+    TutoPanelCentral: 0
+    Texto1Activo: 0
+    Texto2Activo: 0
+    nextBtonact: 0
+    MisionAct: 0
 --- !u!1 &862276012796504158
 GameObject:
   m_ObjectHideFlags: 0
@@ -5203,7 +5244,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5201050982402213146}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6809437385256540948}
+        m_MethodName: BotonInventario
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1401368819316265246
 GameObject:
   m_ObjectHideFlags: 0
@@ -5389,7 +5441,7 @@ GameObject:
   - component: {fileID: 1022098464345731639}
   - component: {fileID: 1720564480129867434}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Mision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5411,7 +5463,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.7777759}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.08963013}
+  m_AnchoredPosition: {x: 0, y: 0.08959961}
   m_SizeDelta: {x: 0, y: 0.17913818}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1022098464345731639
@@ -7099,7 +7151,7 @@ GameObject:
   - component: {fileID: 7655029873379996381}
   - component: {fileID: 2659932406795155133}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Inventario Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7818,12 +7870,12 @@ GameObject:
   - component: {fileID: 4605771042504257952}
   - component: {fileID: 8289524683974804062}
   m_Layer: 5
-  m_Name: Image
+  m_Name: NextBton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2812695267948149112
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10173,7 +10225,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7066582365882379199
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10608,12 +10660,12 @@ GameObject:
   - component: {fileID: 1972200087622166385}
   - component: {fileID: 3107418778405058453}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Life Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2813512979903732543
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10815,7 +10867,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2104382682804875608
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12205,7 +12257,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.26177737, y: 0.47049415}
   m_AnchorMax: {x: 0.3754883, y: 0.7464714}
-  m_AnchoredPosition: {x: 0.000091552734, y: -0.0018005371}
+  m_AnchoredPosition: {x: 0, y: -0.0018005371}
   m_SizeDelta: {x: 0.000030517578, y: 0.0037841797}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6266552939009693285
@@ -12220,12 +12272,12 @@ GameObject:
   - component: {fileID: 3815846450391719332}
   - component: {fileID: 882811348525568009}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Dron Bton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &595781541759189326
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12838,12 +12890,12 @@ GameObject:
   - component: {fileID: 4730262640322679228}
   - component: {fileID: 363725242773204686}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Inventario Bton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1329897125216636069
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13209,7 +13261,7 @@ GameObject:
   - component: {fileID: 5432787597973838474}
   - component: {fileID: 2853687768094450657}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Radar Bton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15650,12 +15702,12 @@ GameObject:
   - component: {fileID: 4120544903868041303}
   - component: {fileID: 902312300325401672}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Panel Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1546627258359570744
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16134,7 +16186,7 @@ GameObject:
   - component: {fileID: 4175393274072092376}
   - component: {fileID: 2362856926836273082}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Recarga Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16580,7 +16632,7 @@ GameObject:
   - component: {fileID: 3954779075109085631}
   - component: {fileID: 8807593387399938399}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Recarga Bton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

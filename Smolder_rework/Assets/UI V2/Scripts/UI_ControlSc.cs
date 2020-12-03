@@ -304,6 +304,33 @@ public class Invetario
 
   
 }
+
+[System.Serializable]
+public class TutorialElements
+{
+    public Image[] Paneles;
+    public Canvas CanvasTexto1;
+    public Canvas CanvasTexto2;
+    public Image Mision;
+    public GameObject nextbton;
+    [Space(10)]
+    public bool TutoBtonRecarga;
+    public bool TutopanelRegarga;
+    public bool TutoBtonRadar;
+    public bool TutoPanelRadar;
+    public bool TutoBtonInventario;
+    public bool TutoPanelInventario;
+    public bool TutoBtonDron;
+    public bool TutoPanelVida;
+    public bool TutoPanelCentral;
+    [Space(10)]
+    public bool Texto1Activo;
+    public bool Texto2Activo;
+    public bool nextBtonact;
+    public bool MisionAct;
+}
+
+
 public class UI_ControlSc : MonoBehaviour
 {
     // Start is called before the first frame update

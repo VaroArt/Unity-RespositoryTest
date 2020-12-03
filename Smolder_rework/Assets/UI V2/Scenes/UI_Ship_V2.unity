@@ -2447,7 +2447,7 @@ PrefabInstance:
     - target: {fileID: 862276013590612963, guid: 1c5d0a1c25237174387661be81375a19,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -18.100586
+      value: -18.10083
       objectReference: {fileID: 0}
     - target: {fileID: 862276013590612963, guid: 1c5d0a1c25237174387661be81375a19,
         type: 3}
@@ -2542,7 +2542,7 @@ PrefabInstance:
     - target: {fileID: 1215465991989159481, guid: 1c5d0a1c25237174387661be81375a19,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000061035156
+      value: 0.00012207031
       objectReference: {fileID: 0}
     - target: {fileID: 1243534217642361866, guid: 1c5d0a1c25237174387661be81375a19,
         type: 3}
@@ -2562,7 +2562,7 @@ PrefabInstance:
     - target: {fileID: 1325333524335633435, guid: 1c5d0a1c25237174387661be81375a19,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.13545227
+      value: 0.13543701
       objectReference: {fileID: 0}
     - target: {fileID: 1398634162763036408, guid: 1c5d0a1c25237174387661be81375a19,
         type: 3}
@@ -2733,6 +2733,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.000015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 2695310064745414787, guid: 1c5d0a1c25237174387661be81375a19,
+        type: 3}
+      propertyPath: tutotial_elements.TutoBtonInventario
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2703175472114414397, guid: 1c5d0a1c25237174387661be81375a19,
         type: 3}
@@ -3082,7 +3087,7 @@ PrefabInstance:
     - target: {fileID: 6297790393991570296, guid: 1c5d0a1c25237174387661be81375a19,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.69999695
+      value: 0.69999886
       objectReference: {fileID: 0}
     - target: {fileID: 6297790393991570296, guid: 1c5d0a1c25237174387661be81375a19,
         type: 3}
@@ -3183,6 +3188,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ObjsColorNave.Array.data[0].ColorActivo.b
       value: 0.14489143
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809437385256540948, guid: 1c5d0a1c25237174387661be81375a19,
+        type: 3}
+      propertyPath: ControlPanelesNave.ActivarPanelInventario
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6938947266455544484, guid: 1c5d0a1c25237174387661be81375a19,
         type: 3}
@@ -3357,7 +3367,7 @@ PrefabInstance:
     - target: {fileID: 8698538930944735062, guid: 1c5d0a1c25237174387661be81375a19,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.089660645
+      value: 0.08972168
       objectReference: {fileID: 0}
     - target: {fileID: 8700794549897566470, guid: 1c5d0a1c25237174387661be81375a19,
         type: 3}
