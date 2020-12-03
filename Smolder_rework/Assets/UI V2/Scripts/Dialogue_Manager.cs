@@ -92,13 +92,6 @@ public class Dialogue_Manager : MonoBehaviour
                 }
                 if (S_Dialogos.id == 2)
                 {
-                 /*   if (player.currentItem == ("Llave"))
-                    {
-                        controlNave.ControlPanelesNave.ActivarPanelTexto = true;
-                        IniciarDialogo();
-                        E.SetActive(true);
-                    }
-                    */
                     if(inventorySystem.ItemList[0] ==("Llave") || inventorySystem.ItemList[1] ==("Llave") || inventorySystem.ItemList[2] == ("Llave"))
                     {
                         controlNave.ControlPanelesNave.ActivarPanelTexto = true;
@@ -108,9 +101,9 @@ public class Dialogue_Manager : MonoBehaviour
                     else
                     {
                         controlNave.ControlPanelesNave.ActivarPanelTexto = false;
-                        //IniciarDialogo();
                         E.SetActive(false);
                         Display.text = "Parece que esta nave necesita una llave maestra para poder abrirla.".ToString();
+                        StartCoroutine(TypeTheSentence("Parece que esta nave necesita una llave maestra para poder abrirla."));
                         controlNave.controlTextoNave.hablando = true;
                         controlNave.controlTextoNave.PanelPerrosActivo = true;
                         controlNave.controlTextoNave.EdgarHablando = true;
@@ -141,13 +134,7 @@ public class Dialogue_Manager : MonoBehaviour
                         }
                         if (S_Dialogos.id == 2)
                         {
-                            /* if (player.currentItem == ("Llave"))
-                             {
-                                 controlNave.controlTextoNave.hablando = true;
-                                 controlNave.controlTextoNave.PanelPerrosActivo = true;
-                                 MostrarSigSentencia();
-                                 currentSentence++;
-                             }*/
+      
                             if (inventorySystem.ItemList[0] == ("Llave") || inventorySystem.ItemList[1] == ("Llave") || inventorySystem.ItemList[2] == ("Llave"))
                             {
                                 controlNave.controlTextoNave.hablando = true;

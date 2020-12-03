@@ -11,7 +11,7 @@ public class player_script : MonoBehaviour
     float shipAngle;
     [Header("Variables Movimiento y rotacion")]
     public float speed;
-    [HideInInspector]public float speedInitial;
+    public float speedInitial;
     public float rotationInterpolation = 0.4f;
     public bool isMoving;
     public int vida;
