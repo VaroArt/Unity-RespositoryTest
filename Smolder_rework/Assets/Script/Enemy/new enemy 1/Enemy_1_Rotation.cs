@@ -9,6 +9,7 @@ public class Enemy_1_Rotation : MonoBehaviour
     public float offset;
     public Transform targetTr;
     public Animator enemyAnim;
+    public Enemy_1_IA enemtTarget;
     void Start()
     {
         
@@ -17,6 +18,8 @@ public class Enemy_1_Rotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        targetTr = enemtTarget.sensor.CurrentTarget;
+
         if (canRotate)
         {
             RotateTowards(targetTr.position);    

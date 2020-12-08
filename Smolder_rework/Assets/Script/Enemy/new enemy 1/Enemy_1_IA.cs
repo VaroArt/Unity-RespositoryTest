@@ -35,16 +35,36 @@ public class Enemy_1_IA : Enemy_1_Var
 
         gfx.mat.SetFloat("_Fade", 1f);
     }
+
+    #region Pathfind
+    void updatePath()
+    {
+        if (Path.seeker.IsDone())
+        {
+            Path.seeker.StartPath(movimiento.rb.position, sensor.CurrentTarget.position, OnPathComplete);
+        }
+    }
+    void OnPathComplete(Path p)
+    {
+        if (!p.error)
+        {
+            Path.path = p;
+            Path.currentWaypoint = 0;
+        }
+    }
+
+    #endregion
     public void Start()
     {
-        patrol.isHide = false;  
-        patrol.randomSpot = Random.Range(0, patrol.Points.Length);
-        InvokeRepeating("updatePath", 0f, 0.1f);
-        Path.seeker = GetComponent<Seeker>();
         movimiento.rb = GetComponent<Rigidbody2D>();
-        patrol.waitTime = patrol.startWaitTime;
-
         audioenemigo = GetComponent<AudioSource>();
+        Path.seeker = GetComponent<Seeker>();
+        patrol.isHide = false;  
+        patrol.randomSpot = Random.Range(0, patrol.Points.Length); //Para seleccionar un target random al inicio
+        patrol.waitTime = patrol.startWaitTime; //reinicio apropiado del waitTime cuando se llega a un patrolPoint
+        InvokeRepeating("updatePath", 0f, 0.1f); //Si encuentra el target, en este caso, si llega a el, volvera a preguntar por uno cada 0.1s.
+
+
 
     }
 
@@ -70,31 +90,11 @@ public class Enemy_1_IA : Enemy_1_Var
         #endregion
 
          Hide();
-         Reconocimiento();
-         taskTrigger();
-         taskList();
-         movimiento.rotation.canRotate = true;
-         movimiento.rotation.targetTr = sensor.CurrentTarget;
-
-        #region Ver target con radius
-        float moveDistance = Vector3.Distance(sensor.sensorTarget.transform.position, transform.position);
-
-        if (moveDistance < movimiento.attackRadius)
-        {
-           // movimiento.move = false;
-        }
-        else if (moveDistance < movimiento.MoveDistance)
-        {
-           // print("target in radius");
-             VerTarget();
-        }
-        if (moveDistance > movimiento.MoveDistance)
-        {
-           // print("target not in radius");
-            sensor.RecognitionGeneral = false;
-            //movimiento.rotation.canRotate = false;
-        }
-        #endregion
+     //   Reconocimiento();
+     //   taskTrigger();
+          taskList();
+          movimiento.rotation.canRotate = true;
+     //   movimiento.rotation.targetTr = sensor.CurrentTarget;
     }
 
     public void FixedUpdate()
@@ -146,8 +146,6 @@ public class Enemy_1_IA : Enemy_1_Var
             sensor.recognitionTime = 0;
         }
     }
-   
-
     public void VerTarget()
     {
         Vector2 dirToTarget = (sensor.sensorTarget.position - transform.position).normalized;
@@ -171,41 +169,13 @@ public class Enemy_1_IA : Enemy_1_Var
           }
     }
    
-    #endregion
-
-    #region Pathfind
-    void updatePath()
-    {
-        if (Path.seeker.IsDone())
-        {
-            Path.seeker.StartPath(movimiento.rb.position, sensor.CurrentTarget.position, OnPathComplete);
-        }
-    }
-    void OnPathComplete(Path p)
-    {
-        if (!p.error)
-        {
-            Path.path = p;
-            Path.currentWaypoint = 0;
-        }
-    }
-
-    #endregion
+    #endregion 
 
     #region Tareas
     public void taskTrigger()
     {
-        if (tasks.priority <= 10)
-        {
-            tasks.TaskList = 1;
-        }
-        if(tasks.priority >10 && tasks.priority <= 20)
-        {
-            tasks.TaskList = 2;
-        }
+       
     }
-
-
     public void taskList()
     {
         switch (tasks.TaskList)
@@ -214,7 +184,9 @@ public class Enemy_1_IA : Enemy_1_Var
                 patrullaje();
                 break;
             case 2:
-                // activar musica y se para musica 1   
+                sensor.CurrentTarget = sensor.sensorTarget;
+                //movimiento.move = false;
+
                 break;
             case 3:
 
@@ -239,12 +211,21 @@ public class Enemy_1_IA : Enemy_1_Var
             Path.reachedEndOfPath = false;
         }
         Vector2 direction = ((Vector2)Path.path.vectorPath[Path.currentWaypoint] - movimiento.rb.position).normalized;
-  
-          if (movimiento.move)
-          {
-              Vector2 force = direction * movimiento.speed * Time.deltaTime;
-              movimiento.rb.AddForce(force);
-          }
+
+        if (movimiento.move)
+        {
+            Vector2 force = direction * movimiento.speed * Time.deltaTime;
+            movimiento.rb.AddForce(force);
+        }
+
+        float moveDistance = Vector3.Distance(sensor.CurrentTarget.position, transform.position);
+
+       
+        if (moveDistance < movimiento.MoveDistance)
+        {
+            movimiento.move = true;
+        }
+
         float distance = Vector2.Distance(movimiento.rb.position, Path.path.vectorPath[Path.currentWaypoint]);
 
         if (distance < Path.nextWaypointDistance)
@@ -317,30 +298,7 @@ public class Enemy_1_IA : Enemy_1_Var
     #region ATTACK
     public void RandomAttackTime()
     {
-        movimiento.getRandom(1, 3);
-        switch (movimiento.randomNum)
-        {
-            case 1:
-                
-                print("velocidad normal 1");
-                movimiento.speed = 500f;
-                movimiento.MoveDistance = 5f;
-                break;
-            case 2:
-                print("Velocidad ataque");
-                movimiento.speed = 1800f;
-                movimiento.MoveDistance = 6;
-                audioenemigo.clip = ataque;
-                audioenemigo.Play();
-              
-                break;
-            case 3:
-               
-                print("velocidad normal 2");
-                movimiento.speed = 500f;
-                movimiento.MoveDistance = 5f;
-                break;
-        }
+       
 
     }
     #endregion
