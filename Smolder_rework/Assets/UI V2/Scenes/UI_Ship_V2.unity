@@ -1663,7 +1663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   S_Dialogos:
-    id: 10
+    id: 4
     listaDeSentencias:
     - 
     - "Esta nave esta completamente destrozada por ese asteroide. No creo que podamos
