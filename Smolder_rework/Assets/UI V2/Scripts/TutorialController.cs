@@ -17,6 +17,7 @@ public class TutorialController : MonoBehaviour
     {
         TutorialFunc();
         TutorialInstruccions();
+        PerrosTutorial();
     }
 
     public void TutorialFunc()
@@ -139,6 +140,53 @@ public class TutorialController : MonoBehaviour
         else
         {
             tutotial_elements.Mision.enabled = false;
+        }
+    }
+
+    public void PerrosTutorial()
+    {
+        if (tutotial_elements.IsAstro1Act)
+        {
+            tutotial_elements.TextosPaneles1[0].enabled = true;
+            tutotial_elements.ImgPaneles1[0].enabled = true;
+        }
+        else
+        {
+            tutotial_elements.TextosPaneles1[0].enabled = false;
+            tutotial_elements.ImgPaneles1[0].enabled = false;
+        }
+
+        if (tutotial_elements.IsEdgar1Act)
+        {
+            tutotial_elements.TextosPaneles1[1].enabled = true;
+            tutotial_elements.ImgPaneles1[1].enabled = true;
+        }
+        else
+        {
+            tutotial_elements.TextosPaneles1[1].enabled = false;
+            tutotial_elements.ImgPaneles1[1].enabled = false;
+        }
+
+        if (tutotial_elements.IsAstro2Act)
+        {
+            tutotial_elements.TextosPaneles2[0].enabled = true;
+            tutotial_elements.ImgPaneles2[0].enabled = true;
+        }
+        else
+        {
+            tutotial_elements.TextosPaneles2[0].enabled = false;
+            tutotial_elements.ImgPaneles2[0].enabled = false;
+        }
+
+        if (tutotial_elements.IsEdgar2Act)
+        {
+            tutotial_elements.TextosPaneles2[1].enabled = true;
+            tutotial_elements.ImgPaneles2[1].enabled = true;
+        }
+        else
+        {
+            tutotial_elements.TextosPaneles2[1].enabled = false;
+            tutotial_elements.ImgPaneles2[1].enabled = false;
         }
     }
 }

@@ -12,7 +12,6 @@ public class Dialogue_Manager : MonoBehaviour
 
     public GameObject PanelDialogo;
     public Text Display;
-    public Button playText;
     public GameObject nextbton;
     string sentenciaActiva;
     public float typingSpeed;
@@ -209,7 +208,6 @@ public class Dialogue_Manager : MonoBehaviour
                     controlNave.controlTextoNave.AstroHablando = true;
                     controlNave.controlTextoNave.EdgarHablando = false;
                 }
-
                 break;
 
             case 3:
@@ -256,7 +254,6 @@ public class Dialogue_Manager : MonoBehaviour
                     controlNave.controlTextoNave.AstroHablando = true;
                     controlNave.controlTextoNave.EdgarHablando = false;
                 }
-
                 break;
             case 5:
                 if (S_Dialogos.id == 1)

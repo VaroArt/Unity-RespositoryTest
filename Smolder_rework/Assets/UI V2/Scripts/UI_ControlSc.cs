@@ -309,11 +309,20 @@ public class Invetario
 public class TutorialElements
 {
     public Image[] Paneles;
+    [Space(10)]
     public Canvas CanvasTexto1;
     public Canvas CanvasTexto2;
     public Image Mision;
     public GameObject nextbton;
     [Space(10)]
+    [Header("control de Paneles")]
+    public Text[] TextosPaneles1;
+    public Text[] TextosPaneles2;
+    [Space(10)]
+    public Image[] ImgPaneles1;
+    public Image[] ImgPaneles2;
+    [Space(10)]
+    [Header("Activadores de Pantallas")]
     public bool TutoBtonRecarga;
     public bool TutopanelRegarga;
     public bool TutoBtonRadar;
@@ -328,6 +337,11 @@ public class TutorialElements
     public bool Texto2Activo;
     public bool nextBtonact;
     public bool MisionAct;
+    [Space(10)]
+    public bool IsEdgar1Act;
+    public bool IsAstro1Act;
+    public bool IsEdgar2Act;
+    public bool IsAstro2Act;
 }
 
 

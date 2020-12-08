@@ -11548,6 +11548,18 @@ MonoBehaviour:
     CanvasTexto2: {fileID: 7567445233799575495}
     Mision: {fileID: 104242283893768442}
     nextbton: {fileID: 4384447243418711803}
+    TextosPaneles1:
+    - {fileID: 6869087651988500588}
+    - {fileID: 410551842206536329}
+    TextosPaneles2:
+    - {fileID: 1390840258874747050}
+    - {fileID: 7106858212127832871}
+    ImgPaneles1:
+    - {fileID: 7538752119648220307}
+    - {fileID: 9006980135777897307}
+    ImgPaneles2:
+    - {fileID: 8908250683210679029}
+    - {fileID: 8528571389175982815}
     TutoBtonRecarga: 0
     TutopanelRegarga: 0
     TutoBtonRadar: 0
@@ -11561,6 +11573,10 @@ MonoBehaviour:
     Texto2Activo: 0
     nextBtonact: 0
     MisionAct: 0
+    IsEdgar1Act: 0
+    IsAstro1Act: 0
+    IsEdgar2Act: 0
+    IsAstro2Act: 0
 --- !u!1 &1654646947520903678
 GameObject:
   m_ObjectHideFlags: 0
