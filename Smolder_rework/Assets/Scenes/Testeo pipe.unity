@@ -3451,7 +3451,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.104644775}
+  m_AnchoredPosition: {x: 0, y: -0.10461426}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &139696385
@@ -3558,13 +3558,6 @@ MonoBehaviour:
     MoveDistance: 0
     rotation: {fileID: 1604535934}
     player: {fileID: 2067719416}
-    timer: 0
-    numFinal: 0
-    randomNum: 0
-    AttackRate: 0
-    nextAttack: 0
-    rotateEnemy: {fileID: 1604535934}
-    camerashake: {fileID: 0}
     timercito: 3
     rb: {fileID: 143423478}
   sensor:
@@ -6662,7 +6655,6 @@ MonoBehaviour:
   controlNave: {fileID: 1007640363}
   PanelDialogo: {fileID: 1106910614}
   Display: {fileID: 1987591981}
-  playText: {fileID: 0}
   nextbton: {fileID: 523117755}
   typingSpeed: 0.01
   currentSentence: 0
@@ -8543,13 +8535,6 @@ MonoBehaviour:
     MoveDistance: 0
     rotation: {fileID: 1733203447}
     player: {fileID: 2067719416}
-    timer: 0
-    numFinal: 0
-    randomNum: 0
-    AttackRate: 0
-    nextAttack: 0
-    rotateEnemy: {fileID: 1733203447}
-    camerashake: {fileID: 0}
     timercito: 0
     rb: {fileID: 430397660}
   sensor:
@@ -9155,7 +9140,6 @@ MonoBehaviour:
   controlNave: {fileID: 1007640363}
   PanelDialogo: {fileID: 1106910614}
   Display: {fileID: 1987591981}
-  playText: {fileID: 0}
   nextbton: {fileID: 523117755}
   typingSpeed: 0.01
   currentSentence: 0
@@ -9729,13 +9713,6 @@ MonoBehaviour:
     MoveDistance: 0
     rotation: {fileID: 1097476166}
     player: {fileID: 2067719416}
-    timer: 0
-    numFinal: 0
-    randomNum: 0
-    AttackRate: 0
-    nextAttack: 0
-    rotateEnemy: {fileID: 1097476166}
-    camerashake: {fileID: 0}
     timercito: 3
     rb: {fileID: 464643194}
   sensor:
@@ -10420,13 +10397,6 @@ MonoBehaviour:
     MoveDistance: 3
     rotation: {fileID: 969578422}
     player: {fileID: 2067719416}
-    timer: 0
-    numFinal: 0
-    randomNum: 0
-    AttackRate: 0
-    nextAttack: 0
-    rotateEnemy: {fileID: 969578422}
-    camerashake: {fileID: 0}
     timercito: 3
     rb: {fileID: 506171926}
   sensor:
@@ -10436,18 +10406,18 @@ MonoBehaviour:
     RecognitionGeneral: 0
     raycastRangeGeneral: 360
     recognitionTime: 0
-    CurrentTarget: {fileID: 0}
+    CurrentTarget: {fileID: 506171924}
     sensorTarget: {fileID: 2067719413}
   tasks:
     currentTask: 
-    TaskList: 1
+    TaskList: 2
     priority: 0
   patrol:
     isHide: 0
     Points:
     - {fileID: 2020513766}
     - {fileID: 1303092788}
-    startWaitTime: 3
+    startWaitTime: 10
     waitTime: 0
     randomSpot: 0
   Path:
@@ -10471,7 +10441,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 1.5
-  m_AngularDrag: 1
+  m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -11846,7 +11816,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.21000001, y: 0.209}
   m_AnchorMax: {x: 0.7997587, y: 0.7906439}
-  m_AnchoredPosition: {x: -0.49998856, y: 0}
+  m_AnchoredPosition: {x: -0.49998474, y: 0}
   m_SizeDelta: {x: 41, y: 42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &571329821
@@ -21653,7 +21623,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.104644775}
+  m_AnchoredPosition: {x: 0, y: -0.10461426}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &768021134
@@ -22889,7 +22859,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.21000001, y: 0.209}
   m_AnchorMax: {x: 0.7997587, y: 0.7906439}
-  m_AnchoredPosition: {x: -0.49998856, y: 0}
+  m_AnchoredPosition: {x: -0.49998474, y: 0}
   m_SizeDelta: {x: 41, y: 42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &856906401
@@ -23176,7 +23146,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.028}
   m_AnchorMax: {x: 1, y: 0.25021392}
-  m_AnchoredPosition: {x: 0.0000076293945, y: 0.0000038146973}
+  m_AnchoredPosition: {x: 0.0000076293945, y: 0.0000076293945}
   m_SizeDelta: {x: 105.50432, y: 31.98928}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &881853795
@@ -23448,7 +23418,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.104644775}
+  m_AnchoredPosition: {x: 0, y: -0.10461426}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &907818788
@@ -26405,7 +26375,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.010000001, y: 0}
   m_AnchorMax: {x: 0.26458955, y: 0.8005623}
-  m_AnchoredPosition: {x: -1.7895508, y: 0.1005249}
+  m_AnchoredPosition: {x: -1.7894897, y: 0.1005249}
   m_SizeDelta: {x: 3.7856903, y: -0.20103455}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1034567621
@@ -31364,7 +31334,6 @@ MonoBehaviour:
   controlNave: {fileID: 1007640363}
   PanelDialogo: {fileID: 1106910614}
   Display: {fileID: 1987591981}
-  playText: {fileID: 0}
   nextbton: {fileID: 523117755}
   typingSpeed: 0.01
   currentSentence: 0
@@ -38216,13 +38185,6 @@ MonoBehaviour:
     MoveDistance: 0
     rotation: {fileID: 1552518744}
     player: {fileID: 2067719416}
-    timer: 0
-    numFinal: 0
-    randomNum: 0
-    AttackRate: 0
-    nextAttack: 0
-    rotateEnemy: {fileID: 1552518744}
-    camerashake: {fileID: 0}
     timercito: 3
     rb: {fileID: 1401912810}
   sensor:
@@ -42329,13 +42291,6 @@ MonoBehaviour:
     MoveDistance: 0
     rotation: {fileID: 0}
     player: {fileID: 0}
-    timer: 0
-    numFinal: 0
-    randomNum: 0
-    AttackRate: 0
-    nextAttack: 0
-    rotateEnemy: {fileID: 0}
-    camerashake: {fileID: 0}
     timercito: 0
     rb: {fileID: 0}
   sensor:
@@ -43956,7 +43911,6 @@ MonoBehaviour:
   controlNave: {fileID: 1007640363}
   PanelDialogo: {fileID: 1106910614}
   Display: {fileID: 1987591981}
-  playText: {fileID: 0}
   nextbton: {fileID: 523117755}
   typingSpeed: 0.01
   currentSentence: 0
@@ -45862,13 +45816,6 @@ MonoBehaviour:
     MoveDistance: 0
     rotation: {fileID: 692797755}
     player: {fileID: 2067719416}
-    timer: 0
-    numFinal: 0
-    randomNum: 0
-    AttackRate: 0
-    nextAttack: 0
-    rotateEnemy: {fileID: 692797755}
-    camerashake: {fileID: 0}
     timercito: 3
     rb: {fileID: 1673898161}
   sensor:
@@ -46731,13 +46678,6 @@ MonoBehaviour:
     MoveDistance: 5
     rotation: {fileID: 1696074712}
     player: {fileID: 2067719416}
-    timer: 3
-    numFinal: 0
-    randomNum: 0
-    AttackRate: 3
-    nextAttack: 0
-    rotateEnemy: {fileID: 1696074712}
-    camerashake: {fileID: 604309277}
     timercito: 3
     rb: {fileID: 1713466278}
   sensor:
@@ -49325,13 +49265,6 @@ MonoBehaviour:
     MoveDistance: 0
     rotation: {fileID: 692210684}
     player: {fileID: 2067719416}
-    timer: 0
-    numFinal: 0
-    randomNum: 0
-    AttackRate: 0
-    nextAttack: 0
-    rotateEnemy: {fileID: 692210684}
-    camerashake: {fileID: 0}
     timercito: 3
     rb: {fileID: 1807493708}
   sensor:
@@ -50056,13 +49989,6 @@ MonoBehaviour:
     MoveDistance: 0
     rotation: {fileID: 207465091}
     player: {fileID: 2067719416}
-    timer: 0
-    numFinal: 0
-    randomNum: 0
-    AttackRate: 0
-    nextAttack: 0
-    rotateEnemy: {fileID: 207465091}
-    camerashake: {fileID: 0}
     timercito: 3
     rb: {fileID: 1837978792}
   sensor:
@@ -54553,7 +54479,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020513765}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -27.7, y: -1.6300001, z: 0}
+  m_LocalPosition: {x: -27.23, y: 0.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 886409200}
@@ -55200,13 +55126,6 @@ MonoBehaviour:
     MoveDistance: 0
     rotation: {fileID: 1066636257}
     player: {fileID: 2067719416}
-    timer: 0
-    numFinal: 0
-    randomNum: 0
-    AttackRate: 0
-    nextAttack: 0
-    rotateEnemy: {fileID: 1066636257}
-    camerashake: {fileID: 0}
     timercito: 3
     rb: {fileID: 2052888074}
   sensor:
@@ -55912,7 +55831,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.21000001, y: 0.209}
   m_AnchorMax: {x: 0.7997587, y: 0.7906439}
-  m_AnchoredPosition: {x: -0.49998856, y: 0}
+  m_AnchoredPosition: {x: -0.49998474, y: 0}
   m_SizeDelta: {x: 41, y: 42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2070644019
@@ -56327,13 +56246,6 @@ MonoBehaviour:
     MoveDistance: 0
     rotation: {fileID: 1758447156}
     player: {fileID: 2067719416}
-    timer: 0
-    numFinal: 0
-    randomNum: 0
-    AttackRate: 0
-    nextAttack: 0
-    rotateEnemy: {fileID: 1758447156}
-    camerashake: {fileID: 0}
     timercito: 3
     rb: {fileID: 2090160530}
   sensor:
@@ -56584,7 +56496,6 @@ MonoBehaviour:
   controlNave: {fileID: 1007640363}
   PanelDialogo: {fileID: 1106910614}
   Display: {fileID: 1987591981}
-  playText: {fileID: 0}
   nextbton: {fileID: 523117755}
   typingSpeed: 0.01
   currentSentence: 0

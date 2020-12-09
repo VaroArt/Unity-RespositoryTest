@@ -63,7 +63,7 @@ public class Enemy_1_IA : Enemy_1_Var
         patrol.randomSpot = Random.Range(0, patrol.Points.Length); //Para seleccionar un target random al inicio
         patrol.waitTime = patrol.startWaitTime; //reinicio apropiado del waitTime cuando se llega a un patrolPoint
         InvokeRepeating("updatePath", 0f, 0.1f); //Si encuentra el target, en este caso, si llega a el, volvera a preguntar por uno cada 0.1s.
-
+       
 
 
     }
@@ -89,8 +89,8 @@ public class Enemy_1_IA : Enemy_1_Var
         }
         #endregion
 
-         Hide();
-     //   Reconocimiento();
+          Hide();
+          Reconocimiento();
      //   taskTrigger();
           taskList();
           movimiento.rotation.canRotate = true;
@@ -116,33 +116,14 @@ public class Enemy_1_IA : Enemy_1_Var
         }
         if (sensor.recognitionTime > 2)
         {
-            tasks.priority = 15;
-            sensor.recognitionTime = 2;
-            if(Time.time > movimiento.nextAttack)
-            {
-                movimiento.nextAttack = Time.time + movimiento.AttackRate;
-                RandomAttackTime();
-            }
-            if(sensor.sensorTarget.tag == ("Bengala"))
-            {
-                sensor.CurrentTarget = sensor.sensorTarget;
-                movimiento.move = true;
-            }
-            else if (sensor.sensorTarget.tag == ("Player"))
-            {
-                sensor.CurrentTarget = sensor.sensorTarget;
-                movimiento.move = true;
-            }
          
+            sensor.recognitionTime = 2;
         }
 
         
         if (sensor.recognitionTime <= 0)
         {
-           
-           
            //sensor.CurrentTarget = null;
-            tasks.priority = 10;
             sensor.recognitionTime = 0;
         }
     }
@@ -185,8 +166,35 @@ public class Enemy_1_IA : Enemy_1_Var
                 break;
             case 2:
                 sensor.CurrentTarget = sensor.sensorTarget;
-                //movimiento.move = false;
+                float moveDistance = Vector3.Distance(sensor.CurrentTarget.position, transform.position);
 
+                if (moveDistance < movimiento.MoveDistance) // Si el player esta cerca del radio de movimiento, y no es menor al radio de ataque, se puede mover
+                {
+                    VerTarget();
+                    if(sensor.recognitionTime == 2)
+                    {
+                        movimiento.speed = 150f;
+                        print("move");
+                        movimiento.move = true;
+                    }
+
+                }
+               if(moveDistance < movimiento.MoveDistance && sensor.recognitionTime == 0)
+                {
+                    print("dont move");
+                    movimiento.move = false;
+                }
+
+                if (moveDistance > movimiento.MoveDistance) //Si el player esta lejos del rango de movimiento, este no se movera,
+                {
+                    sensor.RecognitionGeneral = false;
+                    if(sensor.recognitionTime == 0)
+                    {
+                        movimiento.move = false;
+                        movimiento.speed = 100f;
+                        print("stop");
+                    }
+                }
                 break;
             case 3:
 
@@ -218,13 +226,6 @@ public class Enemy_1_IA : Enemy_1_Var
             movimiento.rb.AddForce(force);
         }
 
-        float moveDistance = Vector3.Distance(sensor.CurrentTarget.position, transform.position);
-
-       
-        if (moveDistance < movimiento.MoveDistance)
-        {
-            movimiento.move = true;
-        }
 
         float distance = Vector2.Distance(movimiento.rb.position, Path.path.vectorPath[Path.currentWaypoint]);
 
@@ -307,16 +308,14 @@ public class Enemy_1_IA : Enemy_1_Var
     {
         if(collision.tag == ("Player"))
         {
-            movimiento.rotateEnemy.enemyAnim.SetBool("attack", true);
-            movimiento.player.vida--;
-            camera_shake.instance.shakeCamera(2f, 0.3f);
+         
         }
     }
     public void OnTriggerExit2D(Collider2D collision)
     {
         if(collision.tag == ("Player"))
         {
-            movimiento.rotateEnemy.enemyAnim.SetBool("attack", false);
+          
         }
     }
     private void OnDrawGizmos()

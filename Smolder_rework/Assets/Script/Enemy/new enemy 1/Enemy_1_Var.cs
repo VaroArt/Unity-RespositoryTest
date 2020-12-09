@@ -27,23 +27,7 @@ public class VariablesMovimiento
     public Enemy_1_Rotation rotation;
     [Header("Attack")]
     public player_script player;
-    public float timer;
-    [Header("Variables para hacer un random para ataque")]
-    public int numFinal;
-    public int randomNum;
-    public int getRandom(int min, int max)
-    {
-        randomNum = Random.Range(min, max);
-        while (randomNum == numFinal)
-            randomNum = Random.Range(min, max);
-        numFinal = randomNum;
-        return randomNum;
-    }
-    [Header("Variable para llamar al ataque en cierta cantidad de tiempo")]
-    public float AttackRate;
-    public float nextAttack = 0.0F;
-    public Enemy_1_Rotation rotateEnemy;
-    public camera_shake camerashake;
+    [Header("Reinicio")]
     public float timercito;
     [Header("Rb")]
     public Rigidbody2D rb;
