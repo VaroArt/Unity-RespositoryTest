@@ -225,7 +225,7 @@ Transform:
   - {fileID: 508743048}
   - {fileID: 1819132299}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &49599267
 GameObject:
@@ -263,7 +263,7 @@ Transform:
   - {fileID: 302317910}
   - {fileID: 316785193}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &52554557
 GameObject:
@@ -667,7 +667,7 @@ Transform:
   - {fileID: 998672038}
   - {fileID: 1065429402}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &168756887
 GameObject:
@@ -7359,7 +7359,7 @@ Transform:
   - {fileID: 439031142}
   - {fileID: 413288603}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &489483918
 GameObject:
@@ -9049,7 +9049,7 @@ Transform:
   - {fileID: 1976537309}
   - {fileID: 1692156673}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &739905994
 GameObject:
@@ -10590,7 +10590,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1065429400
 GameObject:
@@ -10872,7 +10872,7 @@ Transform:
   m_Children:
   - {fileID: 2054550706}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1268182789
 GameObject:
@@ -11475,7 +11475,7 @@ Transform:
   - {fileID: 536714071}
   - {fileID: 1371870200}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1400465834
 GameObject:
@@ -13365,7 +13365,7 @@ Transform:
   m_LocalScale: {x: 130.71545, y: 66.6302, z: 60}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1886907410
 SpriteRenderer:
@@ -17126,7 +17126,7 @@ RectTransform:
   - {fileID: 2435524741597738405}
   - {fileID: 4880130447626499223}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -17160,6 +17160,18 @@ MonoBehaviour:
     CanvasTexto2: {fileID: 6790921502241748671}
     Mision: {fileID: 3911538689643544962}
     nextbton: {fileID: 856365562104608643}
+    TextosPaneles1:
+    - {fileID: 7523582772829303060}
+    - {fileID: 3641255687468389361}
+    TextosPaneles2:
+    - {fileID: 2627715831831488978}
+    - {fileID: 6168354356661107295}
+    ImgPaneles1:
+    - {fileID: 6892129641611146731}
+    - {fileID: 5460048087692888611}
+    ImgPaneles2:
+    - {fileID: 5519920782170489741}
+    - {fileID: 4711141265655344039}
     TutoBtonRecarga: 0
     TutopanelRegarga: 0
     TutoBtonRadar: 0
@@ -17173,6 +17185,10 @@ MonoBehaviour:
     Texto2Activo: 0
     nextBtonact: 0
     MisionAct: 0
+    IsEdgar1Act: 0
+    IsAstro1Act: 0
+    IsEdgar2Act: 0
+    IsAstro2Act: 0
 --- !u!1 &2435524740808836565
 GameObject:
   m_ObjectHideFlags: 0
@@ -34955,7 +34971,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2180520320804466312}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7395731899090173636}
+        m_MethodName: BtonNext
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6034981097668933369
 GameObject:
   m_ObjectHideFlags: 0
@@ -35367,6 +35394,110 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!58 &7395731899090173633
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7395731899090173638}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.3707117
+--- !u!50 &7395731899090173634
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7395731899090173638}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &7395731899090173636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7395731899090173638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7009498296e966846ae15c2730b6125a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  S_TDialogos:
+    id: 1000
+    listaDeSentencias:
+    - hey...
+    - you finally awake....
+    - subscribe to pewdiepie
+    - 'hey vsauce michael here
+
+'
+    - it's time to stop!
+    - ha! got em!
+  C_Nave: {fileID: 2435524740798602846}
+  elementosTutorial: {fileID: 2435524740798602851}
+  PanelDialogo: {fileID: 2726392526607265021}
+  Display: {fileID: 1921832483606817080}
+  nextbton: {fileID: 1429774840277770933}
+  typingSpeed: 0.0005
+  currentSentence: 0
+  E: {fileID: 7395731899090173638}
+  player: {fileID: 0}
+  inventorySystem: {fileID: 0}
+  Used: 0
+--- !u!4 &7395731899090173637
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7395731899090173638}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -72, y: 40, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7395731899090173638
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7395731899090173637}
+  - component: {fileID: 7395731899090173633}
+  - component: {fileID: 7395731899090173634}
+  - component: {fileID: 7395731899090173636}
+  m_Layer: 0
+  m_Name: TutorialText Trigger
+  m_TagString: Evento Texto
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!222 &7466448919975193367
 CanvasRenderer:
   m_ObjectHideFlags: 0
