@@ -78,7 +78,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
         {
             if (Used != 1)
             {
-                if (S_TDialogos.id == 1000)
+                if (S_TDialogos.id == 1000 || S_TDialogos.id == 1001 || S_TDialogos.id == 1002 || S_TDialogos.id == 1003 || S_TDialogos.id == 1004 || S_TDialogos.id == 1005 || S_TDialogos.id == 1006 || S_TDialogos.id == 1007 || S_TDialogos.id == 1008)
                 {
                     C_Nave.ControlPanelesNave.ActivarPanelTexto = true;
                     IniciarDialogo();
@@ -101,8 +101,57 @@ public class TutorialDialogue_Manager : MonoBehaviour
                  
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        if (S_TDialogos.id == 1000)
+                        if (S_TDialogos.id == 1000 || S_TDialogos.id == 1001)
                         {
+                            MostrarSigSentencia();
+                            currentSentence++;
+                        }
+                        if (S_TDialogos.id == 1002)
+                        {
+                            elementosTutorial.tutotial_elements.Texto1Activo = true;
+                            elementosTutorial.tutotial_elements.TutoPanelCentral = true;
+                            MostrarSigSentencia();
+                            currentSentence++;
+                        }
+                        if (S_TDialogos.id == 1003)
+                        {
+                            elementosTutorial.tutotial_elements.Texto1Activo = true;
+                            elementosTutorial.tutotial_elements.TutoPanelCentral = true;
+                            MostrarSigSentencia();
+                            currentSentence++;
+                        }
+                        if (S_TDialogos.id == 1004)
+                        {
+                            elementosTutorial.tutotial_elements.Texto1Activo = true;
+                            elementosTutorial.tutotial_elements.TutoPanelCentral = true;
+                            MostrarSigSentencia();
+                            currentSentence++;
+                        }
+                        if (S_TDialogos.id == 1005)
+                        {
+                            elementosTutorial.tutotial_elements.Texto1Activo = true;
+                            elementosTutorial.tutotial_elements.TutoPanelCentral = true;
+                            MostrarSigSentencia();
+                            currentSentence++;
+                        }
+                        if (S_TDialogos.id == 1006)
+                        {
+                            elementosTutorial.tutotial_elements.Texto1Activo = true;
+                            elementosTutorial.tutotial_elements.TutoPanelCentral = true;
+                            MostrarSigSentencia();
+                            currentSentence++;
+                        }
+                        if (S_TDialogos.id == 1007)
+                        {
+                            elementosTutorial.tutotial_elements.Texto1Activo = true;
+                            elementosTutorial.tutotial_elements.TutoPanelCentral = true;
+                            MostrarSigSentencia();
+                            currentSentence++;
+                        }
+                        if (S_TDialogos.id == 1008)
+                        {
+                            elementosTutorial.tutotial_elements.Texto1Activo = true;
+                            elementosTutorial.tutotial_elements.TutoPanelCentral = true;
                             MostrarSigSentencia();
                             currentSentence++;
                         }
@@ -111,7 +160,13 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     {
                         elementosTutorial.tutotial_elements.Texto1Activo = true;
                         elementosTutorial.tutotial_elements.TutoPanelCentral = true;
-                        elementosTutorial.tutotial_elements.IsAstro1Act = true;
+                        elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                        elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                    }
+                    if (S_TDialogos.id == 1001)
+                    {
+                        elementosTutorial.tutotial_elements.Texto1Activo = true;
+                        elementosTutorial.tutotial_elements.TutoPanelCentral = true;
                     }
                 }
                 else
@@ -139,12 +194,92 @@ public class TutorialDialogue_Manager : MonoBehaviour
             case 1:
                 if (S_TDialogos.id == 1000)
                 {
-                    elementosTutorial.tutotial_elements.IsAstro1Act = true;
-                    elementosTutorial.tutotial_elements.IsEdgar1Act = false;
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1001)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1002)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1003)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1004)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1005)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1006)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1007)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1008)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
                 }
                 break;
             case 2:
                 if (S_TDialogos.id == 1000)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1001)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1002)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1003)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1004)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1005)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1006)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1007)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1008)
                 {
                     elementosTutorial.tutotial_elements.IsAstro1Act = false;
                     elementosTutorial.tutotial_elements.IsEdgar1Act = true;
@@ -154,16 +289,96 @@ public class TutorialDialogue_Manager : MonoBehaviour
             case 3:
                 if (S_TDialogos.id == 1000)
                 {
-                    elementosTutorial.tutotial_elements.IsAstro1Act = true;
-                    elementosTutorial.tutotial_elements.IsEdgar1Act = false;
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1001)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1002)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1003)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1004)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1005)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1006)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1007)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1008)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
                 }
                 break;
 
             case 4:
                 if (S_TDialogos.id == 1000)
                 {
-                    elementosTutorial.tutotial_elements.IsAstro1Act = true;
-                    elementosTutorial.tutotial_elements.IsEdgar1Act = false;
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1001)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1002)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1003)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1004)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1005)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1006)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1007)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1008)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
                 }
                 break;
             case 5:
@@ -173,13 +388,103 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.IsAstro1Act = false;
                     elementosTutorial.tutotial_elements.IsEdgar1Act = true;
                 }
+                if (S_TDialogos.id == 1001)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1002)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1003)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1004)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1005)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1006)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1007)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1008)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
                 break;
             case 6:
                 if (S_TDialogos.id == 1000)
                 {
+                    elementosTutorial.tutotial_elements.nextBtonact = true;
                     elementosTutorial.tutotial_elements.IsAstro1Act = false;
                     elementosTutorial.tutotial_elements.IsEdgar1Act = true;
-                    elementosTutorial.tutotial_elements.nextBtonact = true;
+                }
+                if (S_TDialogos.id == 1001)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    this.gameObject.SetActive(false);
+                }
+                if (S_TDialogos.id == 1002)
+                {
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    this.gameObject.SetActive(false);
+                }
+                if (S_TDialogos.id == 1003)
+                {
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    this.gameObject.SetActive(false);
+                }
+                if (S_TDialogos.id == 1004)
+                {
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    this.gameObject.SetActive(false);
+                }
+                if (S_TDialogos.id == 1005)
+                {
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    this.gameObject.SetActive(false);
+                }
+                if (S_TDialogos.id == 1006)
+                {
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    this.gameObject.SetActive(false);
+                }
+                if (S_TDialogos.id == 1007)
+                {
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    this.gameObject.SetActive(false);
+                }
+                if (S_TDialogos.id == 1008)
+                {
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    this.gameObject.SetActive(false);
                 }
                 break;
             case 7:
@@ -189,30 +494,129 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.IsAstro1Act = false;
                     elementosTutorial.tutotial_elements.IsEdgar1Act = true;
                 }
+                if (S_TDialogos.id == 1001)
+                {
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    this.gameObject.SetActive(false);
+                }
+                if (S_TDialogos.id == 1002)
+                {
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    this.gameObject.SetActive(false);
+                }
+                if (S_TDialogos.id == 1003)
+                {
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    this.gameObject.SetActive(false);
+                }
+                if (S_TDialogos.id == 1004)
+                {
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    this.gameObject.SetActive(false);
+                }
+                if (S_TDialogos.id == 1005)
+                {
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    this.gameObject.SetActive(false);
+                }
+                if (S_TDialogos.id == 1006)
+                {
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    this.gameObject.SetActive(false);
+                }
+                if (S_TDialogos.id == 1007)
+                {
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    this.gameObject.SetActive(false);
+                }
+                if (S_TDialogos.id == 1008)
+                {
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    this.gameObject.SetActive(false);
+                }
                 break;
             case 8:
-                elementosTutorial.tutotial_elements.nextBtonact = true;
-                elementosTutorial.tutotial_elements.IsAstro1Act = false;
-                elementosTutorial.tutotial_elements.IsEdgar1Act = true;
-                currentSentence = 0;
+                if (S_TDialogos.id == 1000)
+                {
+                    elementosTutorial.tutotial_elements.nextBtonact = true;
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                    currentSentence = 0;
+                }
+                if(S_TDialogos.id == 1001)
+                {
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    this.gameObject.SetActive(false);
+                }
+                if (S_TDialogos.id == 1002)
+                {
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    this.gameObject.SetActive(false);
+                }
+                if (S_TDialogos.id == 1003)
+                {
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    this.gameObject.SetActive(false);
+                }
+                if (S_TDialogos.id == 1004)
+                {
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    this.gameObject.SetActive(false);
+                }
+                if (S_TDialogos.id == 1005)
+                {
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    this.gameObject.SetActive(false);
+                }
+                if (S_TDialogos.id == 1006)
+                {
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    this.gameObject.SetActive(false);
+                }
+                if (S_TDialogos.id == 1007)
+                {
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    this.gameObject.SetActive(false);
+                }
+                if (S_TDialogos.id == 1008)
+                {
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    this.gameObject.SetActive(false);
+                }
                 //E.SetActive(false);
                 break;
 
-            default:
-                elementosTutorial.tutotial_elements.IsAstro1Act = false;
-                elementosTutorial.tutotial_elements.IsEdgar1Act = true;
-                break;
         }
     }
 
     public void BtonNext()
     {
-        elementosTutorial.tutotial_elements.IsAstro1Act = false;
-        elementosTutorial.tutotial_elements.IsEdgar1Act = false;
-        elementosTutorial.tutotial_elements.Texto1Activo = false;
-        elementosTutorial.tutotial_elements.TutoPanelCentral = false;
-        elementosTutorial.tutotial_elements.nextBtonact = false;
-        currentSentence = 0;
-        E.SetActive(false);
+        if(S_TDialogos.id == 1000)
+        {
+            elementosTutorial.tutotial_elements.IsAstro1Act = false;
+            elementosTutorial.tutotial_elements.IsEdgar1Act = false;
+            elementosTutorial.tutotial_elements.Texto1Activo = false;
+            elementosTutorial.tutotial_elements.TutoPanelCentral = false;
+            elementosTutorial.tutotial_elements.nextBtonact = false;
+            currentSentence = 0;
+            E.SetActive(false);
+        }
+
     }
 }
