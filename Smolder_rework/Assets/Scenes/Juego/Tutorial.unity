@@ -602,14 +602,17 @@ MonoBehaviour:
   S_TDialogos:
     id: 1002
     listaDeSentencias:
-    - hey...
-    - you finally awake....
-    - subscribe to pewdiepie
-    - 'hey vsauce michael here
-
-'
-    - it's time to stop!
-    - ha! got em!
+    - 
+    - "Se\xF1or en caso de emergencia, podemos usar la aceleraci\xF3n, pero solo
+      por un corto tiempo ya que se agota r\xE1pidamente.\n"
+    - No seamos imprudentes, debemos guardar lo mas posible los Contenedores AM y
+      usarlo solo en casos de emergencia, sin ellos no tendremos ninguna velocidad.
+    - "Si se\xF1or."
+    - ...
+    - "Astro, esta nave posee coordenadas, \xBFcrees que debamos conservarlo?"
+    - "Claro que debemos conservarlo, nos podr\xEDa servir para salir de esta zona,
+      en caso de que nos perdamos.\r"
+    - "Entonces los guardare todos.\r"
   C_Nave: {fileID: 2435524740798602846}
   elementosTutorial: {fileID: 2435524740798602851}
   PanelDialogo: {fileID: 2726392526607265021}
@@ -1524,14 +1527,14 @@ MonoBehaviour:
   S_TDialogos:
     id: 1005
     listaDeSentencias:
-    - hey...
-    - you finally awake....
-    - subscribe to pewdiepie
-    - 'hey vsauce michael here
-
-'
-    - it's time to stop!
-    - ha! got em!
+    - 
+    - "Astro hemos encontrado otra nave, al parecer ya esta casi todo destruido por
+      dentro, pero encontramos unas bengalas.\r"
+    - "Entonces no todo se perdi\xF3, podemos usar las bengalas para dejar iluminada
+      alguna zona."
+    - "cierto!, Adem\xE1s si lo desea, puedo desarmar la bengala y convertirlo en
+      m\xE1s energ\xEDa para la luz de la nave. "
+    - Bien pensado Edgar.
   C_Nave: {fileID: 2435524740798602846}
   elementosTutorial: {fileID: 2435524740798602851}
   PanelDialogo: {fileID: 2726392526607265021}
@@ -7550,7 +7553,7 @@ GameObject:
   m_Layer: 0
   m_Name: TutorialText Extra 3 Trigger
   m_TagString: Evento Texto
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -8743,7 +8746,7 @@ GameObject:
   m_Layer: 0
   m_Name: TutorialText Extra 1 Trigger
   m_TagString: Evento Texto
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -10101,14 +10104,15 @@ MonoBehaviour:
   S_TDialogos:
     id: 1008
     listaDeSentencias:
-    - hey...
-    - you finally awake....
-    - subscribe to pewdiepie
-    - 'hey vsauce michael here
-
-'
-    - it's time to stop!
-    - ha! got em!
+    - 
+    - "Otra nave, y muy cerca se encuentra un portal.\r"
+    - "Se\xF1or, la nave contiene otra coordenada, podemos usarlas en el portal para
+      poder dar saltos y llegar a otra zona.\r"
+    - "R\xE1pido us\xE9moslas para salir de aqu\xED aun estamos muy cerca de la Tierra
+      y esos monstruos estar rodeando todo el planeta.\r"
+    - "Claro se\xF1or, solo debemos acercar nuestra nave a los contenedores que se
+      encuentran a los lados del portal, en ellos colocaremos las coordenadas y el
+      portal se abrir\xE1."
   C_Nave: {fileID: 2435524740798602846}
   elementosTutorial: {fileID: 2435524740798602851}
   PanelDialogo: {fileID: 2726392526607265021}
@@ -11949,7 +11953,7 @@ GameObject:
   m_Layer: 0
   m_Name: TutorialText Extra 2 Trigger
   m_TagString: Evento Texto
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -13557,14 +13561,11 @@ MonoBehaviour:
   S_TDialogos:
     id: 1004
     listaDeSentencias:
-    - hey...
-    - you finally awake....
-    - subscribe to pewdiepie
-    - 'hey vsauce michael here
-
-'
-    - it's time to stop!
-    - ha! got em!
+    - 
+    - "Se\xF1or si desea revisar lo que hemos recolectado, puede revisar el inventario,
+      donde se encontrara todo lo que encontramos."
+    - Que bueno que seas organizado Edgar, es de mucha utilidad.
+    - "muchas gracias se\xF1or"
   C_Nave: {fileID: 2435524740798602846}
   elementosTutorial: {fileID: 2435524740798602851}
   PanelDialogo: {fileID: 2726392526607265021}
@@ -13648,14 +13649,16 @@ MonoBehaviour:
   S_TDialogos:
     id: 1001
     listaDeSentencias:
-    - 1
-    - 1 2
-    - ' 1 2 3'
-    - '1 2 3 probando
+    - "Se\xF1or!"
+    - "para mayor precauci\xF3n podemos usar el radar para saber de los obst\xE1culos,
+      adem\xE1s nos podr\xE1 indicar de enemigos u otras naves que podr\xEDan haber
+      escapado."
+    - Tomemos todas las precauciones posibles, no sabemos de lo que son capases esas
+      cosas, con el radar podremos anticipar un poco sus movimientos.
+    - 'Para usarlo solo seleccione el boton del radar para expandir el panel, luego
+      pulse directamente en el radar para poder mandar un pulso que revelara la zona.
 
 '
-    - probando probando
-    - ajask
   C_Nave: {fileID: 2435524740798602846}
   elementosTutorial: {fileID: 2435524740798602851}
   PanelDialogo: {fileID: 2726392526607265021}
@@ -15971,7 +15974,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1663852965237570337
 GameObject:
   m_ObjectHideFlags: 0
@@ -16177,7 +16180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1f36067956a506a4b91b0e104bccb437, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f183ded46b896cf4ca35725b00d58949, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -27634,7 +27637,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.022740006, y: 0.6897752}
   m_AnchorMax: {x: 0.9826301, y: 0.90112406}
-  m_AnchoredPosition: {x: 0.234375, y: -0.000045776367}
+  m_AnchoredPosition: {x: 0.234375, y: -0.000030517578}
   m_SizeDelta: {x: -342.00116, y: -61.43608}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2435524741917014443
@@ -35156,9 +35159,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9e3b1851b0b37324ab26e3b2c1190760, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dbd26b5b39e4d174b95eb0a56e6743aa, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -36312,14 +36315,12 @@ MonoBehaviour:
   S_TDialogos:
     id: 1000
     listaDeSentencias:
-    - hey...
-    - you finally awake....
-    - subscribe to pewdiepie
-    - 'hey vsauce michael here
-
-'
-    - it's time to stop!
-    - ha! got em!
+    - "Debemos escapar lo m\xE1s r\xE1pido posible, no nos pueden atrapar."
+    - "Encender\xE9 las luces para iluminar el camino y poder ver los obst\xE1culos
+      que nos rodea en el oscuro espacio."
+    - Perfecto, cuidemos bien nuestros recursos
+    - 'recuerda que la luz no es infinita y debemos estar pendientes de cuanto mas
+      puede durar. '
   C_Nave: {fileID: 2435524740798602846}
   elementosTutorial: {fileID: 2435524740798602851}
   PanelDialogo: {fileID: 2726392526607265021}

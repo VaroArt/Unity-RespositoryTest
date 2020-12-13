@@ -160,8 +160,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     {
                         elementosTutorial.tutotial_elements.Texto1Activo = true;
                         elementosTutorial.tutotial_elements.TutoPanelCentral = true;
-                        elementosTutorial.tutotial_elements.IsAstro1Act = false;
-                        elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+
                     }
                     if (S_TDialogos.id == 1001)
                     {
@@ -191,6 +190,18 @@ public class TutorialDialogue_Manager : MonoBehaviour
     {
         switch (currentSentence)
         {
+            case 0:
+                if (S_TDialogos.id == 1000)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1001)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                break;
             case 1:
                 if (S_TDialogos.id == 1000)
                 {
@@ -288,7 +299,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
 
             case 3:
                 if (S_TDialogos.id == 1000)
-                {
+                {                 
                     elementosTutorial.tutotial_elements.IsAstro1Act = false;
                     elementosTutorial.tutotial_elements.IsEdgar1Act = true;
                 }
@@ -337,13 +348,17 @@ public class TutorialDialogue_Manager : MonoBehaviour
             case 4:
                 if (S_TDialogos.id == 1000)
                 {
+                    elementosTutorial.tutotial_elements.nextBtonact = true;
                     elementosTutorial.tutotial_elements.IsAstro1Act = false;
                     elementosTutorial.tutotial_elements.IsEdgar1Act = true;
                 }
                 if (S_TDialogos.id == 1001)
                 {
-                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
-                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    this.gameObject.SetActive(false);
+                    //elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    //elementosTutorial.tutotial_elements.IsEdgar1Act = true;
                 }
                 if (S_TDialogos.id == 1002)
                 {
@@ -382,16 +397,11 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 }
                 break;
             case 5:
-                if (S_TDialogos.id == 1000)
-                {
-                    elementosTutorial.tutotial_elements.nextBtonact = true;
-                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
-                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
-                }
                 if (S_TDialogos.id == 1001)
                 {
-                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
-                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    this.gameObject.SetActive(false);
                 }
                 if (S_TDialogos.id == 1002)
                 {
@@ -405,8 +415,9 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 }
                 if (S_TDialogos.id == 1004)
                 {
-                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
-                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    this.gameObject.SetActive(false);
                 }
                 if (S_TDialogos.id == 1005)
                 {
@@ -430,33 +441,12 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 }
                 break;
             case 6:
-                if (S_TDialogos.id == 1000)
-                {
-                    elementosTutorial.tutotial_elements.nextBtonact = true;
-                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
-                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
-                }
-                if (S_TDialogos.id == 1001)
-                {
-                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
-                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
-                    currentSentence = 0;
-                    E.SetActive(false);
-                    this.gameObject.SetActive(false);
-                }
                 if (S_TDialogos.id == 1002)
                 {
-                    currentSentence = 0;
-                    E.SetActive(false);
-                    this.gameObject.SetActive(false);
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
                 }
                 if (S_TDialogos.id == 1003)
-                {
-                    currentSentence = 0;
-                    E.SetActive(false);
-                    this.gameObject.SetActive(false);
-                }
-                if (S_TDialogos.id == 1004)
                 {
                     currentSentence = 0;
                     E.SetActive(false);
@@ -488,37 +478,12 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 }
                 break;
             case 7:
-                if (S_TDialogos.id == 1000)
+                if (S_TDialogos.id == 1002)
                 {
-                    elementosTutorial.tutotial_elements.nextBtonact = true;
                     elementosTutorial.tutotial_elements.IsAstro1Act = false;
                     elementosTutorial.tutotial_elements.IsEdgar1Act = true;
                 }
-                if (S_TDialogos.id == 1001)
-                {
-                    currentSentence = 0;
-                    E.SetActive(false);
-                    this.gameObject.SetActive(false);
-                }
-                if (S_TDialogos.id == 1002)
-                {
-                    currentSentence = 0;
-                    E.SetActive(false);
-                    this.gameObject.SetActive(false);
-                }
                 if (S_TDialogos.id == 1003)
-                {
-                    currentSentence = 0;
-                    E.SetActive(false);
-                    this.gameObject.SetActive(false);
-                }
-                if (S_TDialogos.id == 1004)
-                {
-                    currentSentence = 0;
-                    E.SetActive(false);
-                    this.gameObject.SetActive(false);
-                }
-                if (S_TDialogos.id == 1005)
                 {
                     currentSentence = 0;
                     E.SetActive(false);
@@ -531,12 +496,6 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     this.gameObject.SetActive(false);
                 }
                 if (S_TDialogos.id == 1007)
-                {
-                    currentSentence = 0;
-                    E.SetActive(false);
-                    this.gameObject.SetActive(false);
-                }
-                if (S_TDialogos.id == 1008)
                 {
                     currentSentence = 0;
                     E.SetActive(false);
@@ -544,38 +503,12 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 }
                 break;
             case 8:
-                if (S_TDialogos.id == 1000)
-                {
-                    elementosTutorial.tutotial_elements.nextBtonact = true;
-                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
-                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
-                    currentSentence = 0;
-                }
-                if(S_TDialogos.id == 1001)
-                {
-                    currentSentence = 0;
-                    E.SetActive(false);
-                    this.gameObject.SetActive(false);
-                }
                 if (S_TDialogos.id == 1002)
                 {
-                    currentSentence = 0;
-                    E.SetActive(false);
-                    this.gameObject.SetActive(false);
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
                 }
                 if (S_TDialogos.id == 1003)
-                {
-                    currentSentence = 0;
-                    E.SetActive(false);
-                    this.gameObject.SetActive(false);
-                }
-                if (S_TDialogos.id == 1004)
-                {
-                    currentSentence = 0;
-                    E.SetActive(false);
-                    this.gameObject.SetActive(false);
-                }
-                if (S_TDialogos.id == 1005)
                 {
                     currentSentence = 0;
                     E.SetActive(false);
@@ -593,15 +526,15 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     E.SetActive(false);
                     this.gameObject.SetActive(false);
                 }
-                if (S_TDialogos.id == 1008)
+                break;
+            case 9:
+                if (S_TDialogos.id == 1002)
                 {
                     currentSentence = 0;
                     E.SetActive(false);
                     this.gameObject.SetActive(false);
                 }
-                //E.SetActive(false);
                 break;
-
         }
     }
 
