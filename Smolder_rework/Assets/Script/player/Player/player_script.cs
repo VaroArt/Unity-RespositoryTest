@@ -21,10 +21,13 @@ public class player_script : MonoBehaviour
     public float cantidadTurbo;
     public float turbospeed;
     public bool isTurboActivate;
+    [Header("Particulas")]
+    public bool canMoveStars;
+    public stardust_System stardust;
 
     void Start()
     {
-       
+        canMoveStars = true;
         myrg = GetComponent<Rigidbody2D>();
         vida = 2;
        
@@ -112,5 +115,30 @@ public class player_script : MonoBehaviour
         {
             myrg.rotation = Mathf.Lerp(myrg.rotation, shipAngle, rotationInterpolation);
         } 
+    }
+
+    public void Reparar()
+    {
+        if (vida != 2)
+        {
+            print("reparacion");
+        }
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == ("obstacule"))
+        {
+           
+            canMoveStars = false;
+        }
+    }
+    public void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == ("obstacule"))
+        {
+            
+            canMoveStars = true;
+        }
     }
 }

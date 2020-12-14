@@ -17,6 +17,7 @@ TagManager:
   - Interaction2
   - minimap
   - Enemy
+  - obstacule
   layers:
   - Default
   - TransparentFX

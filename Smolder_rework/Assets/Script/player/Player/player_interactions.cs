@@ -7,17 +7,10 @@ using UnityEngine.UI;
 public class player_interactions : MonoBehaviour
 {
 
-    /* private AudioSource myaudio;  // estas variables de aqui a abajo son las que usaste diego pal audio, de la camara y pa cambiar el audio a otro
-     public  AudioSource cAudio;
-     public AudioClip test;*/
-    public Dialogue_Manager manager;
-   // public string currentItem;
-   // public int coordenadaCount;
-   // public Image Llave, Coordenada1, Coordenada2;
+  
     void Start()
     {
-        //   myaudio = GetComponent<AudioSource>(); // esto vo mismo me lo enseñaste asi que no se porque te lo comento
-      //  currentItem = ("null");
+     
     }
 
     // Update is called once per frame

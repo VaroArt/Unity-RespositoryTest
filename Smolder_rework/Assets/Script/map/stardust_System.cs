@@ -17,10 +17,15 @@ public class stardust_System : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    
+
+        if (player.canMoveStars)
+        {
             moveUp();
             moveDown();
+        }
+        else dontMove();
+
+
         if (player.vida <= 0)
         {
             myvelocity.x = 0;
@@ -38,5 +43,9 @@ public class stardust_System : MonoBehaviour
     {
         myvelocity.x = -player.input.x * 10;
     }
-    
+    public void dontMove()
+    {
+        myvelocity.x = 0f;
+        myvelocity.y = 0f;
+    }
 }

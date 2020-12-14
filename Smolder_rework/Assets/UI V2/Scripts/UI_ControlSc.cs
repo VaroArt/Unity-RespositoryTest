@@ -35,6 +35,7 @@ public class BoolPanelesNave
     public bool ActivarPanelInteraccion;
     public bool ActivarPanelTexto;
     public bool ActivarPanelInventario;
+    
 }
 
 //0 es boton interactuar e interaccion activa
@@ -343,6 +344,7 @@ public class TutorialElements
     public bool IsEdgar2Act;
     public bool IsAstro2Act;
 }
+
 
 
 public class UI_ControlSc : MonoBehaviour
