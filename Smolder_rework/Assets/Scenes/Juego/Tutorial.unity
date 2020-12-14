@@ -13568,9 +13568,9 @@ MonoBehaviour:
     - "muchas gracias se\xF1or"
   C_Nave: {fileID: 2435524740798602846}
   elementosTutorial: {fileID: 2435524740798602851}
-  PanelDialogo: {fileID: 2726392526607265021}
-  Display: {fileID: 1921832483606817080}
-  nextbton: {fileID: 1429774840277770933}
+  PanelDialogo: {fileID: 3000363780575595127}
+  Display: {fileID: 3428194249398520727}
+  nextbton: {fileID: 6676851358752086276}
   typingSpeed: 0.01
   currentSentence: 0
   E: {fileID: 1712395840}
@@ -15721,7 +15721,7 @@ GameObject:
   - component: {fileID: 5942110927806781571}
   - component: {fileID: 2627715831831488978}
   m_Layer: 5
-  m_Name: nombre Perro Astro
+  m_Name: nombre Perro Astro 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15969,12 +15969,12 @@ GameObject:
   - component: {fileID: 2706459994864445686}
   - component: {fileID: 6667924672007637778}
   m_Layer: 5
-  m_Name: Canvas_Info (1)
+  m_Name: Canvas_Info 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1663852965237570337
 GameObject:
   m_ObjectHideFlags: 0
@@ -34482,7 +34482,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3564049421513128209}
   m_Layer: 5
-  m_Name: Panel Dialogos
+  m_Name: Panel Dialogos 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34780,7 +34780,7 @@ GameObject:
   - component: {fileID: 6638227604756612360}
   - component: {fileID: 4477644234057908595}
   m_Layer: 5
-  m_Name: Fondo Dialogo
+  m_Name: Fondo Dialogo 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34971,7 +34971,7 @@ GameObject:
   - component: {fileID: 218209070768325372}
   - component: {fileID: 6535034776682936519}
   m_Layer: 5
-  m_Name: Pantalla Perros
+  m_Name: Pantalla Perros 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35027,7 +35027,7 @@ GameObject:
   - component: {fileID: 4201483042989046568}
   - component: {fileID: 5519920782170489741}
   m_Layer: 5
-  m_Name: Astro
+  m_Name: Astro 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35115,7 +35115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 24043859644908507}
   m_Layer: 5
-  m_Name: Panel_Perros
+  m_Name: Panel_Perros 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35417,7 +35417,7 @@ GameObject:
   - component: {fileID: 4003579816534804412}
   - component: {fileID: 4711141265655344039}
   m_Layer: 5
-  m_Name: Edgar
+  m_Name: Edgar 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35527,7 +35527,7 @@ GameObject:
   - component: {fileID: 340110243967766622}
   - component: {fileID: 6168354356661107295}
   m_Layer: 5
-  m_Name: nombre Perro Edgar
+  m_Name: nombre Perro Edgar 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35639,7 +35639,7 @@ GameObject:
   - component: {fileID: 125218433964043026}
   - component: {fileID: 8544506622844422649}
   m_Layer: 5
-  m_Name: Panel Perros
+  m_Name: Panel Perros 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36083,7 +36083,7 @@ GameObject:
   - component: {fileID: 4790518324803670369}
   - component: {fileID: 3964604611874988545}
   m_Layer: 5
-  m_Name: Next Logo
+  m_Name: Next Logo 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36195,7 +36195,7 @@ GameObject:
   - component: {fileID: 2333117776630668238}
   - component: {fileID: 3428194249398520727}
   m_Layer: 5
-  m_Name: Texto Ejemplo
+  m_Name: Texto Ejemplo 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

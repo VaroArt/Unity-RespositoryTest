@@ -122,7 +122,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
                         }
                         if (S_TDialogos.id == 1004)
                         {
-                            elementosTutorial.tutotial_elements.Texto1Activo = true;
+                            elementosTutorial.tutotial_elements.Texto2Activo = true;
                             elementosTutorial.tutotial_elements.TutoPanelCentral = true;
                             MostrarSigSentencia();
                             currentSentence++;
@@ -225,8 +225,8 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 }
                 if (S_TDialogos.id == 1004)
                 {
-                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
-                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                    elementosTutorial.tutotial_elements.IsAstro2Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar2Act = true;
                 }
                 if (S_TDialogos.id == 1005)
                 {
@@ -272,8 +272,8 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 }
                 if (S_TDialogos.id == 1004)
                 {
-                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
-                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                    elementosTutorial.tutotial_elements.IsAstro2Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar2Act = true;
                 }
                 if (S_TDialogos.id == 1005)
                 {
@@ -320,8 +320,8 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 }
                 if (S_TDialogos.id == 1004)
                 {
-                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
-                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                    elementosTutorial.tutotial_elements.IsAstro2Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar2Act = true;
                 }
                 if (S_TDialogos.id == 1005)
                 {
@@ -372,8 +372,8 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 }
                 if (S_TDialogos.id == 1004)
                 {
-                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
-                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                    elementosTutorial.tutotial_elements.IsAstro2Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar2Act = true;
                 }
                 if (S_TDialogos.id == 1005)
                 {
