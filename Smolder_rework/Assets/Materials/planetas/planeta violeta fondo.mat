@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: planet_test_mat
+  m_Name: planeta violeta fondo
   m_Shader: {fileID: -6465566751694194690, guid: 2a587b1ece1926a4b90882dc88de3e94,
     type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_A20DE4C9:
-        m_Texture: {fileID: 2800000, guid: 9a145c4ccbff81744b60ae3ac793be0b, type: 3}
+        m_Texture: {fileID: 2800000, guid: da3d089115c35461a9471ff81e976ef2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _AlphaTex:
@@ -48,7 +48,7 @@ Material:
     - _EnableExternalAlpha: 0
     m_Colors:
     - Color_FF531B: {r: 2.9960785, g: 1.2862746, b: 0, a: 1}
-    - Vector2_D030506A: {r: 0.05, g: 0.05, b: 0, a: 0}
+    - Vector2_D030506A: {r: 0.05, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
