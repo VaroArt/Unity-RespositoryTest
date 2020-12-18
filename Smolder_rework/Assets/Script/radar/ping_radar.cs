@@ -11,6 +11,8 @@ public class ping_radar : MonoBehaviour
     [SerializeField] private Color color;
 
 
+
+
     private void Awake()
     {
         spriterd = GetComponent<SpriteRenderer>();
@@ -20,7 +22,7 @@ public class ping_radar : MonoBehaviour
     }
     void Start()
     {
-        
+
     }
 
   
@@ -45,4 +47,5 @@ public class ping_radar : MonoBehaviour
         this.disappeartimerMax = disappeartimermax;
         disappeartimer = 0f;
     }
+
 }

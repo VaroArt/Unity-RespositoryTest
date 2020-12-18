@@ -10,6 +10,7 @@ public class pulse_radar : MonoBehaviour
     public float rangeMax;
     public float rangespeed;
     public bool activate;
+    public Sprite[] sprites;
     [SerializeField] private List<Collider2D> col;
 
     private void Awake()
