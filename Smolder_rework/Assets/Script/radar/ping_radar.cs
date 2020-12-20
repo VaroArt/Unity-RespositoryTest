@@ -5,7 +5,7 @@ using UnityEngine.Rendering;
 
 public class ping_radar : MonoBehaviour
 {
-    [SerializeField]private SpriteRenderer spriterd;
+    public SpriteRenderer spriterd;
     [SerializeField] private float disappeartimer;
     [SerializeField] private float disappeartimerMax;
     [SerializeField] private Color color;

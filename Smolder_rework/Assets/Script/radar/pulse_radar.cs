@@ -43,18 +43,19 @@ public class pulse_radar : MonoBehaviour
             foreach (Collider2D colision in col)
             {
              Transform radarpingtr =   Instantiate(radarping, collision.gameObject.transform.position, collision.transform.rotation);
-             if (collision.name == ("meteoro minimap"))
-             {
+                if (collision.name == ("meteoro minimap"))
+                {
                     ping_radar radar = radarpingtr.GetComponent<ping_radar>();
+                    radar.spriterd.sprite = sprites[4];
                     radar.setColor(new Color(1, 1, 0));
 
-             }
-             if (collision.name == ("enemy minimap"))
-             {
+                }
+                if (collision.name == ("enemy minimap"))
+                {
                     ping_radar radar2 = radarpingtr.GetComponent<ping_radar>();
                     radar2.setColor(new Color(1, 0, 0));
                    //
-             }
+                }
                 if (collision.name == ("nave minimap"))
                 {
                     ping_radar radar2 = radarpingtr.GetComponent<ping_radar>();
