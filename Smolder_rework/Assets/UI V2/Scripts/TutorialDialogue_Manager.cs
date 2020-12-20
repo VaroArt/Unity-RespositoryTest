@@ -124,6 +124,8 @@ public class TutorialDialogue_Manager : MonoBehaviour
                         {
                             elementosTutorial.tutotial_elements.Texto2Activo = true;
                             elementosTutorial.tutotial_elements.TutoPanelCentral = true;
+                            elementosTutorial.tutotial_elements.TutoBtonInventario = false;
+                            elementosTutorial.tutotial_elements.TutoPanelInventario = false;
                             MostrarSigSentencia();
                             currentSentence++;
                         }
@@ -131,6 +133,8 @@ public class TutorialDialogue_Manager : MonoBehaviour
                         {
                             elementosTutorial.tutotial_elements.Texto1Activo = true;
                             elementosTutorial.tutotial_elements.TutoPanelCentral = true;
+                            elementosTutorial.tutotial_elements.TutoBtonRecarga = false;
+                            elementosTutorial.tutotial_elements.TutopanelRegarga = false;
                             MostrarSigSentencia();
                             currentSentence++;
                         }
@@ -169,7 +173,9 @@ public class TutorialDialogue_Manager : MonoBehaviour
                         elementosTutorial.tutotial_elements.IsAstro1Act = false;
                         elementosTutorial.tutotial_elements.IsEdgar1Act = true;
                         elementosTutorial.tutotial_elements.Texto1Activo = true;
-                        elementosTutorial.tutotial_elements.TutoBtonRecarga = true;
+                        elementosTutorial.tutotial_elements.TutoPanelCentral = true;
+                        elementosTutorial.tutotial_elements.TutoBtonRadar = false;
+                        elementosTutorial.tutotial_elements.TutoPanelRadar = false;
                     }
                 }
                 else
@@ -182,6 +188,12 @@ public class TutorialDialogue_Manager : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D obj)
     {
+        elementosTutorial.tutotial_elements.TutoBtonRecarga = false;
+        elementosTutorial.tutotial_elements.TutopanelRegarga = false;
+        elementosTutorial.tutotial_elements.TutoBtonInventario = false;
+        elementosTutorial.tutotial_elements.TutoPanelInventario = false;
+        elementosTutorial.tutotial_elements.TutoPanelRadar = false;
+        elementosTutorial.tutotial_elements.TutoBtonRadar = false;
         elementosTutorial.tutotial_elements.Texto2Activo = false;
         elementosTutorial.tutotial_elements.IsAstro2Act = false;
         elementosTutorial.tutotial_elements.IsEdgar2Act = true;
@@ -207,6 +219,9 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 {
                     elementosTutorial.tutotial_elements.IsAstro1Act = false;
                     elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                    elementosTutorial.tutotial_elements.TutoPanelCentral = true;
+                    elementosTutorial.tutotial_elements.TutoBtonRadar = false;
+                    elementosTutorial.tutotial_elements.TutoPanelRadar = false;
                 }
                 if (S_TDialogos.id == 1002)
                 {
@@ -221,11 +236,17 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 {
                     elementosTutorial.tutotial_elements.IsAstro2Act = false;
                     elementosTutorial.tutotial_elements.IsEdgar2Act = true;
+                    elementosTutorial.tutotial_elements.TutoBtonInventario = true;
+                    elementosTutorial.tutotial_elements.TutoPanelInventario = false;
+                    elementosTutorial.tutotial_elements.TutoPanelCentral = false;
                 }
                 if (S_TDialogos.id == 1005)
                 {
                     elementosTutorial.tutotial_elements.IsAstro1Act = false;
                     elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                    elementosTutorial.tutotial_elements.TutoPanelCentral = true;
+                    elementosTutorial.tutotial_elements.TutoBtonRecarga = false;
+                    elementosTutorial.tutotial_elements.TutopanelRegarga = false;
                 }
                 if (S_TDialogos.id == 1006)
                 {
@@ -249,6 +270,9 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 {
                     elementosTutorial.tutotial_elements.IsAstro1Act = true;
                     elementosTutorial.tutotial_elements.IsEdgar1Act = false;
+                    elementosTutorial.tutotial_elements.TutoPanelCentral = true;
+                    elementosTutorial.tutotial_elements.TutoBtonRadar = false;
+                    elementosTutorial.tutotial_elements.TutoPanelRadar = false;
                 }
                 if (S_TDialogos.id == 1002)
                 {
@@ -262,13 +286,20 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 }
                 if (S_TDialogos.id == 1004)
                 {
+                    C_Nave.ControlPanelesNave.ActivarPanelInventario = true;
                     elementosTutorial.tutotial_elements.IsAstro2Act = true;
                     elementosTutorial.tutotial_elements.IsEdgar2Act = false;
+                    elementosTutorial.tutotial_elements.TutoBtonInventario = false;
+                    elementosTutorial.tutotial_elements.TutoPanelInventario = true;
+                    elementosTutorial.tutotial_elements.TutoPanelCentral = false;
                 }
                 if (S_TDialogos.id == 1005)
                 {
                     elementosTutorial.tutotial_elements.IsAstro1Act = true;
                     elementosTutorial.tutotial_elements.IsEdgar1Act = false;
+                    elementosTutorial.tutotial_elements.TutoPanelCentral = false;
+                    elementosTutorial.tutotial_elements.TutoBtonRecarga = true;
+                    elementosTutorial.tutotial_elements.TutopanelRegarga = false;
                 }
                 if (S_TDialogos.id == 1006)
                 {
@@ -298,6 +329,9 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 {
                     elementosTutorial.tutotial_elements.IsAstro1Act = false;
                     elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                    elementosTutorial.tutotial_elements.TutoPanelCentral = false;
+                    elementosTutorial.tutotial_elements.TutoBtonRadar = true;
+                    elementosTutorial.tutotial_elements.TutoPanelRadar = false;
                 }
                 if (S_TDialogos.id == 1002)
                 {
@@ -311,13 +345,21 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 }
                 if (S_TDialogos.id == 1004)
                 {
+                    C_Nave.ControlPanelesNave.ActivarPanelInventario = true;
                     elementosTutorial.tutotial_elements.IsAstro2Act = false;
                     elementosTutorial.tutotial_elements.IsEdgar2Act = true;
+                    elementosTutorial.tutotial_elements.TutoBtonInventario = false;
+                    elementosTutorial.tutotial_elements.TutoPanelInventario = true;
+                    elementosTutorial.tutotial_elements.TutoPanelCentral = false;
                 }
                 if (S_TDialogos.id == 1005)
                 {
+                    C_Nave.ControlPanelesNave.ActivarPanelRecarga = true;
                     elementosTutorial.tutotial_elements.IsAstro1Act = false;
                     elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                    elementosTutorial.tutotial_elements.TutoPanelCentral = false;
+                    elementosTutorial.tutotial_elements.TutoBtonRecarga = false;
+                    elementosTutorial.tutotial_elements.TutopanelRegarga = true;
                 }
                 if (S_TDialogos.id == 1006)
                 {
@@ -345,12 +387,12 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 }
                 if (S_TDialogos.id == 1001)
                 {
+                    C_Nave.ControlPanelesNave.ActivarPanelRadar = true;
                     elementosTutorial.tutotial_elements.IsAstro1Act = false;
-                    elementosTutorial.tutotial_elements.IsEdgar1Act = false;
-                    elementosTutorial.tutotial_elements.Texto1Activo = false;
-                    elementosTutorial.tutotial_elements.TutoBtonRecarga = false;
-                    currentSentence = 0;
-                    E.SetActive(false);
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                    elementosTutorial.tutotial_elements.TutoPanelCentral = false;
+                    elementosTutorial.tutotial_elements.TutoBtonRadar = false;
+                    elementosTutorial.tutotial_elements.TutoPanelRadar = true;
                 }
                 if (S_TDialogos.id == 1002)
                 {
@@ -364,13 +406,21 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 }
                 if (S_TDialogos.id == 1004)
                 {
+                    C_Nave.ControlPanelesNave.ActivarPanelInventario = true;
                     elementosTutorial.tutotial_elements.IsAstro2Act = false;
                     elementosTutorial.tutotial_elements.IsEdgar2Act = true;
+                    elementosTutorial.tutotial_elements.TutoBtonInventario = false;
+                    elementosTutorial.tutotial_elements.TutoPanelInventario = true;
+                    elementosTutorial.tutotial_elements.TutoPanelCentral = false;
                 }
                 if (S_TDialogos.id == 1005)
                 {
+                    C_Nave.ControlPanelesNave.ActivarPanelRecarga = true;
                     elementosTutorial.tutotial_elements.IsAstro1Act = false;
                     elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                    elementosTutorial.tutotial_elements.TutoPanelCentral = false;
+                    elementosTutorial.tutotial_elements.TutoBtonRecarga = false;
+                    elementosTutorial.tutotial_elements.TutopanelRegarga = true;
                 }
                 if (S_TDialogos.id == 1006)
                 {
@@ -391,10 +441,13 @@ public class TutorialDialogue_Manager : MonoBehaviour
             case 5:
                 if (S_TDialogos.id == 1001)
                 {
+                    C_Nave.ControlPanelesNave.ActivarPanelRadar = false;
                     elementosTutorial.tutotial_elements.IsAstro1Act = false;
                     elementosTutorial.tutotial_elements.IsEdgar1Act = false;
                     elementosTutorial.tutotial_elements.Texto1Activo = false;
-                    elementosTutorial.tutotial_elements.TutoBtonRecarga = false;
+                    elementosTutorial.tutotial_elements.TutoBtonRadar = false;
+                    elementosTutorial.tutotial_elements.TutoPanelCentral = false;
+                    elementosTutorial.tutotial_elements.TutoPanelRadar = false;
                     currentSentence = 0;
                     E.SetActive(false);
                 }
@@ -410,17 +463,24 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 }
                 if (S_TDialogos.id == 1004)
                 {
+                    C_Nave.ControlPanelesNave.ActivarPanelInventario = false;
                     elementosTutorial.tutotial_elements.Texto2Activo = false;
                     elementosTutorial.tutotial_elements.TutoPanelCentral = false;
+                    elementosTutorial.tutotial_elements.TutoBtonInventario = false;
+                    elementosTutorial.tutotial_elements.TutoPanelInventario = false;
                     elementosTutorial.tutotial_elements.IsAstro2Act = false;
-                    elementosTutorial.tutotial_elements.IsEdgar2Act = true;
+                    elementosTutorial.tutotial_elements.IsEdgar2Act = false;
                     currentSentence = 0;
                     E.SetActive(false);
                 }
                 if (S_TDialogos.id == 1005)
                 {
+                    C_Nave.ControlPanelesNave.ActivarPanelRecarga = true;
                     elementosTutorial.tutotial_elements.IsAstro1Act = false;
                     elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                    elementosTutorial.tutotial_elements.TutoPanelCentral = false;
+                    elementosTutorial.tutotial_elements.TutoBtonRecarga = false;
+                    elementosTutorial.tutotial_elements.TutopanelRegarga = true;
                 }
                 if (S_TDialogos.id == 1006)
                 {
@@ -441,10 +501,13 @@ public class TutorialDialogue_Manager : MonoBehaviour
             case 6:
                 if (S_TDialogos.id == 1001)
                 {
+                    C_Nave.ControlPanelesNave.ActivarPanelRadar = false;
                     elementosTutorial.tutotial_elements.IsAstro1Act = false;
                     elementosTutorial.tutotial_elements.IsEdgar1Act = false;
                     elementosTutorial.tutotial_elements.Texto1Activo = false;
-                    elementosTutorial.tutotial_elements.TutoBtonRecarga = false;
+                    elementosTutorial.tutotial_elements.TutoBtonRadar = false;
+                    elementosTutorial.tutotial_elements.TutoPanelCentral = false;
+                    elementosTutorial.tutotial_elements.TutoPanelRadar = false;
                     currentSentence = 0;
                     E.SetActive(false);
                 }
@@ -459,14 +522,25 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     E.SetActive(false);
                     this.gameObject.SetActive(false);
                 }
-                if (S_TDialogos.id == 1005)
+                if (S_TDialogos.id == 1004)
                 {
-                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
-                    elementosTutorial.tutotial_elements.IsEdgar1Act = false;
-                    elementosTutorial.tutotial_elements.Texto1Activo = false;
+                    elementosTutorial.tutotial_elements.Texto2Activo = false;
                     elementosTutorial.tutotial_elements.TutoPanelCentral = false;
+                    elementosTutorial.tutotial_elements.TutoBtonInventario = false;
+                    elementosTutorial.tutotial_elements.TutoPanelInventario = false;
+                    elementosTutorial.tutotial_elements.IsAstro2Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar2Act = false;
                     currentSentence = 0;
                     E.SetActive(false);
+                }
+                if (S_TDialogos.id == 1005)
+                {
+                    C_Nave.ControlPanelesNave.ActivarPanelRecarga = true;
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                    elementosTutorial.tutotial_elements.TutoPanelCentral = false;
+                    elementosTutorial.tutotial_elements.TutoBtonRecarga = false;
+                    elementosTutorial.tutotial_elements.TutopanelRegarga = true;
                 }
                 if (S_TDialogos.id == 1006)
                 {
@@ -499,10 +573,13 @@ public class TutorialDialogue_Manager : MonoBehaviour
             case 7:
                 if (S_TDialogos.id == 1001)
                 {
+                    C_Nave.ControlPanelesNave.ActivarPanelRadar = false;
                     elementosTutorial.tutotial_elements.IsAstro1Act = false;
                     elementosTutorial.tutotial_elements.IsEdgar1Act = false;
                     elementosTutorial.tutotial_elements.Texto1Activo = false;
-                    elementosTutorial.tutotial_elements.TutoBtonRecarga = false;
+                    elementosTutorial.tutotial_elements.TutoBtonRadar = false;
+                    elementosTutorial.tutotial_elements.TutoPanelCentral = false;
+                    elementosTutorial.tutotial_elements.TutoPanelRadar = false;
                     currentSentence = 0;
                     E.SetActive(false);
                 }
@@ -516,6 +593,29 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     currentSentence = 0;
                     E.SetActive(false);
                     this.gameObject.SetActive(false);
+                }
+                if (S_TDialogos.id == 1004)
+                {
+                    elementosTutorial.tutotial_elements.Texto2Activo = false;
+                    elementosTutorial.tutotial_elements.TutoPanelCentral = false;
+                    elementosTutorial.tutotial_elements.TutoBtonInventario = false;
+                    elementosTutorial.tutotial_elements.TutoPanelInventario = false;
+                    elementosTutorial.tutotial_elements.IsAstro2Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar2Act = false;
+                    currentSentence = 0;
+                    E.SetActive(false);
+                }
+                if (S_TDialogos.id == 1005)
+                {
+                    C_Nave.ControlPanelesNave.ActivarPanelRecarga = false;
+                    elementosTutorial.tutotial_elements.TutoBtonRecarga = false;
+                    elementosTutorial.tutotial_elements.TutopanelRegarga = false;
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = false;
+                    elementosTutorial.tutotial_elements.Texto1Activo = false;
+                    elementosTutorial.tutotial_elements.TutoPanelCentral = false;
+                    currentSentence = 0;
+                    E.SetActive(false);
                 }
                 if (S_TDialogos.id == 1006)
                 {
