@@ -43,13 +43,137 @@ public class pulse_radar : MonoBehaviour
             foreach (Collider2D colision in col)
             {
              Transform radarpingtr =   Instantiate(radarping, collision.gameObject.transform.position, collision.transform.rotation);
-                if (collision.name == ("meteoro minimap"))
+
+                #region Colisiones anillo de asteroides
+                if (collision.name == ("colision 1"))
+                {
+                    ping_radar radar = radarpingtr.GetComponent<ping_radar>();
+                    radar.spriterd.sprite = sprites[0];
+                    radar.setColor(new Color(1, 1, 0));
+
+                }
+                if (collision.name == ("colision 2"))
+                {
+                    ping_radar radar = radarpingtr.GetComponent<ping_radar>();
+                    radar.spriterd.sprite = sprites[1];
+                    radar.setColor(new Color(1, 1, 0));
+
+                }
+                if (collision.name == ("colision 3"))
+                {
+                    ping_radar radar = radarpingtr.GetComponent<ping_radar>();
+                    radar.spriterd.sprite = sprites[2];
+                    radar.setColor(new Color(1, 1, 0));
+
+                }
+                if (collision.name == ("colision 4"))
+                {
+                    ping_radar radar = radarpingtr.GetComponent<ping_radar>();
+                    radar.spriterd.sprite = sprites[3];
+                    radar.setColor(new Color(1, 1, 0));
+
+                }
+                if (collision.name == ("colision 5"))
                 {
                     ping_radar radar = radarpingtr.GetComponent<ping_radar>();
                     radar.spriterd.sprite = sprites[4];
                     radar.setColor(new Color(1, 1, 0));
 
                 }
+                if (collision.name == ("colision 6"))
+                {
+                    ping_radar radar = radarpingtr.GetComponent<ping_radar>();
+                    radar.spriterd.sprite = sprites[5];
+                    radar.setColor(new Color(1, 1, 0));
+
+                }
+                if (collision.name == ("colision 7"))
+                {
+                    ping_radar radar = radarpingtr.GetComponent<ping_radar>();
+                    radar.spriterd.sprite = sprites[6];
+                    radar.setColor(new Color(1, 1, 0));
+
+                }
+                if (collision.name == ("colision 8"))
+                {
+                    ping_radar radar = radarpingtr.GetComponent<ping_radar>();
+                    radar.spriterd.sprite = sprites[7];
+                    radar.setColor(new Color(1, 1, 0));
+
+                }
+                if (collision.name == ("colision 9"))
+                {
+                    ping_radar radar = radarpingtr.GetComponent<ping_radar>();
+                    radar.spriterd.sprite = sprites[8];
+                    radar.setColor(new Color(1, 1, 0));
+
+                }
+                if (collision.name == ("colision 10"))
+                {
+                    ping_radar radar = radarpingtr.GetComponent<ping_radar>();
+                    radar.spriterd.sprite = sprites[9];
+                    radar.setColor(new Color(1, 1, 0));
+
+                }
+                if (collision.name == ("colision 11"))
+                {
+                    ping_radar radar = radarpingtr.GetComponent<ping_radar>();
+                    radar.spriterd.sprite = sprites[10];
+                    radar.setColor(new Color(1, 1, 0));
+
+                }
+                if (collision.name == ("colision 12"))
+                {
+                    ping_radar radar = radarpingtr.GetComponent<ping_radar>();
+                    radar.spriterd.sprite = sprites[11];
+                    radar.setColor(new Color(1, 1, 0));
+
+                }
+                if (collision.name == ("colision 13"))
+                {
+                    ping_radar radar = radarpingtr.GetComponent<ping_radar>();
+                    radar.spriterd.sprite = sprites[12];
+                    radar.setColor(new Color(1, 1, 0));
+
+                }
+                if (collision.name == ("colision 14"))
+                {
+                    ping_radar radar = radarpingtr.GetComponent<ping_radar>();
+                    radar.spriterd.sprite = sprites[13];
+                    radar.setColor(new Color(1, 1, 0));
+
+                }
+                if (collision.name == ("colision 15"))
+                {
+                    ping_radar radar = radarpingtr.GetComponent<ping_radar>();
+                    radar.spriterd.sprite = sprites[14];
+                    radar.setColor(new Color(1, 1, 0));
+
+                }
+                if (collision.name == ("colision 16"))
+                {
+                    ping_radar radar = radarpingtr.GetComponent<ping_radar>();
+                    radar.spriterd.sprite = sprites[15];
+                    radar.setColor(new Color(1, 1, 0));
+
+                }
+                if (collision.name == ("colision 17"))
+                {
+                    ping_radar radar = radarpingtr.GetComponent<ping_radar>();
+                    radar.spriterd.sprite = sprites[16];
+                    radar.setColor(new Color(1, 1, 0));
+
+                }
+
+                #endregion
+
+                if (collision.name == ("meteoro minimap"))
+                {
+                    ping_radar radar2 = radarpingtr.GetComponent<ping_radar>();
+                    radar2.setColor(new Color(1, 1, 0));
+                    //
+                }
+
                 if (collision.name == ("enemy minimap"))
                 {
                     ping_radar radar2 = radarpingtr.GetComponent<ping_radar>();
