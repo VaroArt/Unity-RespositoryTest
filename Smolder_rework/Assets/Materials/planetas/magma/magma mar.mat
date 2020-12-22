@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: planeta violeta nube
+  m_Name: magma mar
   m_Shader: {fileID: -6465566751694194690, guid: 2a587b1ece1926a4b90882dc88de3e94,
     type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_A20DE4C9:
-        m_Texture: {fileID: 2800000, guid: 42ba15841826541869173f6312282e54, type: 3}
+        m_Texture: {fileID: 2800000, guid: 367f7536780db45e7a20b6010a910fe2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _AlphaTex:

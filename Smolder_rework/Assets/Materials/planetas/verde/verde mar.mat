@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: planeta violeta fondo
+  m_Name: verde mar
   m_Shader: {fileID: -6465566751694194690, guid: 2a587b1ece1926a4b90882dc88de3e94,
     type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_A20DE4C9:
-        m_Texture: {fileID: 2800000, guid: ec764410540e04c39a1332d23038b020, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8cbd3f3c253d942d38e33e98f7d06c02, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _AlphaTex:
