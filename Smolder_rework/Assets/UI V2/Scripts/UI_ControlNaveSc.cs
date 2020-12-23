@@ -24,9 +24,9 @@ public class UI_ControlNaveSc : MonoBehaviour
     [Header("Recarga")]
     public BengalSystem Municion;
     public AppFunciones extras;
-    [Header("Turbo")]
+    [Header("control Turbo y luz")]
+    public OpcionesTurboYLinterna OpcionesMYL;
     public TurboSystem Turbo;
-    [Header("Linterna")]
     public Linterna LinternaNave;
     [Header("Inventario")]
     public Invetario inventario;
@@ -58,6 +58,8 @@ public class UI_ControlNaveSc : MonoBehaviour
         ControlPausa.ControlPausa();
         SistemaDelDron.Errorupdate();
         BengalaInventario();
+        ControlLuces();
+        ControlMotores();
     }
 
     //Control De UI
@@ -179,6 +181,30 @@ public class UI_ControlNaveSc : MonoBehaviour
         }
     }
 
+    void ControlLuces()
+    {
+        if(OpcionesMYL.InfoLuzActiva == true)
+        {
+            print("luz on");
+        }
+        if(OpcionesMYL.InfoLuzActiva == false)
+        {
+            print("Luz off");
+        }
+    }
+
+    void ControlMotores()
+    {
+        if(OpcionesMYL.InfoMotorActiva == true)
+        {
+            print("motorOn");
+        }
+        if(OpcionesMYL.InfoMotorActiva == false)
+        {
+            print("motorOff");
+        }
+    }
+
     //funciones
     void VidaBaja()
     {
@@ -260,14 +286,12 @@ public class UI_ControlNaveSc : MonoBehaviour
         else 
         {
             Municion.Error.SetActive(false);
-        }
-       
+        } 
     }
     public void BotonRecargaCentro()
     {
         if (municionCargada)
-        {
-            
+        {         
             Municion.Shoot();
             Municion.AmmoCount = 0;
             Municion.canShoot = 0;
@@ -322,6 +346,30 @@ public class UI_ControlNaveSc : MonoBehaviour
             ControlPanelesNave.ActivarPanelInventario = false;
         }
     }
+    public void BotonInfoLuz()
+    {
+        if(OpcionesMYL.InfoLuzActiva == false)
+        {
+            OpcionesMYL.InfoLuzActiva = true;
+        }
+        else
+        {
+            OpcionesMYL.InfoLuzActiva = false;
+        }
+    }
+
+    public void BotonInfoMotor()
+    {
+        if(OpcionesMYL.InfoMotorActiva == false)
+        {
+            OpcionesMYL.InfoMotorActiva = true;
+        }
+        else
+        {
+            OpcionesMYL.InfoMotorActiva = false;
+        }
+    }
+
     public void BengalaInventario()
     {
         inventario.BengalaText.text = "X " + Municion.CantBengalas.ToString();

@@ -286,7 +286,17 @@ public class DronFuncion
 }
 
 [System.Serializable]
+public class OpcionesTurboYLinterna
+{
+    public Image IndicadorLuz;
+    public Image BotonLuz;
+    public Image IndicadorMotor;
+    [Space(10)]
+    public bool InfoLuzActiva;
+    public bool InfoMotorActiva;
+}
 
+[System.Serializable]
 public class TurboSystem
 {
     public Image TurboBar;
