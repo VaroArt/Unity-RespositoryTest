@@ -288,9 +288,13 @@ public class DronFuncion
 [System.Serializable]
 public class OpcionesTurboYLinterna
 {
-    public Image IndicadorLuz;
+    public Canvas IndicadorLuz;
     public Image BotonLuz;
-    public Image IndicadorMotor;
+    public Canvas IndicadorMotor;
+    [Space(10)]
+    public Image[] FlechaFuncionLuz;
+    [Space(10)]
+    public Image[] FlechaFuncionMotor;
     [Space(10)]
     public bool InfoLuzActiva;
     public bool InfoMotorActiva;
@@ -304,16 +308,13 @@ public class TurboSystem
 [System.Serializable]
 public class Linterna
 {
-    public Image LinternaBar;
-    
+    public Image LinternaBar;   
 }
 [System.Serializable]
 public class Invetario
 {
     public Text TurboText;
-    public Text BengalaText;
-
-  
+    public Text BengalaText; 
 }
 
 [System.Serializable]

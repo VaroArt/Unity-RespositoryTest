@@ -185,11 +185,17 @@ public class UI_ControlNaveSc : MonoBehaviour
     {
         if(OpcionesMYL.InfoLuzActiva == true)
         {
-            print("luz on");
+            OpcionesMYL.IndicadorLuz.enabled = true;
+            OpcionesMYL.BotonLuz.enabled = true;
+            OpcionesMYL.FlechaFuncionLuz[0].enabled = false;
+            OpcionesMYL.FlechaFuncionLuz[1].enabled = true;
         }
         if(OpcionesMYL.InfoLuzActiva == false)
         {
-            print("Luz off");
+            OpcionesMYL.IndicadorLuz.enabled = false;
+            OpcionesMYL.BotonLuz.enabled = false;
+            OpcionesMYL.FlechaFuncionLuz[0].enabled = true;
+            OpcionesMYL.FlechaFuncionLuz[1].enabled = false;
         }
     }
 
@@ -197,11 +203,15 @@ public class UI_ControlNaveSc : MonoBehaviour
     {
         if(OpcionesMYL.InfoMotorActiva == true)
         {
-            print("motorOn");
+            OpcionesMYL.IndicadorMotor.enabled = true;
+            OpcionesMYL.FlechaFuncionMotor[0].enabled = false;
+            OpcionesMYL.FlechaFuncionMotor[1].enabled = true;
         }
         if(OpcionesMYL.InfoMotorActiva == false)
         {
-            print("motorOff");
+            OpcionesMYL.IndicadorMotor.enabled = false;
+            OpcionesMYL.FlechaFuncionMotor[0].enabled = true;
+            OpcionesMYL.FlechaFuncionMotor[1].enabled = false;
         }
     }
 
