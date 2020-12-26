@@ -12,7 +12,7 @@ public class flickering : MonoBehaviour
     public UI_ControlNaveSc HUD;
     public BengalSystem bengala;
     [Header("Flickering system")]
-    [HideInInspector] public bool iniciate;
+    public bool iniciate;
     public int Min;
     public int Max;
     [HideInInspector] public int rangeR;
@@ -63,7 +63,17 @@ public class flickering : MonoBehaviour
         {
             lightFlicker();
         }
-     
+
+      if(lightCharge > 100f) // limitar la cantidad de luz solo a 100%
+        {
+            lightCharge = 100f;
+        }
+        if (lightCharge < 50f) // si tienes menos carga que cierta cantidad de cifra, pues la luz parpadeara
+        {
+            iniciate = true;
+
+        }
+        else iniciate = false;
 
     }
      public void lightFlicker()
@@ -83,10 +93,11 @@ public class flickering : MonoBehaviour
 
     public void RecargaLinterna()
     {
-        if (bengala.CantBengalas != 0)
+        if (bengala.CantBengalas != 0 && lightCharge < 100) //preguntar si al menos hay una bengala disponible para recargar y la cantidad de linterna no es 100%
         {
             bengala.CantBengalas--;
             lightCharge += 20f;
+
         }
      
 

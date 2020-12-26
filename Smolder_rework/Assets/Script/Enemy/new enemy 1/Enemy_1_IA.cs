@@ -34,6 +34,7 @@ public class Enemy_1_IA : Enemy_1_Var
     {
 
         gfx.mat.SetFloat("_Fade", 1f);
+        
     }
 
     #region Pathfind
@@ -63,8 +64,8 @@ public class Enemy_1_IA : Enemy_1_Var
         patrol.randomSpot = Random.Range(0, patrol.Points.Length); //Para seleccionar un target random al inicio
         patrol.waitTime = patrol.startWaitTime; //reinicio apropiado del waitTime cuando se llega a un patrolPoint
         InvokeRepeating("updatePath", 0f, 0.1f); //Si encuentra el target, en este caso, si llega a el, volvera a preguntar por uno cada 0.1s.
-       
 
+        Path.pathfinder.Scan();
 
     }
 
@@ -94,7 +95,9 @@ public class Enemy_1_IA : Enemy_1_Var
      //   taskTrigger();
           taskList();
           movimiento.rotation.canRotate = true;
-     //   movimiento.rotation.targetTr = sensor.CurrentTarget;
+        //   movimiento.rotation.targetTr = sensor.CurrentTarget;
+
+   
     }
 
     public void FixedUpdate()
