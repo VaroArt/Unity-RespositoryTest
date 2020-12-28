@@ -18,6 +18,7 @@ public class Enemy_trigger : MonoBehaviour
     void Start()
     {
         audiointeraccion = GetComponent<AudioSource>();
+        enemy_scr.movimiento.move = false;
     }
 
     // Update is called once per frame
@@ -37,12 +38,12 @@ public class Enemy_trigger : MonoBehaviour
              
                 Invoke("PointAssing", 0.5f);
             }
-            if (tipo_trigger == ("entrada2")) // si el player colisiona con este trigger y tiene el string necesario, se activara el enemigo para que aparesca y asuste
+           /* if (tipo_trigger == ("entrada2")) // si el player colisiona con este trigger y tiene el string necesario, se activara el enemigo para que aparesca y asuste
             {
 
                                                 // esto es una prueba, pa la interaccion expecifica que marcaste, pero ta incompleto y no lo voy a usar pal testeo
                 Invoke("PointAssing", 0.5f);
-            }
+            }*/
         }
         if(collision.tag == ("Enemy")) // para que el enemigo desaparesca
         {
@@ -70,5 +71,7 @@ public class Enemy_trigger : MonoBehaviour
     {
         enemy_scr.patrol.isHide = true;
         enemy_scr.patrol.Points[0] = point;
+        enemy_scr.sensor.CurrentTarget = enemy_scr.patrol.Points[0];
+        enemy_scr.movimiento.move = true;
     }
 }

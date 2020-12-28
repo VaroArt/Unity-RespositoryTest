@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 using UnityEngine.SceneManagement;
-
+using System.Threading.Tasks;
 
 public class Enemy_1_IA : Enemy_1_Var
 {
@@ -57,6 +57,7 @@ public class Enemy_1_IA : Enemy_1_Var
     #endregion
     public void Start()
     {
+        gfx.mat.SetFloat("_Fade", 1f);
         movimiento.rb = GetComponent<Rigidbody2D>();
         audioenemigo = GetComponent<AudioSource>();
         Path.seeker = GetComponent<Seeker>();
@@ -65,7 +66,7 @@ public class Enemy_1_IA : Enemy_1_Var
         patrol.waitTime = patrol.startWaitTime; //reinicio apropiado del waitTime cuando se llega a un patrolPoint
         InvokeRepeating("updatePath", 0f, 0.1f); //Si encuentra el target, en este caso, si llega a el, volvera a preguntar por uno cada 0.1s.
 
-        Path.pathfinder.Scan();
+       
 
     }
 
@@ -95,9 +96,10 @@ public class Enemy_1_IA : Enemy_1_Var
      //   taskTrigger();
           taskList();
           movimiento.rotation.canRotate = true;
+          visionEnemy();
         //   movimiento.rotation.targetTr = sensor.CurrentTarget;
 
-   
+
     }
 
     public void FixedUpdate()
@@ -151,7 +153,7 @@ public class Enemy_1_IA : Enemy_1_Var
                 // sensor.sensorTarget = null;
               }
           }
-    }
+    } //metodo para generar raycast que funciona solo si el player esta a la vista y ningun obstaculo delante
    
     #endregion 
 
@@ -166,36 +168,59 @@ public class Enemy_1_IA : Enemy_1_Var
         {
             case 1:
                 patrullaje();
+              
                 break;
             case 2:
-                sensor.CurrentTarget = sensor.sensorTarget;
-                float moveDistance = Vector3.Distance(sensor.CurrentTarget.position, transform.position);
+                // sensor.CurrentTarget = sensor.sensorTarget;
+                /*     float moveDistance = Vector3.Distance(sensor.sensorTarget.position, transform.position);
 
-                if (moveDistance < movimiento.MoveDistance) // Si el player esta cerca del radio de movimiento, y no es menor al radio de ataque, se puede mover
-                {
-                    VerTarget();
-                    if(sensor.recognitionTime == 2)
-                    {
-                        movimiento.speed = 150f;
-                        print("move");
-                        movimiento.move = true;
-                    }
+                     if (moveDistance < movimiento.MoveDistance) // Si el player esta cerca del radio de movimiento, y no es menor al radio de ataque, se puede mover
+                     {
+                         VerTarget();
+                         if(sensor.recognitionTime == 2)
+                         {
+                             sensor.CurrentTarget = sensor.sensorTarget;
+                             movimiento.speed = 500f;
+                             print("move");
+                             movimiento.move = true;
+                         }
 
-                }
-               if(moveDistance < movimiento.MoveDistance && sensor.recognitionTime == 0)
+                     }
+                    if(moveDistance < movimiento.MoveDistance && sensor.recognitionTime == 0)
+                     {
+                         print("dont move");
+                         sensor.CurrentTarget = patrol.Points[0];
+                         movimiento.move = false;
+                     }
+
+                     if (moveDistance > movimiento.MoveDistance) //Si el player esta lejos del rango de movimiento, este no se movera,
+                     {
+                         sensor.RecognitionGeneral = false;
+                         if(sensor.recognitionTime == 0)
+                         {
+                             movimiento.move = false;
+                             movimiento.speed = 100f;
+                             print("stop");
+                         }
+                     }*/
+                float moveDistance = Vector3.Distance(sensor.sensorTarget.position, transform.position);
+
+               /* if (moveDistance < movimiento.MoveDistance && sensor.recognitionTime == 0)
                 {
                     print("dont move");
+                    sensor.CurrentTarget = patrol.Points[0];
                     movimiento.move = false;
-                }
+                }*/
 
                 if (moveDistance > movimiento.MoveDistance) //Si el player esta lejos del rango de movimiento, este no se movera,
                 {
                     sensor.RecognitionGeneral = false;
-                    if(sensor.recognitionTime == 0)
+                    if (sensor.recognitionTime == 0)
                     {
-                        movimiento.move = false;
-                        movimiento.speed = 100f;
-                        print("stop");
+                       // movimiento.move = false;
+                        movimiento.speed = 400f;
+                        tasks.TaskList = 1;
+                        gfx.enemyAnim.SetBool("movAttack", false);
                     }
                 }
                 break;
@@ -306,6 +331,25 @@ public class Enemy_1_IA : Enemy_1_Var
 
     }
     #endregion
+
+    public void visionEnemy()
+    {
+        float moveDistance = Vector3.Distance(sensor.sensorTarget.position, transform.position);
+
+        if (moveDistance < movimiento.MoveDistance) // Si el player esta cerca del radio de movimiento, y no es menor al radio de ataque, se puede mover
+        {
+            // tasks.TaskList = 2;
+            VerTarget();
+            if (sensor.recognitionTime == 2)
+            {
+                sensor.CurrentTarget = sensor.sensorTarget;
+                gfx.enemyAnim.SetBool("movAttack", true);
+                movimiento.speed = 500f;
+                movimiento.move = true;
+                tasks.TaskList = 2;
+            }
+        } 
+    }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {

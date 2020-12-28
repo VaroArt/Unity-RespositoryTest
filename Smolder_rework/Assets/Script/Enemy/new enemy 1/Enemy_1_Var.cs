@@ -72,7 +72,7 @@ public class TaskSystem
 [System.Serializable]
 public class PathFinder
 {
-    public  AstarPath pathfinder;
+
     public Path path;
     public Seeker seeker;
     public float nextWaypointDistance = 3f;

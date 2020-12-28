@@ -44,7 +44,7 @@ public class flickering : MonoBehaviour
         if (Count == 1)
         {
             light2d.enabled = true;
-            lightCharge -= 1 * Time.deltaTime;
+            lightCharge -= 0.7f * Time.deltaTime;
         }
         if(Count == 0)
         {
@@ -64,11 +64,16 @@ public class flickering : MonoBehaviour
             lightFlicker();
         }
 
+      if(lightCharge <= 0f)
+        {
+            Max = 25;
+        }
+
       if(lightCharge > 100f) // limitar la cantidad de luz solo a 100%
         {
             lightCharge = 100f;
         }
-        if (lightCharge < 50f) // si tienes menos carga que cierta cantidad de cifra, pues la luz parpadeara
+        if (lightCharge < 30f) // si tienes menos carga que cierta cantidad de cifra, pues la luz parpadeara
         {
             iniciate = true;
 
