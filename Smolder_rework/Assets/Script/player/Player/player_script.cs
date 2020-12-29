@@ -15,6 +15,7 @@ public class player_script : MonoBehaviour
     public float rotationInterpolation = 0.4f;
     public bool isMoving;
     public int vida;
+    public Animator anim;
     public UI_ControlNaveSc HUD;
     [Header("Variables turbo")]
     [Range(0,100)]
@@ -121,10 +122,21 @@ public class player_script : MonoBehaviour
     {
         if (vida != 2)
         {
-            print("reparacion");
+            StartCoroutine("Reparacion");
         }
     }
 
+    IEnumerator Reparacion()
+    {
+        print("rep");
+        anim.SetBool("rep", true);
+        yield return new WaitForSeconds(1.5f);
+        print("rep finalizado");
+        anim.SetBool("rep", false);
+        vida++;
+
+
+    }
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == ("obstacule"))

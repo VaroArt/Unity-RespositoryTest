@@ -16,6 +16,8 @@ public class Enemy_1_IA : Enemy_1_Var
     [Header("Sensores")]
     public SensorEnemigo sensor;
 
+    [Header("Attack")]
+    public AttackEnemy attack;
     [Header("Task")]
     public TaskSystem tasks;
 
@@ -73,19 +75,19 @@ public class Enemy_1_IA : Enemy_1_Var
     public void Update()
     {
         #region reset game
-        if (movimiento.player.vida <= 0)
+        if (attack.player.vida <= 0)
         {
-            movimiento.timercito -= 1 * Time.deltaTime;
-           if(movimiento.timercito <= 2)
+            attack.timercito -= 1 * Time.deltaTime;
+           if(attack.timercito <= 2)
             {
-                movimiento.player.gameObject.SetActive(false);
+                attack.player.gameObject.SetActive(false);
                
             }
 
             // 
            
         }
-        if (movimiento.timercito <= 0)
+        if (attack.timercito <= 0)
         {
             SceneManager.LoadScene("UI_Menu");
         }
@@ -203,26 +205,26 @@ public class Enemy_1_IA : Enemy_1_Var
                              print("stop");
                          }
                      }*/
-                float moveDistance = Vector3.Distance(sensor.sensorTarget.position, transform.position);
 
-               /* if (moveDistance < movimiento.MoveDistance && sensor.recognitionTime == 0)
-                {
-                    print("dont move");
-                    sensor.CurrentTarget = patrol.Points[0];
-                    movimiento.move = false;
-                }*/
+               
+               
 
+                float moveDistance = Vector3.Distance(sensor.CurrentTarget.position, transform.position);     
+
+             
                 if (moveDistance > movimiento.MoveDistance) //Si el player esta lejos del rango de movimiento, este no se movera,
                 {
                     sensor.RecognitionGeneral = false;
                     if (sensor.recognitionTime == 0)
                     {
                        // movimiento.move = false;
-                        movimiento.speed = 400f;
+                        movimiento.speed = 100f;
                         tasks.TaskList = 1;
                         gfx.enemyAnim.SetBool("movAttack", false);
                     }
                 }
+
+              
                 break;
             case 3:
 
@@ -272,7 +274,7 @@ public class Enemy_1_IA : Enemy_1_Var
 
         float moveDistance = Vector3.Distance(sensor.CurrentTarget.position, transform.position);
 
-        if (moveDistance < movimiento.attackRadius)
+        if (moveDistance < movimiento.stopRadius)
         {
             if (patrol.waitTime <= 0)
             {
@@ -286,7 +288,7 @@ public class Enemy_1_IA : Enemy_1_Var
 
             }
         }
-        else if (moveDistance > movimiento.attackRadius)
+        else if (moveDistance > movimiento.stopRadius)
         {
             movimiento.move = true;
         }
@@ -343,34 +345,32 @@ public class Enemy_1_IA : Enemy_1_Var
             if (sensor.recognitionTime == 2)
             {
                 sensor.CurrentTarget = sensor.sensorTarget;
-                gfx.enemyAnim.SetBool("movAttack", true);
-                movimiento.speed = 500f;
-                movimiento.move = true;
+              //  gfx.enemyAnim.SetBool("movAttack", true);
+                movimiento.speed = 400f;
+               // movimiento.move = true;
                 tasks.TaskList = 2;
+               
             }
-        } 
+        }
+        if (moveDistance < movimiento.stopRadius)
+        {
+            movimiento.move = false;
+        }
+        else if (moveDistance > movimiento.stopRadius && movimiento.CanMove== true)
+        {
+            movimiento.move = true;
+        }
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.tag == ("Player"))
-        {
-         
-        }
-    }
-    public void OnTriggerExit2D(Collider2D collision)
-    {
-        if(collision.tag == ("Player"))
-        {
-          
-        }
-    }
+    
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.white;
-        Gizmos.DrawWireSphere(transform.position, movimiento.attackRadius);
+        Gizmos.DrawWireSphere(transform.position, movimiento.stopRadius);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, movimiento.MoveDistance);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, movimiento.attackRadius);
 
     }
 }

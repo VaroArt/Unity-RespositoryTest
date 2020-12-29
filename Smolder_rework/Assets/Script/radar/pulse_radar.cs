@@ -5,6 +5,7 @@ using UnityEngine;
 public class pulse_radar : MonoBehaviour
 {
     [SerializeField] private Transform radarping;
+    [SerializeField] private Transform radarping2;
     public Transform pulsetr;
     public float range;
     public float rangeMax;
@@ -43,6 +44,7 @@ public class pulse_radar : MonoBehaviour
             foreach (Collider2D colision in col)
             {
              Transform radarpingtr =   Instantiate(radarping, collision.gameObject.transform.position, collision.transform.rotation);
+            // Transform radarpingtr2 = Instantiate(radarping2, collision.gameObject.transform.position, collision.transform.rotation);
 
                 #region Colisiones anillo de asteroides
                 if (collision.name == ("colision 1"))

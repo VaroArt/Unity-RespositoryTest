@@ -20,15 +20,14 @@ public class VariablesMovimiento
 {
     [Header("Variables movimiento")]
     public float speed;
+    public float stopRadius;
     public float attackRadius;
+    public bool CanMove;
     public bool move;
     [Header("Variables rotacion")]
     public float MoveDistance;
     public Enemy_1_Rotation rotation;
-    [Header("Attack")]
-    public player_script player;
-    [Header("Reinicio")]
-    public float timercito;
+    public BoxCollider2D attackTrigger;
     [Header("Rb")]
     public Rigidbody2D rb;
 }
@@ -68,7 +67,17 @@ public class TaskSystem
     public int priority;
 }
 
-
+[System.Serializable]
+public class AttackEnemy
+{
+    [Header("Attack")]
+    public player_script player;
+    public float attackRate;
+    public float nextAttack;
+    
+    [Header("Reinicio")]
+    public float timercito;
+}
 [System.Serializable]
 public class PathFinder
 {

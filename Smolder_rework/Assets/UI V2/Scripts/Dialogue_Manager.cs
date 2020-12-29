@@ -17,7 +17,8 @@ public class Dialogue_Manager : MonoBehaviour
     public float typingSpeed;
     public int currentSentence;
     public GameObject E;
-    public player_interactions player;
+    public player_script player;
+    public BengalSystem bengala;
     public InventarioSystem inventorySystem;
     public int Used;
     void Start()
@@ -82,14 +83,14 @@ public class Dialogue_Manager : MonoBehaviour
         {
             if(Used != 1)
             {
-                if (S_Dialogos.id == 1 || S_Dialogos.id == 3 || S_Dialogos.id == 4)
+                if (S_Dialogos.id == 1 || S_Dialogos.id == 3 || S_Dialogos.id == 2)
                 {
                     controlNave.ControlPanelesNave.ActivarPanelTexto = true;
                     IniciarDialogo();
                     E.SetActive(true);
                    
                 }
-                if (S_Dialogos.id == 2)
+                if (S_Dialogos.id == 4)
                 {
                     if(inventorySystem.ItemList[0] ==("Llave") || inventorySystem.ItemList[1] ==("Llave") || inventorySystem.ItemList[2] == ("Llave"))
                     {
@@ -124,14 +125,14 @@ public class Dialogue_Manager : MonoBehaviour
                     nextbton.SetActive(true);
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        if (S_Dialogos.id == 1 || S_Dialogos.id == 3 || S_Dialogos.id == 4)
+                        if (S_Dialogos.id == 1 || S_Dialogos.id == 3 || S_Dialogos.id == 2)
                         {
                             controlNave.controlTextoNave.hablando = true;
                             controlNave.controlTextoNave.PanelPerrosActivo = true;
                             MostrarSigSentencia();
                             currentSentence++;
                         }
-                        if (S_Dialogos.id == 2)
+                        if (S_Dialogos.id == 4)
                         {
       
                             if (inventorySystem.ItemList[0] == ("Llave") || inventorySystem.ItemList[1] == ("Llave") || inventorySystem.ItemList[2] == ("Llave"))
@@ -177,7 +178,7 @@ public class Dialogue_Manager : MonoBehaviour
                 {
                     controlNave.controlTextoNave.EdgarHablando = true;
                 }
-               if (S_Dialogos.id == 3)
+               if(S_Dialogos.id == 3)
                 {
                     controlNave.controlTextoNave.EdgarHablando = true;
                 }
@@ -193,20 +194,20 @@ public class Dialogue_Manager : MonoBehaviour
                     controlNave.controlTextoNave.AstroHablando = true;
                     controlNave.controlTextoNave.EdgarHablando = false;
                 }
-                if (S_Dialogos.id == 2)
+                if(S_Dialogos.id == 2)
                 {
                     controlNave.controlTextoNave.AstroHablando = true;
                     controlNave.controlTextoNave.EdgarHablando = false;
                 }
-                if (S_Dialogos.id == 3)
+                if(S_Dialogos.id == 3)
                 {
                     controlNave.controlTextoNave.AstroHablando = true;
                     controlNave.controlTextoNave.EdgarHablando = false;
                 }
-                if (S_Dialogos.id == 4)
+                if(S_Dialogos.id == 4)
                 {
-                    controlNave.controlTextoNave.AstroHablando = false;
-                    controlNave.controlTextoNave.EdgarHablando = true;
+                    controlNave.controlTextoNave.AstroHablando = true;
+                    controlNave.controlTextoNave.EdgarHablando = false;
                 }
                 break;
 
@@ -228,8 +229,8 @@ public class Dialogue_Manager : MonoBehaviour
                 }
                 if (S_Dialogos.id == 4)
                 {
-                    controlNave.controlTextoNave.AstroHablando = true;
-                    controlNave.controlTextoNave.EdgarHablando = false;
+                    controlNave.controlTextoNave.AstroHablando = false;
+                    controlNave.controlTextoNave.EdgarHablando = true;
                 }
                 break;
 
@@ -251,8 +252,8 @@ public class Dialogue_Manager : MonoBehaviour
                 }
                 if (S_Dialogos.id == 4)
                 {
-                    controlNave.controlTextoNave.AstroHablando = false;
-                    controlNave.controlTextoNave.EdgarHablando = true;
+                    controlNave.controlTextoNave.AstroHablando = true;
+                    controlNave.controlTextoNave.EdgarHablando = false;
                 }
                 break;
             case 5:
@@ -271,27 +272,10 @@ public class Dialogue_Manager : MonoBehaviour
                     currentSentence = 0;
                     Used = 1;
                     E.SetActive(false);
-                    if (inventorySystem.slot1Active != true)
-                    {
-                        inventorySystem.slot1.gameObject.transform.GetChild(1).gameObject.SetActive(true);
-                        inventorySystem.slot1Active = true;
-                        inventorySystem.ItemList[0] = "Coordenada 2";
-                        inventorySystem.coordenadaCount++;
-                    }
-                    else if (inventorySystem.slot1Active && inventorySystem.slot2Active != true && inventorySystem.slot3Active != true)
-                    {
-                        inventorySystem.slot2.gameObject.transform.GetChild(1).gameObject.SetActive(true);
-                        inventorySystem.slot2Active = true;
-                        inventorySystem.ItemList[1] = "Coordenada 2";
-                        inventorySystem.coordenadaCount++;
-                    }
-                    else if (inventorySystem.slot1Active && inventorySystem.slot2Active && inventorySystem.slot3Active != true)
-                    {
-                        inventorySystem.slot3.gameObject.transform.GetChild(1).gameObject.SetActive(true);
-                        inventorySystem.slot3Active = true;
-                        inventorySystem.ItemList[2] = "Coordenada 2";
-                        inventorySystem.coordenadaCount++;
-                    }
+                    player.cantidadTurbo += 20f;
+                    bengala.CantBengalas++;
+
+
                 }
                 if (S_Dialogos.id == 3)
                 {
@@ -317,8 +301,8 @@ public class Dialogue_Manager : MonoBehaviour
                 }
                 if(S_Dialogos.id == 4)
                 {
-                    controlNave.controlTextoNave.AstroHablando = false;
-                    controlNave.controlTextoNave.EdgarHablando = true;
+                    controlNave.controlTextoNave.AstroHablando = true;
+                    controlNave.controlTextoNave.EdgarHablando = false;
                 }
                 break;
 
@@ -335,8 +319,8 @@ public class Dialogue_Manager : MonoBehaviour
                 }
                 if(S_Dialogos.id == 4)
                 {
-                    controlNave.controlTextoNave.AstroHablando = true;
-                    controlNave.controlTextoNave.EdgarHablando = false;
+                    controlNave.controlTextoNave.AstroHablando = false;
+                    controlNave.controlTextoNave.EdgarHablando = true;
                 }
                 break;
 
@@ -383,28 +367,7 @@ public class Dialogue_Manager : MonoBehaviour
                     currentSentence = 0;
                     E.SetActive(false);
                     Used = 1;
-                }
-                if(S_Dialogos.id == 4)
-                {
-                    controlNave.controlTextoNave.AstroHablando = false;
-                    controlNave.controlTextoNave.EdgarHablando = true;
-                }
-                break;
-            case 9:
-                controlNave.controlTextoNave.AstroHablando = true;
-                controlNave.controlTextoNave.EdgarHablando = false;
-                break;
-            case 10:
-                if(S_Dialogos.id == 4)
-                {
-                    controlNave.controlTextoNave.AstroHablando = false;
-                    controlNave.controlTextoNave.EdgarHablando = false;
-                    controlNave.ControlPanelesNave.ActivarPanelTexto = false;
-                    controlNave.controlTextoNave.hablando = false;
-                    controlNave.controlTextoNave.PanelPerrosActivo = false;
-                    currentSentence = 0;
-                    E.SetActive(false);
-                    Used = 1;
+                    bengala.CantBengalas++;
                     if (inventorySystem.slot1Active != true)
                     {
                         inventorySystem.slot1.gameObject.transform.GetChild(2).gameObject.SetActive(true);
@@ -424,7 +387,73 @@ public class Dialogue_Manager : MonoBehaviour
                         inventorySystem.ItemList[2] = "Llave";
                     }
                 }
+                if(S_Dialogos.id == 4)
+                {
+                    controlNave.controlTextoNave.AstroHablando = false;
+                    controlNave.controlTextoNave.EdgarHablando = true;
+                }
                 break;
+            case 9:
+                controlNave.controlTextoNave.AstroHablando = false;
+                controlNave.controlTextoNave.EdgarHablando = true;
+                break;
+            case 10:
+                if(S_Dialogos.id == 4)
+                {
+                    controlNave.controlTextoNave.AstroHablando = true;
+                    controlNave.controlTextoNave.EdgarHablando = false;
+                }
+                break;
+            case 11:
+                if(S_Dialogos.id == 4)
+                {
+                    controlNave.controlTextoNave.AstroHablando = false;
+                    controlNave.controlTextoNave.EdgarHablando = true;
+                }
+                break;
+            case 12:
+                if(S_Dialogos.id == 4)
+                {
+                    controlNave.controlTextoNave.AstroHablando = true;
+                    controlNave.controlTextoNave.EdgarHablando = false;
+                }
+                break;
+            case 13:
+                if (S_Dialogos.id == 4)
+                {
+                    controlNave.controlTextoNave.AstroHablando = false;
+                    controlNave.controlTextoNave.EdgarHablando = false;
+                    controlNave.ControlPanelesNave.ActivarPanelTexto = false;
+                    controlNave.controlTextoNave.hablando = false;
+                    controlNave.controlTextoNave.PanelPerrosActivo = false;
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    Used = 1;
+                    if (inventorySystem.slot1Active != true)
+                    {
+                        inventorySystem.slot1.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+                        inventorySystem.slot1Active = true;
+                        inventorySystem.ItemList[0] = "Coordenada 2";
+                        inventorySystem.coordenadaCount++;
+                    }
+                    else if (inventorySystem.slot1Active && inventorySystem.slot2Active != true && inventorySystem.slot3Active != true)
+                    {
+                        inventorySystem.slot2.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+                        inventorySystem.slot2Active = true;
+                        inventorySystem.ItemList[1] = "Coordenada 2";
+                        inventorySystem.coordenadaCount++;
+                    }
+                    else if (inventorySystem.slot1Active && inventorySystem.slot2Active && inventorySystem.slot3Active != true)
+                    {
+                        inventorySystem.slot3.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+                        inventorySystem.slot3Active = true;
+                        inventorySystem.ItemList[2] = "Coordenada 2";
+                        inventorySystem.coordenadaCount++;
+                    }
+                }
+              
+                break;
+                
         }
     }
 }
