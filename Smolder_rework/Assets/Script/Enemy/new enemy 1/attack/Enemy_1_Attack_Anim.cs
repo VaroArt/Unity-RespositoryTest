@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy_1_Attack_Anim : MonoBehaviour
 {
     public Animator anim;
+    public player_script player;
     void Start()
     {
         
@@ -20,5 +21,6 @@ public class Enemy_1_Attack_Anim : MonoBehaviour
     {
         anim.SetBool("attack", false);
         print("false");
+        player.vida--;
     }
 }
