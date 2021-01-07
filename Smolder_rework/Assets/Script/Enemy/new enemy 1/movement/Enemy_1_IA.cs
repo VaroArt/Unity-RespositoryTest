@@ -355,6 +355,7 @@ public class Enemy_1_IA : Enemy_1_Var
         if (moveDistance < movimiento.stopRadius)
         {
             movimiento.move = false;
+            print("dont move");
         }
         else if (moveDistance > movimiento.stopRadius && movimiento.CanMove== true)
         {
@@ -369,8 +370,8 @@ public class Enemy_1_IA : Enemy_1_Var
         Gizmos.DrawWireSphere(transform.position, movimiento.stopRadius);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, movimiento.MoveDistance);
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, movimiento.attackRadius);
+       // Gizmos.color = Color.red;
+      //  Gizmos.DrawWireSphere(transform.position, movimiento.attackRadius);
 
     }
 }

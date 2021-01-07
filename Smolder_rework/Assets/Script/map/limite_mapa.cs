@@ -11,6 +11,7 @@ public class limite_mapa : MonoBehaviour
     public bool repeatTime;
     public bool startOpaccity;
     public GameObject player;
+    public player_script player_scr;
     public float radius;
     
     void Start()
@@ -79,7 +80,7 @@ public class limite_mapa : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.tag == ("Player"))
+        if(collision.tag == ("Player")&& player_scr.vida!=0)
         {
             print("funcionaa!");
             startOpaccity = true;
