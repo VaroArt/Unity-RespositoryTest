@@ -3332,7 +3332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &59471409
 Transform:
   m_ObjectHideFlags: 0
@@ -3375,7 +3375,6 @@ MonoBehaviour:
   movimiento:
     speed: 100
     stopRadius: 1.31
-    attackRadius: 0
     CanMove: 1
     move: 1
     MoveDistance: 3.71
@@ -3428,7 +3427,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 5
-  m_AngularDrag: 1
+  m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -8292,7 +8291,6 @@ MonoBehaviour:
   movimiento:
     speed: 600
     stopRadius: 0
-    attackRadius: 0
     CanMove: 0
     move: 1
     MoveDistance: 0
@@ -10729,8 +10727,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1502188951
-  m_SortingLayer: 5
+  m_SortingLayerID: -1501393297
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 96c9c9a39f13c482d956a1cbec95004f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -15771,7 +15769,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &321277957
 Transform:
   m_ObjectHideFlags: 0
@@ -15814,7 +15812,6 @@ MonoBehaviour:
   movimiento:
     speed: 100
     stopRadius: 1.31
-    attackRadius: 0
     CanMove: 1
     move: 1
     MoveDistance: 3.71
@@ -15867,7 +15864,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 5
-  m_AngularDrag: 1
+  m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -21880,7 +21877,6 @@ MonoBehaviour:
   movimiento:
     speed: 400
     stopRadius: 0
-    attackRadius: 0
     CanMove: 0
     move: 1
     MoveDistance: 0
@@ -24291,7 +24287,6 @@ MonoBehaviour:
   movimiento:
     speed: 600
     stopRadius: 0
-    attackRadius: 0
     CanMove: 0
     move: 1
     MoveDistance: 0
@@ -42658,8 +42653,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737394642}
-  m_LocalRotation: {x: -0, y: -0, z: 0.0075044315, w: 0.99997187}
-  m_LocalPosition: {x: -0.017999649, y: 0.012999773, z: -0.001}
+  m_LocalRotation: {x: -0, y: -0, z: 0.011999352, w: 0.999928}
+  m_LocalPosition: {x: -0.002, y: 0.012999773, z: -0.001}
   m_LocalScale: {x: 1.7271394, y: 1.4092938, z: 1.7271395}
   m_Children: []
   m_Father: {fileID: 1713466276}
@@ -42693,7 +42688,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 0.7799184
+  m_PointLightOuterRadius: 0.96624404
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -49748,7 +49743,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &883846704
 Transform:
   m_ObjectHideFlags: 0
@@ -49791,7 +49786,6 @@ MonoBehaviour:
   movimiento:
     speed: 100
     stopRadius: 1.31
-    attackRadius: 0
     CanMove: 1
     move: 1
     MoveDistance: 3.71
@@ -49844,7 +49838,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 1.5
-  m_AngularDrag: 1
+  m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -57309,8 +57303,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1502188951
-  m_SortingLayer: 5
+  m_SortingLayerID: -1501393297
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 96c9c9a39f13c482d956a1cbec95004f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -64979,8 +64973,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1502188951
-  m_SortingLayer: 5
+  m_SortingLayerID: -1501393297
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 96c9c9a39f13c482d956a1cbec95004f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -66969,7 +66963,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 0.7799184
+  m_PointLightOuterRadius: 0.96624404
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -75366,7 +75360,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1291764192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75389,7 +75383,6 @@ MonoBehaviour:
   movimiento:
     speed: 100
     stopRadius: 1.31
-    attackRadius: 0
     CanMove: 1
     move: 1
     MoveDistance: 3.71
@@ -75442,7 +75435,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 1.5
-  m_AngularDrag: 1
+  m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -80560,8 +80553,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1502188951
-  m_SortingLayer: 5
+  m_SortingLayerID: -1501393297
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 96c9c9a39f13c482d956a1cbec95004f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -80853,7 +80846,6 @@ MonoBehaviour:
   movimiento:
     speed: 600
     stopRadius: 0
-    attackRadius: 0
     CanMove: 0
     move: 0
     MoveDistance: 0
@@ -86536,7 +86528,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1487407706
 Transform:
   m_ObjectHideFlags: 0
@@ -86579,7 +86571,6 @@ MonoBehaviour:
   movimiento:
     speed: 100
     stopRadius: 1.31
-    attackRadius: 0
     CanMove: 1
     move: 1
     MoveDistance: 3.71
@@ -86632,7 +86623,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 5
-  m_AngularDrag: 1
+  m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -87171,7 +87162,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 0.7799184
+  m_PointLightOuterRadius: 0.96624404
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -89586,7 +89577,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 0.7799184
+  m_PointLightOuterRadius: 0.96624404
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -89837,7 +89828,6 @@ MonoBehaviour:
   movimiento:
     speed: 0
     stopRadius: 0
-    attackRadius: 0
     CanMove: 0
     move: 0
     MoveDistance: 0
@@ -90662,7 +90652,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 0.7799184
+  m_PointLightOuterRadius: 0.96624404
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -98227,8 +98217,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1502188951
-  m_SortingLayer: 5
+  m_SortingLayerID: -1501393297
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 96c9c9a39f13c482d956a1cbec95004f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -98425,7 +98415,6 @@ MonoBehaviour:
   movimiento:
     speed: 600
     stopRadius: 0
-    attackRadius: 0
     CanMove: 0
     move: 1
     MoveDistance: 0
@@ -99085,7 +99074,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1687589278
 Transform:
   m_ObjectHideFlags: 0
@@ -99128,7 +99117,6 @@ MonoBehaviour:
   movimiento:
     speed: 100
     stopRadius: 1.31
-    attackRadius: 0
     CanMove: 1
     move: 1
     MoveDistance: 3.71
@@ -99181,7 +99169,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 5
-  m_AngularDrag: 1
+  m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -100272,7 +100260,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713466275}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -46.52, y: 14.07, z: 0}
+  m_LocalPosition: {x: -46.12, y: 15.83, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 737394643}
@@ -100306,7 +100294,6 @@ MonoBehaviour:
   movimiento:
     speed: 100
     stopRadius: 1.31
-    attackRadius: 1.28
     CanMove: 1
     move: 1
     MoveDistance: 3.71
@@ -102939,7 +102926,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 0.7799184
+  m_PointLightOuterRadius: 0.96624404
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -105630,7 +105617,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 0.7799184
+  m_PointLightOuterRadius: 0.96624404
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -106034,7 +106021,6 @@ MonoBehaviour:
   movimiento:
     speed: 600
     stopRadius: 0
-    attackRadius: 0
     CanMove: 0
     move: 1
     MoveDistance: 0
@@ -108826,8 +108812,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1502188951
-  m_SortingLayer: 5
+  m_SortingLayerID: -1501393297
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 96c9c9a39f13c482d956a1cbec95004f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -110321,8 +110307,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1502188951
-  m_SortingLayer: 5
+  m_SortingLayerID: -1501393297
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 96c9c9a39f13c482d956a1cbec95004f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
