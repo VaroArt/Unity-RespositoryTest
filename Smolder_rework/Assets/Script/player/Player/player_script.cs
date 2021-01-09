@@ -30,7 +30,7 @@ public class player_script : MonoBehaviour
     {
         canMoveStars = true;
         myrg = GetComponent<Rigidbody2D>();
-        vida = 2;
+       // vida = 2;
        
     }
 
