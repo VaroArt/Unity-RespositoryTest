@@ -344,6 +344,11 @@ public class TutorialElements
     public bool TutoBtonDron;
     public bool TutoPanelVida;
     public bool TutoPanelCentral;
+    [Space(5)]
+    public bool TutoBtonLuz;
+    public bool TutoFuncionLuz;
+    public bool TutoBtonMotor;
+    public bool TutoFuncionMotor;
     [Space(10)]
     public bool Texto1Activo;
     public bool Texto2Activo;

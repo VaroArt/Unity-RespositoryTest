@@ -102,6 +102,42 @@ public class TutorialController : MonoBehaviour
         {
             tutotial_elements.Paneles[0].enabled = false;
         }
+
+        if(tutotial_elements.TutoBtonLuz == true)
+        {
+            tutotial_elements.Paneles[10].enabled = true;
+        }
+        else
+        {
+            tutotial_elements.Paneles[10].enabled = false;
+        }
+
+        if(tutotial_elements.TutoFuncionLuz == true)
+        {
+            tutotial_elements.Paneles[9].enabled = true;
+        }
+        else
+        {
+            tutotial_elements.Paneles[9].enabled = false;
+        }
+
+        if(tutotial_elements.TutoBtonMotor == true)
+        {
+            tutotial_elements.Paneles[12].enabled = true;
+        }
+        else
+        {
+            tutotial_elements.Paneles[12].enabled = false;
+        }
+
+        if(tutotial_elements.TutoFuncionMotor == true)
+        {
+            tutotial_elements.Paneles[11].enabled = true;
+        }
+        else
+        {
+            tutotial_elements.Paneles[11].enabled = false;
+        }
     }
 
     public void TutorialInstruccions()

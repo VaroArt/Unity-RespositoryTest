@@ -679,8 +679,8 @@ MonoBehaviour:
     id: 1002
     listaDeSentencias:
     - 
-    - "Se\xF1or en caso de emergencia, podemos usar la aceleraci\xF3n, pero solo
-      por un corto tiempo ya que se agota r\xE1pidamente.\n"
+    - "Se\xF1or en caso de emergencia, podemos usar la aceleraci\xF3n con shift,
+      pero solo por un corto tiempo ya que se agotara r\xE1pidamente.\n"
     - No seamos imprudentes, debemos guardar lo mas posible los Contenedores AM y
       usarlo solo en casos de emergencia, sin ellos no tendremos ninguna velocidad.
     - "Si se\xF1or."
@@ -688,7 +688,7 @@ MonoBehaviour:
     - "Astro, esta nave posee coordenadas, \xBFcrees que debamos conservar?"
     - "Claro que debemos conservarlo, nos podr\xEDa servir para salir de esta zona,
       en caso de que nos perdamos.\r"
-    - "Entonces los guardare todos.\r"
+    - Entonces la guardare.
   C_Nave: {fileID: 2435524740798602846}
   elementosTutorial: {fileID: 2435524740798602851}
   PanelDialogo: {fileID: 2726392526607265021}
@@ -9509,7 +9509,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.58637893, y: 0.16813178}
   m_AnchorMax: {x: 0.6754883, y: 0.318713}
-  m_AnchoredPosition: {x: 0.000015258789, y: 0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -37.560287, y: -35.726852}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &564315373
@@ -10960,7 +10960,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.20856068, y: 0.098000005}
   m_AnchorMax: {x: 0.7914392, y: 0.8196023}
-  m_AnchoredPosition: {x: 0, y: -0.34999418}
+  m_AnchoredPosition: {x: 0, y: -0.34999895}
   m_SizeDelta: {x: -0.000011444092, y: -0.7044754}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &726727785
@@ -12036,7 +12036,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.20856068, y: 0.098000005}
   m_AnchorMax: {x: 0.7914392, y: 0.8196023}
-  m_AnchoredPosition: {x: 0, y: -0.35000563}
+  m_AnchoredPosition: {x: 0, y: -0.3500061}
   m_SizeDelta: {x: -0.000011444092, y: -0.7044754}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &928064908
@@ -16673,7 +16673,7 @@ MonoBehaviour:
   vida: 2
   anim: {fileID: 0}
   HUD: {fileID: 0}
-  cantidadTurbo: 0
+  cantidadTurbo: 100
   turbospeed: 0
   isTurboActivate: 0
   canMoveStars: 0
@@ -19915,7 +19915,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.031815, y: 0.026750613}
   m_AnchorMax: {x: 0.9862601, y: 0.8452528}
-  m_AnchoredPosition: {x: 0, y: -0.053115845}
+  m_AnchoredPosition: {x: 0, y: -0.053100586}
   m_SizeDelta: {x: 0.000061035156, y: 0.10623169}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2435524740704294938
@@ -21169,6 +21169,10 @@ MonoBehaviour:
     TutoBtonDron: 0
     TutoPanelVida: 0
     TutoPanelCentral: 0
+    TutoBtonLuz: 0
+    TutoFuncionLuz: 0
+    TutoBtonMotor: 0
+    TutoFuncionMotor: 0
     Texto1Activo: 0
     Texto2Activo: 0
     nextBtonact: 0
@@ -31927,7 +31931,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -18.100098, y: 0.00024414062}
+  m_AnchoredPosition: {x: -18.10022, y: 0.00024414062}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2435524742046320637
