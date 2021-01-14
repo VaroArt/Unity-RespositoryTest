@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FInal.unity
     guid: e079fb1cc6c117d47a02e9aae3dcbee9
+  - enabled: 1
+    path: Assets/Scenes/Juego/Tutorial.unity
+    guid: d8f458effe13ff048b17af6e8b17f681
+  - enabled: 1
+    path: Assets/Scenes/Testeo pipe.unity
+    guid: ed586e37daa831042aa13eee2498d25c
   m_configObjects: {}

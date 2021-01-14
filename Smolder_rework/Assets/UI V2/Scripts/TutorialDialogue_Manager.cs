@@ -8,6 +8,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
     public Dialogos S_TDialogos;
     public UI_ControlNaveSc C_Nave;
     public TutorialController elementosTutorial;
+    public BengalSystem bengala;
 
     Queue<string> Sentencias;
     [Space(20)]
@@ -18,7 +19,6 @@ public class TutorialDialogue_Manager : MonoBehaviour
     public float typingSpeed;
     public int currentSentence;
     public GameObject E;
-    public player_interactions player;
     public InventarioSystem inventorySystem;
     public int Used;
 
@@ -83,7 +83,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     C_Nave.ControlPanelesNave.ActivarPanelTexto = true;
                     IniciarDialogo();
                     E.SetActive(true);
-
+                    print("E");
                 }
             }
         }
@@ -346,6 +346,14 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 {
                     elementosTutorial.tutotial_elements.IsAstro1Act = false;
                     elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                    if (inventorySystem.slot2Active != true)
+                    {
+                        inventorySystem.slot2.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+                        inventorySystem.slot2Active = true;
+                        inventorySystem.ItemList[1] = "Coordenada 2";
+                        inventorySystem.coordenadaCount++;
+                    }
+
                 }
                 break;
 
@@ -595,6 +603,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutoBtonRecarga = false;
                     elementosTutorial.tutotial_elements.TutopanelRegarga = false;
                     elementosTutorial.tutotial_elements.Texto1Activo = false;
+                    bengala.CantBengalas = 3;
                 }
                 if (S_TDialogos.id == 1006)
                 {
@@ -644,6 +653,15 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutoPanelCentral = true;
                     elementosTutorial.tutotial_elements.TutoBtonMotor = false;
                     elementosTutorial.tutotial_elements.TutoFuncionMotor = false;
+                    //para poder dar la primera coordenada
+                    if (inventorySystem.slot1Active != true)
+                    {
+                        inventorySystem.slot1.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+                        inventorySystem.slot1Active = true;
+                        inventorySystem.ItemList[0] = "Coordenada 1";
+                        inventorySystem.coordenadaCount++;
+                    }
+                    
                 }
                 if (S_TDialogos.id == 1003)
                 {
@@ -673,6 +691,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.Texto1Activo = false;
                     currentSentence = 0;
                     E.SetActive(false);
+
                 }
                 if (S_TDialogos.id == 1006)
                 {

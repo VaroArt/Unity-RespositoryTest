@@ -5,12 +5,13 @@ using UnityEngine;
 public class pulse_radar : MonoBehaviour
 {
     [SerializeField] private Transform radarping;
-    [SerializeField] private Transform radarping2;
+  //  [SerializeField] private Transform radarping2;
     public Transform pulsetr;
     public float range;
     public float rangeMax;
     public float rangespeed;
     public bool activate;
+    public Sprite[] spriteTutorial;
     public Sprite[] sprites;
     [SerializeField] private List<Collider2D> col;
 
@@ -44,7 +45,14 @@ public class pulse_radar : MonoBehaviour
             foreach (Collider2D colision in col)
             {
              Transform radarpingtr =   Instantiate(radarping, collision.gameObject.transform.position, collision.transform.rotation);
-            // Transform radarpingtr2 = Instantiate(radarping2, collision.gameObject.transform.position, collision.transform.rotation);
+            
+
+                if(collision.name ==("colision tutorial 1"))
+                { 
+                    ping_radar radar = radarpingtr.GetComponent<ping_radar>();
+                    radar.spriterd.sprite = spriteTutorial[0];
+                    radar.setColor(new Color(1, 1, 0));
+                }
 
                 #region Colisiones anillo de asteroides
                 if (collision.name == ("colision 1"))

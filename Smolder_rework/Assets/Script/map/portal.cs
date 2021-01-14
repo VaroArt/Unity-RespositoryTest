@@ -12,6 +12,7 @@ public class portal : MonoBehaviour
     public int coordenadasCount;
     public GameObject lightportal;
     public CapsuleCollider2D mycapsule;
+    public int portalID;
     void Start()
     {
         
@@ -31,7 +32,7 @@ public class portal : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == ("Player"))
+        if(collision.tag == ("Player")&& portalID == 2)
         {
             if (coordenadasCount == 2)
             {
@@ -39,6 +40,14 @@ public class portal : MonoBehaviour
                 SceneManager.LoadScene("UI_Credits");
             }
         }
-      
+        if (collision.tag == ("Player") && portalID == 1)
+        {
+            if (coordenadasCount == 2)
+            {
+                print("start game");
+                SceneManager.LoadScene("Testeo pipe");
+            }
+        }
+
     }
 }
