@@ -26561,6 +26561,7 @@ MonoBehaviour:
   coordenadasCount: 0
   lightportal: {fileID: 716042350}
   mycapsule: {fileID: 525875156}
+  portalID: 0
 --- !u!70 &525875156
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -27138,6 +27139,7 @@ MonoBehaviour:
   coordenadasCount: 0
   lightportal: {fileID: 2116984024}
   mycapsule: {fileID: 529926557}
+  portalID: 0
 --- !u!70 &529926557
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -51953,6 +51955,7 @@ MonoBehaviour:
   coordenadasCount: 0
   lightportal: {fileID: 0}
   mycapsule: {fileID: 0}
+  portalID: 0
 --- !u!212 &931895183
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -112341,6 +112344,7 @@ MonoBehaviour:
   coordenadasCount: 0
   lightportal: {fileID: 0}
   mycapsule: {fileID: 0}
+  portalID: 0
 --- !u!212 &1933868681
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -117505,7 +117509,6 @@ GameObject:
   - component: {fileID: 2045432576}
   - component: {fileID: 2045432577}
   - component: {fileID: 2045432578}
-  - component: {fileID: 2045432579}
   m_Layer: 0
   m_Name: NUBU CHICA.3
   m_TagString: Untagged
@@ -117590,19 +117593,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallaxEffect: -0.2
---- !u!114 &2045432579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2045432575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0674b14e08369d40b9453a72f2f653e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parallaxEffect: 0
 --- !u!1 &2047735777
 GameObject:
   m_ObjectHideFlags: 0
