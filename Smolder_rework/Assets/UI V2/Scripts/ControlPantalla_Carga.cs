@@ -26,7 +26,8 @@ public class ControlPantalla_Carga : MonoBehaviour
             if (TiempoCarga >= 5)
             {
                 TiempoCarga = 0f;
-                SceneManager.LoadSceneAsync("Testeo_pipe");
+                //SceneManager.LoadSceneAsync("Testeo_pipe");
+                SceneManager.LoadSceneAsync("Tutorial");
             }
         }
 
