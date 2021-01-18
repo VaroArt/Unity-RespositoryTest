@@ -55,13 +55,16 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Base
+    uniqueID: 3290636291
+    locked: 0
   - name: starts
     uniqueID: 1229461267
     locked: 0
   - name: Meteoritos back
     uniqueID: 78398063
     locked: 0
-  - name: Nebulosas
+  - name: Decorativos
     uniqueID: 3902406915
     locked: 0
   - name: Satelites
@@ -76,8 +79,11 @@ TagManager:
   - name: Player
     uniqueID: 2793573999
     locked: 0
-  - name: Meteoritos obs
+  - name: Meteoritos obstaculos
     uniqueID: 2239060195
+    locked: 0
+  - name: Nebulosas Delante
+    uniqueID: 528031093
     locked: 0
   - name: player mini map
     uniqueID: 2159272865
