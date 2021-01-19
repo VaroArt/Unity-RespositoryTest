@@ -12,8 +12,16 @@ public class Flare_Game : MonoBehaviour
     public GameObject bengala;
     public float countRadius;
     public bool Radius;
+
+    //Sonidos
+    public AudioClip explosion;
+
+    private AudioSource audioFlare;
+
     void Start()
     {
+
+        audioFlare = GetComponent<AudioSource>();
 
         // rb.AddForce(transform.up * speed, ForceMode2D.Impulse);
         Invoke("exploid", 1f);
@@ -40,7 +48,9 @@ public class Flare_Game : MonoBehaviour
         bengala.transform.GetChild(0).gameObject.SetActive(false);
         speed = 0;
         Radius = true;
-      
+
+        audioFlare.clip = explosion;
+        audioFlare.Play();
         
     }
 }

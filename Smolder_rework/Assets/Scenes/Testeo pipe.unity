@@ -120222,6 +120222,8 @@ MonoBehaviour:
   isTurboActivate: 0
   canMoveStars: 0
   stardust: {fileID: 1281608148}
+  movimiento: {fileID: 8300000, guid: 7a6066e9479a28141ad700e28923f6ef, type: 3}
+  muerte: {fileID: 8300000, guid: d62b21ec06303014d94cd1e4907f58aa, type: 3}
 --- !u!82 &2067719417
 AudioSource:
   m_ObjectHideFlags: 0
@@ -120231,10 +120233,11 @@ AudioSource:
   m_GameObject: {fileID: 2067719412}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -4415065769638017604, guid: 5f049a44d5af13a49b245e1d41471149,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.13
   m_Pitch: 1
   Loop: 0
   Mute: 0

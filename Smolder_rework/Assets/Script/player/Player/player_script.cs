@@ -26,8 +26,16 @@ public class player_script : MonoBehaviour
     public bool canMoveStars;
     public stardust_System stardust;
 
+    //Sonidos
+    public AudioClip movimiento;
+    public AudioClip muerte;
+
+    private AudioSource audioNave;
+
     void Start()
     {
+        audioNave = GetComponent<AudioSource>();
+
         canMoveStars = true;
         myrg = GetComponent<Rigidbody2D>();
        // vida = 2;
@@ -39,15 +47,18 @@ public class player_script : MonoBehaviour
     {
         input.x = Input.GetAxis("Horizontal");
         input.y = Input.GetAxis("Vertical");
-
-        if(input.x != 0 || input.y != 0)
+        
+        if (input.x != 0 || input.y != 0)
         {
             isMoving = true;
             rotationInterpolation = 0.4f;
+            
         }
         else
         {
-            isMoving = false; 
+            isMoving = false;
+            audioNave.clip = movimiento;
+            audioNave.Play();
         }
         Rotation();
 
@@ -57,7 +68,7 @@ public class player_script : MonoBehaviour
         }
        if(vida <= 0)
         {
-           
+
                 input.x = 0f;
                 input.y = 0f;
 
