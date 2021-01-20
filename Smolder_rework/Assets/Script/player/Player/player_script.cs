@@ -29,6 +29,7 @@ public class player_script : MonoBehaviour
     //Sonidos
     public AudioClip movimiento;
     public AudioClip muerte;
+    public AudioClip recuperar;
 
     private AudioSource audioNave;
 
@@ -93,9 +94,9 @@ public class player_script : MonoBehaviour
         {
             speed = turbospeed;
             cantidadTurbo -= 1 * Time.deltaTime;
-           
 
-            if(cantidadTurbo < 0)
+
+            if (cantidadTurbo < 0)
             {
                 cantidadTurbo = 0;
             }
