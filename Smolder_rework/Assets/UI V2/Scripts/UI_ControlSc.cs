@@ -188,15 +188,19 @@ public class SystemaPausa
 [System.Serializable]
 public class AppFunciones
 {
-    public Image FadeOut;
     public Animator FadeOutAnim;
     public Canvas PantallaConfig;
     public bool ConfiguracionAbierta;
 
     public void JugarJuego()
     {
-        SceneManager.LoadScene("UI_LoadScene");
+        FadeOutAnim.enabled = true;
     }
+
+    /*public void CambiarEscena()
+    {
+        SceneManager.LoadScene("UI_LoadScene");
+    }*/
 
     public void PantallaCreditos()
     {

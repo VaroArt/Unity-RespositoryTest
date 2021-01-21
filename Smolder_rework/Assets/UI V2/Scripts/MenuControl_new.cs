@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuControl_new : MonoBehaviour
 {
+    public float TiempoFade;
     public AppFunciones Botones;
 
     // Start is called before the first frame update
@@ -21,6 +23,12 @@ public class MenuControl_new : MonoBehaviour
     public void BtonJugar()
     {
         Botones.JugarJuego();
+        Invoke("CambiarEscena", TiempoFade);
+    }
+
+    public void CambiarEscena()
+    {
+        SceneManager.LoadScene("UI_LoadScene");
     }
 
     public void BtonConfig()
