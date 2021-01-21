@@ -18,11 +18,23 @@ public class MenuControl_new : MonoBehaviour
     void Update()
     {
         Botones.Pantallaconfiguraciones();
+        Botones.PantallaSelector();
     }
 
-    public void BtonJugar()
+    /*public void BtonJugar()
     {
         Botones.JugarJuego();
+        Invoke("CambiarEscena", TiempoFade);
+    }*/
+
+    public void BtonAbrirSelector()
+    {
+        Botones.FuncAbrirSelector();
+    }
+
+    public void PlayTutorial()
+    {
+        Botones.PlayFade();
         Invoke("CambiarEscena", TiempoFade);
     }
 
@@ -39,6 +51,11 @@ public class MenuControl_new : MonoBehaviour
     public void BtonConfigCerrar()
     {
         Botones.FuncCerrarConfiguracion();
+    }
+
+    public void BtonCerrarSelector()
+    {
+        Botones.FuncCerrarSelector();
     }
 
     public void BtonCreditos()
@@ -59,6 +76,11 @@ public class MenuControl_new : MonoBehaviour
     public void BtonFace()
     {
         Botones.AbrirFace();
+    }
+
+    public void BtonFeedback()
+    {
+        Botones.AbrirFeedback();
     }
 
     //para los creditos

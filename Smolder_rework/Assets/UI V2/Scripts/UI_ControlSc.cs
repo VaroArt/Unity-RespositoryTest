@@ -190,9 +190,11 @@ public class AppFunciones
 {
     public Animator FadeOutAnim;
     public Canvas PantallaConfig;
+    public Canvas PanelSelector;
     public bool ConfiguracionAbierta;
+    public bool SelectorAbierto;
 
-    public void JugarJuego()
+    public void PlayFade()
     {
         FadeOutAnim.enabled = true;
     }
@@ -212,6 +214,11 @@ public class AppFunciones
         ConfiguracionAbierta = true;
     }
 
+    public void FuncAbrirSelector()
+    {
+        SelectorAbierto = true;
+    }
+
     public void Pantallaconfiguraciones()
     {
         if (ConfiguracionAbierta == true)
@@ -225,9 +232,26 @@ public class AppFunciones
         }
     }
 
+    public void PantallaSelector()
+    {
+        if(SelectorAbierto == true)
+        {
+            PanelSelector.enabled = true;
+        }
+        if(SelectorAbierto == false)
+        {
+            PanelSelector.enabled = false;
+        }
+    }
+
     public void FuncCerrarConfiguracion()
     {
         ConfiguracionAbierta = false;
+    }
+
+    public void FuncCerrarSelector()
+    {
+        SelectorAbierto = false;
     }
 
     public void Exitgame()
@@ -243,6 +267,11 @@ public class AppFunciones
     public void AbrirFace()
     {
         Application.OpenURL("https://www.facebook.com/Dimensions-Games-101686981606579");
+    }
+
+    public void AbrirFeedback()
+    {
+        Application.OpenURL("https://forms.gle/VMLZQGCvg5SsiiaC8");
     }
 
     public void Gotomenu()

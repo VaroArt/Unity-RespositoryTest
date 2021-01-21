@@ -30,6 +30,7 @@ public class UI_ControlNaveSc : MonoBehaviour
     public Linterna LinternaNave;
     [Header("Inventario")]
     public Invetario inventario;
+    
 
 
     // Start is called before the first frame update
@@ -60,6 +61,7 @@ public class UI_ControlNaveSc : MonoBehaviour
         BengalaInventario();
         ControlLuces();
         ControlMotores();
+        extras.Pantallaconfiguraciones();
     }
 
     //Control De UI
@@ -398,4 +400,15 @@ public class UI_ControlNaveSc : MonoBehaviour
     {
         extras.Gotomenu();
     }
+
+    public void BtonAbrirConfig()
+    {
+        extras.FuncAbrirConfiguracion();
+    }
+
+    public void BtonCerrarConfig()
+    {
+        extras.FuncCerrarConfiguracion();
+    }
+
 }
