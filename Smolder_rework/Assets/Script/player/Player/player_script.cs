@@ -7,7 +7,7 @@ public class player_script : MonoBehaviour
 {
    
     Rigidbody2D myrg;
-    [HideInInspector] public Vector2 input;
+    public Vector2 input;
     float shipAngle;
     [Header("Variables Movimiento y rotacion")]
     public float speed;
@@ -26,19 +26,17 @@ public class player_script : MonoBehaviour
     public bool canMoveStars;
     public stardust_System stardust;
 
-    //Sonidos
-    public AudioClip movimiento;
-    public AudioClip muerte;
+    [Header("Audios")]
     public AudioClip recuperar;
-
-    private AudioSource audioNave;
+    public AudioSource audioNave;
 
     void Start()
     {
         audioNave = GetComponent<AudioSource>();
-
         canMoveStars = true;
         myrg = GetComponent<Rigidbody2D>();
+        input.x = 0;
+        input.y = 0;
        // vida = 2;
        
     }
@@ -53,13 +51,10 @@ public class player_script : MonoBehaviour
         {
             isMoving = true;
             rotationInterpolation = 0.4f;
-            
         }
         else
         {
             isMoving = false;
-            audioNave.clip = movimiento;
-            audioNave.Play();
         }
         Rotation();
 

@@ -6,6 +6,7 @@ public class Enemy_1_Attack_Anim : MonoBehaviour
 {
     public Animator anim;
     public player_script player;
+    public game_controller gameController;
     void Start()
     {
         
@@ -22,5 +23,10 @@ public class Enemy_1_Attack_Anim : MonoBehaviour
         anim.SetBool("attack", false);
         print("false");
         player.vida--;
+        if (player.vida == 0)
+        {
+            print("game over");
+            gameController.deadSound();
+        }
     }
 }

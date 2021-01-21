@@ -75,7 +75,7 @@ public class Enemy_1_IA : Enemy_1_Var
     public void Update()
     {
         #region reset game
-        if (attack.player.vida <= 0)
+      /*  if (attack.player.vida <= 0)
         {
             attack.timercito -= 1 * Time.deltaTime;
            if(attack.timercito <= 2)
@@ -90,7 +90,7 @@ public class Enemy_1_IA : Enemy_1_Var
         if (attack.timercito <= 0)
         {
             SceneManager.LoadScene("UI_Menu");
-        }
+        }*/
         #endregion
 
           Hide();

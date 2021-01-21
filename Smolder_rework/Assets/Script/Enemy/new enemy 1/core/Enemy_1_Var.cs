@@ -74,9 +74,6 @@ public class AttackEnemy
     public player_script player;
     public float attackRate;
     public float nextAttack;
-    
-    [Header("Reinicio")]
-    public float timercito;
 }
 [System.Serializable]
 public class PathFinder
