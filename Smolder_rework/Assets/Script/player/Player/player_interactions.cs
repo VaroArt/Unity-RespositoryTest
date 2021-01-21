@@ -30,5 +30,6 @@ public class player_interactions : MonoBehaviour
             audioNave.clip = movimiento;
             audioNave.Play();
         }
+
     }
 }

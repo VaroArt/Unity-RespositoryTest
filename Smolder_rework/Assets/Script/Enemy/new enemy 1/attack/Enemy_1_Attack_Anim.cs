@@ -25,6 +25,7 @@ public class Enemy_1_Attack_Anim : MonoBehaviour
         player.vida--;
         if (player.vida == 0)
         {
+            player.anim.SetBool("dead",true);
             print("game over");
             gameController.deadSound();
         }

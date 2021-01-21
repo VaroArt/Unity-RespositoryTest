@@ -25,10 +25,10 @@ public class player_script : MonoBehaviour
     [Header("Particulas")]
     public bool canMoveStars;
     public stardust_System stardust;
-
     [Header("Audios")]
     public AudioClip recuperar;
     public AudioSource audioNave;
+
 
     void Start()
     {
@@ -130,6 +130,8 @@ public class player_script : MonoBehaviour
         if (vida != 2)
         {
             StartCoroutine("Reparacion");
+            audioNave.clip = recuperar;
+            audioNave.Play();
         }
     }
 
@@ -141,7 +143,7 @@ public class player_script : MonoBehaviour
         print("rep finalizado");
         anim.SetBool("rep", false);
         vida++;
-
+        audioNave.Stop();
 
     }
     public void OnCollisionEnter2D(Collision2D collision)
