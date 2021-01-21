@@ -188,6 +188,8 @@ public class SystemaPausa
 [System.Serializable]
 public class AppFunciones
 {
+    public Image FadeOut;
+    public Animator FadeOutAnim;
     public Canvas PantallaConfig;
     public bool ConfiguracionAbierta;
 
