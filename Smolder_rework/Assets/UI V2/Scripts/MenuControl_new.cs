@@ -35,12 +35,23 @@ public class MenuControl_new : MonoBehaviour
     public void PlayTutorial()
     {
         Botones.PlayFade();
-        Invoke("CambiarEscena", TiempoFade);
+        Invoke("CambiarEscenaTutorial", TiempoFade);
     }
 
-    public void CambiarEscena()
+    public void PlayPruebas()
+    {
+        Botones.PlayFade();
+        Invoke("CambiarEscenaPrueba", TiempoFade);
+    }
+
+    public void CambiarEscenaTutorial()
     {
         SceneManager.LoadScene("UI_LoadScene");
+    }
+
+    public void CambiarEscenaPrueba()
+    {
+        SceneManager.LoadScene("LoadScenePruebas");
     }
 
     public void BtonConfig()
