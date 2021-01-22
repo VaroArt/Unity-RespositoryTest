@@ -21,9 +21,13 @@ public class TutorialDialogue_Manager : MonoBehaviour
     public GameObject E;
     public InventarioSystem inventorySystem;
     public int Used;
-
+    [Header("sonidos")]
+    private AudioSource AudioDialogos;
+    public AudioClip DialogoClip;
+    public int count;
     void Start()
     {
+        AudioDialogos = GetComponent<AudioSource>();
         Sentencias = new Queue<string>();
         Used = 0;
     }
@@ -44,6 +48,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
         }
 
         MostrarSigSentencia();
+       
     }
 
     void MostrarSigSentencia()
@@ -67,6 +72,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
 
         foreach (char letter in sentencia.ToCharArray())
         {
+            count++;
             Display.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
@@ -101,17 +107,28 @@ public class TutorialDialogue_Manager : MonoBehaviour
                  
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        if (S_TDialogos.id == 1000 || S_TDialogos.id == 1001)
+                        if (S_TDialogos.id == 1000 && currentSentence != 4)
                         {
                             MostrarSigSentencia();
                             currentSentence++;
+                            AudioDialogos.clip = DialogoClip; // reproducir el audio cuando inicia el dialogo
+                            AudioDialogos.Play();
                         }
-                        if (S_TDialogos.id == 1002)
+                        if(S_TDialogos.id == 1001)
+                        {
+                            MostrarSigSentencia();
+                            currentSentence++;
+                            AudioDialogos.clip = DialogoClip; // reproducir el audio cuando inicia el dialogo
+                            AudioDialogos.Play();
+                        }
+                        if (S_TDialogos.id == 1002 && currentSentence !=8)
                         {
                             elementosTutorial.tutotial_elements.Texto1Activo = true;
                             elementosTutorial.tutotial_elements.TutoPanelCentral = true;
                             elementosTutorial.tutotial_elements.TutoBtonMotor = false;
                             elementosTutorial.tutotial_elements.TutoFuncionMotor = false;
+                            AudioDialogos.clip = DialogoClip; // reproducir el audio cuando inicia el dialogo
+                            AudioDialogos.Play();
 
                             MostrarSigSentencia();
                             currentSentence++;
@@ -122,6 +139,8 @@ public class TutorialDialogue_Manager : MonoBehaviour
                             elementosTutorial.tutotial_elements.TutoPanelCentral = true;
                             MostrarSigSentencia();
                             currentSentence++;
+                            AudioDialogos.clip = DialogoClip; // reproducir el audio cuando inicia el dialogo
+                            AudioDialogos.Play();
                         }
                         if (S_TDialogos.id == 1004)
                         {
@@ -131,6 +150,8 @@ public class TutorialDialogue_Manager : MonoBehaviour
                             elementosTutorial.tutotial_elements.TutoPanelInventario = false;
                             MostrarSigSentencia();
                             currentSentence++;
+                            AudioDialogos.clip = DialogoClip; // reproducir el audio cuando inicia el dialogo
+                            AudioDialogos.Play();
                         }
                         if (S_TDialogos.id == 1005)
                         {
@@ -140,6 +161,8 @@ public class TutorialDialogue_Manager : MonoBehaviour
                             elementosTutorial.tutotial_elements.TutopanelRegarga = false;
                             MostrarSigSentencia();
                             currentSentence++;
+                            AudioDialogos.clip = DialogoClip; // reproducir el audio cuando inicia el dialogo
+                            AudioDialogos.Play();
                         }
                         if (S_TDialogos.id == 1006)
                         {
@@ -147,6 +170,8 @@ public class TutorialDialogue_Manager : MonoBehaviour
                             elementosTutorial.tutotial_elements.TutoPanelCentral = true;
                             MostrarSigSentencia();
                             currentSentence++;
+                            AudioDialogos.clip = DialogoClip; // reproducir el audio cuando inicia el dialogo
+                            AudioDialogos.Play();
                         }
                         if (S_TDialogos.id == 1007)
                         {
@@ -154,6 +179,8 @@ public class TutorialDialogue_Manager : MonoBehaviour
                             elementosTutorial.tutotial_elements.TutoPanelCentral = true;
                             MostrarSigSentencia();
                             currentSentence++;
+                            AudioDialogos.clip = DialogoClip; // reproducir el audio cuando inicia el dialogo
+                            AudioDialogos.Play();
                         }
                         if (S_TDialogos.id == 1008)
                         {
@@ -161,6 +188,8 @@ public class TutorialDialogue_Manager : MonoBehaviour
                             elementosTutorial.tutotial_elements.TutoPanelCentral = true;
                             MostrarSigSentencia();
                             currentSentence++;
+                            AudioDialogos.clip = DialogoClip; // reproducir el audio cuando inicia el dialogo
+                            AudioDialogos.Play();
                         }
                     }
                     if (S_TDialogos.id == 1000)
@@ -171,6 +200,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
                         /*elementosTutorial.tutotial_elements.TutoPanelCentral = true;
                         elementosTutorial.tutotial_elements.TutoBtonLuz = false;
                         elementosTutorial.tutotial_elements.TutoFuncionLuz = false;*/
+   
 
                     }
                     if (S_TDialogos.id == 1001)
@@ -181,6 +211,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
                         elementosTutorial.tutotial_elements.TutoPanelCentral = true;
                         elementosTutorial.tutotial_elements.TutoBtonRadar = false;
                         elementosTutorial.tutotial_elements.TutoPanelRadar = false;
+
                     }
                 }
                 else
@@ -234,6 +265,10 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutoPanelCentral = false;
                     elementosTutorial.tutotial_elements.TutoBtonLuz = true;
                     elementosTutorial.tutotial_elements.TutoFuncionLuz = false;
+                    if (count == 167)
+                    {
+                        AudioDialogos.Stop();
+                    }
 
                 }
                 if (S_TDialogos.id == 1001)
@@ -243,6 +278,10 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutoPanelCentral = true;
                     elementosTutorial.tutotial_elements.TutoBtonRadar = false;
                     elementosTutorial.tutotial_elements.TutoPanelRadar = false;
+                    if (count == 158)
+                    {
+                        AudioDialogos.Stop();
+                    }
                 }
                 if (S_TDialogos.id == 1002)
                 {
@@ -251,6 +290,10 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutoPanelCentral = false;
                     elementosTutorial.tutotial_elements.TutoBtonMotor = true;
                     elementosTutorial.tutotial_elements.TutoFuncionMotor = false;
+                    if (count == 129)
+                    {
+                        AudioDialogos.Stop();
+                    }
                 }
                 if (S_TDialogos.id == 1003)
                 {
@@ -263,6 +306,10 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutoBtonInventario = true;
                     elementosTutorial.tutotial_elements.TutoPanelInventario = false;
                     elementosTutorial.tutotial_elements.TutoPanelCentral = false;
+                    if (count == 122)
+                    {
+                        AudioDialogos.Stop();
+                    }
                 }
                 if (S_TDialogos.id == 1005)
                 {
@@ -271,6 +318,10 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutoPanelCentral = true;
                     elementosTutorial.tutotial_elements.TutoBtonRecarga = false;
                     elementosTutorial.tutotial_elements.TutopanelRegarga = false;
+                    if (count == 117)
+                    {
+                        AudioDialogos.Stop();
+                    }
                 }
                 if (S_TDialogos.id == 1006)
                 {
@@ -282,6 +333,10 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 {
                     elementosTutorial.tutotial_elements.IsAstro1Act = true;
                     elementosTutorial.tutotial_elements.IsEdgar1Act = false;
+                    if (count == 47)
+                    {
+                        AudioDialogos.Stop();
+                    }
                 }
                 break;
             case 2:
@@ -292,6 +347,10 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutoPanelCentral = false;
                     elementosTutorial.tutotial_elements.TutoBtonLuz = true;
                     elementosTutorial.tutotial_elements.TutoFuncionLuz = false;
+                    if (count == 208)
+                    {
+                        AudioDialogos.Stop();
+                    }
                 }
                 if (S_TDialogos.id == 1001)
                 {
@@ -300,6 +359,10 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutoPanelCentral = true;
                     elementosTutorial.tutotial_elements.TutoBtonRadar = false;
                     elementosTutorial.tutotial_elements.TutoPanelRadar = false;
+                    if (count == 300)
+                    {
+                        AudioDialogos.Stop();
+                    }
                 }
                 if (S_TDialogos.id == 1002)
                 {
@@ -309,6 +372,10 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutoPanelCentral = false;
                     elementosTutorial.tutotial_elements.TutoBtonMotor = false;
                     elementosTutorial.tutotial_elements.TutoFuncionMotor = true;
+                    if (count == 282)
+                    {
+                        AudioDialogos.Stop();
+                    }
                 }
                 if (S_TDialogos.id == 1003)
                 {
@@ -323,6 +390,10 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutoBtonInventario = false;
                     elementosTutorial.tutotial_elements.TutoPanelInventario = true;
                     elementosTutorial.tutotial_elements.TutoPanelCentral = false;
+                    if (count == 180)
+                    {
+                        AudioDialogos.Stop();
+                    }
                 }
                 if (S_TDialogos.id == 1005)
                 {
@@ -331,6 +402,10 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutoPanelCentral = false;
                     elementosTutorial.tutotial_elements.TutoBtonRecarga = true;
                     elementosTutorial.tutotial_elements.TutopanelRegarga = false;
+                    if (count == 204)
+                    {
+                        AudioDialogos.Stop();
+                    }
                 }
                 if (S_TDialogos.id == 1006)
                 {
@@ -353,7 +428,10 @@ public class TutorialDialogue_Manager : MonoBehaviour
                         inventorySystem.ItemList[1] = "Coordenada 2";
                         inventorySystem.coordenadaCount++;
                     }
-
+                    if (count == 161)
+                    {
+                        AudioDialogos.Stop();
+                    }
                 }
                 break;
 
@@ -367,6 +445,10 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutoPanelCentral = false;
                     elementosTutorial.tutotial_elements.TutoBtonLuz = false;
                     elementosTutorial.tutotial_elements.TutoFuncionLuz = true;
+                    if (count == 284)
+                    {
+                        AudioDialogos.Stop();
+                    }
                 }
                 if (S_TDialogos.id == 1001)
                 {
@@ -375,6 +457,10 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutoPanelCentral = false;
                     elementosTutorial.tutotial_elements.TutoBtonRadar = true;
                     elementosTutorial.tutotial_elements.TutoPanelRadar = false;
+                    if (count == 369)
+                    {
+                        AudioDialogos.Stop();
+                    }
                 }
                 if (S_TDialogos.id == 1002)
                 {
@@ -384,6 +470,10 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutoPanelCentral = false;
                     elementosTutorial.tutotial_elements.TutoBtonMotor = false;
                     elementosTutorial.tutotial_elements.TutoFuncionMotor = true;
+                    if (count == 291)
+                    {
+                        AudioDialogos.Stop();
+                    }
                 }
                 if (S_TDialogos.id == 1003)
                 {
@@ -398,6 +488,11 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutoBtonInventario = false;
                     elementosTutorial.tutotial_elements.TutoPanelInventario = true;
                     elementosTutorial.tutotial_elements.TutoPanelCentral = false;
+                    if (count == 200)
+                    {
+                        AudioDialogos.Stop();
+                    }
+
                 }
                 if (S_TDialogos.id == 1005)
                 {
@@ -407,6 +502,10 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutoPanelCentral = false;
                     elementosTutorial.tutotial_elements.TutoBtonRecarga = false;
                     elementosTutorial.tutotial_elements.TutopanelRegarga = true;
+                    if (count == 274)
+                    {
+                        AudioDialogos.Stop();
+                    }
                 }
                 if (S_TDialogos.id == 1006)
                 {
@@ -422,6 +521,10 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 {
                     elementosTutorial.tutotial_elements.IsAstro1Act = true;
                     elementosTutorial.tutotial_elements.IsEdgar1Act = false;
+                    if (count == 281)
+                    {
+                        AudioDialogos.Stop();
+                    }
                 }
                 break;
 
@@ -435,6 +538,8 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutoPanelCentral = false;
                     elementosTutorial.tutotial_elements.TutoBtonLuz = false;
                     elementosTutorial.tutotial_elements.TutoFuncionLuz = true;
+                    AudioDialogos.Stop();
+
                 }
                 if (S_TDialogos.id == 1001)
                 {
@@ -444,6 +549,10 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutoPanelCentral = false;
                     elementosTutorial.tutotial_elements.TutoBtonRadar = false;
                     elementosTutorial.tutotial_elements.TutoPanelRadar = true;
+                    if (count == 455)
+                    {
+                        AudioDialogos.Stop();
+                    }
                 }
                 if (S_TDialogos.id == 1002)
                 {
@@ -453,66 +562,10 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutoPanelCentral = true;
                     elementosTutorial.tutotial_elements.TutoBtonMotor = false;
                     elementosTutorial.tutotial_elements.TutoFuncionMotor = false;
-                }
-                if (S_TDialogos.id == 1003)
-                {
-                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
-                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
-                }
-                if (S_TDialogos.id == 1004)
-                {
-                    C_Nave.ControlPanelesNave.ActivarPanelInventario = true;
-                    elementosTutorial.tutotial_elements.IsAstro2Act = false;
-                    elementosTutorial.tutotial_elements.IsEdgar2Act = true;
-                    elementosTutorial.tutotial_elements.TutoBtonInventario = false;
-                    elementosTutorial.tutotial_elements.TutoPanelInventario = true;
-                    elementosTutorial.tutotial_elements.TutoPanelCentral = false;
-                }
-                if (S_TDialogos.id == 1005)
-                {
-                    C_Nave.ControlPanelesNave.ActivarPanelRecarga = true;
-                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
-                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
-                    elementosTutorial.tutotial_elements.TutoPanelCentral = false;
-                    elementosTutorial.tutotial_elements.TutoBtonRecarga = false;
-                    elementosTutorial.tutotial_elements.TutopanelRegarga = true;
-                }
-                if (S_TDialogos.id == 1006)
-                {
-                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
-                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
-                }
-                if (S_TDialogos.id == 1007)
-                {
-                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
-                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
-                }
-                if (S_TDialogos.id == 1008)
-                {
-                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
-                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
-                }
-                break;
-            case 5:
-                if (S_TDialogos.id == 1001)
-                {
-                    C_Nave.ControlPanelesNave.ActivarPanelRadar = false;
-                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
-                    elementosTutorial.tutotial_elements.IsEdgar1Act = false;
-                    elementosTutorial.tutotial_elements.Texto1Activo = false;
-                    elementosTutorial.tutotial_elements.TutoBtonRadar = false;
-                    elementosTutorial.tutotial_elements.TutoPanelCentral = false;
-                    elementosTutorial.tutotial_elements.TutoPanelRadar = false;
-                    currentSentence = 0;
-                    E.SetActive(false);
-                }
-                if (S_TDialogos.id == 1002)
-                {
-                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
-                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
-                    elementosTutorial.tutotial_elements.TutoPanelCentral = true;
-                    elementosTutorial.tutotial_elements.TutoBtonMotor = false;
-                    elementosTutorial.tutotial_elements.TutoFuncionMotor = false;
+                    if (count == 294)
+                    {
+                        AudioDialogos.Stop();
+                    }
                 }
                 if (S_TDialogos.id == 1003)
                 {
@@ -530,15 +583,21 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.IsEdgar2Act = false;
                     currentSentence = 0;
                     E.SetActive(false);
+                    AudioDialogos.Stop();
+                    Used = 1;
                 }
                 if (S_TDialogos.id == 1005)
                 {
-                    C_Nave.ControlPanelesNave.ActivarPanelRecarga = false;
-                    elementosTutorial.tutotial_elements.IsAstro1Act = true;
-                    elementosTutorial.tutotial_elements.IsEdgar1Act = false;
-                    elementosTutorial.tutotial_elements.TutoPanelCentral = true;
+                    C_Nave.ControlPanelesNave.ActivarPanelRecarga = true;
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                    elementosTutorial.tutotial_elements.TutoPanelCentral = false;
                     elementosTutorial.tutotial_elements.TutoBtonRecarga = false;
-                    elementosTutorial.tutotial_elements.TutopanelRegarga = false;
+                    elementosTutorial.tutotial_elements.TutopanelRegarga = true;
+                    if (count == 382)
+                    {
+                        AudioDialogos.Stop();
+                    }
                 }
                 if (S_TDialogos.id == 1006)
                 {
@@ -554,6 +613,81 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 {
                     elementosTutorial.tutotial_elements.IsAstro1Act = false;
                     elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                    if (count == 448)
+                    {
+                        AudioDialogos.Stop();
+                    }
+                }
+                break;
+            case 5:
+                if (S_TDialogos.id == 1001)
+                {
+                    C_Nave.ControlPanelesNave.ActivarPanelRadar = false;
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = false;
+                    elementosTutorial.tutotial_elements.Texto1Activo = false;
+                    elementosTutorial.tutotial_elements.TutoBtonRadar = false;
+                    elementosTutorial.tutotial_elements.TutoPanelCentral = false;
+                    elementosTutorial.tutotial_elements.TutoPanelRadar = false;
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    AudioDialogos.Stop();
+                }
+                if (S_TDialogos.id == 1002)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                    elementosTutorial.tutotial_elements.TutoPanelCentral = true;
+                    elementosTutorial.tutotial_elements.TutoBtonMotor = false;
+                    elementosTutorial.tutotial_elements.TutoFuncionMotor = false;
+                    if (count == 359)
+                    {
+                        AudioDialogos.Stop();
+                    }
+                }
+                if (S_TDialogos.id == 1003)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1004)
+                {
+
+                }
+                if (S_TDialogos.id == 1005)
+                {
+                    C_Nave.ControlPanelesNave.ActivarPanelRecarga = false;
+                    elementosTutorial.tutotial_elements.IsAstro1Act = true;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = false;
+                    elementosTutorial.tutotial_elements.TutoPanelCentral = true;
+                    elementosTutorial.tutotial_elements.TutoBtonRecarga = false;
+                    elementosTutorial.tutotial_elements.TutopanelRegarga = false;
+                    if (count == 401)
+                    {
+                        AudioDialogos.Stop();
+                    }
+                }
+                if (S_TDialogos.id == 1006)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1007)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                }
+                if (S_TDialogos.id == 1008)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = false;
+                    elementosTutorial.tutotial_elements.Texto1Activo = false;
+                    elementosTutorial.tutotial_elements.TutoPanelCentral = false;
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    Used = 1;
+                    AudioDialogos.Stop();
+
                 }
                 break;
             case 6:
@@ -568,6 +702,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutoPanelRadar = false;
                     currentSentence = 0;
                     E.SetActive(false);
+                    Used = 1;
                 }
                 if (S_TDialogos.id == 1002)
                 {
@@ -576,6 +711,10 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutoPanelCentral = true;
                     elementosTutorial.tutotial_elements.TutoBtonMotor = false;
                     elementosTutorial.tutotial_elements.TutoFuncionMotor = false;
+                    if (count == 462)
+                    {
+                        AudioDialogos.Stop();
+                    }
                 }
                 if (S_TDialogos.id == 1003)
                 {
@@ -593,6 +732,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.IsEdgar2Act = false;
                     currentSentence = 0;
                     E.SetActive(false);
+                    Used = 1;
                 }
                 if (S_TDialogos.id == 1005)
                 {
@@ -604,6 +744,9 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutopanelRegarga = false;
                     elementosTutorial.tutotial_elements.Texto1Activo = false;
                     bengala.CantBengalas = 3;
+                    AudioDialogos.Stop();
+                    E.SetActive(false);
+                    Used = 1;
                 }
                 if (S_TDialogos.id == 1006)
                 {
@@ -625,12 +768,8 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 }
                 if (S_TDialogos.id == 1008)
                 {
-                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
-                    elementosTutorial.tutotial_elements.IsEdgar1Act = false;
-                    elementosTutorial.tutotial_elements.Texto1Activo = false;
-                    elementosTutorial.tutotial_elements.TutoPanelCentral = false;
-                    currentSentence = 0;
-                    E.SetActive(false);
+
+
                 }
                 break;
             case 7:
@@ -653,6 +792,11 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutoPanelCentral = true;
                     elementosTutorial.tutotial_elements.TutoBtonMotor = false;
                     elementosTutorial.tutotial_elements.TutoFuncionMotor = false;
+
+                    if (count == 483)
+                    {
+                        AudioDialogos.Stop();
+                    }
                     //para poder dar la primera coordenada
                     if (inventorySystem.slot1Active != true)
                     {
@@ -691,6 +835,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.Texto1Activo = false;
                     currentSentence = 0;
                     E.SetActive(false);
+                    Used = 1;
 
                 }
                 if (S_TDialogos.id == 1006)
@@ -715,6 +860,9 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutoPanelCentral = false;
                     elementosTutorial.tutotial_elements.TutoBtonMotor = false;
                     elementosTutorial.tutotial_elements.TutoFuncionMotor = false;
+                    AudioDialogos.Stop();
+                    E.SetActive(false);
+                    Used = 1;
                 }
                 if (S_TDialogos.id == 1003)
                 {

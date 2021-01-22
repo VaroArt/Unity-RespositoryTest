@@ -45,7 +45,7 @@ public class portal : MonoBehaviour
             if (coordenadasCount == 2)
             {
                 print("start game");
-                SceneManager.LoadScene("UI_Credits"); // en el futuro, cambiar a escena de juego 1
+                SceneManager.LoadScene("Testeo pipe"); // en el futuro, cambiar a escena de juego 1
 
             }
         }
