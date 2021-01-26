@@ -85,6 +85,9 @@ TagManager:
   - name: Nebulosas Delante
     uniqueID: 528031093
     locked: 0
+  - name: bengala
+    uniqueID: 1950788225
+    locked: 0
   - name: player mini map
     uniqueID: 2159272865
     locked: 0

@@ -11,7 +11,7 @@ public class portal : MonoBehaviour
     public GameObject luceslaterales;
     public int coordenadasCount;
     public GameObject lightportal;
-    public CapsuleCollider2D mycapsule;
+    public PolygonCollider2D mypolygon;
     public int portalID;
     void Start()
     {
@@ -23,7 +23,7 @@ public class portal : MonoBehaviour
     {
        if(coordenadasCount == 2)
         {
-            mycapsule.isTrigger = true;
+            mypolygon.isTrigger = true;
             portalabierto.gameObject.SetActive(true);
             portalcerrado.gameObject.SetActive(false);
             luceslaterales.gameObject.SetActive(true);
