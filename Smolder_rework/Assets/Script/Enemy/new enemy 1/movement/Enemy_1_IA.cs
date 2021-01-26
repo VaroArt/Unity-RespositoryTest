@@ -326,13 +326,7 @@ public class Enemy_1_IA : Enemy_1_Var
     }
     #endregion
 
-    #region ATTACK
-    public void RandomAttackTime()
-    {
-       
-
-    }
-    #endregion
+   
 
     public void visionEnemy()
     {
@@ -345,7 +339,7 @@ public class Enemy_1_IA : Enemy_1_Var
             if (sensor.recognitionTime == 2)
             {
                 sensor.CurrentTarget = sensor.sensorTarget;
-              //  gfx.enemyAnim.SetBool("movAttack", true);
+                gfx.enemyAnim.SetBool("movAttack", true);
                 movimiento.speed = 400f;
                // movimiento.move = true;
                 tasks.TaskList = 2;
