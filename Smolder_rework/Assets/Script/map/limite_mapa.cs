@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
 public class limite_mapa : MonoBehaviour
@@ -11,6 +12,8 @@ public class limite_mapa : MonoBehaviour
     public bool repeatTime;
     public bool startOpaccity;
     public GameObject player;
+    public Light2D playerlight, playerlight2;
+    public Animator playerAnim;
     public player_script player_scr;
     public float radius;
     
@@ -32,9 +35,17 @@ public class limite_mapa : MonoBehaviour
                 startOpaccity = false;
                 repeatTime = true;
             }
+            if(timetoDie > 2)
+            {
+                playerAnim.SetBool("dead", true);
+                print("animacion muerte");
+                playerlight.intensity = 0;
+                playerlight2.intensity = 0;
+            }
             if(timetoDie > 3)
             {
                 print("Die");
+
                 SceneManager.LoadScene("UI_Menu");
                 //player.SetActive(false);
             }
@@ -84,7 +95,6 @@ public class limite_mapa : MonoBehaviour
         {
             print("funcionaa!");
             startOpaccity = true;
-
         }
     }
     void turnOpaccity()

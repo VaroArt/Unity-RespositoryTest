@@ -24,8 +24,9 @@ public class Enemy_1_Attack : MonoBehaviour
         {
             enemy_scr.attack.nextAttack = Time.time + enemy_scr.attack.attackRate;
             enemy_scr.gfx.enemyAnim.SetBool("attack", true);
-           // print("attack");
-           
+
+            // print("attack");
+
         }
       
     }
