@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MenuControl_new : MonoBehaviour
 {
     public float TiempoFade;
+    public float TiempoFadeLoad;
     public AppFunciones Botones;
 
     // Start is called before the first frame update
@@ -17,15 +18,8 @@ public class MenuControl_new : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Botones.Pantallaconfiguraciones();
         Botones.PantallaSelector();
     }
-
-    /*public void BtonJugar()
-    {
-        Botones.JugarJuego();
-        Invoke("CambiarEscena", TiempoFade);
-    }*/
 
     public void BtonAbrirSelector()
     {
@@ -35,6 +29,7 @@ public class MenuControl_new : MonoBehaviour
     public void PlayTutorial()
     {
         Botones.PlayFade();
+        //Invoke("InicioCarga", TiempoFade);
         Invoke("CambiarEscenaTutorial", TiempoFade);
     }
 
@@ -52,16 +47,6 @@ public class MenuControl_new : MonoBehaviour
     public void CambiarEscenaPrueba()
     {
         SceneManager.LoadScene("LoadScenePruebas");
-    }
-
-    public void BtonConfig()
-    {
-        Botones.FuncAbrirConfiguracion();
-    }
-
-    public void BtonConfigCerrar()
-    {
-        Botones.FuncCerrarConfiguracion();
     }
 
     public void BtonCerrarSelector()

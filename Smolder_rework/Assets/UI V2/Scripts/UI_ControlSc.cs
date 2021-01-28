@@ -77,7 +77,6 @@ public class ImagenTextoPerros
 [System.Serializable]
 public class LlamarDialogos
 {
-    //public player_triggers player;
     public DialogueManager dialogoManager;
 }
 
@@ -170,13 +169,11 @@ public class SystemaPausa
     {
         if (ActivarPanelPausa == false)
         {
-            //Debug.Log("Play");
             PanelNavePausa.enabled = false;
             Time.timeScale = 1;
         }
         if (ActivarPanelPausa == true)
         {
-            //Debug.Log("Stop");
             Time.timeScale = 0;
             PanelNavePausa.enabled = true;
         }
@@ -189,9 +186,8 @@ public class SystemaPausa
 public class AppFunciones
 {
     public Animator FadeOutAnim;
-    public Canvas PantallaConfig;
     public Canvas PanelSelector;
-    public bool ConfiguracionAbierta;
+    public Canvas PanelCarga;
     public bool SelectorAbierto;
 
     public void PlayFade()
@@ -199,37 +195,14 @@ public class AppFunciones
         FadeOutAnim.enabled = true;
     }
 
-    /*public void CambiarEscena()
-    {
-        SceneManager.LoadScene("UI_LoadScene");
-    }*/
-
     public void PantallaCreditos()
     {
         SceneManager.LoadScene("UI_Credits");
     }
 
-    public void FuncAbrirConfiguracion()
-    {
-        ConfiguracionAbierta = true;
-    }
-
     public void FuncAbrirSelector()
     {
         SelectorAbierto = true;
-    }
-
-    public void Pantallaconfiguraciones()
-    {
-        if (ConfiguracionAbierta == true)
-        {
-            PantallaConfig.enabled = true;
-        }
-
-        if(ConfiguracionAbierta == false)
-        {
-            PantallaConfig.enabled = false;
-        }
     }
 
     public void PantallaSelector()
@@ -242,11 +215,6 @@ public class AppFunciones
         {
             PanelSelector.enabled = false;
         }
-    }
-
-    public void FuncCerrarConfiguracion()
-    {
-        ConfiguracionAbierta = false;
     }
 
     public void FuncCerrarSelector()

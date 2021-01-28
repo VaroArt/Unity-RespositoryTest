@@ -27,7 +27,7 @@ public class ControlPantalla_Carga : MonoBehaviour
             {
                 TiempoCarga = 0f;
                 //SceneManager.LoadSceneAsync("Testeo_pipe");
-                SceneManager.LoadSceneAsync("Tutorial");
+                SceneManager.LoadScene("Tutorial");
             }
         }
 

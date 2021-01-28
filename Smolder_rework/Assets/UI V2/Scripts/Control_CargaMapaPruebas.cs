@@ -25,7 +25,7 @@ public class Control_CargaMapaPruebas : MonoBehaviour
             if (TiempoCarga >= 5)
             {
                 TiempoCarga = 0f;
-                SceneManager.LoadSceneAsync("Testeo pipe");
+                SceneManager.LoadScene("Testeo pipe");
             }
         }
     }

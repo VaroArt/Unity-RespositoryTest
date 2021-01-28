@@ -61,7 +61,6 @@ public class UI_ControlNaveSc : MonoBehaviour
         BengalaInventario();
         ControlLuces();
         ControlMotores();
-        extras.Pantallaconfiguraciones();
     }
 
     //Control De UI
@@ -400,15 +399,4 @@ public class UI_ControlNaveSc : MonoBehaviour
     {
         extras.Gotomenu();
     }
-
-    public void BtonAbrirConfig()
-    {
-        extras.FuncAbrirConfiguracion();
-    }
-
-    public void BtonCerrarConfig()
-    {
-        extras.FuncCerrarConfiguracion();
-    }
-
 }

@@ -6,6 +6,11 @@ using UnityEngine.UI;
 
 public class SettingsScript : MonoBehaviour
 {
+    [Header("Controles")]
+    public Canvas PanelDeConfiguracion;
+    public bool ConfiguracionesActivas;
+
+    [Header("Funciones")]
     public AudioMixer AudioMix;
     public AudioMixerGroup BgVolume;
     public AudioMixerGroup FxVolume;
@@ -41,10 +46,15 @@ public class SettingsScript : MonoBehaviour
         resolutionDropdown.RefreshShownValue();
     }
 
+    public void Update()
+    {
+        ConfigOnOffFunc();
+    }
+
     public void SetResolution (int resolutionIndex) //Actualiza la resolucion del juego
     {
         Resolution resolution = resolutions[resolutionIndex];
-        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen, resolution.refreshRate);
     }
 
     public void SetVolume (float volume) //volumen General
@@ -75,5 +85,27 @@ public class SettingsScript : MonoBehaviour
     public void SetFullscreen (bool isFullscreen) //Pantalla Completa
     {
         Screen.fullScreen = isFullscreen;
+    }
+
+    public void ConfigOnOffFunc()
+    {
+        if(ConfiguracionesActivas == true)
+        {
+            PanelDeConfiguracion.enabled = true;
+        }
+        if(ConfiguracionesActivas == false)
+        {
+            PanelDeConfiguracion.enabled = false;
+        }
+    }
+
+    public void ButtonConfigOn()
+    {
+        ConfiguracionesActivas = true;
+    }
+
+    public void ButtonConfigOff()
+    {
+        ConfiguracionesActivas = false;
     }
 }
