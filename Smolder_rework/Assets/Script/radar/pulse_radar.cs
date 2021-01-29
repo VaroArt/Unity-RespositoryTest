@@ -51,7 +51,7 @@ public class pulse_radar : MonoBehaviour
                 { 
                     ping_radar radar = radarpingtr.GetComponent<ping_radar>();
                     radar.spriterd.sprite = spriteTutorial[0];
-                    radar.setColor(new Color(1, 1, 0));
+                    radar.setColor(new Color(1, 1, 0)); //amarillo
                 }
 
                 #region Colisiones anillo de asteroides
@@ -264,33 +264,38 @@ public class pulse_radar : MonoBehaviour
                 if (collision.name == ("meteoro minimap"))
                 {
                     ping_radar radar2 = radarpingtr.GetComponent<ping_radar>();
-                    radar2.setColor(new Color(1, 1, 0));
+                    radar2.setColor(new Color(1, 1, 0)); //amarillo
                     //
                 }
 
                 if (collision.name == ("enemy minimap"))
                 {
                     ping_radar radar2 = radarpingtr.GetComponent<ping_radar>();
-                    radar2.setColor(new Color(1, 0, 0));
+                    radar2.setColor(new Color(1, 0, 0)); // rojo
                    //
                 }
                 if (collision.name == ("nave minimap"))
                 {
                     ping_radar radar2 = radarpingtr.GetComponent<ping_radar>();
-                    radar2.setColor(new Color(0, 1, 0));
+                    radar2.setColor(new Color(0, 1, 0)); //verde
                     //
                 }
                 if (collision.name == ("portal minimap"))
                 {
                     ping_radar radar2 = radarpingtr.GetComponent<ping_radar>();
-                    radar2.setColor(new Color(0.5f, 0.5f, 0.5f));
+                    radar2.setColor(new Color(0.5f, 0.5f, 0.5f)); //gris
                     //
                 }
                 if (collision.name == ("receptor minimap"))
                 {
                     ping_radar radar2 = radarpingtr.GetComponent<ping_radar>();
-                    radar2.setColor(new Color(0, 1, 1));
+                    radar2.setColor(new Color(0, 1, 1));  //cyan
                     //
+                }
+                if(collision.name == ("satelite minimap"))
+                {
+                    ping_radar radar2 = radarpingtr.GetComponent<ping_radar>();
+                    radar2.setColor(new Color(0, 1, 0)); //
                 }
             }
            

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -11264,7 +11264,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 194423a5d920d4e62b756332b1bccfaf, type: 3}
-  m_Color: {r: 0.043137264, g: 0.06692114, b: 0.8, a: 1}
+  m_Color: {r: 0.32894266, g: 0.34687173, b: 0.9056604, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -38732,7 +38732,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -18.103271, y: 0.00024414062}
+  m_AnchoredPosition: {x: -18.103333, y: 0.00024414062}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1488763349
@@ -42509,9 +42509,8 @@ MonoBehaviour:
   Municion: {fileID: 1613447159}
   extras:
     FadeOutAnim: {fileID: 0}
-    PantallaConfig: {fileID: 1021665960}
     PanelSelector: {fileID: 0}
-    ConfiguracionAbierta: 0
+    PanelCarga: {fileID: 0}
     SelectorAbierto: 0
   OpcionesMYL:
     IndicadorLuz: {fileID: 1637273384}
@@ -42580,6 +42579,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ead06506a1f7bc48b94f5ecd6b1ccf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PanelDeConfiguracion: {fileID: 0}
+  ConfiguracionesActivas: 0
   AudioMix: {fileID: 24100000, guid: 5f049a44d5af13a49b245e1d41471149, type: 2}
   BgVolume: {fileID: -8358624161097803203, guid: 5f049a44d5af13a49b245e1d41471149,
     type: 2}
