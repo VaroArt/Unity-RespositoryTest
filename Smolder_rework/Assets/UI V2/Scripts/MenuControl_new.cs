@@ -7,7 +7,10 @@ public class MenuControl_new : MonoBehaviour
 {
     public float TiempoFade;
     public float TiempoFadeLoad;
+    
     public AppFunciones Botones;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -29,24 +32,37 @@ public class MenuControl_new : MonoBehaviour
     public void PlayTutorial()
     {
         Botones.PlayFade();
-        //Invoke("InicioCarga", TiempoFade);
-        Invoke("CambiarEscenaTutorial", TiempoFade);
+        Invoke("InicioCargaTutorial", TiempoFade);
+    }
+
+    public void InicioCargaTutorial()
+    {
+        Botones.PanelCarga.enabled = true;
+        Invoke("CambiarEscenaTutorial", TiempoFadeLoad);
+    }
+
+    public void CambiarEscenaTutorial()
+    {
+        //SceneManager.LoadScene("UI_LoadScene");
+        SceneManager.LoadScene("Tutorial");
     }
 
     public void PlayPruebas()
     {
         Botones.PlayFade();
-        Invoke("CambiarEscenaPrueba", TiempoFade);
+        Invoke("InicioCargaMapaPruebas", TiempoFade);
     }
 
-    public void CambiarEscenaTutorial()
+    public void InicioCargaMapaPruebas()
     {
-        SceneManager.LoadScene("UI_LoadScene");
+        Botones.PanelCarga.enabled = true;
+        Invoke("CambiarEscenaPrueba", TiempoFadeLoad);
     }
 
     public void CambiarEscenaPrueba()
     {
-        SceneManager.LoadScene("LoadScenePruebas");
+        //SceneManager.LoadScene("LoadScenePruebas");
+        SceneManager.LoadScene("Testeo pipe");
     }
 
     public void BtonCerrarSelector()
