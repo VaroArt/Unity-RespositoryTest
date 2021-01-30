@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -201,7 +202,7 @@ public class Dialogue_Manager : MonoBehaviour
                if(S_Dialogos.id == 2)
                 {
                     controlNave.controlTextoNave.EdgarHablando = true;
-                    if (count == 170)
+                    if (count == 69)
                     {
                         AudioDialogos.Stop();
                     }
@@ -238,7 +239,7 @@ public class Dialogue_Manager : MonoBehaviour
                 {
                     controlNave.controlTextoNave.AstroHablando = true;
                     controlNave.controlTextoNave.EdgarHablando = false;
-                    if (count == 283)
+                    if (count == 124)
                     {
                         AudioDialogos.Stop();
                     }
@@ -277,7 +278,7 @@ public class Dialogue_Manager : MonoBehaviour
                 {
                     controlNave.controlTextoNave.AstroHablando = false;
                     controlNave.controlTextoNave.EdgarHablando = true;
-                    if (count == 406)
+                    if (count == 260)
                     {
                         AudioDialogos.Stop();
                     }
@@ -286,7 +287,7 @@ public class Dialogue_Manager : MonoBehaviour
                 {
                     controlNave.controlTextoNave.AstroHablando = false;
                     controlNave.controlTextoNave.EdgarHablando = true;
-                    if (count == 278)
+                    if (count == 266)
                     {
                         AudioDialogos.Stop();
                     }
@@ -316,16 +317,16 @@ public class Dialogue_Manager : MonoBehaviour
                 {
                     controlNave.controlTextoNave.AstroHablando = true;
                     controlNave.controlTextoNave.EdgarHablando = false;
-                    if (count == 460)
+                    if (count == 349)
                     {
                         AudioDialogos.Stop();
                     }
                 }
                 if (S_Dialogos.id == 3)
                 {
-                    controlNave.controlTextoNave.AstroHablando = false;
-                    controlNave.controlTextoNave.EdgarHablando = true;
-                    if (count == 424)
+                    controlNave.controlTextoNave.AstroHablando = true;
+                    controlNave.controlTextoNave.EdgarHablando = false;
+                    if (count == 290)
                     {
                         AudioDialogos.Stop();
                     }
@@ -353,24 +354,17 @@ public class Dialogue_Manager : MonoBehaviour
                 if (S_Dialogos.id == 2)
                 {
                     controlNave.controlTextoNave.AstroHablando = false;
-                    controlNave.controlTextoNave.EdgarHablando = false;
-                    controlNave.ControlPanelesNave.ActivarPanelTexto = false;
-                    controlNave.controlTextoNave.hablando = false;
-                    controlNave.controlTextoNave.PanelPerrosActivo = false;
-                    currentSentence = 0;
-                    AudioDialogos.Stop();
-                    Used = 1;
-                    E.SetActive(false);
-                    player.cantidadTurbo += 20f;
-                    bengala.CantBengalas++;
-
-
+                    controlNave.controlTextoNave.EdgarHablando = true;
+                    if (count == 572)
+                    {
+                        AudioDialogos.Stop();
+                    }
                 }
                 if (S_Dialogos.id == 3)
                 {
                     controlNave.controlTextoNave.AstroHablando = false;
                     controlNave.controlTextoNave.EdgarHablando = true;
-                    if (count == 519)
+                    if (count == 326)
                     {
                         AudioDialogos.Stop();
                     }
@@ -395,11 +389,20 @@ public class Dialogue_Manager : MonoBehaviour
                         AudioDialogos.Stop();
                     }
                 }  
+                if(S_Dialogos.id == 2)
+                {
+                    controlNave.controlTextoNave.AstroHablando = true;
+                    controlNave.controlTextoNave.EdgarHablando = false;
+                    if (count == 678)
+                    {
+                        AudioDialogos.Stop();
+                    }
+                }
                 if (S_Dialogos.id == 3)
                 {
                     controlNave.controlTextoNave.AstroHablando = false;
                     controlNave.controlTextoNave.EdgarHablando = true;
-                    if (count == 715)
+                    if (count == 568)
                     {
                         AudioDialogos.Stop();
                     }
@@ -425,11 +428,23 @@ public class Dialogue_Manager : MonoBehaviour
                         AudioDialogos.Stop();
                     }
                 }
+                if(S_Dialogos.id == 2)
+                {
+                    controlNave.controlTextoNave.AstroHablando = false;
+                    controlNave.controlTextoNave.EdgarHablando = false;
+                    controlNave.ControlPanelesNave.ActivarPanelTexto = false;
+                    controlNave.controlTextoNave.hablando = false;
+                    controlNave.controlTextoNave.PanelPerrosActivo = false;
+                    currentSentence = 0;
+                    E.SetActive(false);
+                    Used = 1;
+                    AudioDialogos.Stop();
+                }
                 if(S_Dialogos.id == 3)
                 {
-                    controlNave.controlTextoNave.AstroHablando = true;
-                    controlNave.controlTextoNave.EdgarHablando = false;
-                    if (count == 779)
+                    controlNave.controlTextoNave.AstroHablando = false;
+                    controlNave.controlTextoNave.EdgarHablando = true;
+                    if (count == 764)
                     {
                         AudioDialogos.Stop();
                     }
@@ -456,58 +471,15 @@ public class Dialogue_Manager : MonoBehaviour
                     currentSentence = 0;
                     E.SetActive(false);
                     AudioDialogos.Stop();
-                    if (inventorySystem.slot1Active != true)
-                    {
-                        inventorySystem.slot1.gameObject.transform.GetChild(0).gameObject.SetActive(true);
-                        inventorySystem.slot1Active = true;
-                        inventorySystem.ItemList[0] = "Coordenada 1";
-                        inventorySystem.coordenadaCount++;
-                    }
-                    else if (inventorySystem.slot1Active && inventorySystem.slot2Active != true && inventorySystem.slot3Active != true)
-                    {
-                        inventorySystem.slot2.gameObject.transform.GetChild(0).gameObject.SetActive(true);
-                        inventorySystem.slot2Active = true;
-                        inventorySystem.ItemList[1] = "Coordenada 1";
-                        inventorySystem.coordenadaCount++;
-                    }
-                    else if (inventorySystem.slot1Active && inventorySystem.slot2Active && inventorySystem.slot3Active != true)
-                    {
-                        inventorySystem.slot3.gameObject.transform.GetChild(0).gameObject.SetActive(true);
-                        inventorySystem.slot3Active = true;
-                        inventorySystem.ItemList[2] = "Coordenada 1";
-                        inventorySystem.coordenadaCount++;
-                    }
                     Used = 1;
                 }
                 if(S_Dialogos.id == 3)
                 {
-                    controlNave.controlTextoNave.AstroHablando = false;
+                    controlNave.controlTextoNave.AstroHablando = true;
                     controlNave.controlTextoNave.EdgarHablando = false;
-                    controlNave.ControlPanelesNave.ActivarPanelTexto = false;
-                    controlNave.controlTextoNave.hablando = false;
-                    controlNave.controlTextoNave.PanelPerrosActivo = false;
-                    currentSentence = 0;
-                    E.SetActive(false);
-                    AudioDialogos.Stop();
-                    Used = 1;
-                    bengala.CantBengalas++;
-                    if (inventorySystem.slot1Active != true)
+                    if(count == 881)
                     {
-                        inventorySystem.slot1.gameObject.transform.GetChild(2).gameObject.SetActive(true);
-                        inventorySystem.slot1Active = true;
-                        inventorySystem.ItemList[0] = "Llave";
-                    }
-                    else if (inventorySystem.slot1Active && inventorySystem.slot2Active != true && inventorySystem.slot3Active != true)
-                    {
-                        inventorySystem.slot2.gameObject.transform.GetChild(2).gameObject.SetActive(true);
-                        inventorySystem.slot2Active = true;
-                        inventorySystem.ItemList[1] = "Llave";
-                    }
-                    else if (inventorySystem.slot1Active && inventorySystem.slot2Active && inventorySystem.slot3Active != true)
-                    {
-                        inventorySystem.slot3.gameObject.transform.GetChild(2).gameObject.SetActive(true);
-                        inventorySystem.slot3Active = true;
-                        inventorySystem.ItemList[2] = "Llave";
+                        AudioDialogos.Stop();
                     }
                 }
                 if(S_Dialogos.id == 4)
@@ -521,7 +493,32 @@ public class Dialogue_Manager : MonoBehaviour
                 }
                 break;
             case 9:
-                if(S_Dialogos.id == 4)
+                if (S_Dialogos.id == 3)
+                {
+                    controlNave.controlTextoNave.AstroHablando = false;
+                    controlNave.controlTextoNave.EdgarHablando = false;
+                    controlNave.ControlPanelesNave.ActivarPanelTexto = false;
+                    controlNave.controlTextoNave.hablando = false;
+                    controlNave.controlTextoNave.PanelPerrosActivo = false;    
+                    E.SetActive(false);
+                    AudioDialogos.Stop();
+                    Used = 1;
+                    if (inventorySystem.slot1Active != true)
+                    {
+                        inventorySystem.slot1.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+                        inventorySystem.slot1Active = true;
+                        inventorySystem.ItemList[0] = "Coordenada 1";
+                        inventorySystem.coordenadaCount++;
+                    }
+                   
+                    if (inventorySystem.slot2Active != true)
+                    {
+                        inventorySystem.slot2.gameObject.transform.GetChild(2).gameObject.SetActive(true);
+                        inventorySystem.slot2Active = true;
+                        inventorySystem.ItemList[1] = "Llave";
+                    }
+                }
+                if (S_Dialogos.id == 4)
                 {
                     controlNave.controlTextoNave.AstroHablando = false;
                     controlNave.controlTextoNave.EdgarHablando = true;
@@ -533,11 +530,12 @@ public class Dialogue_Manager : MonoBehaviour
                 
                 break;
             case 10:
-                if(S_Dialogos.id == 4)
+                
+                if (S_Dialogos.id == 4)
                 {
                     controlNave.controlTextoNave.AstroHablando = true;
                     controlNave.controlTextoNave.EdgarHablando = false;
-                    if (count == 1141)
+                    if (count == 1135)
                     {
                         AudioDialogos.Stop();
                     }
@@ -548,9 +546,10 @@ public class Dialogue_Manager : MonoBehaviour
                 {
                     controlNave.controlTextoNave.AstroHablando = false;
                     controlNave.controlTextoNave.EdgarHablando = true;
-                    if (count == 1150)
+                    if (count == 1311)
                     {
                         AudioDialogos.Stop();
+                        //1338
                     }
                 }
                 break;
@@ -559,13 +558,24 @@ public class Dialogue_Manager : MonoBehaviour
                 {
                     controlNave.controlTextoNave.AstroHablando = true;
                     controlNave.controlTextoNave.EdgarHablando = false;
-                    if (count == 1352)
+                    if (count == 1338)
                     {
                         AudioDialogos.Stop();
                     }
                 }
                 break;
             case 13:
+                if (S_Dialogos.id == 4)
+                {
+                    controlNave.controlTextoNave.AstroHablando = false;
+                    controlNave.controlTextoNave.EdgarHablando = true;
+                    if (count == 1450)
+                    {
+                        AudioDialogos.Stop();
+                    }
+                }
+                break;
+            case 14:
                 if (S_Dialogos.id == 4)
                 {
                     controlNave.controlTextoNave.AstroHablando = false;
@@ -599,9 +609,7 @@ public class Dialogue_Manager : MonoBehaviour
                         inventorySystem.coordenadaCount++;
                     }
                 }
-              
                 break;
-                
         }
     }
 }
