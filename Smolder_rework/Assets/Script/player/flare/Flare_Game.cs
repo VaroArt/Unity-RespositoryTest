@@ -13,7 +13,7 @@ public class Flare_Game : MonoBehaviour
     public float countRadius;
     public bool Radius;
     public ParticleSystem spark;
-
+    public ParticleSystem electricity;
     //Sonidos
     public AudioClip explosion;
 
@@ -47,6 +47,8 @@ public class Flare_Game : MonoBehaviour
     public void exploid()
     {
         spark.gameObject.SetActive(true);
+        electricity.gameObject.SetActive(true);
+        electricity.Play();
         spark.Play();
         bengala.transform.GetChild(0).gameObject.SetActive(false);
         speed = 0;
