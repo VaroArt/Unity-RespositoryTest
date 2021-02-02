@@ -109,6 +109,12 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     {
                         if (S_TDialogos.id == 1000 && currentSentence != 4)
                         {
+                            elementosTutorial.tutotial_elements.IsAstro1Act = true;
+                            elementosTutorial.tutotial_elements.IsEdgar1Act = false;
+                            elementosTutorial.tutotial_elements.Texto1Activo = true;
+                            elementosTutorial.tutotial_elements.TutoPanelCentral = true;
+                            elementosTutorial.tutotial_elements.TutoBtonLuz = false;
+                            elementosTutorial.tutotial_elements.TutoFuncionLuz = false;
                             MostrarSigSentencia();
                             currentSentence++;
                             AudioDialogos.clip = DialogoClip; // reproducir el audio cuando inicia el dialogo
@@ -116,6 +122,12 @@ public class TutorialDialogue_Manager : MonoBehaviour
                         }
                         if(S_TDialogos.id == 1001)
                         {
+                            elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                            elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                            elementosTutorial.tutotial_elements.Texto1Activo = true;
+                            elementosTutorial.tutotial_elements.TutoPanelCentral = true;
+                            elementosTutorial.tutotial_elements.TutoBtonRadar = false;
+                            elementosTutorial.tutotial_elements.TutoPanelRadar = false;
                             MostrarSigSentencia();
                             currentSentence++;
                             AudioDialogos.clip = DialogoClip; // reproducir el audio cuando inicia el dialogo
@@ -192,27 +204,6 @@ public class TutorialDialogue_Manager : MonoBehaviour
                             AudioDialogos.Play();
                         }
                     }
-                    if (S_TDialogos.id == 1000)
-                    {
-                        elementosTutorial.tutotial_elements.IsAstro1Act = true;
-                        elementosTutorial.tutotial_elements.IsEdgar1Act = false;
-                        elementosTutorial.tutotial_elements.Texto1Activo = true;
-                        /*elementosTutorial.tutotial_elements.TutoPanelCentral = true;
-                        elementosTutorial.tutotial_elements.TutoBtonLuz = false;
-                        elementosTutorial.tutotial_elements.TutoFuncionLuz = false;*/
-   
-
-                    }
-                    if (S_TDialogos.id == 1001)
-                    {
-                        elementosTutorial.tutotial_elements.IsAstro1Act = false;
-                        elementosTutorial.tutotial_elements.IsEdgar1Act = true;
-                        elementosTutorial.tutotial_elements.Texto1Activo = true;
-                        elementosTutorial.tutotial_elements.TutoPanelCentral = true;
-                        elementosTutorial.tutotial_elements.TutoBtonRadar = false;
-                        elementosTutorial.tutotial_elements.TutoPanelRadar = false;
-
-                    }
                 }
                 else
                 {
@@ -249,14 +240,6 @@ public class TutorialDialogue_Manager : MonoBehaviour
     {
         switch (currentSentence)
         {
-            case 0:
-                if (S_TDialogos.id == 1000)
-                {
-                    elementosTutorial.tutotial_elements.TutoPanelCentral = true;
-                    elementosTutorial.tutotial_elements.TutoBtonLuz = false;
-                    elementosTutorial.tutotial_elements.TutoFuncionLuz = false;
-                }
-                break;
             case 1:
                 if (S_TDialogos.id == 1000)
                 {
