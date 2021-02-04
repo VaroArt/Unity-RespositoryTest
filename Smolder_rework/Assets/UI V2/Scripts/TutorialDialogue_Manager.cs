@@ -9,7 +9,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
     public UI_ControlNaveSc C_Nave;
     public TutorialController elementosTutorial;
     public BengalSystem bengala;
-
+    public player_script player;
     Queue<string> Sentencias;
     [Space(20)]
     public GameObject PanelDialogo;
@@ -91,6 +91,10 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     E.SetActive(true);
                     print("E");
                 }
+                if(S_TDialogos.id == 0)
+                {
+                    IniciarDialogo();
+                }
             }
         }
     }
@@ -103,6 +107,22 @@ public class TutorialDialogue_Manager : MonoBehaviour
             {
                 if (Used != 1)
                 {
+                    if (S_TDialogos.id == 0)
+                    {
+                        if (Input.GetKeyDown(KeyCode.E))
+                        {
+                            elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                            elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                            elementosTutorial.tutotial_elements.Texto1Activo = true;
+                            elementosTutorial.tutotial_elements.TutoPanelCentral = true;
+                            elementosTutorial.tutotial_elements.TutoBtonLuz = false;
+                            elementosTutorial.tutotial_elements.TutoFuncionLuz = false;
+                            MostrarSigSentencia();
+                            currentSentence++;
+                            AudioDialogos.clip = DialogoClip; // reproducir el audio cuando inicia el dialogo
+                            AudioDialogos.Play();
+                        }
+                    }
                     nextbton.SetActive(true);
                  
                     if (Input.GetKeyDown(KeyCode.E))
@@ -240,7 +260,17 @@ public class TutorialDialogue_Manager : MonoBehaviour
     {
         switch (currentSentence)
         {
+
             case 1:
+                if(S_TDialogos.id == 0)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                    if(count == 92)
+                    {
+                        AudioDialogos.Stop();
+                    }
+                }
                 if (S_TDialogos.id == 1000)
                 {
                     elementosTutorial.tutotial_elements.IsAstro1Act = false;
@@ -323,6 +353,15 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 }
                 break;
             case 2:
+                if (S_TDialogos.id == 0)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = true;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = false;
+                    if (count == 121)
+                    {
+                        AudioDialogos.Stop();
+                    }
+                }
                 if (S_TDialogos.id == 1000)
                 {
                     elementosTutorial.tutotial_elements.IsAstro1Act = true;
@@ -419,6 +458,17 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 break;
 
             case 3:
+                if (S_TDialogos.id == 0)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                    if (count == 204)
+                    {
+                        AudioDialogos.Stop();
+                    }
+                    // elementosTutorial.tutotial_elements.TutoBtonDron = true;
+                    // elementosTutorial.tutotial_elements.TutoPanelCentral = false;
+                }
                 if (S_TDialogos.id == 1000)
                 {
                     C_Nave.OpcionesMYL.InfoLuzActiva = true;
@@ -512,6 +562,17 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 break;
 
             case 4:
+                if (S_TDialogos.id == 0)
+                {
+                    elementosTutorial.tutotial_elements.TutoBtonDron = true;
+                    elementosTutorial.tutotial_elements.IsAstro1Act = true;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = false;
+                    elementosTutorial.tutotial_elements.TutoPanelCentral = false;
+                    if (count == 331)
+                    {
+                        AudioDialogos.Stop();
+                    }
+                }
                 if (S_TDialogos.id == 1000)
                 {
                     C_Nave.OpcionesMYL.InfoLuzActiva = true;
@@ -603,6 +664,16 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 }
                 break;
             case 5:
+                if(S_TDialogos.id == 0)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = true;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = false;
+                    elementosTutorial.tutotial_elements.TutoPanelCentral = false;
+                    if (count == 442)
+                    {
+                        AudioDialogos.Stop();
+                    }
+                }
                 if (S_TDialogos.id == 1001)
                 {
                     C_Nave.ControlPanelesNave.ActivarPanelRadar = false;
@@ -674,6 +745,16 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 }
                 break;
             case 6:
+                if(S_TDialogos.id == 0)
+                {
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = true;
+                    elementosTutorial.tutotial_elements.TutoPanelCentral = false;
+                    if (count == 451)
+                    {
+                        AudioDialogos.Stop();
+                    }
+                }
                 if (S_TDialogos.id == 1001)
                 {
                     C_Nave.ControlPanelesNave.ActivarPanelRadar = false;
@@ -756,6 +837,18 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 }
                 break;
             case 7:
+                if(S_TDialogos.id == 0)
+                {
+                    elementosTutorial.tutotial_elements.Texto1Activo = false;
+                    elementosTutorial.tutotial_elements.TutoPanelCentral = false;
+                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
+                    elementosTutorial.tutotial_elements.IsEdgar1Act = false;
+                    elementosTutorial.tutotial_elements.TutoBtonDron = false;
+                    AudioDialogos.Stop();
+                    E.gameObject.SetActive(false);
+
+                    Used = 1;
+                }
                 if (S_TDialogos.id == 1001)
                 {
                     C_Nave.ControlPanelesNave.ActivarPanelRadar = false;

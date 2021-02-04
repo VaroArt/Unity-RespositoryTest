@@ -17,6 +17,7 @@ public class player_script : MonoBehaviour
     public int vida;
     public Animator anim;
     public UI_ControlNaveSc HUD;
+    public TutorialDialogue_Manager tuto;
     [Header("Variables turbo")]
     [Range(0,100)]
     public float cantidadTurbo;
@@ -144,7 +145,6 @@ public class player_script : MonoBehaviour
         anim.SetBool("rep", false);
         vida++;
         audioNave.Stop();
-
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -161,5 +161,10 @@ public class player_script : MonoBehaviour
             
             canMoveStars = true;
         }
+    }
+    public void tutorialRep()
+    {
+        print("continuar tuto");
+
     }
 }

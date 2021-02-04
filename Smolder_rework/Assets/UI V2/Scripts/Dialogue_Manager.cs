@@ -389,7 +389,7 @@ public class Dialogue_Manager : MonoBehaviour
                         AudioDialogos.Stop();
                     }
                 }  
-                if(S_Dialogos.id == 2)
+                 if(S_Dialogos.id == 2)
                 {
                     controlNave.controlTextoNave.AstroHablando = true;
                     controlNave.controlTextoNave.EdgarHablando = false;
