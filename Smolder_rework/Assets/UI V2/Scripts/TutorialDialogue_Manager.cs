@@ -686,6 +686,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     currentSentence = 0;
                     E.SetActive(false);
                     AudioDialogos.Stop();
+                    Used = 1;
                 }
                 if (S_TDialogos.id == 1002)
                 {
@@ -757,16 +758,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 }
                 if (S_TDialogos.id == 1001)
                 {
-                    C_Nave.ControlPanelesNave.ActivarPanelRadar = false;
-                    elementosTutorial.tutotial_elements.IsAstro1Act = false;
-                    elementosTutorial.tutotial_elements.IsEdgar1Act = false;
-                    elementosTutorial.tutotial_elements.Texto1Activo = false;
-                    elementosTutorial.tutotial_elements.TutoBtonRadar = false;
-                    elementosTutorial.tutotial_elements.TutoPanelCentral = false;
-                    elementosTutorial.tutotial_elements.TutoPanelRadar = false;
-                    currentSentence = 0;
-                    E.SetActive(false);
-                    Used = 1;
+
                 }
                 if (S_TDialogos.id == 1002)
                 {
@@ -809,6 +801,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.Texto1Activo = false;
                     bengala.CantBengalas = 3;
                     AudioDialogos.Stop();
+                    currentSentence = 0;
                     E.SetActive(false);
                     Used = 1;
                 }
@@ -820,6 +813,8 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutoPanelCentral = false;
                     currentSentence = 0;
                     E.SetActive(false);
+                    AudioDialogos.Stop();
+                    Used = 1;
                 }
                 if (S_TDialogos.id == 1007)
                 {
@@ -829,6 +824,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutoPanelCentral = false;
                     currentSentence = 0;
                     E.SetActive(false);
+                    Used = 1;
                 }
                 if (S_TDialogos.id == 1008)
                 {
@@ -868,7 +864,6 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutoPanelCentral = true;
                     elementosTutorial.tutotial_elements.TutoBtonMotor = false;
                     elementosTutorial.tutotial_elements.TutoFuncionMotor = false;
-
                     if (count == 483)
                     {
                         AudioDialogos.Stop();
@@ -970,6 +965,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     elementosTutorial.tutotial_elements.TutoFuncionMotor = false;
                     currentSentence = 0;
                     E.SetActive(false);
+                    Used = 1;
                 }
                 break;
         }
@@ -986,6 +982,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 elementosTutorial.tutotial_elements.TutoFuncionMotor = false;
                 currentSentence = 0;
                 E.SetActive(false);
+                Used = 1;
             }
         }
     }
@@ -1004,6 +1001,8 @@ public class TutorialDialogue_Manager : MonoBehaviour
             elementosTutorial.tutotial_elements.TutoFuncionLuz = false;
             currentSentence = 0;
             E.SetActive(false);
+            Used = 1;
+            AudioDialogos.Stop();
         }
 
     }

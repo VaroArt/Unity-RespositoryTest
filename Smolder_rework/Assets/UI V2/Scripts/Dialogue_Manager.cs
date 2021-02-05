@@ -183,6 +183,7 @@ public class Dialogue_Manager : MonoBehaviour
         controlNave.controlTextoNave.PanelPerrosActivo = false;
         StopAllCoroutines();
         E.SetActive(false);
+        AudioDialogos.Stop();
     }
 
     public void conversacion()
