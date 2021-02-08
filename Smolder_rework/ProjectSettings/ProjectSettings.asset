@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: Dimension Games
   productName: Smolder
-  defaultCursor: {fileID: 0}
+  defaultCursor: {fileID: 2800000, guid: 06b0fde8cf00b294180c4c71f8acf6f8, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.029358542, g: 0.020425422, b: 0.16037738, a: 1}
   m_ShowUnitySplashScreen: 1
@@ -22,7 +22,7 @@ PlayerSettings:
   m_SplashScreenOverlayOpacity: 1
   m_SplashScreenAnimation: 1
   m_SplashScreenLogoStyle: 1
-  m_SplashScreenDrawMode: 0
+  m_SplashScreenDrawMode: 1
   m_SplashScreenBackgroundAnimationZoom: 1
   m_SplashScreenLogoAnimationZoom: 1
   m_SplashScreenBackgroundLandscapeAspect: 1
@@ -40,8 +40,10 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos:
-  - logo: {fileID: 21300000, guid: 56041a13b86854746bc9efe59192e25d, type: 3}
-    duration: 2
+  - logo: {fileID: 10404, guid: 0000000000000000e000000000000000, type: 0}
+    duration: 3
+  - logo: {fileID: 21300000, guid: c99a9b2ee428b14478e6fd06b5db6fc4, type: 3}
+    duration: 3
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1280
@@ -279,7 +281,7 @@ PlayerSettings:
   - m_BuildTarget: Standalone
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 0}
+      m_Icon: {fileID: 2800000, guid: 436a3217a404cf74788feb034e344045, type: 3}
       m_Width: 1024
       m_Height: 1024
       m_Kind: 0
@@ -309,7 +311,7 @@ PlayerSettings:
       m_Height: 48
       m_Kind: 0
     - serializedVersion: 2
-      m_Icon: {fileID: 0}
+      m_Icon: {fileID: 2800000, guid: 56041a13b86854746bc9efe59192e25d, type: 3}
       m_Width: 32
       m_Height: 32
       m_Kind: 0
@@ -321,7 +323,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 56041a13b86854746bc9efe59192e25d, type: 3}
+      m_Icon: {fileID: 2800000, guid: 436a3217a404cf74788feb034e344045, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -585,9 +587,10 @@ PlayerSettings:
   ps4IncludedModules: []
   ps4attribVROutputEnabled: 0
   monoEnv: 
-  splashScreenBackgroundSourceLandscape: {fileID: 0}
+  splashScreenBackgroundSourceLandscape: {fileID: 21300000, guid: f1e0bdfd8870b294e88ff62cb7f642b9,
+    type: 3}
   splashScreenBackgroundSourcePortrait: {fileID: 0}
-  blurSplashScreenBackground: 1
+  blurSplashScreenBackground: 0
   spritePackerPolicy: 
   webGLMemorySize: 16
   webGLExceptionSupport: 1
