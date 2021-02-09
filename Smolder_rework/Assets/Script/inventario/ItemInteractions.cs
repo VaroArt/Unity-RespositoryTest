@@ -48,13 +48,15 @@ public class ItemInteractions : MonoBehaviour
                     imageMensaje.gameObject.SetActive(true); // hago visible el cuadro 
                     textImage.gameObject.SetActive(true); //y el texto
                     audioItems.clip = recolectar;
-                    audioItems.Play();
-                    isUsed = 1;
+                    audioItems.Play(); //Se reproduce el audio
+                    isUsed = 1;  //Se setea que se pueda usar solo 1 vez
                     E.SetActive(false);
                     timer -= Time.deltaTime;
                     Invoke("Off", 1f);
                     player.cantidadTurbo += 30f;
                     bengala.CantBengalas += 1;
+                    imageAnim.SetBool("On", true); //Se activa la animacion
+                    textAnim.SetBool("On", true); //Se activa la animacion
                 }
             }
             if (ID == 2)
@@ -65,12 +67,14 @@ public class ItemInteractions : MonoBehaviour
                     imageMensaje.gameObject.SetActive(true); // hago visible el cuadro 
                     textImage.gameObject.SetActive(true); //y el texto
                     audioItems.clip = recolectar;
-                    audioItems.Play();
-                    isUsed = 1;
+                    audioItems.Play(); //Se reproduce el audio
+                    isUsed = 1; //Se setea que se pueda usar solo 1 vez
                     E.SetActive(false);
                     timer -= Time.deltaTime;
                     Invoke("Off", 1f);
                     player.cantidadTurbo += 30f;
+                    imageAnim.SetBool("On", true); //Se activa la animacion
+                    textAnim.SetBool("On", true); //Se activa la animacion
                 }
             }
             if (ID == 3)
@@ -81,12 +85,14 @@ public class ItemInteractions : MonoBehaviour
                     imageMensaje.gameObject.SetActive(true); // hago visible el cuadro 
                     textImage.gameObject.SetActive(true); //y el texto
                     audioItems.clip = recolectar;
-                    audioItems.Play();
-                    isUsed = 1;
+                    audioItems.Play(); //Se reproduce el audio
+                    isUsed = 1; //Se setea que se pueda usar solo 1 vez
                     E.SetActive(false);
                     timer -= Time.deltaTime;
                     Invoke("Off", 1f);
                     bengala.CantBengalas += 1;
+                    imageAnim.SetBool("On", true); //Se activa la animacion
+                    textAnim.SetBool("On", true); //Se activa la animacion
                 }
             }
             if (ID == 4)
@@ -97,12 +103,14 @@ public class ItemInteractions : MonoBehaviour
                     imageMensaje.gameObject.SetActive(true); // hago visible el cuadro 
                     textImage.gameObject.SetActive(true); //y el texto
                     audioItems.clip = recolectar;
-                    audioItems.Play();
-                    isUsed = 1;
+                    audioItems.Play(); //Se reproduce el audio
+                    isUsed = 1; //Se setea que se pueda usar solo 1 vez
                     E.SetActive(false);
                     timer -= Time.deltaTime;
                     Invoke("Off", 1f);
                     bengala.CantBengalas += 1;
+                    imageAnim.SetBool("On", true); //Se activa la animacion
+                    textAnim.SetBool("On", true); //Se activa la animacion
                 }
             }
 
@@ -121,5 +129,8 @@ public class ItemInteractions : MonoBehaviour
     {
         imageAnim.SetBool("IsFinish", true);
         textAnim.SetBool("isFinish", true);
+        imageAnim.SetBool("On", false);
+        textAnim.SetBool("On", false);
+
     }
 }
