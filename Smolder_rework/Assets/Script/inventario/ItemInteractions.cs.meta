@@ -3,7 +3,16 @@ guid: f99308b2f2bc46f4fbd8a349b9c909c5
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - E: {instanceID: 0}
+  - imageMensaje: {instanceID: 0}
+  - textImage: {instanceID: 0}
+  - imageAnim: {instanceID: 0}
+  - textAnim: {instanceID: 0}
+  - bengala: {instanceID: 0}
+  - player: {instanceID: 0}
+  - recolectar: {fileID: 8300000, guid: 8c7d98251d5e51249a94c3d79dc198d5, type: 3}
+  - audioItems: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

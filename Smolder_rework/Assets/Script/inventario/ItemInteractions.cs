@@ -14,9 +14,14 @@ public class ItemInteractions : MonoBehaviour
     public float timer;
     public BengalSystem bengala;
     public player_script player;
+
+
+    public AudioClip recolectar;
+    public AudioSource audioItems;
+
     void Start()
     {
-        
+        audioItems = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -42,6 +47,8 @@ public class ItemInteractions : MonoBehaviour
                     print("bengala y turbo");
                     imageMensaje.gameObject.SetActive(true); // hago visible el cuadro 
                     textImage.gameObject.SetActive(true); //y el texto
+                    audioItems.clip = recolectar;
+                    audioItems.Play();
                     isUsed = 1;
                     E.SetActive(false);
                     timer -= Time.deltaTime;
@@ -57,6 +64,8 @@ public class ItemInteractions : MonoBehaviour
                     print("turbo");
                     imageMensaje.gameObject.SetActive(true); // hago visible el cuadro 
                     textImage.gameObject.SetActive(true); //y el texto
+                    audioItems.clip = recolectar;
+                    audioItems.Play();
                     isUsed = 1;
                     E.SetActive(false);
                     timer -= Time.deltaTime;
@@ -71,6 +80,8 @@ public class ItemInteractions : MonoBehaviour
                     print("bengala");
                     imageMensaje.gameObject.SetActive(true); // hago visible el cuadro 
                     textImage.gameObject.SetActive(true); //y el texto
+                    audioItems.clip = recolectar;
+                    audioItems.Play();
                     isUsed = 1;
                     E.SetActive(false);
                     timer -= Time.deltaTime;
@@ -85,6 +96,8 @@ public class ItemInteractions : MonoBehaviour
                     print("bengala y turbo");
                     imageMensaje.gameObject.SetActive(true); // hago visible el cuadro 
                     textImage.gameObject.SetActive(true); //y el texto
+                    audioItems.clip = recolectar;
+                    audioItems.Play();
                     isUsed = 1;
                     E.SetActive(false);
                     timer -= Time.deltaTime;
