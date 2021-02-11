@@ -502,6 +502,7 @@ public class Dialogue_Manager : MonoBehaviour
                     controlNave.controlTextoNave.hablando = false;
                     controlNave.controlTextoNave.PanelPerrosActivo = false;    
                     E.SetActive(false);
+                    currentSentence = 0;
                     AudioDialogos.Stop();
                     Used = 1;
                     if (inventorySystem.slot1Active != true)
