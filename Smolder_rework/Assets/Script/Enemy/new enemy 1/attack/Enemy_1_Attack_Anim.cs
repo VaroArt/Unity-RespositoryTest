@@ -22,7 +22,7 @@ public class Enemy_1_Attack_Anim : MonoBehaviour
     public void AttackTrigger()
     {
         anim.SetBool("attack", false);
-        print("false");
+        print("vida player =" + player.vida);
     }
     public void shakeTime()
     {

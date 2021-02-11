@@ -11,11 +11,12 @@ public class limite_mapa : MonoBehaviour
     public float timetoDie;
     public bool repeatTime;
     public bool startOpaccity;
+    [Header("Desactivables")]
     public GameObject player;
     public Light2D playerlight, playerlight2;
     public Animator playerAnim;
     public player_script player_scr;
-    public float radius;
+    public TrailRenderer trail1,trail2;
     
     void Start()
     {
@@ -41,6 +42,11 @@ public class limite_mapa : MonoBehaviour
                 print("animacion muerte");
                 playerlight.intensity = 0;
                 playerlight2.intensity = 0;
+                player_scr.speedInitial = 0;
+                player_scr.enabled = false;
+                player_scr.canMoveStars = false;
+                trail1.gameObject.SetActive(false);
+                trail2.gameObject.SetActive(false);
             }
             if(timetoDie > 3)
             {
@@ -70,13 +76,7 @@ public class limite_mapa : MonoBehaviour
         {
            
         }
-   */
-       
-    }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, radius);
+   */ 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
