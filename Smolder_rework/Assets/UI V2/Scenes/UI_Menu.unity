@@ -2517,18 +2517,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 660477137}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6756025258823617087}
-        m_MethodName: PlayTutorial
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &678496279
 GameObject:
   m_ObjectHideFlags: 0
@@ -4118,13 +4107,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 93035812ab8d7214d9b12c7a0c350f12, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d742d0a3d7298374d940c0b7c8f0aab1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
