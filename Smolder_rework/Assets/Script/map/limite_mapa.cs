@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-//using UnityEditor.U2D.Path.GUIFramework;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
 public class limite_mapa : MonoBehaviour

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -10917,8 +10917,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451625738}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.4, y: -13.08, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.19853607}
+  m_LocalPosition: {x: -3.4, y: -13, z: 0}
+  m_LocalScale: {x: 0.14482813, y: 0.14482813, z: 0.14376803}
   m_Children: []
   m_Father: {fileID: 489875880}
   m_RootOrder: 0
@@ -15676,12 +15676,9 @@ MonoBehaviour:
   timetoDie: 0
   repeatTime: 0
   startOpaccity: 0
-  player: {fileID: 1118790304}
-  playerlight: {fileID: 2131798412}
-  playerlight2: {fileID: 2039716877}
   playerAnim: {fileID: 1118790308}
   player_scr: {fileID: 1118790306}
-  radius: 0
+  controller: {fileID: 0}
 --- !u!60 &637960728
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -26007,8 +26004,10 @@ MonoBehaviour:
   isTurboActivate: 0
   canMoveStars: 0
   stardust: {fileID: 1214787857}
+  repbool: 0
   recuperar: {fileID: 8300000, guid: c3888f89f6479874db6a2aac8930c469, type: 3}
   audioNave: {fileID: 0}
+  interaction: {fileID: 0}
 --- !u!114 &1118790307
 MonoBehaviour:
   m_ObjectHideFlags: 0
