@@ -1,23 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.U2D.Path.GUIFramework;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
 public class limite_mapa : MonoBehaviour
 {
+    [Header("Sprite")]
     public SpriteRenderer mysprite;
+    [Header("Variables")]
     public float value;
     public float timetoDie;
     public bool repeatTime;
     public bool startOpaccity;
-    [Header("Desactivables")]
-    public GameObject player;
-    public Light2D playerlight, playerlight2;
+    [Header("Animator")]
     public Animator playerAnim;
+    [Header("Scripts")]
     public player_script player_scr;
-    public TrailRenderer trail1,trail2;
-    
+    public player_interactions controller;
+
     void Start()
     {
         
@@ -35,24 +37,16 @@ public class limite_mapa : MonoBehaviour
             {
                 startOpaccity = false;
                 repeatTime = true;
-            }
+            }      
             if(timetoDie > 2)
             {
+               // player_scr.vida = 0;         
                 playerAnim.SetBool("dead", true);
-                print("animacion muerte");
-                playerlight.intensity = 0;
-                playerlight2.intensity = 0;
-                player_scr.speedInitial = 0;
-                player_scr.enabled = false;
-                player_scr.canMoveStars = false;
-                trail1.gameObject.SetActive(false);
-                trail2.gameObject.SetActive(false);
             }
             if(timetoDie > 3)
             {
                 print("Die");
-
-                SceneManager.LoadScene("UI_Menu");
+                reinicio();
                 //player.SetActive(false);
             }
         }
@@ -67,16 +61,6 @@ public class limite_mapa : MonoBehaviour
                 }
             }
         }
-       /* float MoveDistance = Vector3.Distance(player.transform.position, transform.position);
-        if (MoveDistance > radius)
-        {
-            
-        }
-        if(MoveDistance < radius)
-        {
-           
-        }
-   */ 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -91,9 +75,8 @@ public class limite_mapa : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.tag == ("Player")&& player_scr.vida!=0)
+        if(collision.tag == ("Player")&& player_scr.vida !=0)
         {
-            print("funcionaa!");
             startOpaccity = true;
         }
     }
@@ -105,5 +88,9 @@ public class limite_mapa : MonoBehaviour
     {  
         value -= 0.8f * Time.deltaTime;
 
+    }
+    public void reinicio()
+    {
+        SceneManager.LoadScene("UI_Menu");
     }
 }

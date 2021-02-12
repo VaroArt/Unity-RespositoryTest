@@ -27,8 +27,10 @@ public class player_script : MonoBehaviour
     public bool canMoveStars;
     public stardust_System stardust;
     [Header("Audios")]
+    public bool repbool;
     public AudioClip recuperar;
     public AudioSource audioNave;
+    public player_interactions interaction;
 
 
     void Start()
@@ -45,8 +47,12 @@ public class player_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        input.x = Input.GetAxis("Horizontal");
-        input.y = Input.GetAxis("Vertical");
+        if(repbool == false)
+        {
+            input.x = Input.GetAxis("Horizontal");
+            input.y = Input.GetAxis("Vertical");
+        }
+
         
         if (input.x != 0 || input.y != 0)
         {
@@ -66,8 +72,8 @@ public class player_script : MonoBehaviour
        if(vida <= 0)
         {
 
-                input.x = 0f;
-                input.y = 0f;
+           input.x = 0f;
+           input.y = 0f;
 
         }
 
@@ -140,9 +146,17 @@ public class player_script : MonoBehaviour
     {
         print("rep");
         anim.SetBool("rep", true);
+        repbool = true;
+        speedInitial = 0;
+        canMoveStars = false;
+        input = new Vector2(0, 0);
         yield return new WaitForSeconds(1.5f);
         print("rep finalizado");
         anim.SetBool("rep", false);
+        audioNave.clip = interaction.movimiento;
+        canMoveStars = true;
+        repbool = false;
+        speedInitial = 60f;
         vida++;
         audioNave.Stop();
     }
@@ -152,6 +166,7 @@ public class player_script : MonoBehaviour
         {
            
             canMoveStars = false;
+            audioNave.Stop();
         }
     }
     public void OnCollisionExit2D(Collision2D collision)
@@ -160,6 +175,7 @@ public class player_script : MonoBehaviour
         {
             
             canMoveStars = true;
+            audioNave.Play();
         }
     }
     public void tutorialRep()

@@ -24,7 +24,7 @@ public class game_controller : MonoBehaviour
            
             if (timer <= 2)
             {
-               player.gameObject.SetActive(false);
+              // player.gameObject.SetActive(false);
             }
         }
         if(timer == 3)
@@ -32,7 +32,7 @@ public class game_controller : MonoBehaviour
         }
         if (timer <= 0)
         {
-            SceneManager.LoadScene("UI_Menu");
+          //  SceneManager.LoadScene("UI_Menu");
         }
     }
     public void deadSound()

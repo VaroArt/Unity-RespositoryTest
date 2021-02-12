@@ -6,7 +6,7 @@ public class Enemy_1_Attack_Anim : MonoBehaviour
 {
     public Animator anim;
     public player_script player;
-    public game_controller gameController;
+    public player_interactions gameController;
     public camera_shake shake;
     void Start()
     {
@@ -22,7 +22,7 @@ public class Enemy_1_Attack_Anim : MonoBehaviour
     public void AttackTrigger()
     {
         anim.SetBool("attack", false);
-        print("vida player =" + player.vida);
+       // print("vida player =" + player.vida);
     }
     public void shakeTime()
     {
@@ -31,8 +31,7 @@ public class Enemy_1_Attack_Anim : MonoBehaviour
         if (player.vida == 0)
         {
             player.anim.SetBool("dead", true);
-            print("game over");
-            gameController.deadSound();
+           // print("game over");
         }
     }
 }

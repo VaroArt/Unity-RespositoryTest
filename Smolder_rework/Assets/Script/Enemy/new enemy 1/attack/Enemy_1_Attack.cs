@@ -27,8 +27,7 @@ public class Enemy_1_Attack : MonoBehaviour
 
             // print("attack");
 
-        }
-      
+        }  
     }
     public void OnTriggerStay2D(Collider2D collision)
     {
@@ -46,10 +45,4 @@ public class Enemy_1_Attack : MonoBehaviour
             enemy_scr.gfx.enemyAnim.SetBool("attack", false);
         }
     }
-   /* public void AttackTrigger()
-    {
-        enemy_scr.gfx.enemyAnim.SetBool("attack", false);
-        print("false");
-
-    }*/
 }
