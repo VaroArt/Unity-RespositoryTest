@@ -8,17 +8,17 @@ public class Enemy_1_Attack_Anim : MonoBehaviour
     public player_script player;
     public player_interactions gameController;
     public camera_shake shake;
-    void Start()
-    {
-        
-    }
+    public AudioSource audioSource;
+    public AudioClip hitClip;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
+
+
+
+    //Estos void son basicamente lo que ocurre durante la animacion del ataque, del script Enemy_1_Attack
+    //Un void para parar la animacion, cuando termina justo
+    //Otro void para el ataque concretado, en este caso, si logro hacer hit correctamente, la pantalla temblaria, y restaria vida al player
+    //Si logra matarlo, pues el player reproduciria su propia animacion de muerte mas su apropiado proceso de muerte (sonido de muerte, delay pequeño y reinicio de la escena)
     public void AttackTrigger()
     {
         anim.SetBool("attack", false);
@@ -26,6 +26,8 @@ public class Enemy_1_Attack_Anim : MonoBehaviour
     }
     public void shakeTime()
     {
+        audioSource.clip = hitClip;
+        audioSource.Play();
         shake.shakeCamera(1f, 0.3f);
         player.vida--;
         if (player.vida == 0)

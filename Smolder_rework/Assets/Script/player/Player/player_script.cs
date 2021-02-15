@@ -47,7 +47,7 @@ public class player_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(repbool == false)
+        if(repbool == false) //Bool para la reparacion
         {
             input.x = Input.GetAxis("Horizontal");
             input.y = Input.GetAxis("Vertical");
@@ -145,26 +145,26 @@ public class player_script : MonoBehaviour
     IEnumerator Reparacion()
     {
         print("rep");
-        anim.SetBool("rep", true);
-        repbool = true;
-        speedInitial = 0;
-        canMoveStars = false;
-        input = new Vector2(0, 0);
-        yield return new WaitForSeconds(1.5f);
+        anim.SetBool("rep", true); //Se activa la animacion de rep
+        repbool = true; //Con este bool se bloquea el audio de movimiento 
+        speedInitial = 0; //Se desactiva el movimiento sacando la velocidad
+        canMoveStars = false; //Se bloquea el movimiento de las estrellas
+        input = new Vector2(0, 0); //El input queda en 0 para que no sea posible nisiquiera rotar
+        yield return new WaitForSeconds(1.5f); //Pequeño delay para la duracion de la rep
         print("rep finalizado");
-        anim.SetBool("rep", false);
-        audioNave.clip = interaction.movimiento;
-        canMoveStars = true;
-        repbool = false;
-        speedInitial = 60f;
-        vida++;
-        audioNave.Stop();
+        anim.SetBool("rep", false); //Todo se resetea a su estado original, antes de la rep
+        audioNave.clip = interaction.movimiento; //Le damos denuevo el audio de movimiento a la nave
+        canMoveStars = true; //Se mueven las estrellas again
+        repbool = false; // Se puede reproducir denuevo el audio de movimiento
+        speedInitial = 60f; //Velocidad normal
+        vida++; //Aqui da la vida reparada
+        audioNave.Stop(); //Y se detiene el audio de rep
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == ("obstacule"))
         {
-           
+            //Aqui para cuando la nave colisiona con obstaculos, detengo el movimiento de las estrellas y el audio de movimiento de la nave
             canMoveStars = false;
             audioNave.Stop();
         }
@@ -173,14 +173,9 @@ public class player_script : MonoBehaviour
     {
         if (collision.gameObject.tag == ("obstacule"))
         {
-            
+            //Aqui vuelve todo a la normalidad, dah
             canMoveStars = true;
-            audioNave.Play();
+            audioNave.Play();  
         }
-    }
-    public void tutorialRep()
-    {
-        print("continuar tuto");
-
     }
 }

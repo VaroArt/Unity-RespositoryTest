@@ -349,7 +349,7 @@ public class Enemy_1_IA : Enemy_1_Var
         if (moveDistance < movimiento.stopRadius)
         {
             movimiento.move = false;
-            print("dont move");
+           // print("dont move");
         }
         else if (moveDistance > movimiento.stopRadius && movimiento.CanMove== true)
         {
