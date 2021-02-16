@@ -6,13 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class portal : MonoBehaviour
 {
-    public GameObject portalcerrado;
-    public GameObject portalabierto;
-    public GameObject luceslaterales;
+
     public int coordenadasCount;
-    public GameObject lightportal;
     public PolygonCollider2D mypolygon;
     public int portalID;
+    public Animator portalAnim;
     void Start()
     {
         
@@ -24,10 +22,7 @@ public class portal : MonoBehaviour
        if(coordenadasCount == 2)
         {
             mypolygon.isTrigger = true;
-            portalabierto.gameObject.SetActive(true);
-            portalcerrado.gameObject.SetActive(false);
-            luceslaterales.gameObject.SetActive(true);
-            lightportal.gameObject.SetActive(true);
+            portalAnim.SetBool("On", true);
         }
     }
     public void OnTriggerEnter2D(Collider2D collision)

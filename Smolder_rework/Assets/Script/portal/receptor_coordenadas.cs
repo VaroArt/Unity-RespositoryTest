@@ -5,12 +5,15 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class receptor_coordenadas : MonoBehaviour
 {
-
+    [Header("ID")]
+    public int ID;
+    [Header("Scripts")]
     public InventarioSystem inventario;
     public portal myportal;
-    public Light2D light1;
-    public GameObject CoordenadaOff;
-    public GameObject CoordenadaOn;
+    public Light2D light;
+    [Header("Animators")]
+    public Animator receptor;
+
     void Start()
     {
 
@@ -25,42 +28,28 @@ public class receptor_coordenadas : MonoBehaviour
     {
         if (collision.tag == ("Player"))
         {
-           /* if(player.coordenadaCount == 1)
-            {
-                light1.intensity = 3.68f;
-                CoordenadaOff.gameObject.SetActive(false);
-                CoordenadaOn.gameObject.SetActive(true);
-                myportal.coordenadasCount++;
-                player.coordenadaCount--;
-            }
-            else if(player.coordenadaCount == 2)
-            {
-                light1.intensity = 3.68f;
-                CoordenadaOff.gameObject.SetActive(false);
-                CoordenadaOn.gameObject.SetActive(true);
-                myportal.coordenadasCount++;
-                player.coordenadaCount--;
-            }*/
+
             if(inventario.coordenadaCount == 1)
             {
-                light1.intensity = 3.68f;
-                CoordenadaOff.gameObject.SetActive(false);
-                CoordenadaOn.gameObject.SetActive(true);
+
+                light.intensity = 1.74f;
+              /*  CoordenadaOff.gameObject.SetActive(false);
+               *  animator
+                CoordenadaOn.gameObject.SetActive(true);*/
                 myportal.coordenadasCount++;
                 inventario.coordenadaCount--;
+                receptor.SetBool("On", true);
             }
             else if (inventario.coordenadaCount == 2)
             {
-                light1.intensity = 3.68f;
-                CoordenadaOff.gameObject.SetActive(false);
-                CoordenadaOn.gameObject.SetActive(true);
+                light.intensity = 1.74f;
+              /*  CoordenadaOff.gameObject.SetActive(false);
+                CoordenadaOn.gameObject.SetActive(true);*/
                 myportal.coordenadasCount++;
                 inventario.coordenadaCount--;
+                receptor.SetBool("On", true);
             }
-            /*  light1.intensity = 3.68f;
-                 CoordenadaOff.gameObject.SetActive(false);
-                 CoordenadaOn.gameObject.SetActive(true);
-                 myportal.coordenadasCount ++;*/
+           
         }
     }
 }
