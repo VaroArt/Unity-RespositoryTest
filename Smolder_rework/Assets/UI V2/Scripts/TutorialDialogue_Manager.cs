@@ -111,6 +111,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
                     {
                         if (Input.GetKeyDown(KeyCode.E))
                         {
+                            print("daleee diegooo");
                             elementosTutorial.tutotial_elements.IsAstro1Act = false;
                             elementosTutorial.tutotial_elements.IsEdgar1Act = true;
                             elementosTutorial.tutotial_elements.Texto1Activo = true;
