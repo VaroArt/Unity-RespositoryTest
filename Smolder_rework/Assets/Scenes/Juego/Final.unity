@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -23378,7 +23378,7 @@ MonoBehaviour:
   startOpaccity: 0
   playerAnim: {fileID: 1118790308}
   player_scr: {fileID: 1118790306}
-  controller: {fileID: 0}
+  controller: {fileID: 1118790313}
 --- !u!60 &637960728
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -29339,7 +29339,7 @@ GameObject:
   m_Component:
   - component: {fileID: 831361346}
   m_Layer: 0
-  m_Name: luces globales (1)
+  m_Name: luces globales
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49403,7 +49403,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.20856068, y: 0.098000005}
   m_AnchorMax: {x: 0.7914392, y: 0.8196023}
-  m_AnchoredPosition: {x: 0, y: -0.35000658}
+  m_AnchoredPosition: {x: 0, y: -0.35000515}
   m_SizeDelta: {x: -0.000011444092, y: -0.7044754}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1321152333
@@ -54775,7 +54775,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.20856068, y: 0.098000005}
   m_AnchorMax: {x: 0.7914392, y: 0.8196023}
-  m_AnchoredPosition: {x: 0, y: -0.3499756}
+  m_AnchoredPosition: {x: 0, y: -0.34997416}
   m_SizeDelta: {x: -0.000011444092, y: -0.7044754}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1482295388
