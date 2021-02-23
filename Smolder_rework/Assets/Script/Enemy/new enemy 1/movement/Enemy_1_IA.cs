@@ -63,7 +63,7 @@ public class Enemy_1_IA : Enemy_1_Var
         movimiento.rb = GetComponent<Rigidbody2D>();
         audioenemigo = GetComponent<AudioSource>();
         Path.seeker = GetComponent<Seeker>();
-        patrol.isHide = false;  
+       // patrol.isHide = false;  
         patrol.randomSpot = Random.Range(0, patrol.Points.Length); //Para seleccionar un target random al inicio
         patrol.waitTime = patrol.startWaitTime; //reinicio apropiado del waitTime cuando se llega a un patrolPoint
         InvokeRepeating("updatePath", 0f, 0.1f); //Si encuentra el target, en este caso, si llega a el, volvera a preguntar por uno cada 0.1s.

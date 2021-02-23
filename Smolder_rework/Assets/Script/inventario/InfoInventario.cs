@@ -20,7 +20,7 @@ public class InfoInventario : MonoBehaviour, IPointerEnterHandler,IPointerExitHa
             print("slot1");
             InfoSlot1.SetActive(true);
 
-            if(inventario.ItemList[0] == ("Coordenada 1"))
+            if(inventario.ItemList[0] == ("Coordenada 1") && inventario.slot1Active)
             {
                 text.text = "Coordenada N°1";
             }
@@ -33,7 +33,7 @@ public class InfoInventario : MonoBehaviour, IPointerEnterHandler,IPointerExitHa
                 text.text = "Llave";
             }
         }
-        if (gameObject.name == ("slot 2"))
+        if (gameObject.name == ("slot 2") && inventario.slot2Active)
         {
             print("slot2");
             InfoSlot2.SetActive(true);
@@ -52,7 +52,7 @@ public class InfoInventario : MonoBehaviour, IPointerEnterHandler,IPointerExitHa
             }
 
         }
-        if (gameObject.name == ("slot 3"))
+        if (gameObject.name == ("slot 3") && inventario.slot3Active)
         {
             print("slot3");
             InfoSlot3.SetActive(true);
