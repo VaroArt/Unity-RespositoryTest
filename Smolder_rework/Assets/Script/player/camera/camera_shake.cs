@@ -22,6 +22,7 @@ public class camera_shake : MonoBehaviour
 
         cinemachineB.m_AmplitudeGain = intensity;
         shakeTimer = time;
+        print("shake shake");
     }
    
 

@@ -114,17 +114,17 @@ public class Enemy_1_IA : Enemy_1_Var
     {
         if(sensor.RecognitionGeneral)
         {
-            sensor.recognitionTime += 1 * Time.deltaTime;
+            sensor.recognitionTime += 2 * Time.deltaTime;
         }
         if(!sensor.RecognitionGeneral)
         {
             sensor.recognitionTime -= 1 * Time.deltaTime;
             
         }
-        if (sensor.recognitionTime > 2)
+        if (sensor.recognitionTime > 1)
         {
          
-            sensor.recognitionTime = 2;
+            sensor.recognitionTime = 1;
         }
 
         
@@ -336,7 +336,7 @@ public class Enemy_1_IA : Enemy_1_Var
         {
             // tasks.TaskList = 2;
             VerTarget();
-            if (sensor.recognitionTime == 2)
+            if (sensor.recognitionTime == 1)
             {
                 sensor.CurrentTarget = sensor.sensorTarget;
                 gfx.enemyAnim.SetBool("movAttack", true);

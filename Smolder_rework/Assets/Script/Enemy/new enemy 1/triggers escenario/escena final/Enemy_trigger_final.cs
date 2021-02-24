@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_trigger_final : MonoBehaviour
+public class enemy_trigger_final : MonoBehaviour
 {
-    public Dialogue_Manager dialogeManager;
-    public bool ready;
-    
+    public int id;
+    public enemy_manager manager;
     void Start()
     {
         
@@ -16,19 +15,23 @@ public class Enemy_trigger_final : MonoBehaviour
     void Update()
     {
         
-        if(dialogeManager.S_Dialogos.id == 5)
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == ("Player")) // el resto de enemigos aparecera al pasar por los trigger
         {
-            if(dialogeManager.Used == 1)
+            if(id == 1)
             {
-                StartCoroutine("TimeToAction");
+                manager.enemyBehaviors[2].EnemeyReady();
+            }
+            if (id == 2)
+            {
+                manager.enemyBehaviors[3].EnemeyReady();
+            }
+            if (id == 3)
+            {
+                manager.enemyBehaviors[4].EnemeyReady();
             }
         }
     }
-    IEnumerator TimeToAction()
-    {
-        yield return new WaitForSeconds(3);
-        print("ready");
-        ready = true;
-    }
 }
-

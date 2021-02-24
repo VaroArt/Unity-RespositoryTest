@@ -26,6 +26,7 @@ public class Enemy_1_Attack_Anim : MonoBehaviour
     }
     public void shakeTime()
     {
+        print("atack");
         audioSource.clip = hitClip;
         audioSource.Play();
         shake.shakeCamera(1f, 0.3f);
