@@ -11,9 +11,13 @@ public class pulse_radar : MonoBehaviour
     public float rangeMax;
     public float rangespeed;
     public bool activate;
+    [Tooltip("Sprites de anillos de asteroides tutorial")]
     public Sprite[] spriteTutorial;
+    [Tooltip("Sprites de anillos de asteroides escena 1")]
     public Sprite[] sprites;
+    [Tooltip("Sprites de anillos de asteroides escena final")]
     public Sprite[] spritesFinal;
+    [Tooltip("Sprites de todas las colisiones que detecte el ping radar")]
     [SerializeField] private List<Collider2D> col;
 
     private void Awake()
@@ -39,7 +43,7 @@ public class pulse_radar : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == ("minimap"))
+        if(collision.tag == ("minimap") && activate)
         {
             col.Add(collision);
             // print(collision.name);
@@ -296,20 +300,20 @@ public class pulse_radar : MonoBehaviour
                 }
                 if (collision.name == ("colision 28"))
                 {
-                    Transform radarpingtr2 = Instantiate(radarping2, collision.gameObject.transform.position, collision.transform.rotation);
-                    ping_radar radar2 = radarpingtr2.GetComponent<ping_radar>();
-                    radar2.spriterd.sprite = sprites[27];
-                    radar2.setColor(new Color(1, 1, 0));
+                    Transform radarpingtr1 = Instantiate(radarping, collision.gameObject.transform.position, collision.transform.rotation);
+                    ping_radar radar1 = radarpingtr1.GetComponent<ping_radar>();
+                    radar1.spriterd.sprite = sprites[27];
+                    radar1.setColor(new Color(1, 1, 0));
 
                 }
-                if (collision.name == ("colision 29"))
+             /*   if (collision.name == ("colision 29"))
                 {
                     Transform radarpingtr2 = Instantiate(radarping2, collision.gameObject.transform.position, collision.transform.rotation);
                     ping_radar radar2 = radarpingtr2.GetComponent<ping_radar>();
                     radar2.spriterd.sprite = sprites[28];
                     radar2.setColor(new Color(1, 1, 0));
 
-                }
+                }*/
 
                 #endregion
 
