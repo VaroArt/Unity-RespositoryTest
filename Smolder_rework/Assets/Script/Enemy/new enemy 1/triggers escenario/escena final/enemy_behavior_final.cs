@@ -8,6 +8,7 @@ public class enemy_behavior_final : MonoBehaviour
     public Transform playertr;
     public BoxCollider2D colliderAttack;
 
+
     void Start()
     {
         enemy.patrol.isHide = true;
@@ -26,7 +27,5 @@ public class enemy_behavior_final : MonoBehaviour
         enemy.movimiento.speed = 400f;
         enemy.movimiento.stopRadius = 1.31f;
         colliderAttack.enabled = true;
-
-       
     }
 }

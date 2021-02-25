@@ -1,11 +1,17 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class enemy_trigger_final : MonoBehaviour
 {
     public int id;
     public enemy_manager manager;
+    public AudioSource audioFinal;
+    public AudioClip portazo;
+    public GameObject FadeIn;
+    public GameObject Enemys;
     void Start()
     {
         
@@ -32,6 +38,19 @@ public class enemy_trigger_final : MonoBehaviour
             {
                 manager.enemyBehaviors[4].EnemeyReady();
             }
+            if(id == 4)
+            {
+                audioFinal.clip = portazo;
+                audioFinal.Play();
+                FadeIn.gameObject.SetActive(true);
+                Enemys.gameObject.SetActive(false);
+                Invoke("Endgame", 2f);
+            }
         }
+
+    }
+    public void Endgame()
+    {
+        SceneManager.LoadScene("UI_Credits");
     }
 }
