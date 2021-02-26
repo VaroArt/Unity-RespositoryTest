@@ -23,7 +23,7 @@ public class enemy_behavior_final : MonoBehaviour
         enemy.patrol.isHide = false;
         enemy.patrol.Points[0] = playertr;
         enemy.movimiento.move = true;
-        enemy.movimiento.MoveDistance = 3.71f;
+        enemy.movimiento.MoveDistance = 5f;
         enemy.movimiento.speed = 400f;
         enemy.movimiento.stopRadius = 1.31f;
         colliderAttack.enabled = true;
