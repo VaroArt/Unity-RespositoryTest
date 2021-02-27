@@ -139,7 +139,7 @@ public class Dialogue_Manager : MonoBehaviour
                     nextbton.SetActive(true);
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        if (S_Dialogos.id == 1 || S_Dialogos.id == 3 || S_Dialogos.id == 2 || S_Dialogos.id == 5)
+                        if (S_Dialogos.id == 1 && currentSentence < 8)
                         {
                             controlNave.controlTextoNave.hablando = true;
                             controlNave.controlTextoNave.PanelPerrosActivo = true;
@@ -148,6 +148,34 @@ public class Dialogue_Manager : MonoBehaviour
                             AudioDialogos.clip = DialogoClip; // reproducir el audio cuando inicia el dialogo
                             AudioDialogos.Play();
 
+                        }
+                        // S_Dialogos.id == 3 || S_Dialogos.id == 2 || S_Dialogos.id == 5
+                        if (S_Dialogos.id == 3 && currentSentence < 10)
+                        {
+                            controlNave.controlTextoNave.hablando = true;
+                            controlNave.controlTextoNave.PanelPerrosActivo = true;
+                            MostrarSigSentencia();
+                            currentSentence++;
+                            AudioDialogos.clip = DialogoClip; // reproducir el audio cuando inicia el dialogo
+                            AudioDialogos.Play();
+                        }
+                        if (S_Dialogos.id == 2 && currentSentence < 8)
+                        {
+                            controlNave.controlTextoNave.hablando = true;
+                            controlNave.controlTextoNave.PanelPerrosActivo = true;
+                            MostrarSigSentencia();
+                            currentSentence++;
+                            AudioDialogos.clip = DialogoClip; // reproducir el audio cuando inicia el dialogo
+                            AudioDialogos.Play();
+                        }
+                        if (S_Dialogos.id == 5 && currentSentence < 12 )
+                        {
+                            controlNave.controlTextoNave.hablando = true;
+                            controlNave.controlTextoNave.PanelPerrosActivo = true;
+                            MostrarSigSentencia();
+                            currentSentence++;
+                            AudioDialogos.clip = DialogoClip; // reproducir el audio cuando inicia el dialogo
+                            AudioDialogos.Play();
                         }
                         if (S_Dialogos.id == 4)
                         {
@@ -527,15 +555,15 @@ public class Dialogue_Manager : MonoBehaviour
             case 8:
                 if(S_Dialogos.id == 1)
                 {
-                    controlNave.controlTextoNave.AstroHablando = false;
-                    controlNave.controlTextoNave.EdgarHablando = false;
-                    controlNave.ControlPanelesNave.ActivarPanelTexto = false;
-                    controlNave.controlTextoNave.hablando = false;
-                    controlNave.controlTextoNave.PanelPerrosActivo = false;
-                    currentSentence = 0;
-                    E.SetActive(false);
-                    AudioDialogos.Stop();
-                    Used = 1;
+                        controlNave.controlTextoNave.AstroHablando = false;
+                        controlNave.controlTextoNave.EdgarHablando = false;
+                        controlNave.ControlPanelesNave.ActivarPanelTexto = false;
+                        controlNave.controlTextoNave.hablando = false;
+                        controlNave.controlTextoNave.PanelPerrosActivo = false;
+                        currentSentence = 0;
+                        E.SetActive(false);
+                        AudioDialogos.Stop();
+                        Used = 1;
                 }
                 if(S_Dialogos.id == 3)
                 {

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class game_controller : MonoBehaviour
 {
     public player_script player;
+    public UI_ControlNaveSc hud;
     [Header("Reinicio")]
     public float timer;
     public AudioSource audioSource;
@@ -34,7 +35,14 @@ public class game_controller : MonoBehaviour
         {
           //  SceneManager.LoadScene("UI_Menu");
         }
+
+        if(player.vida < 2)
+        {
+            print("nave dañada");
+            hud.ControlEstadoNave.VidaBaja = true;
+        }
     }
+
     public void deadSound()
     {
         audioSource.clip = dead;

@@ -12981,6 +12981,7 @@ MonoBehaviour:
   movimiento:
     speed: 0
     stopRadius: 0
+    StopPatrol: 0
     CanMove: 0
     move: 0
     MoveDistance: 0
@@ -31712,6 +31713,7 @@ MonoBehaviour:
   movimiento:
     speed: 0
     stopRadius: 0
+    StopPatrol: 0
     CanMove: 0
     move: 0
     MoveDistance: 0
@@ -36438,36 +36440,6 @@ PolygonCollider2D:
       - {x: -0.33333334, y: -1.8500001}
       - {x: 0, y: -1.8333334}
       - {x: 0.38333336, y: -1.7833334}
---- !u!1 &937249112
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 937249113}
-  m_Layer: 0
-  m_Name: me
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &937249113
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 937249112}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.1461143, y: -24.483088, z: -32.65496}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 23
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &937378233
 GameObject:
   m_ObjectHideFlags: 0
@@ -41179,13 +41151,13 @@ MonoBehaviour:
     VidaBaja: 0
     EstadoDron: 0
   ObjsColorNave:
-  - ObjetoARenderear: {fileID: 1693470984}
+  - ObjetoARenderear: {fileID: 929535495}
     ColorActivo: {r: 0.8301887, g: 0.14489143, b: 0.14489143, a: 1}
     ColorInactivo: {r: 1, g: 1, b: 1, a: 1}
-  - ObjetoARenderear: {fileID: 1994495836}
+  - ObjetoARenderear: {fileID: 897449574}
     ColorActivo: {r: 0.8784314, g: 0.15294118, b: 0.12156863, a: 1}
     ColorInactivo: {r: 1, g: 1, b: 1, a: 1}
-  - ObjetoARenderear: {fileID: 2096395281}
+  - ObjetoARenderear: {fileID: 1759085400}
     ColorActivo: {r: 0.8773585, g: 0.15335816, b: 0.120016046, a: 1}
     ColorInactivo: {r: 1, g: 1, b: 1, a: 1}
   - ObjetoARenderear: {fileID: 2126973566}
@@ -42464,12 +42436,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1118790306}
   alerta: {fileID: 637960727}
+  hud: {fileID: 1107873998}
   playerlight: {fileID: 2131798412}
   trail1: {fileID: 1346656727}
   trail2: {fileID: 10451544}
   timer: 3
   movimiento: {fileID: 8300000, guid: 7a6066e9479a28141ad700e28923f6ef, type: 3}
   dead: {fileID: 8300000, guid: d62b21ec06303014d94cd1e4907f58aa, type: 3}
+  damageTime: 0
+  startTime: 0
 --- !u!1 &1126361541
 GameObject:
   m_ObjectHideFlags: 0
@@ -54560,7 +54535,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.20856068, y: 0.098000005}
   m_AnchorMax: {x: 0.7914392, y: 0.8196023}
-  m_AnchoredPosition: {x: 0, y: -0.35000467}
+  m_AnchoredPosition: {x: 0, y: -0.3500061}
   m_SizeDelta: {x: -0.000011444092, y: -0.7044754}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1321152333
@@ -55356,6 +55331,7 @@ MonoBehaviour:
   movimiento:
     speed: 0
     stopRadius: 0
+    StopPatrol: 0
     CanMove: 0
     move: 0
     MoveDistance: 0
@@ -59381,6 +59357,7 @@ MonoBehaviour:
   movimiento:
     speed: 0
     stopRadius: 0
+    StopPatrol: 0
     CanMove: 0
     move: 0
     MoveDistance: 0
@@ -61391,7 +61368,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.20856068, y: 0.098000005}
   m_AnchorMax: {x: 0.7914392, y: 0.8196023}
-  m_AnchoredPosition: {x: 0, y: -0.34997845}
+  m_AnchoredPosition: {x: 0, y: -0.3499837}
   m_SizeDelta: {x: -0.000011444092, y: -0.7044754}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1482295388
@@ -64642,6 +64619,7 @@ MonoBehaviour:
   movimiento:
     speed: 0
     stopRadius: 0
+    StopPatrol: 0
     CanMove: 0
     move: 0
     MoveDistance: 0

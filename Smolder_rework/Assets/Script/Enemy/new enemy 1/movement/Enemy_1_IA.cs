@@ -74,25 +74,6 @@ public class Enemy_1_IA : Enemy_1_Var
 
     public void Update()
     {
-        #region reset game
-      /*  if (attack.player.vida <= 0)
-        {
-            attack.timercito -= 1 * Time.deltaTime;
-           if(attack.timercito <= 2)
-            {
-                attack.player.gameObject.SetActive(false);
-               
-            }
-
-            // 
-           
-        }
-        if (attack.timercito <= 0)
-        {
-            SceneManager.LoadScene("UI_Menu");
-        }*/
-        #endregion
-
           Hide();
           Reconocimiento();
      //   taskTrigger();
@@ -160,10 +141,6 @@ public class Enemy_1_IA : Enemy_1_Var
     #endregion 
 
     #region Tareas
-    public void taskTrigger()
-    {
-       
-    }
     public void taskList()
     {
         switch (tasks.TaskList)
@@ -274,8 +251,9 @@ public class Enemy_1_IA : Enemy_1_Var
 
         float moveDistance = Vector3.Distance(sensor.CurrentTarget.position, transform.position);
 
-        if (moveDistance < movimiento.stopRadius)
+        if (moveDistance < movimiento.StopPatrol)
         {
+            print("move to random point");
             if (patrol.waitTime <= 0)
             {
                 patrol.randomSpot = Random.Range(0, patrol.Points.Length);
@@ -285,10 +263,9 @@ public class Enemy_1_IA : Enemy_1_Var
             {
                 movimiento.move = false;
                 patrol.waitTime -= Time.deltaTime;
-
             }
         }
-        else if (moveDistance > movimiento.stopRadius)
+        else if (moveDistance > movimiento.StopPatrol)
         {
             movimiento.move = true;
         }
@@ -364,8 +341,8 @@ public class Enemy_1_IA : Enemy_1_Var
         Gizmos.DrawWireSphere(transform.position, movimiento.stopRadius);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, movimiento.MoveDistance);
-       // Gizmos.color = Color.red;
-      //  Gizmos.DrawWireSphere(transform.position, movimiento.attackRadius);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, movimiento.StopPatrol);
 
     }
 }

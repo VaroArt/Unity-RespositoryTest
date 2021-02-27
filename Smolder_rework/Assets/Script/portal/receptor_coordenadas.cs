@@ -6,7 +6,7 @@ using UnityEngine.Experimental.Rendering.Universal;
 public class receptor_coordenadas : MonoBehaviour
 {
     [Header("ID")]
-    public int ID;
+    public int Used;
     [Header("Scripts")]
     public InventarioSystem inventario;
     public portal myportal;
@@ -29,25 +29,21 @@ public class receptor_coordenadas : MonoBehaviour
         if (collision.tag == ("Player"))
         {
 
-            if(inventario.coordenadaCount == 1)
+            if(inventario.coordenadaCount == 1 && Used !=1)
             {
-
                 light.intensity = 1.74f;
-              /*  CoordenadaOff.gameObject.SetActive(false);
-               *  animator
-                CoordenadaOn.gameObject.SetActive(true);*/
                 myportal.coordenadasCount++;
                 inventario.coordenadaCount--;
                 receptor.SetBool("On", true);
+                Used = 1;
             }
-            else if (inventario.coordenadaCount == 2)
+            else if (inventario.coordenadaCount == 2 && Used != 1)
             {
                 light.intensity = 1.74f;
-              /*  CoordenadaOff.gameObject.SetActive(false);
-                CoordenadaOn.gameObject.SetActive(true);*/
                 myportal.coordenadasCount++;
                 inventario.coordenadaCount--;
                 receptor.SetBool("On", true);
+                Used = 1;
             }
            
         }

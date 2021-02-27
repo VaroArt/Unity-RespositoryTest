@@ -32,7 +32,7 @@ public class portal : MonoBehaviour
             if (coordenadasCount == 2)
             {
                 print("endgame");
-                SceneManager.LoadScene("UI_Credits");
+                SceneManager.LoadScene("Final");
             }
         }
         if (collision.tag == ("Player") && portalID == 1)

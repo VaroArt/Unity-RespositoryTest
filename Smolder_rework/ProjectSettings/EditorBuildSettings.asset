@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/UI V2/Scenes/UI_Credits.unity
     guid: a125726a9d204544cbbb749d76363259
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FInal.unity
     guid: e079fb1cc6c117d47a02e9aae3dcbee9
   - enabled: 1
@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/UI V2/Scenes/LoadScenePruebas.unity
     guid: 975fb2a05b100454d84fb6f4d9c3a950
+  - enabled: 1
+    path: Assets/Scenes/Juego/Final.unity
+    guid: 8724fb2799e587943b40c21285ebda7d
   m_configObjects: {}

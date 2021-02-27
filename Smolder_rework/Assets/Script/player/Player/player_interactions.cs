@@ -11,6 +11,7 @@ public class player_interactions : MonoBehaviour
     [Header("Scripts")]
     public player_script player;
     public limite_mapa alerta;
+    public UI_ControlNaveSc hud;
     [Header("Desactivables")]
     public Light2D playerlight;
     public TrailRenderer trail1, trail2;
@@ -19,6 +20,9 @@ public class player_interactions : MonoBehaviour
     public AudioClip movimiento;
     public AudioClip dead;
     private AudioSource audioNave;
+    [Header("Dagame")]
+    public float damageTime;
+    public float startTime;
 
     void Start()
     {
@@ -29,7 +33,10 @@ public class player_interactions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(player.vida >= 2)
+        {
+            damageTime = startTime;
+        }
         if (player.isMoving)
         {
             audioNave.volume = 0.13f;
@@ -59,6 +66,12 @@ public class player_interactions : MonoBehaviour
             }
         }
 
+        if (player.vida < 2)
+        {
+            print("nave dañada");
+              hud.ControlEstadoNave.VidaBaja = true;
+        }
+        else hud.ControlEstadoNave.VidaBaja = false;
     }
     public void deadSound()
     {
@@ -69,4 +82,6 @@ public class player_interactions : MonoBehaviour
         trail2.gameObject.SetActive(false);
         playerlight.gameObject.SetActive(false);
     }
+
+
 }

@@ -21,7 +21,7 @@ public class VariablesMovimiento
     [Header("Variables movimiento")]
     public float speed;
     public float stopRadius;
-    //public float attackRadius;
+    public float StopPatrol;
     public bool CanMove;
     public bool move;
     [Header("Variables rotacion")]
