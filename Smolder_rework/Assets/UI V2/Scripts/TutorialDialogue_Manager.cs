@@ -125,10 +125,11 @@ public class TutorialDialogue_Manager : MonoBehaviour
                         }
                     }
                     nextbton.SetActive(true);
+                    E.SetActive(true);
                  
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        if (S_TDialogos.id == 1000 && currentSentence != 4)
+                        if (S_TDialogos.id == 1000 && currentSentence < 4)
                         {
                             elementosTutorial.tutotial_elements.IsAstro1Act = true;
                             elementosTutorial.tutotial_elements.IsEdgar1Act = false;
@@ -141,7 +142,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
                             AudioDialogos.clip = DialogoClip; // reproducir el audio cuando inicia el dialogo
                             AudioDialogos.Play();
                         }
-                        if(S_TDialogos.id == 1001)
+                        if(S_TDialogos.id == 1001 && currentSentence < 5)
                         {
                             elementosTutorial.tutotial_elements.IsAstro1Act = false;
                             elementosTutorial.tutotial_elements.IsEdgar1Act = true;
@@ -154,7 +155,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
                             AudioDialogos.clip = DialogoClip; // reproducir el audio cuando inicia el dialogo
                             AudioDialogos.Play();
                         }
-                        if (S_TDialogos.id == 1002 && currentSentence !=8)
+                        if (S_TDialogos.id == 1002 && currentSentence <8)
                         {
                             elementosTutorial.tutotial_elements.Texto1Activo = true;
                             elementosTutorial.tutotial_elements.TutoPanelCentral = true;
@@ -175,7 +176,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
                             AudioDialogos.clip = DialogoClip; // reproducir el audio cuando inicia el dialogo
                             AudioDialogos.Play();
                         }
-                        if (S_TDialogos.id == 1004)
+                        if (S_TDialogos.id == 1004 && currentSentence <5)
                         {
                             elementosTutorial.tutotial_elements.Texto2Activo = true;
                             elementosTutorial.tutotial_elements.TutoPanelCentral = true;
@@ -186,7 +187,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
                             AudioDialogos.clip = DialogoClip; // reproducir el audio cuando inicia el dialogo
                             AudioDialogos.Play();
                         }
-                        if (S_TDialogos.id == 1005)
+                        if (S_TDialogos.id == 1005 && currentSentence < 6)
                         {
                             elementosTutorial.tutotial_elements.Texto1Activo = true;
                             elementosTutorial.tutotial_elements.TutoPanelCentral = true;
@@ -215,7 +216,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
                             AudioDialogos.clip = DialogoClip; // reproducir el audio cuando inicia el dialogo
                             AudioDialogos.Play();
                         }
-                        if (S_TDialogos.id == 1008)
+                        if (S_TDialogos.id == 1008 && currentSentence <5)
                         {
                             elementosTutorial.tutotial_elements.Texto1Activo = true;
                             elementosTutorial.tutotial_elements.TutoPanelCentral = true;
@@ -229,6 +230,7 @@ public class TutorialDialogue_Manager : MonoBehaviour
                 else
                 {
                     nextbton.SetActive(false);
+                    E.SetActive(false);
                 }
             }
         }
@@ -255,6 +257,27 @@ public class TutorialDialogue_Manager : MonoBehaviour
         currentSentence = 0;
         StopAllCoroutines();
         E.SetActive(false);
+        if(S_TDialogos.id == 0)
+        {
+            elementosTutorial.tutotial_elements.TutoBtonRecarga = false;
+            elementosTutorial.tutotial_elements.TutopanelRegarga = false;
+            elementosTutorial.tutotial_elements.TutoBtonInventario = false;
+            elementosTutorial.tutotial_elements.TutoPanelInventario = false;
+            elementosTutorial.tutotial_elements.TutoPanelRadar = false;
+            elementosTutorial.tutotial_elements.TutoBtonRadar = false;
+            elementosTutorial.tutotial_elements.Texto2Activo = false;
+            elementosTutorial.tutotial_elements.IsAstro2Act = false;
+            elementosTutorial.tutotial_elements.IsEdgar2Act = true;
+            elementosTutorial.tutotial_elements.Texto1Activo = false;
+            elementosTutorial.tutotial_elements.TutoPanelCentral = false;
+            elementosTutorial.tutotial_elements.TutoBtonLuz = false;
+            elementosTutorial.tutotial_elements.TutoFuncionLuz = false;
+            elementosTutorial.tutotial_elements.TutoBtonMotor = false;
+            elementosTutorial.tutotial_elements.TutoFuncionMotor = false;
+            C_Nave.ControlPanelesNave.ActivarPanelTexto = false;
+            currentSentence = 0;
+            StopAllCoroutines();
+        }
     }
 
     public void conversacion()

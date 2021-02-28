@@ -11,6 +11,7 @@ public class portal : MonoBehaviour
     public PolygonCollider2D mypolygon;
     public int portalID;
     public Animator portalAnim;
+    public GameObject fadeIn;
     void Start()
     {
         
@@ -40,10 +41,15 @@ public class portal : MonoBehaviour
             if (coordenadasCount == 2)
             {
                 print("start game");
-                SceneManager.LoadScene("Testeo pipe"); // en el futuro, cambiar a escena de juego 1
+                fadeIn.SetActive(true);
+                Invoke("UsePortal", 1f);
 
             }
         }
 
+    }
+    public void UsePortal()
+    {
+        SceneManager.LoadScene("Testeo pipe"); // en el futuro, cambiar a escena de juego 1
     }
 }

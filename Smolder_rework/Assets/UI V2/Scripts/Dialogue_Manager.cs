@@ -364,7 +364,7 @@ public class Dialogue_Manager : MonoBehaviour
                 {
                     controlNave.controlTextoNave.AstroHablando = true;
                     controlNave.controlTextoNave.EdgarHablando = false;
-                    if (count == 280)
+                    if (count == 288)
                     {
                         AudioDialogos.Stop();
                     }
@@ -527,7 +527,7 @@ public class Dialogue_Manager : MonoBehaviour
                 {
                     controlNave.controlTextoNave.AstroHablando = false;
                     controlNave.controlTextoNave.EdgarHablando = true;
-                    if (count == 764)
+                    if (count == 772)
                     {
                         AudioDialogos.Stop();
                     }

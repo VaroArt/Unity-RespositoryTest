@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -460,7 +460,7 @@ GameObject:
   - component: {fileID: 52554560}
   m_Layer: 0
   m_Name: "Meteoro peque\xF1o 2 (3)"
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -759,7 +759,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 1.11
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 33572bd3
   m_LightCookieSprite: {fileID: 0}
@@ -818,7 +818,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.19250971, y: 0.24560232}
   m_AnchorMax: {x: 0.80749017, y: 0.8524092}
-  m_AnchoredPosition: {x: -0.000022888184, y: 0.000541687}
+  m_AnchoredPosition: {x: -0.000030517578, y: 0.0005340576}
   m_SizeDelta: {x: 0.000011444092, y: -0.0010948181}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &84171861
@@ -6758,7 +6758,7 @@ GameObject:
   - component: {fileID: 154973192}
   m_Layer: 0
   m_Name: "Meteoro peque\xF1o 2 (8)"
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6915,7 +6915,7 @@ GameObject:
   - component: {fileID: 168756890}
   m_Layer: 0
   m_Name: "Meteoro peque\xF1o (1)"
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7308,6 +7308,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &174327672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 174327673}
+  - component: {fileID: 174327674}
+  m_Layer: 12
+  m_Name: nave minimap
+  m_TagString: minimap
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &174327673
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174327672}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.17, y: -0.02, z: 0}
+  m_LocalScale: {x: 1.5163332, y: 1.5163332, z: 0.4549}
+  m_Children: []
+  m_Father: {fileID: 253592984}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &174327674
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174327672}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &185327739
 GameObject:
   m_ObjectHideFlags: 0
@@ -7431,7 +7478,7 @@ GameObject:
   - component: {fileID: 192082247}
   m_Layer: 0
   m_Name: "Meteoro peque\xF1o (3)"
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12599,7 +12646,7 @@ RectTransform:
   m_Children:
   - {fileID: 1104847443}
   m_Father: {fileID: 2435524740798602850}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -12826,6 +12873,7 @@ Transform:
   m_LocalPosition: {x: -5.28, y: -2.19, z: 13.320269}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
+  - {fileID: 174327673}
   - {fileID: 903359489}
   - {fileID: 1712395841}
   - {fileID: 2017845227}
@@ -13145,7 +13193,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 998672038}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &269092888
 MonoBehaviour:
@@ -13735,6 +13783,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 354898302}
   m_CullTransparentMesh: 0
+--- !u!1 &361473825
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 361473826}
+  - component: {fileID: 361473827}
+  m_Layer: 12
+  m_Name: nave minimap
+  m_TagString: minimap
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &361473826
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361473825}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.03, y: -0.01, z: 0}
+  m_LocalScale: {x: 1.5163332, y: 1.5163332, z: 0.4549}
+  m_Children: []
+  m_Father: {fileID: 1065429402}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &361473827
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361473825}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &362219077
 GameObject:
   m_ObjectHideFlags: 0
@@ -13894,7 +13989,7 @@ GameObject:
   - component: {fileID: 374526347}
   m_Layer: 0
   m_Name: circuloasteroides3
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15017,6 +15112,100 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &418051089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 418051090}
+  - component: {fileID: 418051093}
+  - component: {fileID: 418051092}
+  - component: {fileID: 418051091}
+  m_Layer: 5
+  m_Name: FadeIn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &418051090
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418051089}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 851069815}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &418051091
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418051089}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ffd1abc40f3a3b04899fe941649c5d27, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &418051092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418051089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_Maskable: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 499e03d0c9642b3418b0f86f18708f3e, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &418051093
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418051089}
+  m_CullTransparentMesh: 0
 --- !u!1 &428071331
 GameObject:
   m_ObjectHideFlags: 0
@@ -15475,7 +15664,7 @@ GameObject:
   - component: {fileID: 461548058}
   m_Layer: 0
   m_Name: circuloasteroides 17
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16771,7 +16960,7 @@ GameObject:
   - component: {fileID: 525036765}
   m_Layer: 0
   m_Name: "Meteoro peque\xF1o 2 (6)"
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17152,7 +17341,7 @@ GameObject:
   - component: {fileID: 564315375}
   m_Layer: 0
   m_Name: "Meteoro peque\xF1o (4)"
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17317,7 +17506,7 @@ GameObject:
   - component: {fileID: 584062255}
   m_Layer: 0
   m_Name: "Meteoro peque\xF1o 3"
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17638,7 +17827,7 @@ GameObject:
   - component: {fileID: 600035746}
   m_Layer: 0
   m_Name: Meteoro gigante 2
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17804,7 +17993,7 @@ GameObject:
   - component: {fileID: 600773185}
   m_Layer: 0
   m_Name: "Meteoro peque\xF1o 3 (2)"
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18471,6 +18660,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &637662797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 637662798}
+  - component: {fileID: 637662799}
+  m_Layer: 12
+  m_Name: nave minimap
+  m_TagString: minimap
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &637662798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637662797}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.01, y: -0.04, z: 0}
+  m_LocalScale: {x: 1.5163332, y: 1.5163332, z: 0.4549}
+  m_Children: []
+  m_Father: {fileID: 1895801300}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &637662799
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637662797}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &646068843
 GameObject:
   m_ObjectHideFlags: 0
@@ -18505,6 +18741,7 @@ MonoBehaviour:
   mypolygon: {fileID: 646068845}
   portalID: 1
   portalAnim: {fileID: 893109028}
+  fadeIn: {fileID: 851069814}
 --- !u!60 &646068845
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -18565,7 +18802,7 @@ GameObject:
   - component: {fileID: 652543211}
   m_Layer: 0
   m_Name: circuloasteroides 14
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19008,7 +19245,7 @@ GameObject:
   - component: {fileID: 652958388}
   m_Layer: 0
   m_Name: Meteoro gigante 1
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24779,7 +25016,7 @@ GameObject:
   - component: {fileID: 721582868}
   m_Layer: 0
   m_Name: "Meteoro peque\xF1o (7)"
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24998,7 +25235,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.20856068, y: 0.098000005}
   m_AnchorMax: {x: 0.7914392, y: 0.8196023}
-  m_AnchoredPosition: {x: 0, y: -0.3499751}
+  m_AnchoredPosition: {x: 0, y: -0.34996033}
   m_SizeDelta: {x: -0.000011444092, y: -0.7044754}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &726727785
@@ -25085,7 +25322,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 1.11
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 33572bd3
   m_LightCookieSprite: {fileID: 0}
@@ -25990,7 +26227,7 @@ GameObject:
   - component: {fileID: 770017909}
   m_Layer: 0
   m_Name: "Meteoro peque\xF1o 2 (5)"
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26718,7 +26955,7 @@ Transform:
   - {fileID: 152071812}
   - {fileID: 1282933667}
   m_Father: {fileID: 998672038}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &814745894
 SpriteRenderer:
@@ -27012,6 +27249,105 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &851069814
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 851069815}
+  - component: {fileID: 851069818}
+  - component: {fileID: 851069817}
+  - component: {fileID: 851069816}
+  m_Layer: 5
+  m_Name: Canvas_FadeIn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &851069815
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851069814}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.6189225, y: 2.6189225, z: 2.6189225}
+  m_Children:
+  - {fileID: 418051090}
+  m_Father: {fileID: 2435524740798602850}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1024, y: 576.1637}
+  m_SizeDelta: {x: 782, y: 440}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &851069816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851069814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &851069817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851069814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!223 &851069818
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851069814}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &862514339
 GameObject:
   m_ObjectHideFlags: 0
@@ -27282,11 +27618,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 903359488}
   m_LocalRotation: {x: -0, y: -0, z: -0.49618652, w: 0.8682159}
-  m_LocalPosition: {x: -0.005, y: 0.642, z: 0}
+  m_LocalPosition: {x: -0.005, y: 0.345, z: 0}
   m_LocalScale: {x: 24.892826, y: 20.940527, z: 6}
   m_Children: []
   m_Father: {fileID: 253592984}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &903359490
 MonoBehaviour:
@@ -27304,7 +27640,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 1.11
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 33572bd3
   m_LightCookieSprite: {fileID: 0}
@@ -27461,7 +27797,7 @@ GameObject:
   - component: {fileID: 917752067}
   m_Layer: 0
   m_Name: Cadena de meteoro 4
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27934,8 +28270,8 @@ MonoBehaviour:
     - "Otra nave, y muy cerca se encuentra un portal.\r"
     - "Se\xF1or, la nave contiene otra coordenada, podemos usarlas en el portal para
       poder dar saltos y llegar a otra zona.\r"
-    - "R\xE1pido us\xE9moslas para salir de aqu\xED aun estamos muy cerca de la Tierra
-      y esos monstruos estar rodeando todo el planeta.\r"
+    - "R\xE1pido, us\xE9moslas para salir de aqu\xED aun estamos muy cerca de la
+      Tierra y esos monstruos estan rodeando todo el planeta.\r"
     - "Claro se\xF1or, solo debemos acercar nuestra nave a los contenedores que se
       encuentran a los lados del portal, en ellos colocaremos las coordenadas y el
       portal se abrir\xE1."
@@ -28100,7 +28436,7 @@ GameObject:
   - component: {fileID: 948787809}
   m_Layer: 0
   m_Name: "Meteoro peque\xF1o 3 (4)"
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28253,7 +28589,7 @@ GameObject:
   - component: {fileID: 952023384}
   m_Layer: 0
   m_Name: "Meteoro peque\xF1o"
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33909,7 +34245,7 @@ GameObject:
   - component: {fileID: 990809543}
   m_Layer: 0
   m_Name: "Meteoro peque\xF1o 2 (1)"
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34131,6 +34467,7 @@ Transform:
   m_LocalPosition: {x: 4.6359406, y: -1.421051, z: 13.320269}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
+  - {fileID: 2113180325}
   - {fileID: 1982983252}
   - {fileID: 269092887}
   - {fileID: 814745893}
@@ -34463,7 +34800,7 @@ MonoBehaviour:
   playerlight: {fileID: 1095690481}
   trail1: {fileID: 465445527}
   trail2: {fileID: 1725877255}
-  timer: 0
+  timer: 3
   movimiento: {fileID: 8300000, guid: 7a6066e9479a28141ad700e28923f6ef, type: 3}
   dead: {fileID: 8300000, guid: d62b21ec06303014d94cd1e4907f58aa, type: 3}
   damageTime: 0
@@ -34492,8 +34829,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1006039684}
-  m_LocalRotation: {x: -0, y: -0, z: -0.37569377, w: 0.92674387}
-  m_LocalPosition: {x: -0.387, y: 0.203, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.25567183, w: 0.9667636}
+  m_LocalPosition: {x: -0.04, y: -0.093, z: 0}
   m_LocalScale: {x: 18.669626, y: 15.7053995, z: 6}
   m_Children: []
   m_Father: {fileID: 1691924462}
@@ -34515,7 +34852,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 1.11
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 33572bd3
   m_LightCookieSprite: {fileID: 0}
@@ -34527,7 +34864,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 0.48409557
+  m_PointLightOuterRadius: 0.49461678
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -34553,7 +34890,7 @@ GameObject:
   - component: {fileID: 1018536816}
   m_Layer: 0
   m_Name: "Meteoro peque\xF1o 3 (7)"
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35246,6 +35583,7 @@ Transform:
   - {fileID: 1257291218}
   - {fileID: 948732882}
   - {fileID: 1908684980}
+  - {fileID: 361473826}
   m_Father: {fileID: 137206064}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -35262,7 +35600,7 @@ GameObject:
   - component: {fileID: 1069784115}
   m_Layer: 0
   m_Name: "Meteoro peque\xF1o 3 (1)"
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35508,7 +35846,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.19250971, y: 0.24560232}
   m_AnchorMax: {x: 0.80749017, y: 0.8524092}
-  m_AnchoredPosition: {x: -0.000022888184, y: 0.000541687}
+  m_AnchoredPosition: {x: -0.000030517578, y: 0.0005340576}
   m_SizeDelta: {x: 0.000011444092, y: -0.0010948181}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1098242247
@@ -35874,7 +36212,7 @@ MonoBehaviour:
   startOpaccity: 0
   playerAnim: {fileID: 1001418386}
   player_scr: {fileID: 1001418383}
-  controller: {fileID: 0}
+  controller: {fileID: 1001418390}
 --- !u!58 &1139870126
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -36953,7 +37291,7 @@ GameObject:
   - component: {fileID: 1251447216}
   m_Layer: 0
   m_Name: "Meteoro peque\xF1o (6)"
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37374,7 +37712,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 1.11
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 33572bd3
   m_LightCookieSprite: {fileID: 0}
@@ -42874,7 +43212,7 @@ GameObject:
   - component: {fileID: 1329021147}
   m_Layer: 0
   m_Name: "Meteoro peque\xF1o 2 (7)"
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43052,7 +43390,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.19250971, y: 0.24560232}
   m_AnchorMax: {x: 0.80749017, y: 0.8524092}
-  m_AnchoredPosition: {x: -0.000030517578, y: 0.000541687}
+  m_AnchoredPosition: {x: -0.000030517578, y: 0.0005340576}
   m_SizeDelta: {x: 0.000011444092, y: -0.0010948181}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1336879665
@@ -43579,7 +43917,7 @@ GameObject:
   - component: {fileID: 1376186090}
   m_Layer: 0
   m_Name: "Meteoro peque\xF1o 3 (6)"
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49709,7 +50047,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 1.11
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 33572bd3
   m_LightCookieSprite: {fileID: 0}
@@ -49721,7 +50059,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 0.42
+  m_PointLightOuterRadius: 0.31975806
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -49741,7 +50079,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490434169}
-  m_LocalRotation: {x: -0, y: -0, z: 0.60892606, w: 0.793227}
+  m_LocalRotation: {x: -0, y: -0, z: 0.5688143, w: 0.822466}
   m_LocalPosition: {x: -0.27824292, y: 0.39668593, z: 0}
   m_LocalScale: {x: 24.892832, y: 20.94053, z: 6}
   m_Children: []
@@ -50476,7 +50814,7 @@ GameObject:
   - component: {fileID: 1570409736}
   m_Layer: 0
   m_Name: "Meteoro peque\xF1o 2 (2)"
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50889,7 +51227,7 @@ GameObject:
   - component: {fileID: 1597525445}
   m_Layer: 0
   m_Name: "Meteoro peque\xF1o (2)"
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51518,7 +51856,7 @@ GameObject:
   - component: {fileID: 1653497923}
   m_Layer: 0
   m_Name: Meteoro gigante 2 (1)
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51754,7 +52092,7 @@ GameObject:
   - component: {fileID: 1667396221}
   m_Layer: 0
   m_Name: "Meteoro peque\xF1o (5)"
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51919,7 +52257,7 @@ GameObject:
   - component: {fileID: 1673456652}
   m_Layer: 0
   m_Name: "Meteoro peque\xF1o 3 (5)"
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52553,7 +52891,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 253592984}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1712395842
 MonoBehaviour:
@@ -53725,7 +54063,7 @@ GameObject:
   - component: {fileID: 1793364616}
   m_Layer: 0
   m_Name: circuloasteroides2
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55143,7 +55481,7 @@ GameObject:
   - component: {fileID: 1893050320}
   m_Layer: 0
   m_Name: Meteoro gigante 2
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55454,6 +55792,7 @@ Transform:
   m_Children:
   - {fileID: 1162450563}
   - {fileID: 86424704}
+  - {fileID: 637662798}
   - {fileID: 1862102435834423926}
   m_Father: {fileID: 137206064}
   m_RootOrder: 0
@@ -56868,7 +57207,7 @@ Transform:
   m_LocalScale: {x: 24.892832, y: 20.94053, z: 6}
   m_Children: []
   m_Father: {fileID: 998672038}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1982983253
 MonoBehaviour:
@@ -56886,7 +57225,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 1.11
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 33572bd3
   m_LightCookieSprite: {fileID: 0}
@@ -57267,7 +57606,7 @@ Transform:
   - {fileID: 718607683}
   - {fileID: 2010408936}
   m_Father: {fileID: 253592984}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2017845228
 SpriteRenderer:
@@ -57353,7 +57692,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.19250971, y: 0.24560232}
   m_AnchorMax: {x: 0.80749017, y: 0.8524092}
-  m_AnchoredPosition: {x: -0.000030517578, y: 0.000541687}
+  m_AnchoredPosition: {x: -0.000030517578, y: 0.0005340576}
   m_SizeDelta: {x: 0.000011444092, y: -0.0010948181}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2021069073
@@ -57406,7 +57745,7 @@ GameObject:
   - component: {fileID: 2024136075}
   m_Layer: 0
   m_Name: "Meteoro peque\xF1o 2"
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57770,7 +58109,7 @@ GameObject:
   - component: {fileID: 2092623436}
   m_Layer: 0
   m_Name: "Meteoro peque\xF1o 3 (3)"
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58346,7 +58685,7 @@ GameObject:
   - component: {fileID: 2106710047}
   m_Layer: 0
   m_Name: "Meteoro peque\xF1o 2 (4)"
-  m_TagString: Untagged
+  m_TagString: obstacule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58490,6 +58829,53 @@ PolygonCollider2D:
       - {x: 0.45000002, y: -1.7166667}
       - {x: 0.6833334, y: -1.4166667}
       - {x: 0.9333334, y: -1.45}
+--- !u!1 &2113180324
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2113180325}
+  - component: {fileID: 2113180326}
+  m_Layer: 12
+  m_Name: nave minimap
+  m_TagString: minimap
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2113180325
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113180324}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0.14, z: 0}
+  m_LocalScale: {x: 1.5163332, y: 1.5163332, z: 0.4549}
+  m_Children: []
+  m_Father: {fileID: 998672038}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &2113180326
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113180324}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &2115733660
 GameObject:
   m_ObjectHideFlags: 0
@@ -59557,7 +59943,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.48451173, y: 0.47039658}
   m_AnchorMax: {x: 0.5982305, y: 0.74647135}
-  m_AnchoredPosition: {x: -0.000061035156, y: -0.0018005371}
+  m_AnchoredPosition: {x: -0.000061035156, y: -0.0018310547}
   m_SizeDelta: {x: 0.000030517578, y: 0.0037841797}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &99838038184079506
@@ -59641,7 +60027,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.26177737, y: 0.47049415}
   m_AnchorMax: {x: 0.3754883, y: 0.7464714}
-  m_AnchoredPosition: {x: 0, y: -0.0018005371}
+  m_AnchoredPosition: {x: 0, y: -0.0018310547}
   m_SizeDelta: {x: 0.000030517578, y: 0.0037841797}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &340110243967766622
@@ -60160,7 +60546,7 @@ Transform:
   - {fileID: 2708105849850529510}
   - {fileID: 3621178602862305291}
   m_Father: {fileID: 1895801300}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1921832483606817080
 MonoBehaviour:
@@ -60765,7 +61151,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.019185003, y: 0.22200002}
   m_AnchorMax: {x: 0.9862601, y: 0.46222484}
-  m_AnchoredPosition: {x: -0.07562256, y: 35.53624}
+  m_AnchoredPosition: {x: -0.075683594, y: 35.536224}
   m_SizeDelta: {x: -344.42963, y: -44.84297}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2435524740677917879
@@ -61072,7 +61458,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.208, y: 0.14254671}
   m_AnchorMax: {x: 0.293, y: 0.2484533}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0.10003662}
+  m_AnchoredPosition: {x: 0, y: 0.10003662}
   m_SizeDelta: {x: -0.00002670288, y: 0.000015258789}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2435524740720130502
@@ -61561,7 +61947,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.21000001, y: 0.209}
   m_AnchorMax: {x: 0.7997587, y: 0.7906439}
-  m_AnchoredPosition: {x: -0.49998856, y: 0}
+  m_AnchoredPosition: {x: -0.49999237, y: 0}
   m_SizeDelta: {x: 41, y: 42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2435524740776119321
@@ -61728,7 +62114,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.022740006, y: 0.023119166}
   m_AnchorMax: {x: 0.9862601, y: 0.8708754}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0.0022583008}
+  m_AnchoredPosition: {x: 0, y: 0.0022583008}
   m_SizeDelta: {x: 0, y: -0.004486084}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2435524740784565471
@@ -62120,6 +62506,7 @@ RectTransform:
   - {fileID: 2435524741597738405}
   - {fileID: 4880130447626499223}
   - {fileID: 2435524741482391146}
+  - {fileID: 851069815}
   - {fileID: 242464967}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -63398,7 +63785,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.72254455, y: 0.15447138}
   m_AnchorMax: {x: 0.77400005, y: 0.24211736}
-  m_AnchoredPosition: {x: -0.000091552734, y: 0.023376465}
+  m_AnchoredPosition: {x: -0.00012207031, y: 0.023376465}
   m_SizeDelta: {x: 0.000049591064, y: -0.046697617}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2435524740960118154
@@ -64777,7 +65164,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.113334425, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -43.676086, y: -0.0036010742}
+  m_AnchoredPosition: {x: -43.676025, y: -0.0036010742}
   m_SizeDelta: {x: 87.350525, y: -0.005859375}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2435524741132529079
@@ -64926,7 +65313,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.3696668, y: 0.2718297}
   m_AnchorMax: {x: 0.63788897, y: 0.74624133}
-  m_AnchoredPosition: {x: 0.000061035156, y: -0.000015258789}
+  m_AnchoredPosition: {x: 0.000061035156, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &2435524741167040455
@@ -65172,7 +65559,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.40789723, y: 0.036851753}
   m_AnchorMax: {x: 0.5864233, y: 0.29700002}
-  m_AnchoredPosition: {x: -0.40000153, y: 0.60006714}
+  m_AnchoredPosition: {x: -0.3999939, y: 0.6000366}
   m_SizeDelta: {x: 40, y: 37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2435524741221213800
@@ -65394,7 +65781,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24131013, y: 0.20820841}
   m_AnchorMax: {x: 0.72400004, y: 0.84900004}
-  m_AnchoredPosition: {x: -0.000076293945, y: 0}
+  m_AnchoredPosition: {x: -0.000061035156, y: 0}
   m_SizeDelta: {x: -0.022911072, y: 0.000015258789}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2435524741238132807
@@ -66229,7 +66616,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.07416615, y: 0.0461193}
   m_AnchorMax: {x: 0.21129745, y: 0.876407}
-  m_AnchoredPosition: {x: 0.0008544922, y: -0.000061035156}
+  m_AnchoredPosition: {x: 0.0007324219, y: -0.000061035156}
   m_SizeDelta: {x: -0.0014419556, y: 0.000091552734}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2435524741337528846
@@ -70096,7 +70483,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.30400002, y: 0.3397167}
   m_AnchorMax: {x: 0.6883271, y: 0.88900006}
-  m_AnchoredPosition: {x: -1.325943, y: -0.000030517578}
+  m_AnchoredPosition: {x: -1.3259583, y: -0.000030517578}
   m_SizeDelta: {x: 0.000045776367, y: 0.000015258789}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2435524741702358040
@@ -72433,7 +72820,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2217686, y: 0.3949484}
   m_AnchorMax: {x: 0.8622271, y: 0.63993365}
-  m_AnchoredPosition: {x: 0.19774628, y: 0.000015258789}
+  m_AnchoredPosition: {x: 0.1977539, y: 0.000015258789}
   m_SizeDelta: {x: -0.033115387, y: 0.000005722046}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2435524742001784811
@@ -72992,7 +73379,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -18.100342, y: 0.00024414062}
+  m_AnchoredPosition: {x: -18.100159, y: 0.00024414062}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2435524742046320637
@@ -73530,7 +73917,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.21000001, y: 0.209}
   m_AnchorMax: {x: 0.7997587, y: 0.7906439}
-  m_AnchoredPosition: {x: -0.49998856, y: 0}
+  m_AnchoredPosition: {x: -0.49999237, y: 0}
   m_SizeDelta: {x: 41, y: 42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2435524742138596763
@@ -73641,7 +74028,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.21000001, y: 0.209}
   m_AnchorMax: {x: 0.7997587, y: 0.7906439}
-  m_AnchoredPosition: {x: -0.49998856, y: 0}
+  m_AnchoredPosition: {x: -0.49999237, y: 0}
   m_SizeDelta: {x: 41, y: 42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2435524742161307865
@@ -74071,7 +74458,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.104644775}
+  m_AnchoredPosition: {x: 0, y: -0.10461426}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2435524742197868423
@@ -76323,7 +76710,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.104644775}
+  m_AnchoredPosition: {x: 0, y: -0.10461426}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2435524742590843045
@@ -78230,7 +78617,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.104644775}
+  m_AnchoredPosition: {x: 0, y: -0.10461426}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2435524742763471974
@@ -79425,7 +79812,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.3754883, y: 0.509}
   m_AnchorMax: {x: 0.7142774, y: 0.734414}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: -0.000030517578}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &3737004255856612237
