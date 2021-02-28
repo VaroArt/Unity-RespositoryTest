@@ -52,6 +52,11 @@ public class MenuControl_new : MonoBehaviour
         Botones.PlayFade();
         Invoke("InicioCargaMapaPruebas", TiempoFade);
     }
+    public void PlayFinal()
+    {
+        Botones.PlayFade();
+        Invoke("InicioCargaMapaFinal", TiempoFade);
+    }
 
     public void InicioCargaMapaPruebas()
     {
@@ -63,6 +68,16 @@ public class MenuControl_new : MonoBehaviour
     {
         //SceneManager.LoadScene("LoadScenePruebas");
         SceneManager.LoadScene("Testeo pipe");
+    }
+    public void InicioCargaMapaFinal()
+    {
+        Botones.PanelCarga.enabled = true;
+        Invoke("CambiarEscenaFinal", TiempoFadeLoad);
+    }
+    public void CambiarEscenaFinal()
+    {
+        //SceneManager.LoadScene("UI_LoadScene");
+        SceneManager.LoadScene("Final");
     }
 
     public void BtonCerrarSelector()

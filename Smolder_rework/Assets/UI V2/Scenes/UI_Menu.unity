@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 114058551}
   - component: {fileID: 114058553}
   m_Layer: 5
-  m_Name: EntrarANivel1
+  m_Name: Final
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -314,7 +314,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114058551}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6756025258823617087}
+        m_MethodName: PlayFinal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &116438820
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,7 +601,7 @@ GameObject:
   - component: {fileID: 184442123}
   - component: {fileID: 184442122}
   m_Layer: 5
-  m_Name: Titulo (1)
+  m_Name: Tu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -647,7 +658,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Mapa de Pruebas
+  m_Text: 'Comienzos
+
+    (Tutorial)'
 --- !u!222 &184442123
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1042,7 +1055,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Directo a la Accion
+  m_Text: 'Nivel final
+
+'
 --- !u!222 &297181337
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1847,7 +1862,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2c78152435520f146ac423c053b3041b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 01ba18fd3b4357d479bdfaa0e0ba154b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2411,7 +2426,7 @@ GameObject:
   - component: {fileID: 660477137}
   - component: {fileID: 660477139}
   m_Layer: 5
-  m_Name: EntrarATutorial
+  m_Name: Nivel 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2517,7 +2532,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 660477137}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6756025258823617087}
+        m_MethodName: PlayPruebas
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &678496279
 GameObject:
   m_ObjectHideFlags: 0
@@ -3669,9 +3695,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Comienzos
+  m_Text: 'Nivel 1
 
-    (Tutorial)'
+'
 --- !u!222 &842212571
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3865,7 +3891,7 @@ GameObject:
   - component: {fileID: 941265837}
   - component: {fileID: 941265839}
   m_Layer: 5
-  m_Name: EntrarAPruebas
+  m_Name: Tutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3973,7 +3999,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6756025258823617087}
-        m_MethodName: PlayPruebas
+        m_MethodName: PlayTutorial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4113,7 +4139,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d742d0a3d7298374d940c0b7c8f0aab1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 01ba18fd3b4357d479bdfaa0e0ba154b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5029,7 +5055,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d742d0a3d7298374d940c0b7c8f0aab1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 01ba18fd3b4357d479bdfaa0e0ba154b, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
