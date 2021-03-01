@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -658,9 +658,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Comienzos
+  m_Text: '"Comienzos"
 
-    (Tutorial)'
+    Tutorial'
 --- !u!222 &184442123
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1055,9 +1055,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Nivel final
+  m_Text: '"La esperanza"
 
-'
+    Nivel Final'
 --- !u!222 &297181337
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1862,7 +1862,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 01ba18fd3b4357d479bdfaa0e0ba154b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: afbeabc4dd8372c40aaa88e64330e88d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3695,9 +3695,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Nivel 1
+  m_Text: '"Destino: Smolder"
 
-'
+    Nivel 1'
 --- !u!222 &842212571
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5055,7 +5055,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 01ba18fd3b4357d479bdfaa0e0ba154b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 61e4e03370a3ba24689977d2629c1a1d, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -8945,7 +8945,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!1 &5344266230859262699
 GameObject:
@@ -9843,10 +9843,10 @@ RectTransform:
   m_Father: {fileID: 7377301516582662179}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.75553167, y: 0.027}
-  m_AnchorMax: {x: 1, y: 0.090504505}
-  m_AnchoredPosition: {x: 0.0012207031, y: 0.002380371}
-  m_SizeDelta: {x: 0.0007324219, y: -0.00036144257}
+  m_AnchorMin: {x: 0.7484073, y: 0.027}
+  m_AnchorMax: {x: 0.99280244, y: 0.090504505}
+  m_AnchoredPosition: {x: -0.000030517578, y: 0}
+  m_SizeDelta: {x: 0, y: 0.0000038146973}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7141176923080025600
 MonoBehaviour:
@@ -9945,13 +9945,13 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 1
     m_MaxSize: 100
-    m_Alignment: 4
+    m_Alignment: 5
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Smolder Alpha V3.0
+  m_Text: 'Smolder Alpha V4.0 / Final
 
     Dimensions Games'
 --- !u!224 &7377301516582662179
